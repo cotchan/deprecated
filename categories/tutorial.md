@@ -1,5 +1,4 @@
 ---
 layout: category
-title: tutorial
-category: Tutorial
+title: Tutorial
 ---
