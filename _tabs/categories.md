@@ -1,5 +1,6 @@
 ---
 title: Categories
+type: categories
 icon: fas fa-stream
 order: 1
 
