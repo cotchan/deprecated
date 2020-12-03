@@ -1,5 +1,4 @@
 ---
 layout: category
-title: blogging
-category: Blogging
+title: Blogging
 ---
