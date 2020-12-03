@@ -1,7 +1,7 @@
 ---
 title: 리눅스 grep 명령어 사용 방법
 author: cotchan
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
+date: 2020-12-04 12:48:50 +/-TTTT
 categories: [Linux, Command]
 tags: [Linux]     # TAG names should always be lowercase
 ---
