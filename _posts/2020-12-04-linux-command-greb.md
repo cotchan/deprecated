@@ -103,20 +103,12 @@ grep [OPTION...] PATTERN [FILE...]
 $ ls -alR | grep '.*[.]xib'
 
 MainMenu.xib
-MainMenu.xib
 LaunchScreen.xib
-MainMenu.xib
 objects.xib
-MainMenu.xib
-MainMenu.xib
 BloggerSampleWindow.xib
-MainMenu.xib
 BooksSampleWindow.xib
-MainMenu.xib
 CalendarSampleWindow.xib
-EditACLWindow.xib
 EditEventWindow.xib
-MainMenu.xib
 ContactsSampleWindow.xib
 EditEntryWindow.xib
 ```
