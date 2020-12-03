@@ -1,5 +1,5 @@
 ---
 layout: category
-title: demo
-category: demo
+title: Demo
+category: Demo
 ---
