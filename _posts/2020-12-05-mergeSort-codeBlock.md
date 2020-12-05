@@ -2,7 +2,6 @@
 title: 머지소트 손코딩 코드 # TITLE
 author: cotchan # AUTHOR
 date: 2020-12-05 16:37:21 +0800 # YYYY-MM-DD HH:MM:SS +/-TTTT
-comments: true
 categories: [Algorithm, CodeBlock] # [TOP_CATEGORIE, SUB_CATEGORIE]
 tags: [algorithm] # [TAG]     # TAG names should always be lowercase
 ---
