@@ -1,6 +1,6 @@
 ---
-title: 이분탐색(Binary Search) 손코딩 코드# TITLE
-author: Cotchan # AUTHOR
+title: 이분탐색(Binary Search) 손코딩 코드
+author: Cotchan 
 date: 2020-12-06 00:47:21 +0800 # YYYY-MM-DD HH:MM:SS +/-TTTT
 categories: [Algorithm, CodeBlock] # [TOP_CATEGORIE, SUB_CATEGORIE]
 tags: [algorithm] # [TAG]     # TAG names should always be lowercase
