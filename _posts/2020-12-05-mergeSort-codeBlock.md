@@ -59,7 +59,6 @@ void mergeSort(int *arr, int st, int en)
 		}
 
 		return;
-
 	}
 	else
 	{
@@ -67,6 +66,7 @@ void mergeSort(int *arr, int st, int en)
 		mergeSort(arr, st, mid);
 		mergeSort(arr, mid+1, en);
 		merge(arr, st, en);
+		return;
 	}
 }
 
