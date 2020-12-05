@@ -1,7 +1,7 @@
 ---
 title: 최대공약수(GCD) 알고리즘 코드 # TITLE
 author: cotchan # AUTHOR
-date: # 2020-12-05 18:15:21 +0800
+date: 2020-12-05 18:15:21 +0800
 categories: [Algorithm, CodeBlock] # [TOP_CATEGORIE, SUB_CATEGORIE]
 tags: [algorithm] # [TAG]     # TAG names should always be lowercase
 ---
