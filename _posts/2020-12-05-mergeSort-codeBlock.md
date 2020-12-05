@@ -15,12 +15,14 @@ tags: [algorithm] # [TAG]     # TAG names should always be lowercase
 ```c++
 int tmp[N];	//merge 과정에서 데이터를 임시로 담을 변수. 주어진 배열의 크기만큼 메모리를 선언해줍니다.
 
+
 void merge(int *arr, int st, int en)
 {
-	int idx1, idx2, idx3,mid;
+	int idx1, idx2, idx3, mid;
+	
 	mid = (st+en)/2;
 	idx1 = st;
-	idx2 = mid;
+	idx2 = mid + 1;
 	idx3 = st;
 
 	while (idx1 <= idx2 && idx1 <= mid && idx2 <= en)
@@ -35,11 +37,11 @@ void merge(int *arr, int st, int en)
 		}
 	}
 
-	for (int i = idx1; idx1 <= mid; ++i)
-		tmp[idx3++] = arr[idx1];
+	for (int rest = idx1; rest <= mid; ++rest)
+		tmp[idx3++] = arr[rest];
 
-	for (int i = idx2; idx2 <= en; ++i)
-		tmp[idx3++] = arr[idx2];
+	for (int rest = idx2; rest <= en; ++rest)
+		tmp[idx3++] = arr[rest];
 
 	for (int i = st; i <= en; ++i)
 		arr[i] = tmp[i];
@@ -53,13 +55,12 @@ void mergeSort(int *arr, int st, int en)
 	}
 	else if (st + 1 == en)
 	{
-		if (arr[st] > arr[en])
+		if (arr[st] > arr[st+1])
 		{		
-			swap(arr[st],arr[en]);
+			swap(arr[st],arr[st+1]);
 		}
 
 		return;
-
 	}
 	else
 	{
@@ -67,6 +68,7 @@ void mergeSort(int *arr, int st, int en)
 		mergeSort(arr, st, mid);
 		mergeSort(arr, mid+1, en);
 		merge(arr, st, en);
+		return;
 	}
 }
 
