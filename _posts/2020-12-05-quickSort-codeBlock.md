@@ -38,4 +38,6 @@ void quickSort(int *arr, int st, int en)
 	quickSort(arr, st, r);
 	quickSort(arr, r+1,en);
 }
+
+//호출 방법: quickSort(arr, 0, arr.length());
 ```
