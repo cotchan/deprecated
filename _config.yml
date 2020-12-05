@@ -21,7 +21,7 @@ url: 'https://cotchan.github.io'
 
 author: cotchan                  # change to your full name
 
-avatar: /assets/img/sample/background.jpg   # support internet resources
+avatar: /assets/img/sample/background.png   # support internet resources
 
 github:
   username: cotchan             # change to your github username
