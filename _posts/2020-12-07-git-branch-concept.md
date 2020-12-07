@@ -19,7 +19,17 @@ tags: [git]
 ---
 
 
-## 브랜치 생성 방법
+## Branch 중요 개념
+
+1.master를 기준으로, `new를 브랜치(가지치기)하면` master와 똑같은 소스코드가 new에도 적용됩니다.    
+
+2.하지만 이 이후로 new에서 코드를 수정하면 master와 new는 서로 다른 코드가 되기 때문에 갈라집니다.    
+
+
+---
+
+
+## Branch 생성 방법
 
 브랜치를 새로 만드신다면 아래의 명령어로 생성합니다.    
 
@@ -30,21 +40,11 @@ $ git branch [브랜치명]
 $ git branch new
 ```
 
-
+ 
 ---
 
 
-## Branch 중요 개념
-
-1.master를 기준으로, new를 브랜치(가지치기)하면 master와 똑같은 소스코드가 new에도 적용됩니다.    
-
-2.하지만 이 이후로 new에서 코드를 수정하면 master와 new는 서로 다른 코드가 되기 때문에 갈라집니다.    
-
-
----
-
-
-## 생성한 new Branch로 이동하기 
+## 생성한 new Branch로 이동
  
 + 생성된 new 브랜치로 접속하기 위한 명령어    
 
@@ -55,7 +55,7 @@ $ git checkout [브랜치명]
 ---
 
 
-## Branch 생성 + 그 Branch로 이동하기
+## Branch 생성 + 그 Branch로 이동
 
 + 생성과 동시 브랜치로 이동하고자 한다면 git checkout에 `-b 옵션`을 이용합니다.    
 
@@ -71,7 +71,7 @@ $ git checkout -b new
 
 ---
 
-## Branch 원격 저장소에 등록하기
+## Branch 원격 저장소에 등록
 
 이때는 `git push orgin [브랜치명]`을 이용합니다.    
 
