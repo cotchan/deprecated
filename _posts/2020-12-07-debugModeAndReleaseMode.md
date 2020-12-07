@@ -1,6 +1,6 @@
 ---
 
-title: Debug모드, Release모드의 차이점 
+title: Debug 모드, Release 모드의 차이점 
 
 author: cotchan 
 
@@ -36,7 +36,7 @@ tags: [voca]
 + 초기화가 이루어지지 않습니다.
 
 
---
+---
 
 
 ## 차이점
