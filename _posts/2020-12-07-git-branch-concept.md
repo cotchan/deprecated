@@ -1,10 +1,11 @@
 ---
-title: Git Branch 개념/ 관련 명령어
+title: Git Branch 개념/ Branch 기본 명령어
 author: cotchan
 date: 2020-12-07 20:15:21 +0800
 categories: [Git, Git_Branch]
 tags: [git] 
 ---
+
 
 아래 출처를 바탕으로 본인이 이해하기 위해 작성한 포스팅입니다. :)    
 
@@ -14,7 +15,9 @@ tags: [git]
 
 기본은 master 브랜치이고, 이는 필수로 제공되는 브랜치 입니다.    
 
+
 ---
+
 
 ## 브랜치 생성 방법
 
@@ -27,7 +30,9 @@ $ git branch [브랜치명]
 $ git branch new
 ```
 
+
 ---
+
 
 ## Branch 중요 개념
 
@@ -35,13 +40,24 @@ $ git branch new
 
 2.하지만 이 이후로 new에서 코드를 수정하면 master와 new는 서로 다른 코드가 되기 때문에 갈라집니다.    
 
-3.생성된 new 브랜치로 접속하기 위한 명령어    
+
+---
+
+
+## 생성한 new Branch로 이동하기 
+ 
++ 생성된 new 브랜치로 접속하기 위한 명령어    
 
 ```bash
 $ git checkout [브랜치명]    
 ```
 
-생성과 동시 브랜치로 이동하고자 한다면 git checkout에 `-b 옵션`을 이용합니다.    
+---
+
+
+## Branch 생성 + 그 Branch로 이동하기
+
++ 생성과 동시 브랜치로 이동하고자 한다면 git checkout에 `-b 옵션`을 이용합니다.    
 
 ```bash
 //example
@@ -51,6 +67,11 @@ $ git checkout -b new
 이 시점에, 생성한 브랜치는 현재 로컬에 저장되어 있습니다.    
 
 협업 작업에서는 생성한 브랜치를 원격 저장소에 등록해줘야 합니다.    
+
+
+---
+
+## Branch 원격 저장소에 등록하기
 
 이때는 `git push orgin [브랜치명]`을 이용합니다.    
 
