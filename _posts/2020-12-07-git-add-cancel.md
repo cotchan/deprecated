@@ -1,9 +1,9 @@
 ---
-title: Git add 취소하는 방법# TITLE
-author: cotchan # AUTHOR
-date: 2020-12-07 20:00:21 +0800 # YYYY-MM-DD HH:MM:SS +/-TTTT
-categories: [Git, Git_ETC] # [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [git] # [TAG]     # TAG names should always be lowercase
+title: Git add 취소하는 방법
+author: cotchan
+date: 2020-12-07 20:00:21 +0800
+categories: [Git, Git_ETC]
+tags: [git]
 ---
 
 ## ADD 취소하기
