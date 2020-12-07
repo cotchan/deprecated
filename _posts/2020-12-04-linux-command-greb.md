@@ -3,7 +3,7 @@ title: 리눅스 grep 명령어 사용 방법
 author: cotchan
 date: 2020-12-04 12:48:50 +0800
 categories: [Linux, Command]
-tags: [Linux]     # TAG names should always be lowercase
+tags: [linux]     # TAG names should always be lowercase
 ---
 
 
