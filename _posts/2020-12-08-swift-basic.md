@@ -1,12 +1,14 @@
 ---
-title: Swift 기본 기능 코드
+title: Swift) Swift 기본 기능 코드
 author: cotchan 
 date: 2020-12-08 20:38:21 +0800 
 categories: [Swift, Swift_Basic] 
 tags: [swift] 
 ---
 
-계속 추가 될 예정입니다. :)
+내용이 계속 추가 될 예정입니다. :)
+
+---
 
 ## 배열 초기화 방법
 
