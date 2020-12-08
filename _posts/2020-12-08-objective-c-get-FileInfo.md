@@ -13,9 +13,9 @@ tags: [objective-c]
 ```ruby
 -(unsigned long long)getFileSize:(NSString *)filePath
 {
-	unsigned long long fileSize;
-	fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil] fileSize];
-	return fileSize;
+	unsigned long long myFileSize;
+	myFileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil] fileSize];
+	return myFileSize;
 }
 ```
 
@@ -28,8 +28,8 @@ tags: [objective-c]
 ```ruby
 -(NSDate *)getFileModificationDate:(NSString *)filePath
 {
-	NSDate *fileModificationDate;
-	fileModificationDate = [[[NSFileManager defaultManager] attributesOfItemAtPath:self.filePath error:NULL] fileModificationDate];
-	return fileModificationDate;
+	NSDate *myFileModificationDate;
+	myFileModificationDate = [[[NSFileManager defaultManager] attributesOfItemAtPath:self.filePath error:NULL] fileModificationDate];
+	return myFileModificationDate;
 }
 ```
