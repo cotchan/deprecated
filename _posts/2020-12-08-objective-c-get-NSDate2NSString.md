@@ -12,8 +12,7 @@ tags: [objective-c]
 
 ## NSDate => NSString
 
-```objective-c
-{% highlight objc %}
+```ruby
 //result: 2020-12-08 21:15:29
 -  (NSString *)getStringFromDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -21,12 +20,10 @@ tags: [objective-c]
     [dateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:[[NSLocale preferredLanguages] objectAtIndex:0]]];
     NSString *time = [dateFormatter stringFromDate:date];
     return time;
-{% endhighlight %}
 }
 ```
 
-```objective-c
-{% highlight objc %}
+```ruby
 //result: 2020-12-08
 -  (NSString *)getYearMonthDayStringFromDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -34,12 +31,10 @@ tags: [objective-c]
     [dateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:[[NSLocale preferredLanguages] objectAtIndex:0]]];
     NSString *time = [dateFormatter stringFromDate:date];
     return time;
-{% endhighlight %}
 }
 ```
 
-```objective-c
-{% highlight objc %}
+```ruby
 //result: 21:15:29
 -  (NSString *)getHourMinuteSecondStringFromDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init;
@@ -48,7 +43,6 @@ tags: [objective-c]
     NSString *time = [dateFormatter stringFromDate:date];
     return time;
 }
-{% endhighlight %}
 ```
 
 
