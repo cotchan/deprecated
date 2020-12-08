@@ -13,7 +13,7 @@ tags: [objective-c]
 ## NSDate => NSString
 
 ```ruby
-//result: 2020-12-08 21:15:29
+# result: 2020-12-08 21:15:29
 -  (NSString *)getStringFromDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd, HH:mm:ss"];
@@ -24,7 +24,7 @@ tags: [objective-c]
 ```
 
 ```ruby
-//result: 2020-12-08
+# result: 2020-12-08
 -  (NSString *)getYearMonthDayStringFromDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -35,7 +35,7 @@ tags: [objective-c]
 ```
 
 ```ruby
-//result: 21:15:29
+# result: 21:15:29
 -  (NSString *)getHourMinuteSecondStringFromDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init;
     [dateFormatter setDateFormat:@"HH:mm:ss"];
