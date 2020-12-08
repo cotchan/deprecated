@@ -16,8 +16,11 @@ tags: [objective-c]
 	unsigned long long fileSize;
 	fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil] fileSize];
 }
+```
+
 
 ---
+
 
 ## Get File Modification Date
 
