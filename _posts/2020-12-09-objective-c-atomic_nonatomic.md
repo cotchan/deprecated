@@ -6,6 +6,8 @@ categories: [Objective-C, Objective-C_Basic]
 tags: [objective-c] 
 ---
 
+아래 출처를 참고하여 작성한 글입니다. :)        
+더 자세한 설명은 출처를 참고하시면 됩니다.    
 
 ## atomic
 
