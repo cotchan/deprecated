@@ -29,9 +29,8 @@ tags: [spring-boot]
 $ ./gradlew build
 ```
 
-**빌드가 안된다면 build clean을 해줍니다.**
-(build 폴더 자체를 없애는 명령어)    
-이전 빌드 내용을 완전히 지우고 다시 빌드해줍니다.   
+**빌드가 안된다면 build clean을 해줍니다.** (build 폴더 자체를 없애는 명령어)            
+이전 빌드 내용을 완전히 지우고 다시 빌드해줍니다.    
 
 ```terminal
 $ ./gradlew clean build
@@ -65,7 +64,7 @@ $ java -jar hello-spring-0.0.1-SNAPSHOT.jar
 
 ## Summary: 서버 배포 방법
 
-서버에 배포할 때는 .jar 파일만 복사해서 서버에 넣어주고 `java -jar ***.jar` 명령어를 통해 실행하면 됩니다. 그러면 서버에서도 Spring이 동작하게 됩니다.
+서버에 배포할 때는 `.jar 파일만 복사`해서 서버에 넣어주고 `java -jar ***.jar` 명령어를 통해 실행하면 됩니다. 그러면 서버에서도 Spring이 동작하게 됩니다.
 
 
 ---
