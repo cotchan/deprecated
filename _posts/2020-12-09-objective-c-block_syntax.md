@@ -54,6 +54,8 @@ double (^blockName)(double, double);
 
 ## Parameter Field로 정의하기
 
++ Parameter로 Block function을 사용하면 `callback` 방식으로 사용되며, 이 부분은 `비동기로 처리` 됩니다.
+
 ```ruby
 fieldName:(RETURN_TYPE (^)(PARAMETERS...))parameterName
 ```
