@@ -21,7 +21,7 @@ tags: [objective-c]
 ## 블록 선언 방법 (Basic)
 
 + ^표시가 블록임을 선언합니다.
-+ {} 안에 실행할 코드를 넣어줍니다.
++ { } 안에 실행할 코드를 넣어줍니다.
 
 ```ruby
 ^{
@@ -74,13 +74,15 @@ fieldName:(RETURN_TYPE (^)(PARAMETERS...))parameterName
  [manager POST:URL
           parameters:requestDictionary
           progress:nil
-          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) 
+          success:^(NSURLSessionDataTask * _Nonnull task, 
+				      id  _Nullable responseObject) 
 	  {
-		//success case
+		# success case
           }
-	  failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) 
+	  failure:^(NSURLSessionDataTask * _Nullable task, 
+				 NSError * _Nonnull error) 
 	  {
-		//failure case	
+		# failure case	
           }];
 ```
 
@@ -104,7 +106,7 @@ RETURN_TYPE (^)(PARAMETERS ...)
 
 ```ruby
 someClass.completionHandler = ^(NSData *data) {
-	//doSomething
+	# doSomething
 };
 
 ```
