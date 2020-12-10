@@ -25,7 +25,7 @@ tags: [spring-boot]
 
 ## 동작 원리
 
-![Desktop View](/assets/img/post/spring-boot/2020-12-10-web-static-content.png){: width="350" class="normal"}
+![Desktop View](/assets/img/post/spring-boot/2020-12-10-web-static-content.png)
 
 1. 웹브라우저에서 hello-static.html 정적 컨텐츠 요청
 2. 내장 톰캣 서버가 요청을 받고 Spring에게 요청을 넘깁니다.
