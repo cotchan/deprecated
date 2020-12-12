@@ -1,12 +1,12 @@
 ---
-title: Spring-Boot) 정적 컨텐츠 내려주는 방법 
+title: Spring-Boot) 웹 개발방식1. 정적 컨텐츠를 내려주는 방법 
 author: cotchan 
 date: 2020-12-10 23:27:21 +0800 
 categories: [Spring-Boot, Spring-Boot_Basic]
 tags: [spring-boot] 
 ---
 
-## 스프링 부트에서 정적 컨텐츠 내려주는 방법
+## 스프링 부트에서 정적 컨텐츠를 내려주는 방법
 
 + [Spring-Boot Static Content](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-static-content)
 

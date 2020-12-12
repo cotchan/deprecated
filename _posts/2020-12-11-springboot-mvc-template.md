@@ -1,5 +1,5 @@
 ---
-title: Spring-Boot) MVC와 template 사용 방법  
+title: Spring-Boot) 웹 개발방식2. MVC와 template 사용 방법  
 author: cotchan 
 date: 2020-12-11 01:00:21 +0800 
 categories: [Spring-Boot, Spring-Boot_Basic]
