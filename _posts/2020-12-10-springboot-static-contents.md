@@ -1,5 +1,5 @@
 ---
-title: Spring-Boot) 웹 개발방식1. 정적 컨텐츠를 내려주는 방법 
+title: Spring-Boot) 정적 컨텐츠를 내려주는 방법 
 author: cotchan 
 date: 2020-12-10 23:27:21 +0800 
 categories: [Spring-Boot, Spring-Boot_Basic]
