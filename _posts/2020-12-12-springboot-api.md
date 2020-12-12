@@ -8,8 +8,9 @@ tags: [spring-boot]
 
 ## API 방식이란 
 
-**`서버에게 데이터를 요청`할 때 `API방식을 사용`합니다.**
-
++ **`서버에게 데이터를 요청`할 때 `API방식을 사용`합니다.**        
++ **일반적으로 스프링개발을 할 때 말하는 API 방식은 `객체를 반환`하는 것을 의미합니다.**            
++ HttpMessageConverter를 통해 객체를 json 스타일로 만들고, HTTP Response로 반환하는 것을 말합니다. (`중간에 view의 개입 X`) 
     
 ---
 
@@ -79,7 +80,7 @@ public class HelloController {
 	+ 이런게 없으면 스프링은 이전의 MVC & template 방식처럼 `viewResolver`한테 요청을 던집니다. "나한테 맞는 템플릿을 찾아서 돌려줘"
 5. @ResponseBody가 있으면 `HttpMessageConverter`가 동작을 하고 `"HTTP 응답에 그냥 이 데이터를 넘겨야겠다"`고 처리합니다.
 6. 그런데 요청을 처리하는 컨트롤러의 `method의 return type`이 `객체`인 경우 
-	+ 기본 정책(default): 그냥 `Json` 방식으로 데이터를 만들어서 HTTP 응답에 반환하겠다.
+	+ 기본 정책(default): `Json` 방식으로 데이터를 만들어서 HTTP BODY에 넣어 응답으로 반환.
 7. Return type 객체를 보고 HttpMessageConverter가 동작하는 경우
 	+ 단순 문자열이면 StringConverter가 동작, 객체라면 JSonConverter가 기본으로 동작합니다.    
 8. Json으로 데이터를 파싱 후 요청을 한 웹브라우저나 서버에게 HTTP Response로 응답을 보내줍니다.
