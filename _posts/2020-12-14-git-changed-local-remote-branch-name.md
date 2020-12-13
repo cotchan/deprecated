@@ -9,6 +9,10 @@ tags: [git]
 아래 출처를 참고하여 본인 학습 목적으로 작성한 글입니다.    
 더 자세한 설명은 출처 포스팅을 참고하시면 됩니다.    
 
+이 글에서 첨부된 이미지의 상황은 아래와 같습니다.     
+	+ 변경 전 브랜치명: `feature/basic-concept`
+	+ 변경 후 브랜치명: `feature/DI_using-componentScan`
+
 ---
 
 ## 1. Local Branch 이름 변경 방법
@@ -19,7 +23,6 @@ tags: [git]
 $ git checkout {OLD_BRANCH_NAME}
 ```
 
----
 
 2. 원하는 브랜치 명으로 이름을 변경해줍니다.   
 
@@ -29,7 +32,6 @@ $ git branch -m {NEW_BRANCH_NAME}
 
 ![Desktop View](/assets/img/post/git/2020-12-13-git-changed-local_remote_branch_1.png)
 
----
 
 + 아래와 같이 한 번에 바꿀 수도 있습니다.
 
@@ -55,7 +57,6 @@ $ git push origin -u {NEW_BRANCH_NAME}
 
 ![Desktop View](/assets/img/post/git/2020-12-13-git-changed-local_remote_branch_2.png)
 
----
 
 2. 이전 브랜치명 삭제
 
