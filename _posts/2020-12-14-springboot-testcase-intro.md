@@ -36,9 +36,12 @@ class MemberServiceTest {
 ## 3. Assertions
 
 **Assertions 클래스는 `import org.assertj.core.api.Assertions`를 일반적으로 사용합니다.**          
-왜냐면 이 클래스에서 `Assertions.assertThat`을 사용할 수 있기 때문입니다.    
+그리고 `Assertions.assertThat`을 통해 테스트 결과를 검증합니다.    
 
 ```java
+import org.assertj.core.api.Assertions;
+
+
 Assertions.assertThat(result).isEqualTo(member);
 
 //static import를 사용하면
@@ -54,7 +57,7 @@ assertThat(member).isEqualTo(result);
 
 ## 4. given, when, then
 
-**테스트를 위 3단계로 개념화하여 나누고 작성하면 더 직관적인 테스트 코드를 만들 수 있습니다.  
+**테스트를 위의 `3단계로 개념화`하여 나누고 작성하면 더 직관적인 테스트 코드를 만들 수 있습니다.**  
 
 ```java
 class MemberServiceTest {
@@ -90,7 +93,9 @@ class MemberServiceTest {
         memberService.join(member1);
 
         //arg2의 로직(LAMDA)을 수행할 때, arg1의 예외가 터져야 합니다.
-        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+        IllegalStateException e = assertThrows(IllegalStateException.class, 
+					       () -> memberService.join(member2));
+
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
 
 //        try {
@@ -111,13 +116,12 @@ class MemberServiceTest {
 ## 5. @BeforeEach, @AfterEach
 
 + @BeforeEach
-
-**각 테스트가 실행되기 전에 호출됩니다.**
-예시코드에서는 테스트가 서로 영향이 없도록 항상 새로운 객체를 생성하고 의존관계를 맺어줍니다.              
+	+ **각 테스트가 실행되기 전에 호출됩니다.**
+	+ 예시코드에서는 테스트가 서로 영향이 없도록 항상 새로운 객체를 생성하고 의존관계를 맺어줍니다.              
 
 + @AfterEach
-**각 테스트가 종료될 때 마다 호출됩니다.**        
-예를 들면, 한 번에 여러 테스트를 실행하면 메모리 DB에 직전 테스트의 결과가 남을 수 있습니다. 이렇게 되면 이전 테스트 때문에 다음 테스트가 실패할 가능성이 있습니다.
+	+ **각 테스트가 종료될 때 마다 호출됩니다.**
+	+ 예를 들면, 한 번에 여러 테스트를 실행하면 메모리 DB에 직전 테스트의 결과가 남을 수 있습니다. 이렇게 되면 이전 테스트 때문에 다음 테스트가 실패할 가능성이 있습니다.
 
 ```java
 class MemberServiceTest {
