@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_DI]
 tags: [spring-boot] 
 ---
 
+이번에는 클래스에 `@Component` 어노테이션을 사용하지 않고(@ComponentScan 적용 X) 스프링이 관리하는 빈으로 등록하는 방법에 대해 알아보겠습니다.    
+
+---
+
 ## 1. @Configuration 클래스
 
 ![Desktop View](/assets/img/post/spring-boot/2020-12-13-springboot-configuration-class.png)
@@ -28,7 +32,7 @@ public class SpringConfig {
 }
 ```
 
-단, 컨트롤러는 어쩔 수가 없습니다. 어차피 스프링이 관리해주는 것이기 때문에 @Controller나 @RestController를 사용하여 ComponentScan의 적용을 받도록 만듭니다.    
+단, 컨트롤러는 위와 같은 방식을 사용하지 않습니다. 어차피 스프링이 관리해주는 것이기 때문에 @Controller나 @RestController를 사용하여 ComponentScan의 적용을 받도록 만듭니다.    
 
 ---
 
