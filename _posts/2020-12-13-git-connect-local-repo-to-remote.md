@@ -1,5 +1,5 @@
 ---
-title: 로컬 폴더를 원격 저장소와 연결하기 
+title: Git) 로컬 폴더를 원격 저장소와 연결하기 
 author: cotchan
 date: 2020-12-13 19:00:21 +0800 
 categories: [Git, Git_ETC]

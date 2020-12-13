@@ -1,5 +1,5 @@
 ---
-title: Git Commit Message 변경 방법 
+title: Git) Git Commit Message 변경 방법 
 author: cotchan 
 date: 2020-12-09 15:47:21 +0800 
 categories: [Git, Git_ETC] 

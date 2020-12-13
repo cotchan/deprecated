@@ -1,5 +1,5 @@
 ---
-title: Git add 취소하는 방법
+title: Git) Git add 취소하는 방법
 author: cotchan
 date: 2020-12-07 20:00:21 +0800
 categories: [Git, Git_ETC]

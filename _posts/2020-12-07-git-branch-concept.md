@@ -1,5 +1,5 @@
 ---
-title: Git Branch 개념/ Branch 기본 명령어
+title: Git) Git Branch 개념/ Branch 기본 명령어
 author: cotchan
 date: 2020-12-07 20:15:21 +0800
 categories: [Git, Git_Branch]
