@@ -2,7 +2,7 @@
 title: Git 
 author: cotchan
 date: 2020-12-13 19:00:21 +0800 
-categories: # [Git, Git_ETC]
+categories: [Git, Git_ETC]
 tags: [git]
 ---
 

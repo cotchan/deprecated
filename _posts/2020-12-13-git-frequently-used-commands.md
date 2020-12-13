@@ -2,7 +2,7 @@
 title: Git) 자주 쓰는 명령어 정리 
 author: cotchan
 date: 2020-12-13 19:23:21 +0800 
-categories: # [Git, Git_ETC]
+categories: [Git, Git_ETC]
 tags: [git]
 ---
 
@@ -29,13 +29,6 @@ $ git remote -v
 ---
 
 ## commit 관련
-
-
-
----
-
-
-
 
 
 ---
