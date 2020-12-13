@@ -59,6 +59,10 @@ assertThat(member).isEqualTo(result);
 
 **테스트를 위의 `3단계로 개념화`하여 나누고 작성하면 더 직관적인 테스트 코드를 만들 수 있습니다.**  
 
+1. given: 뭔가가 주어졌을 때(테스트 전 필요한 선행 조건을 의미)
+2. when: 이걸 실행했을 때 (테스트 하고자 하는 로직을 의미)
+3. then: 어떤 결과가 나와야 한다 (Green Case 의미)
+
 ```java
 class MemberServiceTest {
 
