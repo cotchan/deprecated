@@ -35,7 +35,7 @@ class MemberServiceTest {
 
 ## 3. Assertions
 
-**Assertions 클래스는 `import org.assertj.core.api.Assertions`를 일반적으로 사용합니다.**          
+**Assertions 클래스는 `org.assertj.core.api.Assertions`를 일반적으로 사용합니다.**          
 그리고 `Assertions.assertThat`을 통해 테스트 결과를 검증합니다.    
 
 ```java
