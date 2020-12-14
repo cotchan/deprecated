@@ -59,3 +59,26 @@ tags: [intellij]
 
 + **`cmd` + `P`**
 
+---
+
+## 9. 리턴 자료형 자동 완성
+
++ **`cmd` + `option` + `V`**
+
+```java
+//before click short-cut (cmd + option + V)
+memberService.findMembers();
+```
+
+```java
+//after click short-cut (cmd + option V)
+List<Member> members = memberService.findMembers();
+```
+
+---
+
+
+
+
+
+
