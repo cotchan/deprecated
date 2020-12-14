@@ -203,7 +203,7 @@ public class Assert {
 
 ---
 
-## 8. 코드의 세로 순서
+## 8. 코드의 세로 배치 순서
 
 + 신문 기사와 마찬가지로 `가장 중요한 개념을` `가장 먼저` 표현합니다.    
 + 가장 중요한 개념을 표현할 때는 세세한 사항을 최대한 배제합니다. 
@@ -229,6 +229,7 @@ public class Assert {
 때로는 간단한 if문, 짧은 while문, 짧은 함수의 경우 들여쓰기 규칙을 무시하려는 경향이 있습니다. 그러나 이러한 경우에도 들여쓰기를 하는 것이 코드 가독성을 높일 수 있습니다.
 
 ```java
+//들여쓰기 사용 X
 public class CommentWidget extends TextWidget
 {
     public static final String REGEXP = "^#[^\r\n]*(?:(?:\r\n)|\n|\r)?";
@@ -239,6 +240,7 @@ public class CommentWidget extends TextWidget
 ```
 
 ```java
+//들여쓰기 사용 O
 public class CommentWidget extends TextWidget
 {
     public static final String REGEXP = "^#[^\r\n]*(?:(?:\r\n)|\n|\r)?";
@@ -257,7 +259,7 @@ public class CommentWidget extends TextWidget
 
 ## 9-2. 빈 while문이나 for문 처리하는 방법
 
-이런 구조는 가능한 피하는 것이 좋지만, 피하지 못할 때는 빈 블록을 올바로 들여쓰고 괄호로 감쌉니다. 세미콜론(;)은 새 행에다 제대로 들여써서 넣어줍니다. 그렇지 않으면 눈에 띄지 않습니다.
+이런 구조는 가능한 피하는 것이 좋지만, 피하지 못할 때는 빈 블록을 올바로 들여쓰고 괄호로 감쌉니다. 세미콜론(`;`)은 새 행에다 제대로 들여써서 넣어줍니다. 그렇지 않으면 눈에 띄지 않습니다.
 
 ```java
 while (dis.read(buf, 0, readBufferSize) != -1)
@@ -269,7 +271,7 @@ while (dis.read(buf, 0, readBufferSize) != -1)
 ## 10. 팀 규칙을 따르기
 
 프로그래머라면 각자 선호하는 규칙이 있습니다.    
-**하지만 팀에 속한다면 자신이 선호해야 할 규칙은 바로 팀 규칙입니다.**        
+**하지만 팀에 속한다면 자신이 선호해야 할 규칙은 바로 `팀 규칙`입니다.**        
 팀은 한 가지 규칙에 합의해야 합니다. 그리고 모든 팀원은 그 규칙을 따라야 합니다. 그래야 소프트웨어가 일관적인 스타일을 보입니다.    
 
 + 팀 규칙 예시 
