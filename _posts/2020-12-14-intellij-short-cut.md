@@ -18,13 +18,13 @@ tags: [intellij]
 
 ## 2. 자동완성
  
-+ **`Shift` + `cmd` + `enter`**
++ **`cmd` + `Shift` + `enter`**
 
 ---
 
 ## 3. extract method
 
-+ **`ctrl` + `t`** (refactoring 관련)
++ **`ctrl` + `t`** (refactoring 관련: 여기안에 extract method가 있습니다.)
     
 ---
 
