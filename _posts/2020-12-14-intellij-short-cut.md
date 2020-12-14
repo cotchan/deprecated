@@ -1,9 +1,11 @@
 ---
+
 title: IntelliJ) 자주 사용하는 단축키
 author: cotchan
 date: 2020-12-14 22:00:21 +0800
 categories: [Ide, Intellij]
 tags: [intellij]     
+
 ---
 
 계속 업데이트 할 에정입니다. :)
