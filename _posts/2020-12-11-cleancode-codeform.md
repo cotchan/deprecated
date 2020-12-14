@@ -66,5 +66,110 @@ JUnit, FitNesse, Time and Money는 500줄을 넘어가는 파일이 없으며 �
 
 ---
 
+## 3. 개념은 빈 행으로 분리하라
+
+거의 모든 코드는 왼쪽에서 오른쪽으로 그리고 위에서 아래로 읽힙니다. 각 행은 수식이나 절을 나타내고, 일련의 행 묶음은 완결된 생각 하나를 표현합니다. `생각 사이에는 빈 행을 넣어 분리`해야 마땅합니다.    
+
+그러므로 패키지 선언부, import 문, 각 함수 사이에는 빈행을 넣어 분리해야 합니다. 너무도 간단한 규칙이지만 코드의 세로 레이아웃에 큰 영향을 미칩니다.
+
+
+---
+
+## 4. 세로 밀집도
+
+줄바꿈이 개념을 분리한다면 `세로 밀집도`는 `연관성을 의미`합니다. 즉, 서로 밀접한 코드 행은 세로로 가까이 놓아야 한다는 뜻입니다.
+
+
++ 아래 코드의 경우 `의미없는 주석`으로 두 인스턴스 변수를 떨어뜨려 놓았습니다.    
+
+```java
+public class ReporterConfig {
+	/**
+	* 리포터 리스너의 클래스 이름
+	*/
+	private String m_className;
+
+	/**
+	* 리포터 리스너의 속성
+	*/
+	private List<Property> m_properties = new ArrayList<Property>();
+	
+	public void addProperty(Property property) {
+		m_properties.add(property);
+	}
+}
+```
+
+---
+
++ 아래 코드의 경우 위의 경우보다 `코드가 한 눈에` 들어옵니다.
+
+```java
+public class ReporterConfig {
+        
+	private String m_className;
+        private List<Property> m_properties = new ArrayList<Property>();
+        
+	public void addProperty(Property property) {
+                m_properties.add(property);
+        }
+}
+```
+
+---
+
+## 5. 변수 간의 수직거리
+
+## 5-1. 변수는 사용하는 위치에 최대한 가까이 선언하기
+
+---
+
+## 5-2. 인스턴스 변수는 클래스 맨 처음에 선언
+
++ 클래스 마지막이든, 클래스 최상단이든 `잘 알려진 위치에 인스턴스 변수를 모은다`는 사실이 중요합니다. 변수 선언을 어디서 찾을지 모두가 알고 있어야 합니다. 
++ **변수 간에 세로로 거리를 두지 않습니다.**
+
+
+---
+
+## 6. caller를 callee보다 상단에 선언하기 (종속함수 관계)
+
++ 한 함수가 다른 함수를 호출한다면 두 함수는 세로로 가까이 배치해야 합니다.
++ **또한 가능하다면 `caller`(호출하는 함수)`를` `callee`(호출되는 함수)`보다` `먼저 배치합니다.`**
+	+ 위와 같이 하면 프로그램이 자연스럽게 읽힙니다. 규칙을 일관적으로 적용한다면 독자는 방금 호출한 함수가 잠시 후에 정의되리라는 사실을 예측할 수 있습니다.
+
+```java
+public class WikiPageResponder implements SecureResponder {
+	public Response makeResponse(FitNesseContext context, Request request) 
+	{
+		//do something
+		String pageName = getPageNameOrDefault(request, "FrontPage");
+		loadPage(pageName, context);
+		//do something
+	}	
+	private String getPageNameOrDefault(Request request, String defaultPageName)
+	{
+		//do something	
+	}
+	protected void loadPage(String resource, FitNesseContext context)
+	{
+		//do something
+	}
+	//...
+}
+```
+
+---
+
+## 7. 개념적 유사성이 비슷한 코드는 가까이 둔다.
+
+친화도가 높을수록 코드를 가까이에 배치합니다.
+
+
+
+
+
+---
+
 + 출처	
 	+ 로버트 C. 마틴, 『Clean Code』, 인사이트(2013), p95-p116
