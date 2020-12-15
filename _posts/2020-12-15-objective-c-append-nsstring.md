@@ -2,7 +2,7 @@
 title: Objective-C) NSString 이어붙이기
 author: cotchan 
 date: 2020-12-15 20:00:21 +0800 
-categories: [Objective-C, Objective-C_ETC]
+categories: [Objective-C, Objective-C_NSString]
 tags: [objective-c]    
 ---
 
