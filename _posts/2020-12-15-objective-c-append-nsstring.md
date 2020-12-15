@@ -31,7 +31,7 @@ NSMutableString *string = [NSMutableString stringWithString:@"String 1"];
 NSString *sample1 = @"Hello";
 NSString *sample2 = @"Being appended";
 
-NSString *complete = [NSString *complete = [NSString stringWithFormat:@"%@ %@", sample1, sample2];
+NSString *complete = [NSString stringWithFormat:@"%@ %@", sample1, sample2];
 ```
 
 ---
