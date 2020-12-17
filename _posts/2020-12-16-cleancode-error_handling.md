@@ -165,8 +165,10 @@ try-catch 구조로 범위를 정의했으므로 TDD를 사용해 필요한 나�
 ## 2nd. 미확인(Unchecked) 예외를 사용하라
 
 + 미확인 예외란 
-    + `jang.lang.RuntimeException` 클래스를 상속한 예외들은 명시적인 예외처리를 강제하지 않기 때문에 Uncheked 예외라고 불립니다.
-    + 주로 프로그램에 오류가 있을 때 발생하도록 의도된 것들입니다.
+    + `jang.lang.RuntimeException` 클래스를 상속한 예외를 의미(RuntimeException의 하위 클래스)
+    + **명시적인 예외 처리를 강제하지 않습니다.**
+    + 실행 단계에서 확인이 가능합니다.
+    + 예외 발생 시 트랜잭션을 rollback 합니다.
     + `NullPointerException`이나 `illegalArgumentException` 등이 있습니다.
 
 ![Desktop View](/assets/img/post/cleancode/2020-12-17-cleancode-unchecked-exception.png)
@@ -193,3 +195,4 @@ try-catch 구조로 범위를 정의했으므로 TDD를 사용해 필요한 나�
 + 출처	
 	+ 로버트 C. 마틴, 『Clean Code』, 인사이트(2013), p68-p94
         + [JAVA Error와 Checked/Unchecked Exception](https://live-everyday.tistory.com/203)
+	+ [[Java]자바의 예외 - Exception, RuntimeException 그리고 Error](https://steady-hello.tistory.com/55)
