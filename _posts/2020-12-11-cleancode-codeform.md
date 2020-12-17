@@ -2,7 +2,7 @@
 title: CleanCode) 코드 형식 맞추기
 author: cotchan 
 date: 2020-12-11 14:46:21 +0800
-categories: [CleanCode, CleanCode_CodeForm] 
+categories: [CleanCode] 
 tags: [cleancode]
 ---
 
