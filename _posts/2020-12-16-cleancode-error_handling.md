@@ -199,9 +199,9 @@ try-catch 구조로 범위를 정의했으므로 TDD를 사용해 필요한 나�
     + 오류가 발생한 유형으로 분류 (ex. 디바이스 실패, 네트워크 실패, 프로그래밍 오류 등)
 + **하지만 애플리케이션에서 오류를 정의할 때 프로그래머에게 가장 중요한 관심사는 `오류를 잡아내는 방법`이 되어야 합니다.**
 
-**결론부터 말하자면 Wrapper 클래스를 사용하여 하나의 예외 클래스만 두는 것입니다.**    
++ **결론부터 말하자면 `Wrapper 클래스를 사용`하여 하나의 예외 클래스만 두는 것입니다.**    
 
-## 4-1. Before
+## 4-1. Before: Wrapper 클래스 사용 X
 
 + 아래 코드는 외부 라이브러리를 호출하는 try-catch-finally 문을 포함한 코드로, 외부 라이브러리가 던질 예외를 모두 잡아냅니다.
 
@@ -229,14 +229,14 @@ try {
 ```
 
 + 위 코드는 중복이 심하지만 대다수 상황에서 우리가 오류를 처리하는 방식은 오류를 일으킨 원인과 무관하게 일정합니다.
-    + 1. 오류를 기록한다.
-    + 2. 프로그램을 계속 수행해도 좋은지 확인한다.
+    1. 오류를 기록한다.
+    2. 프로그램을 계속 수행해도 좋은지 확인한다.
 
 ---
 
-## 4-2. After
+## 4-2. After: Wrapper 클래스 사용 O
 
-+ 위 경우는 `예외에 대응하는 방식이` 예외 유형과 무관하게 `거의 동일`합니다. 
++ 4-1의 경우는 `예외에 대응하는 방식이` 예외 유형과 무관하게 `거의 동일`합니다. 
 + 그래서 호출하는 라이브러리 `API를 감싸면서` `예외 유형 하나를 반환`하면 됩니다.
 
 ```java
@@ -252,7 +252,7 @@ try {
 }
 ```
 
-**여기서 `LocalPort 클래스`는 단순히 ACMEPort 클래스가 던지는 예외를 잡아 변환하는 `Wrapper 클래스`일 뿐입니다.**
++ **`LocalPort 클래스`는 단순히 ACMEPort 클래스가 던지는 예외를 잡아 변환하는 `Wrapper 클래스` 입니다.**
 
 ```java
 public class LocalPort {
@@ -278,7 +278,7 @@ public class LocalPort {
 ```
 
 + LocalPort 클래스처럼 ACMEPort를 감싸는 클래스는 매우 유용합니다.
-+ **실제로 외부 API를 사용할 때는 감싸기 기법이 최선입니다.**
++ **`실제로 외부 API를 사용할 때는 감싸기 기법이 최선입니다.`**
     + 외부 API를 감싸면 외부 라이브러리와 프로그램 사이에서 의존성이 크게 줄어듭니다. 
     + 그러므로 나중에 다른 라이브러리로 갈아타도 비용이 적습니다.
     + 또한 Wrapper 클래스에서 외부 API를 호출하는 대신 테스트 코드를 넣어주는 방법으로 프로그램을 테스트하기도 쉬워집니다.
@@ -296,6 +296,6 @@ public class LocalPort {
 ---
 
 + 출처	
-	+ 로버트 C. 마틴, 『Clean Code』, 인사이트(2013), p68-p94
-        + [JAVA Error와 Checked/Unchecked Exception](https://live-everyday.tistory.com/203)
-	+ [[Java]자바의 예외 - Exception, RuntimeException 그리고 Error](https://steady-hello.tistory.com/55)
+    + 로버트 C. 마틴, 『Clean Code』, 인사이트(2013), p68-p94
+    + [JAVA Error와 Checked/Unchecked Exception](https://live-everyday.tistory.com/203)
+    + [[Java]자바의 예외 - Exception, RuntimeException 그리고 Error](https://steady-hello.tistory.com/55)
