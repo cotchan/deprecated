@@ -11,11 +11,11 @@ CleanCode 책을 바탕으로 정리한 내용입니다.
 
 ---
 
-## 오류 코드보다 예외를 사용하라
+## Intro. 오류 코드보다 예외를 사용하라
 
 오류가 발생하면 예외를 던지는 편이 낫습니다. 그래야 호출자의 코드가 더 깔끔해집니다. 그래야 `논리가 오류 처리 코드와 뒤섞이지 않습니다.`
 
-## 1. 오류를 사용하는 경우
+## 오류를 사용하는 경우
 
 ```java
 public class DeviceController {
@@ -55,7 +55,7 @@ public class DeviceController {
 
 ---
 
-## 2. 예외를 사용하는 경우
+## 예외를 사용하는 경우
 
 ```java
 public class DeviceController {
@@ -89,7 +89,7 @@ public class DeviceController {
 
 ---
 
-## 1st. Try-Catch-Finally 문부터 작성하라
+## 1. Try-Catch-Finally 문부터 작성하라
 
 + **예외가 발생할 코드를 짤 때는 try-catch-finally문으로 시작하는 편이 낫습니다.** 
 + 그러면 try 블록에서 무슨 일이 생기든지 호출자가 기대하는 상태를 정의하기가 쉬워집니다.
@@ -162,7 +162,7 @@ try-catch 구조로 범위를 정의했으므로 TDD를 사용해 필요한 나�
 
 ---
 
-## 2nd. 미확인(Unchecked) 예외를 사용하라
+## 2. 미확인(Unchecked) 예외를 사용하라
 
 + 미확인 예외란 
     + `jang.lang.RuntimeException` 클래스를 상속한 클래스(`RuntimeException의 하위 클래스`)
@@ -180,7 +180,7 @@ try-catch 구조로 범위를 정의했으므로 TDD를 사용해 필요한 나�
 ---
 
 
-## 3rd. 예외에 의미를 제공하라
+## 3. 예외에 의미를 제공하라
 
 예외를 던질 때는 전후 상황을 충분히 덧붙여줍니다. 그러면 오류가 발생한 원인과 위치를 찾기가 더 쉬워집니다. 자바는 모든 예외에 호출 스택을 제공합니다. 하지만 실패한 코드의 의도를 파악하려면 호출 스택만으로는 부족합니다. 
 
@@ -189,6 +189,109 @@ try-catch 구조로 범위를 정의했으므로 TDD를 사용해 필요한 나�
     + **실패한 연산 이름과 실패 유형도 언급해줍니다.**
     + **애플리케이션이 로깅 기능을 사용한다면 catch 블록에서 오류를 기록하도록 충분한 정보를 넘겨줍니다.**
   
+
+---
+
+## 4. 호출자를 고려해 예외 클래스를 작성하라
+
++ 오류를 분류하는 방법은 수없이 많습니다. 
+    + 오류가 발생한 위치로 분류 (ex. 오류가 발생한 컴포넌트로 분류)
+    + 오류가 발생한 유형으로 분류 (ex. 디바이스 실패, 네트워크 실패, 프로그래밍 오류 등)
++ **하지만 애플리케이션에서 오류를 정의할 때 프로그래머에게 가장 중요한 관심사는 `오류를 잡아내는 방법`이 되어야 합니다.**
+
+**결론부터 말하자면 Wrapper 클래스를 사용하여 하나의 예외 클래스만 두는 것입니다.**    
+
+## 4-1. Before
+
++ 아래 코드는 외부 라이브러리를 호출하는 try-catch-finally 문을 포함한 코드로, 외부 라이브러리가 던질 예외를 모두 잡아냅니다.
+
+```java
+//Before
+ACMEPort port = new ACMEPort(12);
+
+try {
+	port.open();
+} catch (DeviceResponseException e) {
+	reportPortError(e);
+	logger.log("Device response exception", e);
+
+} catch (ATM1212UnlockedException e) {
+	reportPortError(e);
+	logger.log("Unlock exception", e);
+
+} catch (GMXError e) {
+	reportPortError(e);
+	logger.log("Device response exception");
+
+} finally {
+	...
+}
+```
+
++ 위 코드는 중복이 심하지만 대다수 상황에서 우리가 오류를 처리하는 방식은 오류를 일으킨 원인과 무관하게 일정합니다.
+    + 1. 오류를 기록한다.
+    + 2. 프로그램을 계속 수행해도 좋은지 확인한다.
+
+---
+
+## 4-2. After
+
++ 위 경우는 `예외에 대응하는 방식이` 예외 유형과 무관하게 `거의 동일`합니다. 
++ 그래서 호출하는 라이브러리 `API를 감싸면서` `예외 유형 하나를 반환`하면 됩니다.
+
+```java
+LocalPort port = new LocalPort(12);
+
+try {
+	port.open();
+} catch (PortDeviceFailure e) {
+	reportError(e);
+	logger.log(e.getMessage(), e);
+} finally {
+	...
+}
+```
+
+**여기서 `LocalPort 클래스`는 단순히 ACMEPort 클래스가 던지는 예외를 잡아 변환하는 `Wrapper 클래스`일 뿐입니다.**
+
+```java
+public class LocalPort {
+	private ACMEPort innerPort;
+	public LocalPort(int portNumber) {
+		innerPort = new ACMEPort(portNumber);
+	}
+	public void open() {
+		try {
+			innerPort.open();
+		} catch (DeviceResponseException e) {
+			throw new PortDeviceFailure(e);
+		} catch (ATM1212UnlockedException e) {
+			throw new PortDeviceFailure(e);
+		} catch (GMXError e) {
+			throw new PortDeviceFailure(e);
+		} finally {
+			...
+		}
+	}
+	...
+}
+```
+
++ LocalPort 클래스처럼 ACMEPort를 감싸는 클래스는 매우 유용합니다.
++ **실제로 외부 API를 사용할 때는 감싸기 기법이 최선입니다.**
+    + 외부 API를 감싸면 외부 라이브러리와 프로그램 사이에서 의존성이 크게 줄어듭니다. 
+    + 그러므로 나중에 다른 라이브러리로 갈아타도 비용이 적습니다.
+    + 또한 Wrapper 클래스에서 외부 API를 호출하는 대신 테스트 코드를 넣어주는 방법으로 프로그램을 테스트하기도 쉬워집니다.
+
++ Wrapper 기법을 사용하면 특정 업체가 API를 설계한 방식에 발목 잡히지 않습니다. 프로그램이 사용하기 편리한 API를 정의하면 그만입니다. 
+    + 위 예제에서는 port 디바이스 실패를 표현하는 예외 유형 하나를 정의했는데, 그랬더니 프로그램이 훨씬 깨끗해졌습니다.
+
++ 흔히 예외 클래스가 하나만 있어도 충분히 코드는 많습니다.
+    + 예외 클래스에 포함된 정보로 오류를 구분해도 괜찮은 경우가 그렇습니다.
+    + **한 예외는 잡아내고 다른 예외는 무시해도 괜찮은 경우라면 여러 예외 클래스를 사용하면 됩니다.** 
+
+
+
 
 ---
 
