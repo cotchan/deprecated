@@ -300,11 +300,152 @@ public class LocalPort {
     + **한 예외는 잡아내고 다른 예외는 무시해도 괜찮은 경우라면 여러 예외 클래스를 사용하면 됩니다.** 
 
 
+---
+
+
+## 5. 정상 흐름을 정의하라 
+
+향후에 업데이트할 예정입니다. (p137)
 
 
 ---
 
+
+## 6. null을 반환하지 마라
+
+```java
+//example
+public void registerItem(Item item) {
+	if (item != null) {
+		ItemRegistry registry = peristentStore.getItemRegistry();
+		if (registry != null) {
+			Item existing = registry.getItem(item.getID());
+			if (existing.getBillingPeriod().hasRetailOwner()) {
+				existing.register(item); 
+			}
+		}
+	}
+}
+```
+
++ 위 처럼 `null`을 반환하는 코드는 일거리를 늘릴 뿐만 아니라 호출자에게 문제를 떠넘깁니다. 누구 하나라도 `null` 확인을 빼먹는다면 애플리케이션이 통제 불능에 빠질지도 모릅니다.    
++ `null`로 인한 문제는 실상은 `null 확인이 너무 많아서` 문제가 됩니다.    
++ **메서드에서 null을 반환하고픈 유혹이 든다면 그 대신 `예외를 던지거나` `특수 사례 객체를 반환`하는 게 낫습니다.**
++ 사용하려는 외부 API가 null을 반환한다면 `Wrapper 메서드를 구현해` 예외를 던지거나 특수 사례 객체를 반환하는 방식을 고려해봅니다.
+
+많은 경우에 특수 사례 객체가 손쉬운 해결책입니다. 
+
+```java
+//before
+List<Employee> employees = getEmployees();
+if (employees != null) { 
+	for (Employee e : employees) {
+		totalPay += e.getPay();
+	}
+}
+```
+
++ 위에서 getEmployees는 null도 반환합니다. 하지만 반드시 null을 반환할 필요가 있을까요? getEmployees를 변경해 빈 리스트를 반환한다면 코드가 훨씬 깔끔해집니다. 
+
+```java
+//after
+List<Employee> employees = getEmployees();
+for (Employee e : employees) {
+	totalPay += e.getPay(); 
+}
+```
+
++ 다행스럽게 자바에는 `Collections.emptyList()`가 있어 미리 정의된 읽기 전용 리스트를 반환합니다. 우리의 목적에 적합한 리스트입니다.     
+
+```java
+public List<Employee> getEmployees() { 
+	if (.. 직원이 없다면 ..)
+		return Collections.emptyList();
+}
+```
+
++ 이렇게 코드를 변경하면 코드도 깔끔해질뿐더러 NullPointerException이 발생할 가능성이 줄어듭니다.  
+
+
+---
+
+
+## 7. null을 전달하지 마라
+
++ 메서드에서 null을 반환하는 방식도 나쁘지만 메서드로 `null을 전달하는 방식은 더 나쁩니다.` 정상적인 인수로 null을 기대하는 API가 아니라면 메서드로 null을 전달하는 코드는 최대한 피해야 합니다.
++ 예제를 살펴보면 이유가 드러납니다. 아래는 두 지점 사이의 거리를 계산하는 간단한 메서드입니다.
+
+```java
+public class MetricsCalculator {
+	public double xProjection(Point p1, Point p2) {
+		return (p2.x - p1.x) * 1.5;
+	}
+	...
+}
+```
+
++ 누군가 인수로 null을 전달하면 어떤 일이 일어날까요? 당연히 NullPointerException이 발생합니다.
+
+```java
+calculator.xProjection(null, new Point(12, 13));
+```
+
+
+---
+
+
+## 7-1. 해결방법: 새로운 예외 유형 만들어 던지기
+
+```java
+
+public class MetricsCalculator {
+	public double xProjection(Point p1, Point p2) {
+		if (p1 == null || p2 == null) {
+			throw InvalidArgumentException(
+				"Invalid argument for MetricsCalculator.xProjection");
+		}
+		return (p2.x - p1.x) * 1.5;	
+	}
+}
+```
+
++ 위 코드가 원래 코드보다 나을까요? NullPointerException보다는 조금 나을지도 모르겠습니다. 하지만 위 코드는 `InvalidArgumentException`을 잡아내는 처리기가 필요합니다. 처리기는 InvalidArgumentException 예외를 어떻게 처리해야 좋을지는 또 고민해볼 문제입니다.
+
+
+---
+
+
+## 7-2. 해결방법: assert문 사용하기
+
++ 다음은 또 다른 대안으로 `assert문을 사용`하는 방법도 있습니다.
+
+```java
+public class MetricsCalculator {
+	public double xProjection(Point p1, Point p2) {
+		assert p1 != null : "p1 should not be null";
+		assert p2 != null : "p2 should not be null";
+		return (p2.x - p1.x) * 1.5;  
+	}	
+}
+```
+
++ 위 코드는 문서화가 잘 되어 코드 읽기는 편하지만 문제를 해결하지는 못합니다. 누군가 null을 전달하면 여전히 실행 오류가 발생합니다.
++ 대다수 프로그래밍 언어는 호출자가 실수로 넘기는 null을 적절히 처리하는 방법이 없습니다. 
+    + **그렇다면 애초에 null을 넘기지 못하도록 금지하는 정책이 합리적일 것입니다. 즉, 인수로 null이 넘어오면 코드에 문제가 있다는 뜻입니다.**
++ 이런 정책을 따르면 그만큼 부주의한 실수를 저지를 확률도 작아집니다.
+
+
+---
+
+
+## 결론
+
+깨끗한 코드는 읽기도 좋아야 하지만 안정성도 높아야 합니다. 이 둘은 상충하는 목표가 아닙니다. **오류 처리를 프로그램 논리와 분리해 독자적인 사안으로 고려하면 튼튼하고 깨끗한 코드를 작성할 수 있습니다.** `오류 처리를 프로그램 논리와 분리`하면 독립적인 추론이 가능해지며 코드 유지보수성도 크게 높아집니다.  
+ 
+
+---
+
 + 출처	
-    + 로버트 C. 마틴, 『Clean Code』, 인사이트(2013), p68-p94
+    + 로버트 C. 마틴, 『Clean Code』, 인사이트(2013), p129-p142
     + [JAVA Error와 Checked/Unchecked Exception](https://live-everyday.tistory.com/203)
     + [[Java]자바의 예외 - Exception, RuntimeException 그리고 Error](https://steady-hello.tistory.com/55)
