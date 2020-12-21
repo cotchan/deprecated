@@ -1,5 +1,5 @@
 ---
-title: Spring-Boot) Spring을 사용하는 이유(구현체 바꿔끼기)   
+title: Spring-Boot) Spring을 사용하는 이유 (구현체 바꿔끼기)   
 author: cotchan 
 date: 2020-12-22 04:40:21 +0800 
 categories: [Spring-Boot, Spring-Boot_DI]
@@ -7,7 +7,7 @@ tags: [spring-boot]
 ---
 
 
-## 환경 설정
+## 1. 환경 설정
 
 + build.gradle 파일에 `jdbc`, `h2` 데이터베이스 관련 라이브러리 추가
 
@@ -22,7 +22,7 @@ runtimeOnly 'com.h2database:h2'
 
 ---
 
-## 스프링 부트에 DB 연결 설정 추가
+## 2. 스프링 부트에 DB 연결 설정 추가
 
 + **DB에 붙을려면 접속 정보를 넣어줘야 합니다.**
 
@@ -39,7 +39,7 @@ spring.datasource.username=sa
 
 ---
 
-## DataSource란
+## 3. DataSource란
 
 + 먼저 DataBase에 붙으려면 DataSource가 필요합니다.
 + DataSource는 주입을 받아야 하는데, 스프링으로부터 주입받습니다.
@@ -58,7 +58,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
 ---
 
-## 1st. 구현체 새로 만들기 
+## 4-1. 구현체 새로 만들기 
 
 + `JdbcMemberRepository` 작성하기
 
@@ -71,7 +71,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
 ---
 
-## 2nd.Configuration 설정을 통해 구현체 연결
+## 4-2. Configuration 설정을 통해 구현체 연결
 
 + **`DataSource`는 SpringBoot가 알아서 주입받습니다.**
 
@@ -104,7 +104,7 @@ public class SpringConfig {
 ---
 
 
-## 결론1
+## 5. 결론1
 
 **현재 기능 확장을 위해 다른 코드는 일절 안 건드리고 딱 두가지만 했습니다.** 
 
@@ -114,7 +114,7 @@ public class SpringConfig {
 
 ---
 
-## 결론2: 스프링을 왜 쓰는가? 스프링의 장점
+## 6. 결론2: 스프링을 왜 쓰는가? 스프링의 장점
 
 + 객체 지향적인 설계가 좋습니다.
 + **왜 좋은가 하면, `다형성을 활용`하기가 좋습니다.**
