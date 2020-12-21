@@ -394,18 +394,18 @@ calculator.xProjection(null, new Point(12, 13));
 ---
 
 
-## 7-1. 해결방법: 새로운 예외 유형 만들어 던지기
+## 7-1. 솔루션: 새 예외 유형 만들어 던지기
 
 ```java
 
 public class MetricsCalculator {
-	public double xProjection(Point p1, Point p2) {
-		if (p1 == null || p2 == null) {
-			throw InvalidArgumentException(
-				"Invalid argument for MetricsCalculator.xProjection");
-		}
-		return (p2.x - p1.x) * 1.5;	
-	}
+    public double xProjection(Point p1, Point p2) {
+        if (p1 == null || p2 == null) {
+            throw InvalidArgumentException(
+                "Invalid argument for MetricsCalculator.xProjection");
+        }
+        return (p2.x - p1.x) * 1.5;	
+    }
 }
 ```
 
@@ -415,7 +415,7 @@ public class MetricsCalculator {
 ---
 
 
-## 7-2. 해결방법: assert문 사용하기
+## 7-2. 솔루션: assert문 사용하기
 
 + 다음은 또 다른 대안으로 `assert문을 사용`하는 방법도 있습니다.
 
@@ -431,7 +431,8 @@ public class MetricsCalculator {
 
 + 위 코드는 문서화가 잘 되어 코드 읽기는 편하지만 문제를 해결하지는 못합니다. 누군가 null을 전달하면 여전히 실행 오류가 발생합니다.
 + 대다수 프로그래밍 언어는 호출자가 실수로 넘기는 null을 적절히 처리하는 방법이 없습니다. 
-    + **그렇다면 애초에 null을 넘기지 못하도록 금지하는 정책이 합리적일 것입니다. 즉, 인수로 null이 넘어오면 코드에 문제가 있다는 뜻입니다.**
+    + **그렇다면 애초에 null을 넘기지 못하도록 금지하는 정책이 합리적일 것입니다.** 
+    + **즉, 인수로 null이 넘어오면 코드에 문제가 있다는 뜻입니다.**
 + 이런 정책을 따르면 그만큼 부주의한 실수를 저지를 확률도 작아집니다.
 
 
@@ -440,7 +441,7 @@ public class MetricsCalculator {
 
 ## 결론
 
-깨끗한 코드는 읽기도 좋아야 하지만 안정성도 높아야 합니다. 이 둘은 상충하는 목표가 아닙니다. **오류 처리를 프로그램 논리와 분리해 독자적인 사안으로 고려하면 튼튼하고 깨끗한 코드를 작성할 수 있습니다.** `오류 처리를 프로그램 논리와 분리`하면 독립적인 추론이 가능해지며 코드 유지보수성도 크게 높아집니다.  
+깨끗한 코드는 읽기도 좋아야 하지만 안정성도 높아야 합니다. 이 둘은 상충하는 목표가 아닙니다. **`오류 처리를 프로그램 논리와 분리해` 독자적인 사안으로 고려하면 튼튼하고 깨끗한 코드를 작성할 수 있습니다.** 오류 처리를 프로그램 논리와 분리하면 독립적인 추론이 가능해지며 코드 유지보수성도 크게 높아집니다.  
  
 
 ---
