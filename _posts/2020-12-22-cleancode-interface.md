@@ -1,5 +1,5 @@
 ---
-title: CleanCode) 경계(interface)
+title: CleanCode) 인터페이스(interface)
 author: cotchan 
 date: 2020-12-22 09:17:21 +0800
 categories: [CleanCode] 
