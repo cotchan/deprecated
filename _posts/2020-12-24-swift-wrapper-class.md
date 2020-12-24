@@ -61,13 +61,15 @@ CFileMonitorLib fm;
         vPaths.push_back([path UTF8String]);
     }
     
-    # FileMonitorLib.cpp의 CFileMonitorLib::Start(const vector<string>& vPaths) 메서드 수행
+    # in FileMonitorLib.cpp
+    # CFileMonitorLib::Start(const vector<string>& vPaths) 메서드 수행
     fm.Start(vPaths);
 }
 
 - (void) Stop
 {
-    # FileMonitorLib.cpp의 CFileMonitorLib::Stop() 메서드 수행 
+    # in FileMonitorLib.cpp
+    # CFileMonitorLib::Stop() 메서드 수행 
     fm.Stop();
 }
 
@@ -76,14 +78,14 @@ CFileMonitorLib fm;
 
 ## 2-2. (기존에 있는) 브릿지 헤더에 등록하기
 
-```c++
+```java
 //sample
 #import "FileMonWrap.h"
 ```
 
 ![Desktop View](/assets/img/post/swift/2020-12-24-swift-wrapper-class-2.png)
 
-```c++
+```java
 //FDR-Bridging.h
 
 #ifndef FDR_Bridging_h
