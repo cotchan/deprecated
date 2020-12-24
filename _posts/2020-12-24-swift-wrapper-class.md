@@ -78,14 +78,14 @@ CFileMonitorLib fm;
 
 ## 2-2. (기존에 있는) 브릿지 헤더에 등록하기
 
-```java
+```ruby
 //sample
 #import "FileMonWrap.h"
 ```
 
 ![Desktop View](/assets/img/post/swift/2020-12-24-swift-wrapper-class-2.png)
 
-```java
+```ruby
 //FDR-Bridging.h
 
 #ifndef FDR_Bridging_h
