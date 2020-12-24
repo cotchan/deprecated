@@ -36,13 +36,15 @@ tags: [swift]
 1. 프로젝트 선택 -> Build Settings -> Swift Compiler 검색
 2. Objective-C Bridging Header 더블클릭해서 프로젝트명-Bridging-Header.h 타이핑 후 엔터를 칩니다.
 
-![Desktop View](/assets/img/post/spring-boot/2020-12-24-swift-bridge-header.png)
+![Desktop View](/assets/img/post/swift/2020-12-24-swift-bridge-header.png)
 
 ---
 
 ## 2-4. 생성한 브릿지헤더에 포함하고자 하는 Objective-C 헤더파일 추가
 
 ```ruby
+# in {MY_PROJECT_NAME}_Bridging_h
+
 #ifndef {MY_PROJECT_NAME}_Bridging_h
 #define {MY_PROJECT_NAME}_Bridging_h
 
@@ -66,7 +68,7 @@ tags: [swift]
     2. 이 header file에 `실제 참조하고자하는` objective-c header file 경로를 입력합니다.
 
 ```ruby
-//objective-c-header1.h
+# objective-c-header1.h
 
 #include "../../directory/directory/project_name/objective-c-header1.h"
 ```
