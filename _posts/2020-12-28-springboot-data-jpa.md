@@ -10,9 +10,25 @@ tags: [spring-boot]
 
 + `Spring Data JPA Framework`는 JPA를 편리하게 사용하도록, Spring이 JPA를 한 번 더 래핑한 기술입니다. 
 
+
 ---
 
+
 ## 2. Spring Data JPA 사용방법
+
++ **구현체 없이 인터페이스만 사용합니다.**
++ **Spring Data JPA가 `JpaRepository를 상속`받고 있으면, `구현체를 자동으로` 만들어 `스프링 빈에 등록`합니다.**
+    + 사용자가 스프링 빈에 등록하는 게 아니라 Spring Data JPA가 자동으로 구현체를 만들어 등록해주는 것입니다. 
+    + 사용자는 그걸 그냥 가져다 쓰는 형식입니다.
+
++ **스프링 설정 클래스(Config)에서 `인터페이스(Repository)를 injection`을 받으면, `Spring Data JPA가 만들어놓은` 구현체가 등록이 됩니다.**
+    1. 스프링 컨테이너에서 MemberRepository를 찾습니다.
+    2. 근데 Config Class에 사용자가 등록한 것은 없고 extends JpaRepository인 것만 있습니다.
+    3. 이렇게 인터페이스만 만들어놓으면 Spring Data JPA가 인터페이스에 대한 구현체를 만들어내고, 스프링빈에 등록을해서 injection을 받습니다.
+
+
+---
+
 
 ## 2-1. 리포지토리 인터페이스 생성
 
@@ -24,6 +40,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
+//JpaRepository<> Paramter
+//arg0: Entity: Member
+//arg1: PK: Long 
 public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Long>, MemberRepository {
 
     @Override
