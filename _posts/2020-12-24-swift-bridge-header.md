@@ -27,7 +27,7 @@ tags: [swift]
 ## 2-2. 프로젝트명-Bridging-Header.h로 파일저장
 
 + 만들 헤더 파일명은 `프로젝트명-Bridging-Header.h` 입니다.
-+ **`Naming convention`은 필수사항은 아닙니다.**
++ **Naming convention은 `필수사항은 아닙니다.`**
 
 ---
 
