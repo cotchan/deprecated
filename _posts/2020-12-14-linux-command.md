@@ -50,11 +50,11 @@ $ touch a.txt
 $ rm FILE_NAME
 ```
 
-+ **rm file1.txt**
++ rm file1.txt
 	+ file1.txt 파일을 삭제한다.
-+ **rm `*.dat`**
++ rm `*.dat`
 	+ '.dat'로 끝나는 파일을 모두 삭제한다.
-+ **rm ***
++ rm *
 	+ 모든 파일을 삭제한다.
 
 ---
@@ -68,10 +68,10 @@ $ rm -r DIR_NAME
 + 디렉토리를 삭제하기 위해서는 `-r 옵션`을 사용해야 합니다. (recursive)
     + rmdir 명령과는 달리 파일이 들어있는 디렉토리도 삭제합니다.
 
-1. **rm `-r` dir1/**
-2. **rm `-rf` dir1/**
+1. rm `-r` dir1/
+2. rm `-rf` dir1/
     + r 옵션과 함께 f 옵션을 사용하게 되면 경고 없이 모두 강제로 삭제합니다.
-3. **rm `-ri` dir1/**
+3. rm `-ri` dir1/
     + 디렉토리에 있는 내용을 하나 하나 확인하면서 삭제하기 위해서는 `i 옵션`을 사용합니다.
 
 
@@ -127,10 +127,10 @@ $ mv dir1/ dir2/
 
 ## 4-1. 자주사용하는 ls 명령어 옵션
 
-+ **`-a` (all)**
-+ **`-l` (long)**
-+ **`-s` (size)**
-+ **`-r` (recursive)**
++ `-a` (all)
++ `-l` (long)
++ `-s` (size)
++ `-r` (recursive)
 
 
 ---
