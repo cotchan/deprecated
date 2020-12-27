@@ -54,7 +54,7 @@ $ rm FILE_NAME
 	+ file1.txt 파일을 삭제한다.
 + **rm `*.dat`**
 	+ '.dat'로 끝나는 파일을 모두 삭제한다.
-+ rm *
++ **rm ***
 	+ 모든 파일을 삭제한다.
 
 ---
@@ -146,7 +146,7 @@ $ mv dir1/ dir2/
 ---
 + 출처
 	+ [알아야 할 리눅스 파일 및 디렉터리 기본 명령어 1탄 및 관련문제(cd,ls,pwd,touch 등)](https://jhnyang.tistory.com/13?category=815412)
-	+ [파일을 생성하는 명령어 - touch, cat, vi](https://kwmblog.tistory.com/8)
-        + [리눅스 rm 명령어, 옵션 사용법 정리 (파일, 디렉토리 삭제 명령)](https://withcoding.com/95)
+	+ [파일을 생성하는 명령어 - touch, cat, vi](https://kwmblog.tistory.com/8)        
+	+ [리눅스 rm 명령어, 옵션 사용법 정리 (파일, 디렉토리 삭제 명령)](https://withcoding.com/95)
 	+ [cURL 소개, HTTP GET, POST 호출 방법](https://blog.naver.com/PostView.nhn?blogId=wideeyed&logNo=221350638501&proxyReferer=https:%2F%2Fwww.google.com%2F)
 	+ [curl GET/POST/DELETE 전송](https://developyo.tistory.com/11)
