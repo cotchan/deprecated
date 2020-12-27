@@ -137,10 +137,30 @@ $ mv dir1/ dir2/
 
 ## 5. curl
 
-향후 업데이트 예정입니다. :)
+향후 업데이트 예정입니다. :)    
 
 + 다양한 프로토콜을 지원하는 데이터 전송용 Command Line Tool 입니다.
 + HTTP, HTTPS, FTP, SFTP, SMTP 등을 지원합니다.
+
+---
+
+## 6. kill (프로세스 종료)
+
+향후 업데이트 예정입니다. :)            
+
++ kill 은 용도에 맞지 않게 이름이 지어진 명령어중의 하나로 실행하면 `signal`을 프로세스에게 `보내게 됩니다.`
+    + signal 은 software interrupt 의 일종으로 어떤 이벤트가 발생했음을 프로세스에게 알려주는 매커니즘입니다.
+
+```terminal
+//시그널 종류를 명시하지 않고 kill 명령을 호출할 경우 전송되는 기본 시그널은 TERM signal
+$ sudo kill PROCESS_ID
+
+$ sudo kill -2 PROCESS_ID    
+
+//KILL signal: 즉시 프로세스 종
+$ sudo kill -9 PROCESS_ID     
+```
+
 
 
 ---
@@ -150,3 +170,4 @@ $ mv dir1/ dir2/
 	+ [리눅스 rm 명령어, 옵션 사용법 정리 (파일, 디렉토리 삭제 명령)](https://withcoding.com/95)
 	+ [cURL 소개, HTTP GET, POST 호출 방법](https://blog.naver.com/PostView.nhn?blogId=wideeyed&logNo=221350638501&proxyReferer=https:%2F%2Fwww.google.com%2F)
 	+ [curl GET/POST/DELETE 전송](https://developyo.tistory.com/11)
+	+ [Unix, Linux 에서 kill 명령어로 안전하게 프로세스 종료 시키는 방법](https://www.lesstif.com/system-admin/unix-linux-kill-12943674.html)
