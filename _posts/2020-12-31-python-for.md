@@ -76,7 +76,7 @@ for num in range(n, 0, -1):
 # 1
 ```
 
-+ sequence 자료형에 대해서는 `reversed()`를 사용합니다.
++ **sequence 자료형에 대해서는 `reversed()`를 사용합니다.**
 
 ```python
 for i in reversed([1,3,5]):
