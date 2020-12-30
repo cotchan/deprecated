@@ -61,6 +61,44 @@ for i in range(0,9):
 
 ---
 
+## 3. 역순으로 순회
+
++ **`step을 음수로` 지정해주면 됩니다.**
+
+```python
+for num in range(n, 0, -1):
+    print(num)
+
+# n 
+# n-1
+# n-2
+# ...
+# 1
+```
+
++ sequence 자료형에 대해서는 `reversed()`를 사용합니다.
+
+```python
+for i in reversed([1,3,5]):
+    print(i)
+
+# 5
+# 3
+# 1
+```
+
+```python
+for i in reversed(range(n)):
+    print(i + 1)
+
+# n
+# n-1
+# ...
+# 1
+```
+
+---
+
 + 출처
     + [19. for in 반복문, Range, enumerate](https://wikidocs.net/16045)
     + [2.3 for를 사용하는 반복문](https://wikidocs.net/58)
