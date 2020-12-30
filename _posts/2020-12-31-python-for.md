@@ -102,3 +102,4 @@ for i in reversed(range(n)):
 + 출처
     + [19. for in 반복문, Range, enumerate](https://wikidocs.net/16045)
     + [2.3 for를 사용하는 반복문](https://wikidocs.net/58)
+    + [[Python] for문 거꾸로 반복하기](https://lightjean.tistory.com/24)
