@@ -6,22 +6,24 @@ categories: # [Algorithm, Python]
 tags: [python]     
 ---
 
-아래 출처를 바탕으로 본인 공부목적으로 작성한 글입니다.    
+아래 출처를 바탕으로 본인의 공부 목적으로 작성한 글입니다.    
 계속 업데이트할 예정입니다.
 
 ---
 
-## for in 반복문
+## 1. for in 반복문
 
++ **문법**
 
 ```python
 for item in iterable:
     # ...반복할 구문...
 ```
 
++ **사용예시**
+
 ```python
 # example
-
 for i in var_list:
     # ...
 
@@ -35,10 +37,11 @@ for i in var_set:
 
 ---
 
-## range
+## 2. range
 
 + range는 `range(시작숫자, 종료숫자, step)` 형태로 사용합니다.
-+ range 범위는 c/c++의 for문과 동일하며 [시작숫자, 종료숫자) 범위를 가집니다.
++ range 범위는 c/c++의 for문과 동일하며 `[시작숫자, 종료숫자)` 범위를 가집니다.
++ **사용예시**
 
 ```python
 # example
