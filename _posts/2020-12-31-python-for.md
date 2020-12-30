@@ -2,7 +2,7 @@
 title: Python for문
 author: cotchan
 date: 2020-12-31 00:26:21 +0800
-categories: # [Algorithm, Python]
+categories: [Algorithm, Python]
 tags: [python]     
 ---
 
