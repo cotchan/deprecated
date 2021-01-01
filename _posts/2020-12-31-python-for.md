@@ -1,5 +1,5 @@
 ---
-title: Python for문
+title: Python) for문 사용 방법
 author: cotchan
 date: 2020-12-31 00:26:21 +0800
 categories: [Algorithm, Python]
