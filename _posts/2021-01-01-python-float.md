@@ -1,5 +1,5 @@
 ---
-title: Python) 실수 연산 (round, format 등) 
+title: Python) 실수 연산 (반올림, 소수점 자릿수 고정) 
 author: cotchan
 date: 2021-01-01 00:26:21 +0800
 categories: [Algorithm, Python]
@@ -64,8 +64,8 @@ import math
 ## 2-1. format() 함수
 
 + **소수점 이하를 n번째 자리까지만 표현하고 싶을 때 format 함수를 사용합니다.**
-    + `.2f` 이면 소수점이하 `둘째 자리`까지 출력
-    + `.3f` 이면 소수점이하 `셋째 자리`까지 출력
+    + `.2f` 이면 소수점이하 `둘째 자리까지` 출력
+    + `.3f` 이면 소수점이하 `셋째 자리까지` 출력
 
 
 ```python
