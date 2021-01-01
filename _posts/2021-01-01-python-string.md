@@ -1,5 +1,5 @@
 ---
-title: Python) 문자열 기법 정리 
+title: Python) 문자열 사용법(Reverse, find, lower/upper) 
 author: cotchan
 date: 2021-01-01 00:26:21 +0800
 categories: [Algorithm, Python]
@@ -65,7 +65,67 @@ string.title()
 string.lower()
 ``` 
 
+---
 
+## 3. 특정문자 찾기
+
+## 3-1. find
+
++ **`find(찾을 문자, 찾기 시작할 위치)`** 
+    + find는 문자열 중에 특정문자를 찾고 위치를 반환해준다. **없을 경우 `-1`을 리턴**
+
+```python
+>>> s = '가나다라 마바사아 자차카타 파하'
+>>> s.find('마')
+5
+>>> s.find('가')
+0
+>>> s.find('가',5)
+-1
+```
+
+---
+
+## 3-2. startwith
+
++ **`startswith(시작하는 문자, 시작지점)`**
+    + startswith은 문자열이 특정문자로 시작하는지 여부를 알려줍니다. `true/false` 반환
+    + 두 번째 인자를 넣음으로써 찾기 시작할 지점을 정할 수 있습니다.
+
+```python
+>>> s = '가나다라 마바사아 자차카타 파하'
+>>> s.startswith('가')
+True
+>>> s.startswith('마')
+False
+
+>>> s.startswith('마',s.find('마')) #find는 '마' 의 시작지점을 알려줌 : 5
+True
+>>> s.startswith('마',1)
+False
+```
+
+
+---
+
+## 3-3. endswith
+
++ **`endswith(끝나는 문자, 문자열의 시작, 문자열의 끝`**
+    + endswith은 문자열이 특정문자로 끝나는지 여부를 알려줍니다. `true/false` 반환
+    + 두번째인자로 문자열의 시작과 세번째인자로 문자열의 끝을 지정할 수 있습니다.
+
+```python
+>>> s = '가나다라 마바사아 자차카타 파하'
+>>> s.endswith('마')
+False
+>>> s.endswith('하')
+True
+
+>>> s.endswith('마',0,10)
+False
+>>> s.endswith('마',0,6)
+True
+```
 
 
 ---
@@ -73,3 +133,4 @@ string.lower()
 + 출처
     + [Python 문자열 뒤집기(Reverse String)](https://dongyeopblog.wordpress.com/2016/11/21/python-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%92%A4%EC%A7%91%EA%B8%B0reverse-string/)
     + [Python 알파벳 대문자로 변환하기](https://m.blog.naver.com/PostView.nhn?blogId=cjh226&logNo=220992745309&proxyReferer=https:%2F%2Fwww.google.com%2F)
+    + [[Python] 파이썬 특정문자 찾기(find,startswith,endswith)](https://dpdpwl.tistory.com/119?category=977964)
