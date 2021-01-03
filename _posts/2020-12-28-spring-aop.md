@@ -1,7 +1,7 @@
 ---
-title: Spring-Boot) 
+title: Spring-Boot) Spring AOP 기본
 author: cotchan 
-date: 2020-12-10 00:00:21 +0800 
+date: 2020-12-28 05:15:21 +0800 
 categories: [Spring-Boot, Spring-Boot_Basic]
 tags: [spring-boot] 
 ---
