@@ -27,11 +27,11 @@ CleanCode 책을 바탕으로 정리한 내용입니다.
 
 + **테스트 코드는 `유연성`, `유지보수성`, `재사용성`을 제공합니다.**
     + 그 이유는 테스트 케이스가 있으면 변경이 쉬워지기 때문입니다.
-    + 테스트 케이스가 없다면 모든 `변경이` `잠정적인 버그`입니다.
+    + 테스트 케이스가 없다면 `모든 변경이` `잠정적인 버그`입니다.
     + 아키텍쳐가 아무리 유연하더라도, 설계를 아무리 잘 나눴더라도, 테스트 케이스가 없으면 개발자는 변경을 주저합니다. 버그가 숨어들까 두렵기 때문입니다.
     + 따라서 테스트 코드가 지저분하면 코드를 변경하는 능력이 떨어지며 코드 구조를 개선하는 능력도 떨어집니다.
 
-+ **그러므로 실제 코드를 점검하는 자동화된 단위 테스트 슈트는 설계와 아키텍쳐를 최대한 깨끗하게 보존하는 열쇠입니다.** 
++ **그러므로 실제 코드를 점검하는 `자동화된 단위 테스트 슈트`는 설계와 아키텍쳐를 최대한 깨끗하게 보존하는 열쇠입니다.** 
 
 ---
 
@@ -50,9 +50,9 @@ CleanCode 책을 바탕으로 정리한 내용입니다.
 ## 3-1. Sample Code
 
 + 각 테스트는 명확히 `세 부분`으로 나눠집니다.
-    1. **첫 부분은 테스트 자료를 만듭니다.**
-    2. **두 번째 부분은 테스트 자료를 조작합니다.**
-    3. **세 번째 부분은 조작한 결과가 올바른지 확인합니다.**
+    1. **첫 부분은 테스트 `자료를 만듭니다.`**
+    2. **두 번째 부분은 테스트 `자료를 조작`합니다.**
+    3. **세 번째 부분은 조작한 `결과가 올바른지 확인`합니다.**
 
 + 잡다하고 세세한 코드를 거의 다 없애고 테스트 코드는 본론에 돌입해 진짜 필요한 자료 유형과 함수만을 사용합니다.
 + 그러므로 코드를 읽는 사람은 코드가 수행하는 기능을 재빨리 이해할 수 있습니다.
@@ -62,7 +62,9 @@ CleanCode 책을 바탕으로 정리한 내용입니다.
 //SerializedPageResponderTest.java
 public void testGetPageHierarchyAsXml() throws Exception { 
 	makePages("pageOne", "PageOne.ChildOne", "PageTwo");
+
 	submitRequest("root", "type:pages");
+
 	assertResponseIsXML();
 	assertResponseContains(
 		"<name>PageOne</name>", 
@@ -70,11 +72,15 @@ public void testGetPageHierarchyAsXml() throws Exception {
 		"<name>ChildOne</name>"
 	);
 }
+
 public void testSymbolicLinksAreNotInXmlPageHierarchy() throws Exception {
 	WikiPage page = makePage("PageOne");
 	makePages("PageOne.ChildOne", "PageTwo");
+
 	addLinkTo(page, "PageTwo", "SymPage");
+
 	submitRequest("root", "type:pages");
+
 	assertResponseIsXML();
 	assertResponseContains(
 		"<name>PageOne</name>", 
@@ -83,14 +89,16 @@ public void testSymbolicLinksAreNotInXmlPageHierarchy() throws Exception {
 	);
 	assertResponseDoesNotContains("SymPage");
 }
+
 public void testGetDataAsXml() throws Exception {
 	makePageWithContent("TestPageOne", "test page");
+
 	submitRequest("TestPageOne", "type:data");
+
 	assertResponseIsXML();
 	assertResponseContains("test page", "<Test");
 }
 ```
-
 
 
 ---
