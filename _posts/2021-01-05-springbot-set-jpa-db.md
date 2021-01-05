@@ -71,6 +71,7 @@ public class Member {
 ## 2-2. Repository 생성
 
 ```java
+//MemberRepository.java
 package jpabook.jpashop;
 
 import org.springframework.stereotype.Repository;
