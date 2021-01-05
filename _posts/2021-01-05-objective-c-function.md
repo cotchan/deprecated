@@ -18,7 +18,7 @@ tags: [objective-c]
 + **`+`**
     + `클래스 메소드`를 의미합니다.
 
-+ 차이점1. 함수 생성 방법에서의 차이가 납니다.
++ 차이점1. `함수 생성 방법`에서의 차이가 납니다.
 
 ```ruby
 - (void)helloObjc { 
@@ -30,7 +30,7 @@ tags: [objective-c]
 }
 ```
 
-+ 차이점2. 함수 호출방식에서의 차이가 납니다.
++ 차이점2. `함수 호출방식`에서의 차이가 납니다.
 
 ```ruby
 [self helloObjc];
@@ -102,7 +102,7 @@ Test *vc = [[Test alloc] init];
 ```ruby
 - (반환형)함수이름: (자료형)내부변수명 {}
 
-//e.g.
+# e.g.
 - (void)helloWithName: (NSString *)str {}
 ```
 
@@ -115,19 +115,19 @@ Test *vc = [[Test alloc] init];
 	NSLog(@"hello");
 }
 
-//매개변수 1개
+# 매개변수 1개
 - (void)helloWithName: (NSString *)str {
 	NSLog(@"%@씨 안녕하세요", str);
 }
 
 
-//매개변수 2개 외부 변수 생략
+# 매개변수 2개 외부 변수 생략
 - (void)helloWithName2: (NSString *)str1 :(NSString *)str2 {
 	NSLog(@"%@와 %@ 안녕", str1, str2);
 }
 
 
-//매개변수 2개 외부 변수를 표시한 케이스
+# 매개변수 2개 외부 변수를 표시한 케이스
 - (void)helloWithName3: (NSString *)str1 name2:(NSString *) str2 {
 	NSLog(@"%@와 %@ 안녕", str1, str2);
 }
@@ -174,7 +174,7 @@ Test *vc = [[Test alloc] init];
 + **매개변수가 2개일 때**
     + 2개일때는 내부변수명과 외부변수명을 두 개 다 사용할 수 있습니다.
     + 또한 `외부변수명`도 `생략 가능`합니다.
-    + 외부 변수명이 없어도 `:`는 꼭 써줘야 합니다.
+    + **외부 변수명이 없어도 `:`는 꼭 써줘야 합니다.**
         + **따라서 `:`로 매개변수의 갯수를 알 수 있습니다.**
 
 ---
