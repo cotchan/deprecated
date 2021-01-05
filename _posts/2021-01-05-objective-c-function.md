@@ -7,7 +7,7 @@ tags: [objective-c]
 ---
 
 내용이 계속 추가 될 예정입니다. :)    
-저도 다른 분 포스팅을 보고 공부했던 내용인데 출처가 기억이 나지 않아서 적지 못하는 점 양해부탁드립니다.    
+여러 포스팅을 참고하여 본인 공부목적으로 작성한 글입니다.    
  
 ---
 
@@ -191,5 +191,10 @@ Test *vc = [[Test alloc] init];
 - (void) scratchTheCat: (CatType) critter; # (O)
 ```
 
-
 ---
+
++ 출처
+    + [[Objective-C] 기초문법 - 변수, 함수, 객체 사용해보기!!](https://nsios.tistory.com/4)
+
+
+
