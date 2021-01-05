@@ -2,8 +2,8 @@
 title: Objective-C) @property
 author: cotchan
 date: 2021-01-05 15:45:21 +0800
-categories: [Swift, Swift_Basic]
-tags: [swift]
+categories: [Objective-C, Objective-C_Basic]
+tags: [objective-c]
 ---
 
 내용이 계속 추가 될 예정입니다. :)    
