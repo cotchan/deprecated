@@ -100,7 +100,8 @@ UITextField *notesFiled_
 
 ```ruby
 @implementation Test2 {
-	NSString *str; //변수 선언
+        # 변수 선언
+	NSString *str;
 }
 
 - (void)viewDidLoad {
