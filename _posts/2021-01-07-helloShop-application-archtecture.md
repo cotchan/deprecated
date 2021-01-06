@@ -22,7 +22,7 @@ tags: # [TAG]     # TAG names should always be lowercase
 
 ---
 
-+ 패키지 구조
++ **패키지 구조**
     + jpabook.japshop
         + domain
         + exception
@@ -30,8 +30,8 @@ tags: # [TAG]     # TAG names should always be lowercase
         + service
         + web
 
-+ 개발 순서
-    1. 서비스, 리포지토리 계층 개발
++ **개발 순서**
+    1. `서비스`, `리포지토리 계층` 개발(웹과 무관한 핵심 비즈니스 로직 먼저 개발)
     2. 테스트 케이스를 작성해서 검증
     3. 마지막에 웹 계층 적용
 
