@@ -24,8 +24,8 @@ tags: # [TAG]     # TAG names should always be lowercase
 + 즉시 로딩(`EAGER`)는 예측이 어렵고, 어떤 SQL이 실행될지 추적하기 어렵습니다.
     + 특히 JPQL을 실행할 때 `N+1 문제`가 자주 발생합니다.
 + **실무에서 모든 연관관계는 지연로딩(`LAZY`)으로 설정해야 합니다.**
-+ **연관된 엔티티를 함께 DB에서 조회해야 하면, `fetch join` 또는 엔티티 그래프 기능을 사용합니다.
-+ **`@XToOne`(OneToOne, ManyToOne) 관계는 `default`가 `즉시로딩`이므로 직접 지연로딩으로 설정해야 합니다.**
++ **연관된 엔티티를 함께 DB에서 조회해야 하면, `fetch join` 또는 `엔티티 그래프` 기능을 사용합니다.**
++ **`@XToOne`(OneToOne, ManyToOne) 관계는 default가 즉시로딩이므로 `직접 지연로딩`으로 `설정해야` 합니다.**
 
 
 ---
