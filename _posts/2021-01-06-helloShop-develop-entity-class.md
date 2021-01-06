@@ -290,6 +290,8 @@ public class OrderItem {
 
 ---
 
+## 9-3. Member Entity
+
 ```java
 package jpabook.jpashop.domain;
 
