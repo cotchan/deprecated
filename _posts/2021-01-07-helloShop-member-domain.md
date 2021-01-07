@@ -209,6 +209,114 @@ public class MemberService {
 
 ## 4. 회원 기능 테스트
 
++ **테스트 요구사항**
+	+ 회원가입을 성공해야 한다.
+	+ 회원가입 할 때 같은 이름이 있으면 예외가 발생해야 합니다.
+
+---
+
+## 4-1. 테스트 관련 주요 기술
+
++ **`@RunWith(SpringRunner.class)`**
+	+ 스프링과 테스트 통합
++ **`@SpringBootTest`**
+	+ 스프링 부트를 띄우고 테스트(이게 없으면 `@Autowired`도 실패합니다)
++ **`@Transactional`**
+	+ 반복 가능한 테스트 지원
+	+ **각각의 테스트를 실행할 때마다 트랜잭션을 시작하고, `테스트가 끝나면 트랜잭션을 강제로 롤백합니다.`**
+	+ 이 어노테이션이 테스트 케이스에서 사용될 때만 롤백합니다.
+
+```java
+package jpabook.jpashop.service;
+
+import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManager;
+
+import static org.junit.Assert.*;
+
+//테스트를 실행하려면아래 두개의 어노테이션이 있어야 완전 SpringBoot와 Integration 되어 테스트 가능
+@RunWith(SpringRunner.class)    //JUnit 실행할 때 Spring과 엮어서 실행한다는 의미
+@SpringBootTest //SpringBoot를 띄운상태로 테스트할 때 필요한 것. 이게 없으면 Autowired도 실패
+@Transactional  //Transaction을 커밋을 안하고 롤백을 합니다.
+public class MemberServiceTest {
+
+    @Autowired
+    MemberService memberService;
+
+    @Autowired
+    MemberRepository memberRepository;
+
+    @Test
+    public void 회원가입() throws Exception {
+        //given
+        Member member = new Member();
+        member.setName("kim");
+
+        //when
+        final Long saveId = memberService.join(member);
+
+        //then
+        assertEquals(member, memberRepository.findOne(saveId));
+    }
+
+    //validateDuplicateMember 검증
+    //여기서 예외가 터져서 잡히는 Exception이 IllegalStateException이면 됩니다.
+    //이 코드가 있기에 try-catch 생략 가능!
+    @Test(expected = IllegalStateException.class)
+    public void 중복_회원_예외() throws Exception {
+        //given
+        Member member1 = new Member();
+        member1.setName("kim");
+
+        Member member2 = new Member();
+        member2.setName("kim");
+
+        //when
+        memberService.join(member1);
+        memberService.join(member2);    //예외가 발생해야 합니다.
+
+        //then
+        //위 문장에서 예외가 나가지 않고  여기까지 코드가 나온다면
+        fail("예외가 발생해야 합니다");
+    }
+}
+```
+
+---
+
+## 4-2. 테스트 케이스를 위한 설정
+
++ **테스트 켸이스는 격리된 환경에서 실행하고 끝나면 데이터를 초기화하는 것이 좋습니다.**
+	+ 그런면에서 `Memory DB`를 사용하는 것이 가장 이상적입니다.
++ **추가적으로 테스트 케이스를 위한 스프링 환경과, 일반적으로 애플리케이션을 실행하는 환경은 보통다르므로 설정 파일을 다르게 사용하는 것이 바람직합니다.**
++ 아래와 같이 간단하게 테스트용 설정 파일을 추가해줍니다.
+
+```java
+// test/resources/application.yml
+spring:
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+``` 
+
++ **이제 테스트에서 스프링을 실행하면 이 위치(`test/resources`)에 있는 설정 파일을 읽습니다.**
+	+ 만약 이 위치에 없으면 `src/resources/application.yml`을 읽습니다.
+
++ **스프링부트는 `datasource` 설정이 없으면 기본적으로 메모리 DB를 사용하고, driver-class도 현재 등록된 라이브러리를 보고 찾아줍니다.**
+	+ 추가로 `ddl-auto`도 `create-drop` 모드로 동작합니다.
+	+ create-drop는 내가 가지고 있는 Entity를 전부 drop한 다음에 Create를 하고 Application 실행 + Application 종료시점에 drop 실행
+
++ 따라서 데이터소스나, JPA 관련 별도의 추가 설정을 하지 않아도 됩니다.
 
 
 ---
