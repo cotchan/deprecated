@@ -45,9 +45,6 @@ public class MemberServiceTest {
     @Autowired
     MemberRepository memberRepository;
 
-    @Autowired
-    EntityManager em;
-
     @Test
     public void 회원가입() throws Exception {
         //given
@@ -56,11 +53,6 @@ public class MemberServiceTest {
 
         //when
         final Long saveId = memberService.join(member);
-
-        //then
-        //플러시는 영속성 컨텍스트에 있는 내용을 DB에 반영하는 것
-        //DB에 일단 쿼리를 날리게 된다(commit)
-        em.flush();
         assertEquals(member, memberRepository.findOne(saveId));
     }
 
@@ -116,8 +108,11 @@ public class MemberServiceTest {
     + 테스트에서 스프링을 실행하면 이 위치에 있는 설정 파일을 읽습니다.
     + 이 위치(test/resources)에 없으면 (src/resources/application.yml)을 읽습니다.
 
-+ 예시1
-    + `test/resources/application.yml`
+---
+
+## 3-1. application.yml (예시1)
+
++ `test/resources/application.yml`
 
 ```java
 spring:
@@ -146,8 +141,11 @@ logging:
     org.hibernate.type: trace
 ```
 
-+ 예시2
-    + `test/resources/application.yml`
+---
+
+## 3-2. application.yml (예시2)
+
++ `test/resources/application.yml`
 
 + 스프링부트에 별도의 설정이 없으면 그냥 MemoryDB로 돌려버립니다. 
 + **그래서 아래와 같이 작성해도 Memory DB로 똑같이 동작합니다.**
@@ -166,20 +164,12 @@ logging.level:
 + **따라서 데이터소스나, JPA 관련된 별도의 추가 설정을 하지 않아도 됩니다.**
 
 
----
 
-## 3.
-
----
-
-
-## 4. 
 
 
 ---
 
 
-![Desktop View](/assets/img/post/spring-boot/2020-12-10-spring-boot-how-to-build.png){: width="350" class="normal"}
 
 
 
