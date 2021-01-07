@@ -11,6 +11,10 @@ tags: [spring-boot]
 
 ## 1. Sample Test Class Code
 
++ 테스트 요구사항
+    1. 회원가입을 성공해야 합니다. 
+    2. 회원가입을 할 때 같은 이름이 있으면 예외가 발생해야 합니다.
+
 ```java
 //MemberServiceTest.java
 package jpabook.jpashop.service;
@@ -85,7 +89,7 @@ public class MemberServiceTest {
 
 ---
 
-## 1. 기술 설명
+## 2. 기술 설명
 
 + **`@RunWith(SpringRunner.class)`**  
     + JUnit을 실행할 때 Spring과 엮어서(통합해서) 실행한다는 의미입니다.
@@ -99,10 +103,11 @@ public class MemberServiceTest {
 
 ---
 
-## 2. 테스트 케이스를 위한 설정
+## 3. 테스트 케이스를 위한 설정
 
 + 테스트 케이스는 격리된 환경에서 실행하고, 끝나면 데이터를 초기화하는 것이 좋습니다.
 + **그런 면에서 `메모리 DB`를 사용하는 것이 가장 이상적입니다.**  
+    + 참고: [H2 Database Engine Cheat Sheet](http://h2database.com/html/cheatSheet.html)
 
 + **또한 설정 파일(`application.yml`)을 다르게 사용하는 것이 좋습니다.**
     + 테스트 케이스를 위한 스프링 환경과, 애플리케이션을 실행하는 환경은 다르므로
