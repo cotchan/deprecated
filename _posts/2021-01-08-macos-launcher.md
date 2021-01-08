@@ -6,7 +6,7 @@ categories: [Macos, Macos_ETC]
 tags: [macos]
 ---
 
-**<목차>**
+## 0. 목차
 
 1. **intro**
 2. **LauncherControl**
@@ -62,7 +62,7 @@ tags: [macos]
 
 - **작업 LOAD / UNLOAD (글로벌 데몬)**
 
-    ```cpp
+    ```bash
     //load
     $ launchctl load /Library/LaunchDaemons/<LABEL>.plist
 
@@ -106,7 +106,7 @@ tags: [macos]
     touch ~/Library/LaunchAgents/com.demo.daemon.plist
     ```
 
-    ```bash
+    ```xml
     # in com.demo.daemon.plist
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
