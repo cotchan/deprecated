@@ -1,5 +1,5 @@
 ---
-title: Spring-Boot) 테스트 케이스 작성 기본 개념 
+title: Spring-Boot) 테스트 케이스 작성 기본 개념(1편)
 author: cotchan 
 date: 2020-12-14 00:40:21 +0800 
 categories: [Spring-Boot, Spring-Boot_Test]
