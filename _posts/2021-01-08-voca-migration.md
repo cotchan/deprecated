@@ -1,7 +1,7 @@
 ---
 title: 마이그레이션(Migration)
 author: cotchan 
-date: 2020-12-14 18:40:21 +0800 
+date: 2021-01-08 14:43:21 +0800 
 categories: [ComputerScience, Voca]
 tags: [voca]
 ---
