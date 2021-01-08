@@ -13,7 +13,7 @@ tags: [voca]
 ## 1. 마이그레이션이란
 
 + **한 운영환경에서 `다른 운영환경으로 옮기는 작업`을 의미합니다.**
-+ **서비스 중인 `애플리케이션` 또는` 모듈` 등을 전혀 다른 환경(OS, 미들웨어, 하드웨어 등)에서도 돌아갈 수 있도록 전환하는 것을 의미합니다.** 
++ **서비스 중인 `애플리케이션` 또는 `모듈` 등을 전혀 `다른 환경`(OS, 미들웨어, 하드웨어 등)`에서도 돌아갈 수 있도록 전환`하는 것을 의미합니다.** 
 
 ---
 
@@ -24,5 +24,5 @@ tags: [voca]
 ---
 
 + 출처
-	+ [마이그레이션이 뭔가요?](https://codingdojang.com/scode/267?orderby=time)
-        + [[DB] 데이터베이스 마이그레이션](https://life-with-coding.tistory.com/68)
+    + [마이그레이션이 뭔가요?](https://codingdojang.com/scode/267?orderby=time)
+    + [[DB] 데이터베이스 마이그레이션](https://life-with-coding.tistory.com/68)
