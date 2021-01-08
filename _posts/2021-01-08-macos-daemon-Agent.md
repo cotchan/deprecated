@@ -82,7 +82,7 @@ tags: [macos]
 - 데몬 / 에이전트의 동작은 `property list`라는 특수 XML 파일에 저장됩니다.
 - `저장 위치`에 따라 데몬 또는 에이전트로 처리됩니다.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fa94cb10-2ae2-4ab8-8f9f-1354a40f9653/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fa94cb10-2ae2-4ab8-8f9f-1354a40f9653/Untitled.png)
+    ![Desktop View](/assets/img/post/macos/2021-01-08-macos-daemonAndAgentType)
 
 1. **Label**
     - Naming your job
