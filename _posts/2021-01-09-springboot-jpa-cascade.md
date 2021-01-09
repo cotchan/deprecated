@@ -6,10 +6,11 @@ categories: [Spring-Boot, Spring-Boot_JPA]
 tags: [spring-boot] 
 ---
 
-## 1. CasCade 옵션 적용 방법
+## 1. Cascade 옵션 적용 방법
 
-+ **아래 예시의 경우 Order가 Delivery를 관리하고, OrderItem을 관리합니다.**
-+ 그러므로 `delivery` 필드와 `orderItems` 필드에 `Cascade 옵션`을 적용해줍니다.
++ **`Entity 클래스의 필드`에 Cascade 옵션을 적용해줍니다.**
+  + **아래 예시의 경우 Order가 Delivery를 관리하고, OrderItem을 관리합니다.**
+  + 그러므로 `delivery` 필드와 `orderItems` 필드에 `Cascade 옵션`을 적용해줍니다.
 
 ```java
 @Entity
@@ -109,10 +110,10 @@ public class OrderSerivce {
 
 + `두 가지 조건`이 만족되면 Cascade 옵션을 적용할 수 있습니다.
   + **1. 참조하는 주인이 `private owner`인 경우에만 써야합니다.**
-    + private owner라는 건 `Order만 Delivery를` 갖다쓰고, `Order만 `OrderItem을` 갖다쓰는 것을 의미합니다.
+    + private owner라는 건 `Order만 Delivery를` 갖다쓰고, `Order만 OrderItem을` 갖다쓰는 것을 의미합니다.
     + 외부에서 따로 참조하는 게 없는 경우를 의미합니다.
   + **2. Life Cycle을 자체가 동일하게 관리될 수 있을 때 cascade 옵션을 적용합니다.**
-    + Life Cycle이 `persist`할 때 같이 persist 해야 하는 경우
+    + Life Cycle이 persist할 때 `같이 persist` 해야 하는 경우
 
 
 ---
