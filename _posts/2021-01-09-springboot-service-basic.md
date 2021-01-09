@@ -15,6 +15,9 @@ tags: [spring-boot]
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class ServiceClass {
+
+    private final RepositoryClass repositoryClass;
+
 }
 ```
 
