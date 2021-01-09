@@ -6,8 +6,6 @@ categories: [Project, HelloShop]
 tags: # [TAG]     # TAG names should always be lowercase
 ---
 
-![Desktop View](/assets/img/post/spring-boot/2020-12-10-spring-boot-how-to-build.png){: width="350" class="normal"}
-
 
 ## 0. 구현기능
 
