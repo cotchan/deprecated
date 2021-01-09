@@ -84,10 +84,10 @@ public abstract class Item {
 
 + 보통 개발을 하는 경우 
   1. `ItemService`에서 `stockQuantity`를 가져와서 값을 만들기 
-  2. 그 다음에 setItem.`setStock()`하는식으로 개발을 합니다.
+  2. 그 다음에 `setItem.setStock()`하는 식으로 개발을 합니다.
 
 + 재고를 넣고 빼는 로직은 `stockQuantity` 값을 통해 일어납니다.
-+ 이 값을 가지고 있는 것이 `Item Entity` 이기에 Item Entity에 비즈니스 로직이 있는 게 관리하기가 쉽습니다.
++ 이 값을 가지고 있는 것이 `Item Entity` 이기에 **Item Entity에 비즈니스 로직이 있는 게 관리하기가 쉽습니다.**
 
 ---
 
@@ -194,6 +194,12 @@ public class Movie extends Item {
 
 ## 2. 상품 리포지토리 개발
 
++ **기능 설명**
+  + **`save()`**
+    + `id`가 없으면 신규 상품으로 보고 `persist()` 실행
+    + `id`가 있으면 이미 데이터베이스에 저장된 엔티티를 수정한다고 보고 `merge()` 실행
+  + **`findOne(Long id)`**
+  + **`findAll()`**
 
 ```java
 package jpabook.jpashop.repository;
@@ -241,13 +247,8 @@ public class ItemRepository {
 }
 ```
 
-+ **기능 설명**
-  + `save()` 
-    + `id`가 없으면 신규 상품으로 보고 `persist()` 실행
-    + `id`가 있으면 이미 데이터베이스에 저장된 엔티티를 수정한다고 보고 `merge()` 실행
 
-
--- 
+---
 
 
 ## 3. 상품 서비스 개발
