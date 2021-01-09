@@ -23,12 +23,12 @@ public class ServiceClass {
 ## 2. 적용된 기술 설명
 
 
-+ **@Service**
++ **`@Service`**
   + ComponentScan의 대상이 되어 빈으로 등록됩니다. @Component 어노테이션을 래핑  
-+ **@Transactional(readOnly = true)**
++ **`@Transactional(readOnly = true)`**
   + **JPA의 모든 데이터 변경 로직들은 전부 트랜잭션 안에서 실행되어야 합니다. 그러므로 추가해줘야 합니다.**
   + 기본적으로 readOnly 옵션을 걸어두고, 데이터를 추가/변경하는 메서드에만 `@Transactional`을 추가해줍니다. 
-+ **@RequiredArgsConstructor**
++ **`@RequiredArgsConstructor`**
   + `final` 키워드가 선언 되어 있는 필드만 가지고 생성자를 만들어줍니다.
   + 생성자 주입방식을 사용하기 위해 이렇게 사용합니다.
   + 스프링은 생성자가 1개인 경우 별도의 어노테이션이 없어도 자동으로 @Autowired 옵션을 적용해줍니다.
@@ -36,6 +36,8 @@ public class ServiceClass {
 ---
 
 ## 3. Sample Code
+
++ Sample1: `MemberService`
 
 ```java
 package jpabook.jpashop.service;
@@ -101,6 +103,7 @@ public class MemberService {
 }
 ```
 
++ Sample2: `ItemService`
 
 ```java
 @Service
