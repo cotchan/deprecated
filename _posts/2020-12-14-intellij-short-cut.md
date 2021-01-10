@@ -80,6 +80,7 @@ List<Member> members = memberService.findMembers();
 ## 10. 가장 최근에 봤던 목록 보기
 
 + **`cmd` + `E`**
+  + 검색 기능 또한 가능합니다.
 
 ---
 
