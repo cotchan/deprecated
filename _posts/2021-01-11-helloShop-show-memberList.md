@@ -8,7 +8,7 @@ tags: # [TAG]     # TAG names should always be lowercase
 
 ## 1. 회원 목록 컨트롤러 추가
 
-+ 조회한 상품을 뷰에 전달하기 위해 스프링 MVC가 제공하는 모델(`Model`)객체에 보관합니다.
++ 조회한 회원을 뷰에 전달하기 위해 스프링 MVC가 제공하는 모델(`Model`)객체에 보관합니다.
 + 실행할 `뷰 이름을 반환`합니다.
 
 ```java
