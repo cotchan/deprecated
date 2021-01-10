@@ -19,9 +19,9 @@ tags: [spring-boot]
 ## 2. 폼 객체 예시 (회원가입 로직)
 
 + **`/domain/Member`**
-  + 도메인 계층의 실제 비즈니스 로직을 위해 사용되는 Member 엔티티
-+ `**/controller/MemberForm`**
-  + 화면을 통해 사용자가 회원가입을 할때 받는 입력값을 처리하는 MemberForm 엔티티
+  + 도메인 계층의 실제 비즈니스 로직을 위해 사용되는 `Member 엔티티`
++ **`/controller/MemberForm`**
+  + 화면을 통해 사용자가 회원가입을 할 때 받는 입력값을 처리하는 `MemberForm 엔티티`
 
 
 ```java
