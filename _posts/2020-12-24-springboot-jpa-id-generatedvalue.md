@@ -1,7 +1,7 @@
 ---
 title: Spring-Boot) @Id, @GeneratedValue, @Column (PK 매핑하는 방법)
 author: cotchan 
-date: 2021-01-05 00:00:21 +0800 
+date: 2020-12-24 00:00:21 +0800 
 categories: [Spring-Boot, Spring-Boot_JPA]
 tags: [spring-boot] 
 ---
@@ -28,7 +28,7 @@ public class Member {
 
 ---
 
-## 2. @Id && @@GeneratedValue
+## 2. @Id, @GeneratedValue
 
 + 기본키를 할당하는 방법으로는 `두 가지`가 있습니다.
   + **`직접할당`**
@@ -70,11 +70,9 @@ public class Member {
       + 데이터베이스에 따라서 IDENTITY, SEQUENCE, TABLE 방법 중 하나를 자동으로 선택해주는 방법입니다.
       + 예를 들어, Oracle일 경우 SEQUeNCE를 자동으로 선택해서 사용합니다. 따라서 데이터베이스를 변경해도 코드를 수정할 필요가 없습니다.
 
-
-
 ---
 
-## 3. @Id, @GeneratedValue Sample Code
+## 3. Sample Code
 
 ```java
 //Member.java
