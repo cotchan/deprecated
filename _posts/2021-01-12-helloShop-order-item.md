@@ -78,27 +78,6 @@ public class OrderController {
         //주문목록 리스트로 redirect
         return "redirect:/orders";
     }
-
-    /**
-     * 상품 리스트 검색 조건들이 orderSearch에 담겨서 넘어옵니다.
-     * @ModelAttribute로 셋팅을 해두면 모델 박스에 자동으로 담습니다.
-     */
-    @GetMapping("/orders")
-    public String orderList(@ModelAttribute("orderSearch") OrderSearch orderSearch, Model model) {
-        List<Order> orders = orderSerivce.findOrders(orderSearch);
-        model.addAttribute("orders", orders);
-
-        //@ModelAttribute("orderSearch") OrderSearch orderSearch 의미
-        //model.addAttribute("orderSearch", orderSearch);
-
-        return "order/orderList";
-    }
-
-    @PostMapping("/orders/{orderId}/cancel")
-    public String cancelOrder(@PathVariable("orderId") Long orderId) {
-        orderSerivce.cancelOrder(orderId);
-        return "redirect:/orders";
-    }
 }
 ```
 
