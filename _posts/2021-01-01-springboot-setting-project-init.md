@@ -31,7 +31,7 @@ tags: [spring-boot]
 
 ## 3. build.gradle 설정
 
-```yml
+```json
 plugins {
     id 'org.springframework.boot' version '2.4.1'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE' 
@@ -81,7 +81,7 @@ test {
 + **`build.gradle`에 아래 부분을 꼭 직접 추가해줘야 합니다.**
 + 해당 부분을 입력하지 않으면 JUnit5로 동작합니다.
 
-```yml
+```json
 //JUnit4 추가 
 testImplementation("org.junit.vintage:junit-vintage-engine") {
 exclude group: "org.hamcrest", module: "hamcrest-core" 
