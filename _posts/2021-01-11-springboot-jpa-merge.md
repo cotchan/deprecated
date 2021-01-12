@@ -179,8 +179,7 @@ public class ItemRepository {
     ```java
     public abstract class Item {
 
-      @Id
-      @GeneratedValue
+      @Id @GeneratedValue
       @Column(name = "item_id")
       private Long id;
     //...
@@ -205,21 +204,28 @@ public class ItemRepository {
 + **컨트롤러에서 어설프게 엔티티를 생성하지 마세요**
   + 아래와 같은 방식은 지양해야 합니다.  
     ```java
-    @PostMapping("items/{itemId}/edit")
-    public String updateItem(@ModelAttribute("form") BookForm form) {
+    @Controller
+    @RequiredArgsConstructor
+    public class ItemController {
 
-        Book book = new Book();
+        private final ItemService itemService;
 
-        book.setId(form.getId());
-        book.setName(form.getName());
-        book.setPrice(form.getPrice());
-        book.setStockQuantity(form.getStockQuantity());
-        book.setAuthor(form.getAuthor());
-        book.setIsbn(form.getIsbn());
+        @PostMapping("items/{itemId}/edit")
+        public String updateItem(@ModelAttribute("form") BookForm form) {
 
-        itemService.saveItem(book);
+            Book book = new Book();
 
-        return "redirect:/items";
+            book.setId(form.getId());
+            book.setName(form.getName());
+            book.setPrice(form.getPrice());
+            book.setStockQuantity(form.getStockQuantity());
+            book.setAuthor(form.getAuthor());
+            book.setIsbn(form.getIsbn());
+
+            itemService.saveItem(book);
+
+            return "redirect:/items";
+        }
     }
     ```
   + **권장하는 방식**
@@ -229,6 +235,7 @@ public class ItemRepository {
     public class ItemController {
         
         private final ItemService itemService;
+        
         /**
         *상품 수정,권장 코드
         */
