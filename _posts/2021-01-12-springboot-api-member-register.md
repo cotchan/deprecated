@@ -53,7 +53,7 @@ public class MemberApiController {
 
 ---
 
-+ Bad Case
++ `Bad Case`
 
 ```java
 //BadCase
@@ -106,7 +106,7 @@ public class MemberApiController {
 
 + **Entity의 변화에도 `API의 스펙이 변하지 않습니다.`**
 + 엔티티를 parameter로 그대로 사용하는 경우 parameter로 어느 필드값이 넘어올지 모릅니다.
-  + 하지만 API 스펙을 위한 DTO는 명확합니다.
+  + 하지만 API 스펙을 위한 DTO는 명확합니다.      
     ```java
     /**
      * DTO를 보면 API 스펙 자체를 알 수 있습니다.
