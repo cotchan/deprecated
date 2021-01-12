@@ -112,8 +112,8 @@ public CreateMemberResponse saveMemberV1(@RequestBody @Valid Member member) {
 + HTTP 메소드로 요청에 대한 `알맞은 응답`을 보내기 위해 사용합니다.
 
 + Sampele Code
-  + `@PostMapping("/api/v2/members")`
-  + `@PutMapping("/api/v2/members/{id}")`
+  + @PostMapping(`"/api/v2/members"`)
+  + @PutMapping(`"/api/v2/members/{id}"`)
 
 ---
 
