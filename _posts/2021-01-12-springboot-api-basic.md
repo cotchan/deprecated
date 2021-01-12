@@ -88,13 +88,14 @@ public class MemberApiController {
 
 ## 2-1. @RestController
 
-+ @RestController는 까보면 `@Controller` + `@ResponseBody`로 데이터 자체를 바로 json이나 XML로 보낼 때 사용합니다. 
++ @RestController는 까보면 `@Controller` + `@ResponseBody`로 구성되어 있습니다.
++ 데이터 자체를 바로 json이나 XML로 보낼 때 사용합니다. 
 
 ---
 
 ## 2-2. @RequestBody
 
-+ @RequestBody를 사용하면 json으로 넘어 온 RequestBody를 Member에 바인딩해서 전부 넣어줍니다.
++ **@RequestBody는 json으로 넘어 온 `RequestBody`를 Member에 `바인딩`해서 전부 넣어줍니다.**
 
 ```java
 @PostMapping("/api/v1/members")
