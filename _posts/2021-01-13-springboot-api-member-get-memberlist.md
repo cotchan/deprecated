@@ -14,7 +14,7 @@ tags: [spring-boot]
 
 ---
 
-## 1-1.Good Case
+## 1-1. Good Case
 
 + **추가로 `Result` 클래스로 컬렉션을 감싸서 결과를 반환합니다.**
   + `껍데기 Object` 추가하기
@@ -92,7 +92,7 @@ public class MemberApiController {
 
 ---
 
-## 1-2.Bad Case
+## 1-2. Bad Case
 
 ```java
 @RestController

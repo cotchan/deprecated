@@ -13,7 +13,7 @@ tags: [spring-boot]
 
 ---
 
-## 1-1.Good Case
+## 1-1. Good Case
 
 ```java
 //Good Case
@@ -55,7 +55,7 @@ public class MemberApiController {
 
 ---
 
-## 1-2.Bad Case
+## 1-2. Bad Case
 
 ```java
 //BadCase
