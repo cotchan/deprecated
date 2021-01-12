@@ -108,16 +108,16 @@ public class MemberApiController {
 + 엔티티를 parameter로 그대로 사용하는 경우 parameter로 어느 필드값이 넘어올지 모릅니다.
   + 하지만 API 스펙을 위한 DTO는 명확합니다.      
     ```java
-    /**
-     * DTO를 보면 API 스펙 자체를 알 수 있습니다.
-     * 그래서 외부 API 스펙랑 매핑되는 별도의 DTO를 만드는 게 API를 만드는 정석입니다.
-     * Entity를 외부에 노출하지 말기
-     */
-    @Data
-    static class CreateMemberRequest {
-        @NotEmpty
-        private String name;
-    }
+      /**
+       * DTO를 보면 API 스펙 자체를 알 수 있습니다.
+       * 그래서 외부 API 스펙랑 매핑되는 별도의 DTO를 만드는 게 API를 만드는 정석입니다.
+       * Entity를 외부에 노출하지 말기
+       */
+      @Data
+      static class CreateMemberRequest {
+          @NotEmpty
+          private String name;
+      }
     ```  
 
 + 엔티티와 프레젠테이션 계층을 위한 로직을 분리할 수 있습니다.
