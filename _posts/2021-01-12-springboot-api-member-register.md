@@ -11,7 +11,9 @@ tags: [spring-boot]
 + **엔티티를 외부에 노출해서는 안됩니다.**
 + **API를 만들 때는 엔티티를 Parameter로 받으면 안됩니다.**
 
-+ **`Good Case`**
+---
+
+## 1-1.Good Case
 
 ```java
 //Good Case
@@ -53,7 +55,7 @@ public class MemberApiController {
 
 ---
 
-+ `Bad Case`
+## 1-2.Bad Case
 
 ```java
 //BadCase
