@@ -1,5 +1,5 @@
 ---
-title: Spring-Boot) 의존 라이브러리 살펴보기(Feat.gradle 의존관계)
+title: Spring-Boot) 의존 라이브러리 살펴보기(Feat.Gradle 의존관계)
 author: cotchan 
 date: 2021-01-13 08:45:21 +0800 
 categories: [Spring-Boot, Spring-Boot_ETC]
