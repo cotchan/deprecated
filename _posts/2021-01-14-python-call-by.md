@@ -14,16 +14,23 @@ tags: [python]
 ## 1. 결론
 
 + 어떤 값을 전달하느냐에 따라 달라집니다.
-  + **`Immutable`(불변)한 객체를 넘긴다면 Call by Value 입니다.**
-    + ex. `int`, `str` 등
-  + **`Mutable`(가변)한 객체를 넘긴다면 Call by Refernece 입니다.**
-    + ex. `list`, `dictionary` 등
-  + 이러한 파이썬의 방식을 `passed by assignment`라고 합니다.
 
 ---
 
-+ **이와 같은 방식이 가능한 이유는 파이썬에서는 `모든 것이 객체`이기 때문입니다.**
+## 1-1. 불변한 객체를 넘긴다면 Call by Value
 
++ **ex. `int`, `str` 등**
+
+---  
+
+## 1-2. 가변한 객체를 넘긴다면 Call by Refernece
+
++ **ex. `list`, `dictionary` 등**
+
+---
+
++ 이러한 파이썬의 방식을 `passed by assignment`라고 합니다.
++ **이와 같은 방식이 가능한 이유는 파이썬에서는 `모든 것이 객체`이기 때문입니다.**
 
 ---
 
