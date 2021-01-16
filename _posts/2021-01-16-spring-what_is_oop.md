@@ -115,7 +115,20 @@ tags: [spring]
 
 ---
 
-![Desktop View](/assets/img/post/spring/2021-01-16-spring-what-is-oop4.png)
+```java
+public class MemberService {
+    private MemberRepository memberRepository = new MemoryMemberRepository();
+}
+```
+
+---
+
+```java
+public class MemberService {
+//  private MemberRepository memberRepository = new MemoryMemberRepository();
+    private MemberRepository memberRepository = new JdbcMemberRepository();
+}
+```
 
 ---
 
