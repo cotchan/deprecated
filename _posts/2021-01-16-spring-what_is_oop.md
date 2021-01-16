@@ -1,5 +1,5 @@
 ---
-title: Spring) 좋은 객체 지향 프로그래밍이란? 
+title: Spring) 왜 스프링을 쓰나요? - 1 (좋은 객체 지향 프로그래밍이란?)
 author: cotchan 
 date: 2021-01-16 19:08:21 +0800 
 categories: [Spring, Spring_Basic]
