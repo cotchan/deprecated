@@ -28,7 +28,8 @@ tags: [intellij]
 ## 3. extract method
 
 + **`ctrl` + `t`** (refactoring 관련: 여기안에 extract method가 있습니다.)
-    
++ **`cmd` + `option` + `M`** 
+   
 ---
 
 ## 4. Create New test
