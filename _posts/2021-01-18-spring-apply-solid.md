@@ -12,7 +12,7 @@ tags: [spring]
 
 ## 1. INTRO
 
-**`AppConfig`를 적용함으로써 `SRP, `DIP`, `OCP`를 만족하게 되었습니다.**
+**`AppConfig`를 적용함으로써 `SRP`, `DIP`, `OCP`를 만족하게 되었습니다.**
 
 ---
 
