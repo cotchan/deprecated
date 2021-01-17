@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Basic]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## API 방식이란 
 
 + **`서버에게 데이터를 요청`할 때 `API방식을 사용`합니다.**        

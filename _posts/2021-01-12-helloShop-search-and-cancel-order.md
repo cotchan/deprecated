@@ -6,6 +6,9 @@ categories: [Project, HelloShop]
 tags: # [TAG]     # TAG names should always be lowercase
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
 
 ## 1. 상품 주문 컨트롤러에 주문 목록 검색 메서드 추가
 

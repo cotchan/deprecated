@@ -6,6 +6,9 @@ categories: [Project, HelloShop]
 tags: # [TAG]     # TAG names should always be lowercase
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
 
 ## 1. 엔티티에는 가급적 Setter 사용 금지
 

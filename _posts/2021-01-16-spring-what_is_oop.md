@@ -6,6 +6,9 @@ categories: [Spring, Spring_Basic]
 tags: [spring] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
 
 ## 1. 유연하고, 변경이 용이하다?
 

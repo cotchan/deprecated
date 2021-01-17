@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_DI]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 이번에는 클래스에 `@Component` 어노테이션을 사용하지 않고(@ComponentScan 적용 X) 스프링이 관리하는 빈으로 등록하는 방법에 대해 알아보겠습니다.    
 
 ---

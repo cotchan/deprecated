@@ -6,6 +6,9 @@ categories: [Spring-Boot, Spring-Boot_JPA]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
 
 ## 1. 준영속 엔티티
 

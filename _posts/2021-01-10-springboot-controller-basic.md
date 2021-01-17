@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Controller]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. Controller 클래스 생성에 필요한 것
 
 + **컨트롤러 클래스를 생성할 때 아래의 어노테이션이 필요합니다.**

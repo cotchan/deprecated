@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Test]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 + 아래 예제를 바탕으로 작성한 글입니다.
     + [HelloShop) 회원 도메인 개발(Entity, Repo, Service, Test)](https://cotchan.github.io/posts/helloShop-member-domain/)
 

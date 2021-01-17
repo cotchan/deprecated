@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Basic]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 **빌드를 해서 실제 실행할 수 있는 파일을 만드는 방법**  
 (macOS를 기준으로 작성하였습니다)   
 

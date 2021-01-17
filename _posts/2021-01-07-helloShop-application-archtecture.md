@@ -6,6 +6,10 @@ categories: [Project, HelloShop]
 tags: # [TAG]     # TAG names should always be lowercase
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. 애플리케이션 아키텍쳐
 
 ![Desktop View](/assets/img/post/helloShop/2021-01-07-application-archtecture.png)

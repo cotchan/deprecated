@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Test]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. @SpringBootTest, @Transactional 추가
 
 + `@SpringBootTest`: 스프링 컨테이너와 테스트를 함께 실행한다.

@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Test]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## Intro
 
 자바는 `JUnit`이라는 프레임워크로 테스트를 실행합니다.    

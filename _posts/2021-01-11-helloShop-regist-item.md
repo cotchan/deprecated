@@ -6,6 +6,10 @@ categories: [Project, HelloShop]
 tags: # [TAG]     # TAG names should always be lowercase
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. 폼 객체를 사용해서 화면 계층과 서비스 계층 분리
 
 ---

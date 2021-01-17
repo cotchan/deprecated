@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Basic]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. AOP가 필요한 상황 
 
 + 모든 메소드의 호출 시간을 측정하고 싶다면?

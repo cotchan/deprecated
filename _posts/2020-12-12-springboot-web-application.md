@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Basic]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ![Desktop View](/assets/img/post/spring-boot/2020-12-12-springboot-web-application.png)
 
 ---

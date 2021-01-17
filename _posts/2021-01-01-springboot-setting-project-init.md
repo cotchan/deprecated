@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Setting]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. 스프링 부트 스타터
 
 + [start.spring.io](https://start.spring.io/)

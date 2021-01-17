@@ -6,6 +6,10 @@ categories: [Project, HelloShop]
 tags: # [TAG]     # TAG names should always be lowercase
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 0. 구현 기능
   + 상품 등록
   + 상품 목록 조회

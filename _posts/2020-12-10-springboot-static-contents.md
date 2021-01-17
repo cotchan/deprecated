@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_Basic]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 스프링 부트에서 정적 컨텐츠를 내려주는 방법
 
 + [Spring-Boot Static Content](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-static-content)

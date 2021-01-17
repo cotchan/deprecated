@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_DB]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. 다운로드 & 압축풀기
 
 + [다운로드 페이지](http://h2database.com/html/main.html)

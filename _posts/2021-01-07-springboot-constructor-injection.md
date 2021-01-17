@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_DI]
 tags: [spring-boot]    
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. 생성자 주입방식
 
 ```java

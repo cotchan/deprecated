@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_JPA]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. Spring Data JPA란
 
 + `Spring Data JPA Framework`는 JPA를 편리하게 사용하도록, Spring이 JPA를 한 번 더 래핑한 기술입니다. 

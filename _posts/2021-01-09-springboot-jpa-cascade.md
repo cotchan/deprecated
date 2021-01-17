@@ -6,6 +6,10 @@ categories: [Spring-Boot, Spring-Boot_JPA]
 tags: [spring-boot] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ## 1. Cascade 옵션 적용 방법
 
 + **`Entity 클래스의 필드`에 Cascade 옵션을 적용해줍니다.**
