@@ -129,7 +129,9 @@ public class MemberServiceImpl implements MemberService {
 
 ---
 
-## 2-2. 클래스 다이어그램(변경 후)
+## 2-2. 클래스 다이어그램
+
++ AppConfig 적용 후(변경 후) 
 
 ![Desktop View](/assets/img/post/spring/2021-01-18-spring-ioc-appconfig1.png)
 
@@ -140,13 +142,16 @@ public class MemberServiceImpl implements MemberService {
 
 ---
 
-## 2-3. 회원 객체 인스턴스 다이어그램(변경 후)
+## 2-3. 회원 객체 인스턴스 다이어그램
+
++ AppConfig 적용 후(변경 후)
 
 ![Desktop View](/assets/img/post/spring/2021-01-18-spring-ioc-appconfig2.png)
 
 + `appConfig` 객체는 `memoryMemberRepository` 객체를 생성하고 그 참조값을 `memberServiceImpl`을 생성하면서 생성자로 전달합니다.
 + 클라이언트인 `memberServiceImpl` 입장에서 보면 의존관계를 마치 외부에서 주입해주는 것 같다고 해서 DI(의존성 주입)이라고 합니다.
 
+---
 
 ## 2-4. OrderServiceImpl - 생성자 주입
 
