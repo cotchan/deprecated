@@ -10,8 +10,6 @@ tags: [jpa]
 
 ---
 
-![Desktop View](/assets/img/post/jpa/2021-01-18-jpa-persist-context-1.png)
-
 ## INTRO
 
 EntityManagerFactory는 고객의 요청이 올 때 마다 EntityManager를 생성합니다.    
@@ -53,8 +51,8 @@ EntityManagerFactory는 고객의 요청이 올 때 마다 EntityManager를 생�
 
 ## 2-1. 비영속 상태
 
-+ 비영속 상태란 멤버 객체를 생성을 하고, 그리고 EntityManager에 아무것도 안하고 생성만 한 상태
-+ 즉 JPA와 전혀 관계가 없는 상태
++ 비영속 상태란 멤버 객체를 생성하고, 그리고 EntityManager에 아무것도 안하고 생성만 한 상태입니다.
++ **즉 JPA와 전혀 관계가 없는 상태**
 
 ![Desktop View](/assets/img/post/jpa/2021-01-18-jpa-persist-context-1.png)
 
@@ -63,10 +61,10 @@ EntityManagerFactory는 고객의 요청이 올 때 마다 EntityManager를 생�
 ## 2-2. 영속 상태
 
 + **EntityManager안에는 영속성 컨텍스트라는 게 있습니다.**
-1. 이렇게 멤버 객체를 생성한 다음에 EM를 얻어와서 EM에 persist를 해서 멤버 객체를 집어넣으면
-2. EntityManager 안에있는 영속성 컨텍스트안에 멤버 객체가 들어가면서 영속상태가 됩니다.
-3. 즉, EM 안에 있는 영속성 컨텍스트를 통해서 이 멤버가 관리된다는 뜻입니다.(이 때 DB에 저장되지 않습니다.)
-4. 쿼리가 날아가는 시점은 트랜잭션을 커밋하는 시점에 영속성 컨텍스트에 있는 애가 DB에 쿼리가 날아갑니다.
+1. 이렇게 멤버 객체를 생성한 다음에 EntityManager를 얻어온 다음 `persist`해서 멤버 객체를 집어넣으면
+2. EntityManager 안에 있는 영속성 컨텍스트 안에 멤버 객체가 들어가면서 영속상태가 됩니다.
+3. 즉, EntityManager 안에 있는 영속성 컨텍스트를 통해서 이 멤버가 관리된다는 뜻입니다.(이 때 DB에는 저장X)
+4. `쿼리가 날아가는 시점`은 `트랜잭션을 커밋하는 시점`에 영속성 컨텍스트에 있는 애가 DB에 쿼리로 날아갑니다.
 
 ![Desktop View](/assets/img/post/jpa/2021-01-18-jpa-persist-context-2.png)
 
@@ -80,7 +78,8 @@ EntityManagerFactory는 고객의 요청이 올 때 마다 EntityManager를 생�
 
 ## 3. 영속성 컨텍스트의 이점
 
-+ 쉽게 말해서 Application과 Database 사이에 중간 계층이 있는 것입니다.
++ 쉽게 말해 영속성 컨텍스트는 Application과 Database 사이에 중간 계층으로 있는 것입니다.
++ 이로 인한 이점들
   + **1차 캐시**
   + **동일성(identity) 보장**
   + **트랜잭션을 지원하는 쓰기 지연**
@@ -98,41 +97,41 @@ EntityManagerFactory는 고객의 요청이 올 때 마다 EntityManager를 생�
   + `Entity` - Entity객체 자체가 값이 됩니다.
 
 + key  = "member1"
-+ 값 = member 객체 자체가 값이 됩니다.
++ value = "member 객체" 자체가 VALUE가 됩니다.
 
 ![Desktop View](/assets/img/post/jpa/2021-01-18-jpa-persist-context-4.png)
 
 ---
 
 + 이렇게 되면 무슨 이점? 
-  + 조회할 때 내가 이렇게 저장을 해놓고 조회를 하면, JPA는 find로 조회를 하면서 어떤 시도를 하냐면
-  + 영속성 컨텍스트에서 1차 캐시를 먼저 뒤집니다. (DB를 뒤지는 게 아님)
+  + 조회할 때 내가 이렇게 저장을 해놓고 `조회를 하면`, JPA는 find로 조회를 하면서 어떤 시도를 하냐면
+  + **영속성 컨텍스트에서 1차 캐시를 먼저 뒤집니다. (DB를 뒤지는 게 아님)**
   + 그래서 값이 있네? 그러면 그냥 캐시에 있는 값을 그냥 조회해옵니다.
 
 ![Desktop View](/assets/img/post/jpa/2021-01-18-jpa-persist-context-5.png)
 
 ---
 
-+ BUT 1차 캐시에 없는 경우?
++ BUT `1차 캐시에 없는 경우`?
   + find로 찾음
   + 1차 캐시에 없음
-  + DB에서 조회를 합니다.
-  + DB에서 조회한 member2를 1차 캐시에 저장합니다.
-  + 그리고 member2를 반환합니다.
+  + **DB에서 조회**를 합니다.
+  + DB에서 조회한 member2를 **1차 캐시에 저장**합니다.
+  + **그리고 member2를 반환**합니다.
 
 ![Desktop View](/assets/img/post/jpa/2021-01-18-jpa-persist-context-6.png)
 
 ---
 
-+ EM은 데이터베이스 트랜잭션 단위로 보통 만들고, 트랜잭션이 종료될 때 EM을 종료시켜버립니다.
++ EntityManager는 보통 DB 트랜잭션 단위로 만들고, 트랜잭션이 종료될 때 EntityManager를 종료시킵니다.
 + 즉, 고객의 요청이 들어와서 비즈니스 로직이 끝나면 영속성 컨텍스트를 지워버립니다.
-+ 고객 여러명이 사용하며 공유하는 캐시는 아닙니다.
++ 1차 캐시는 고객 여러명이 사용하며 공유하는 캐시는 아닙니다.
 
 ---
 
 ## 3-2. 영속 엔티티의 동일성 보장
 
-+ **단, 같은 트랜잭션 안에서 실행을 해야 합니다.**
++ **단, `같은 트랜잭션 안에서` 실행을 해야 합니다.**
 + JPA는 마치 자바 컬렉션에서 가져오듯이 영속 엔티티의 동일성을 보장해줍니다. == 비교를 보장
 + 이게 가능한 이유는 위에 말한 1차 캐시에서 가져오기 때문에 가능합니다.
 
@@ -150,12 +149,12 @@ EntityManagerFactory는 고객의 요청이 올 때 마다 EntityManager를 생�
 
 ## 3-3-1. 쓰기 지연 내부 동작
 
-1. 순차적으로 넣었을 때, 영속성 컨텍스트안에는 1차 캐시 외에도 쓰기 지연 SQL 저장소라는 게 있습니다. 
+1. 순차적으로 넣었을 때, 영속성 컨텍스트안에는 1차 캐시 외에도 `쓰기 지연 SQL 저장소`라는 게 있습니다. 
 2. 그래서 memberA를 persist로 넣으면 memberA가 1차 캐시에 들어가면서, JPA가 이 엔티티를 분석해서 INSERT 쿼리를 생성합니다.
 3. 그래서 쓰기 지연 SQL 저장소에 쌓아놓습니다.
 4. 그리고 memberB를 persist 하면, 이 때도 memberB를 1차 캐시에 넣습니다. 
 5. 그리고 INSERT SQL을 생성해서 쓰기 지연 SQL 저장소에 차곡차곡 쌓습니다.
-6. 현재 A,B 둘 다 쌓여있습니다.
+6. 현재 쓰기 지연 SQL 저장소에 A,B 둘 다 쌓여있습니다.
 7. 그리고 트랜잭션을 커밋하는 시점에 쓰기 지연 SQL저장소에 있던 애들이 플러쉬가 되면서 DB로 날아갑니다.
 8. 그리고 실제 데이터베이스로 트랜잭션이 커밋됩니다. 이 메커니즘으로 돌게 됩니다.
 
@@ -202,5 +201,3 @@ EntityManagerFactory는 고객의 요청이 올 때 마다 EntityManager를 생�
 
 + 출처
     + [자바 ORM 표준 JPA 프로그래밍 - 기본편](https://www.inflearn.com/course/ORM-JPA-Basic)
-    + [실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1/dashboard)
-    + [실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-API%EA%B0%9C%EB%B0%9C-%EC%84%B1%EB%8A%A5%EC%B5%9C%EC%A0%81%ED%99%94/dashboard)
