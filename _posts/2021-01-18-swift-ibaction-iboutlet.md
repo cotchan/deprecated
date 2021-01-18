@@ -2,7 +2,7 @@
 title: Swift) IBAction, IBOutlet 
 author: cotchan
 date: 2021-01-18 16:32:21 +0800
-categories: [Swift, Swift_Basic]
+categories: [Swift, Swift_UI]
 tags: [swift]   
 ---
 
