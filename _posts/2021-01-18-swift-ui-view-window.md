@@ -1,9 +1,9 @@
 ---
-title: TITLE
+title: Swift) View, Window
 author: cotchan
-date: 2021-01-18 00:00:00 +0800
-categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [TAG]   
+date: 2021-01-18 17:00:21 +0800
+categories: [Swift, Swift_UI]
+tags: [swift]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
@@ -11,5 +11,30 @@ tags: [TAG]
 
 ---
 
+## 1. View, Window 요약
+
++ **`View` - `그림`에 해당**
++ **`Window` - `액자`에 해당**
++ 액자안에 액자는 담지 못해도, 한 액자 안에 여러개의 그림이 들어갈 수 있고, 여러 그림을 콜라주해서 한 그림을 만들 수 있습니다.
+
+---
+
+## 2. View란?
+
++ 뷰는 UIView 클래스의 인스턴스로, **윈도우 위에서 컨텐츠를 보여줍니다.**
++ 즉, 화면에 나타나는 거의 모든 요소를 뷰의 컨텐츠라고 봐도 무방합니다.
+  + 뷰를 원하는 **UI를 만들기 위해 쌓아올려야 하는 블럭**으로 봐도 무방합니다.
+
+---
+
+## 3. Window란?
+
++ UIWindow는 **화면에 나타나는 View를 묶고, UI의 배경을 제공하고, 이벤트 처리행동을 제공하는 객체입니다.**
++ 화면에 표시되는 View들은 모두 Window로 묶여있습니다. 
++ 뷰와 윈도우 모두 코드를 통해 작성할 수도 있지만, `Interface Builder` 기능을 사용해 작성하는 방법이 더욱 간단합니다.
+
+
+---
+
 + 출처
-  + []()
+  + [[Swift 기초 개념] View, Window](https://etst.tistory.com/79?category=861730)
