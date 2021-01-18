@@ -1,7 +1,7 @@
 ---
 title: JPA) 엔티티 매핑1. 객체와 테이블 매핑
 author: cotchan 
-date: 2021-01-14 04:55:21 +0800 
+date: 2021-01-19 05:35:21 +0800 
 categories: [JPA, JPA_Basic]
 tags: [jpa] 
 ---
@@ -10,11 +10,7 @@ tags: [jpa]
 
 ---
 
-![Desktop View](/assets/img/post/jpa/2020-12-10-spring-boot-how-to-build.png)
-
----
-
-## 엔티티 매핑
+## 1. 엔티티 매핑
 
 1. **객체와 테이블 매핑**
   + `@Entity`, `@Table`
@@ -27,7 +23,7 @@ tags: [jpa]
 
 ---
 
-## @Entity
+## 2. @Entity
 
 ```java
 @Entity
@@ -36,7 +32,7 @@ public class Member {
 }
 ```
 
-+ @Entity가 붙은 클래스는 JPA가 관리합니다. 
++ **@Entity가 붙은 클래스는 JPA가 관리합니다.** 
 
 + JPA를 사용해서 테이블과 매핑할 클래스는 `@Entity`가 필수입니다.
 
@@ -48,20 +44,18 @@ public class Member {
 
 ---
 
-@Entity 속성 
++ **@Entity 속성**(크게 중요한 건 X)
 
-별로 중요한 건 X
++ 그냥 Name이라는 속성을 지정할 수 있습니다. 
++ @Entity의 `기본값`은 **현재 클래스 이름과 동일한 이름을 사용**합니다.
++ @Entity Name 속성을 사용해야 하는 경우는 예를 들어, 다른 패키지에 같은 이름의 클래스가 있는 경우 구분을 하기 위해 사용합니다. 
++ 그냥 @Entity의 기본값을 쓰는 게 바람직합니다.
 
-그냥 Name이라는 속성을ㅈ ㅣ정할 수 있습니다. 기본값은 현재 클래스 이름고 ㅏ동일한 이름을 사용합니다.
-
-예를 들어, 다른 패키지에 같은 이름의 클래스가 있는 경우, 하나는 다른 이름을
-
-JPA가 내부적으로 구분하는 이름입니다. 그ㅑㄴㅇ 기본값을 써야합니다.
-
+![Desktop View](/assets/img/post/jpa/2021-01-19-jpa-entity-maaping-02.png)
 
 ---
 
-## @Table
+## 3. @Table
 
 + **매핑을 할 때 `TABLE명을 바꾸고 싶은 경우`에 사용합니다.**
 + 아래와 같이 @Table 속성을 주면 `'MBR'`이라는 테이블과 매핑을 합니다.
