@@ -55,11 +55,11 @@ private Long id;
 
 ```java
 //Hibernate
-    create table Member (
-       id bigint not null auto_increment,
-        name varchar(255) not null,
-        primary key (id)
-    ) engine=MyISAM
+create table Member (
+    id bigint not null auto_increment,
+    name varchar(255) not null,
+    primary key (id)
+) engine=MyISAM
 ```
 
 ![Desktop View](/assets/img/post/jpa/2021-01-20-jpa-pk-mapping-02.png)
@@ -68,11 +68,11 @@ private Long id;
 
 ## 2-2-1. IDENTITY 전략 추가사항
 
-+ IDENTITY 전략은 내가 ID에 값을 넣으면 안됩니다.
++ **IDENTITY 전략은 내가 ID에 값을 넣으면 안됩니다.**
 + 즉, `null`로 값을 넘기면 그때 DB에서 insert로 값을 셋팅해줍니다.
-+ 그러면 뭐가 문제냐면 `ID값을 아는 시점`은 `DB에 값이 들어가는 시점`에 ID값을 알 수 있습니다.
++ 이 방식이 문제가 되는 건 `ID값을 아는 시점`은 `DB에 값이 들어가는 시점`에 ID값을 알 수 있습니다.
 
-+ **근데 영속성 컨텍스트에서 관리가 되려면 무조건 PK값이 있어야 합니다.**
++ **그런데 영속성 컨텍스트에서 관리가 되려면 무조건 PK값이 있어야 합니다.**
   + 그래서 어떤 제약이 생기냐면 em.persist를 호출한 시점에 바로 DB에 insert 쿼리를 날려버립니다.
     + commit하는 시점에 insert 쿼리가 나가는 원칙과는 달라집니다.
   + 결론은 IDENTITY 전략에서는 모아서 INSERT하는 게 불가능합니다. (단점)
@@ -96,6 +96,24 @@ try {
 }
 ```
 
++ 코드 실행 결과
+  + **트랜잭션 커밋 이전 시점에 insert 쿼리가 나가는 것을 볼 수 있습니다.**
+  + 이 insert 쿼리는 `em.persist`를 호출한 시점입니다.  
+
+```java
+//코드 실행 결과
+
+=====================
+Hibernate: 
+    /* insert hellojpa.Member
+        */ insert 
+        into
+            Member
+            (id, name) 
+        values
+            (null, ?)
+=====================
+```
 
 ---
 
