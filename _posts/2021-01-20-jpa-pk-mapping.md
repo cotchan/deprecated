@@ -1,7 +1,7 @@
 ---
-title: JPA) 
+title: JPA) 엔티티 매핑3. 기본키(PK) 매핑 
 author: cotchan 
-date: 2021-01-14 00:00:21 +0800 
+date: 2021-01-20 04:30:21 +0800 
 categories: [JPA, JPA_Basic]
 tags: [jpa] 
 ---
@@ -33,9 +33,9 @@ tags: [jpa]
 + AUTO는 DB방언에 따라서 TABLE, SEQUENCE, IDENTITY 중 하나가 자동으로 선택됩니다.
 
 ```java
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) 
-    private Long id;
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO) 
+private Long id;
 ```
 
 ---
@@ -47,10 +47,10 @@ tags: [jpa]
 + 대표적인 예가 Mysql의 AUTO_INCREMENT
 
 ```java
-    //PK 매핑
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//PK 매핑
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
 ```
 
 ```java
@@ -70,7 +70,7 @@ tags: [jpa]
 
 + IDENTITY 전략은 내가 ID에 값을 넣으면 안됩니다.
 + 즉, `null`로 값을 넘기면 그때 DB에서 insert로 값을 셋팅해줍니다.
-+ 그러면 뭐가 문제냐면 ID값을 아는 시점이 DB에 값이 들어가는 시점에 ID값을 알 수 있습니다.
++ 그러면 뭐가 문제냐면 `ID값을 아는 시점`은 `DB에 값이 들어가는 시점`에 ID값을 알 수 있습니다.
 
 + **근데 영속성 컨텍스트에서 관리가 되려면 무조건 PK값이 있어야 합니다.**
   + 그래서 어떤 제약이 생기냐면 em.persist를 호출한 시점에 바로 DB에 insert 쿼리를 날려버립니다.
@@ -78,22 +78,22 @@ tags: [jpa]
   + 결론은 IDENTITY 전략에서는 모아서 INSERT하는 게 불가능합니다. (단점)
 
 ```java
-    try {
+try {
 
-        Member member = new Member();
-        member.setUsername("C");
+    Member member = new Member();
+    member.setUsername("C");
 
-        System.out.println("=====================");
-        em.persist(member);
-        System.out.println("=====================");
+    System.out.println("=====================");
+    em.persist(member);
+    System.out.println("=====================");
 
-        tx.commit();
+    tx.commit();
 
-    } catch (Exception e) {
-        tx.rollback();
-    } finally {
-        em.close();
-    }
+} catch (Exception e) {
+    tx.rollback();
+} finally {
+    em.close();
+}
 ```
 
 
@@ -110,9 +110,9 @@ tags: [jpa]
   + 시퀀스 오브젝트를 통해 값을 가져오고 난 후 값을 셋팅합니다.
 
 ```java
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+@Id
+@GeneratedValue(strategy = GenerationType.SEQUENCE)
+private Long id;
 ```
 
 ![Desktop View](/assets/img/post/jpa/2021-01-20-jpa-pk-mapping-03.png)
@@ -151,7 +151,7 @@ Hibernate:
 
 1. 시퀀스에서 값을 얻어와서 member에 Id값을 넣어줍니다.
 2. 그리고 영속성 컨텍스트에 넣어줍니다.
-  + IDENTITY 전략과 다르게 이 시점에 insert 쿼리가 나가지는 않습니다.
+  + **IDENTITY 전략과 다르게 이 시점에 insert 쿼리가 나가지는 않습니다.**
 
 + 즉 시퀀스 방식은 버퍼링하는 게 가능합니다.
 
@@ -183,26 +183,26 @@ public class Member {
 ```java
 //SEQUENCE 전략 사용
 
-    Member member1 = new Member();
-    member1.setUsername("A");
+Member member1 = new Member();
+member1.setUsername("A");
 
-    Member member2 = new Member();
-    member2.setUsername("B");
+Member member2 = new Member();
+member2.setUsername("B");
 
-    Member member3 = new Member();
-    member3.setUsername("C");
+Member member3 = new Member();
+member3.setUsername("C");
 
-    System.out.println("=====================");
+System.out.println("=====================");
 
-    //DB SEQ = 1 (첫 번째 호출) | APP SEQ = 1
-    //DB SEQ = 51 (두 번째 호출) | APP SEQ = 2
-    //DB SEQ = 51 | APP SEQ = 3
-    em.persist(member1);    //1, 51
-    em.persist(member2);    //Memory에서 호출
-    em.persist(member3);    //Memory에서 호출
-    System.out.println("=====================");
+//DB SEQ = 1 (첫 번째 호출) | APP SEQ = 1
+//DB SEQ = 51 (두 번째 호출) | APP SEQ = 2
+//DB SEQ = 51 | APP SEQ = 3
+em.persist(member1);    //1, 51
+em.persist(member2);    //Memory에서 호출
+em.persist(member3);    //Memory에서 호출
+System.out.println("=====================");
 
-    tx.commit();
+tx.commit();
 ```
 
 
@@ -234,11 +234,11 @@ public class Member {
 
 ```java
 //SQL
-    create table MY_SEQUENCES (
-       sequence_name varchar(255) not null,
-        next_val bigint,
-        primary key (sequence_name)
-    )
+create table MY_SEQUENCES (
+   sequence_name varchar(255) not null,
+    next_val bigint,
+    primary key (sequence_name)
+)
 ```
 
 ![Desktop View](/assets/img/post/jpa/2021-01-20-jpa-pk-mapping-05.png)
@@ -253,17 +253,17 @@ public class Member {
 
 + **기본 키 제약 조건**
   1. `null X`
-  2. `유일해야` 합니다.
+  2. `유일해야 합니다.`
   3. **`변하면 안 된다.`**
     + 사실 이 조건을 찾기가 가장 까다롭습니다.
     + Application 생애 동안 절대로 변해서는 안 됩니다.
     + 미래까지 이 조건을 만족하는 자연키는 찾기가 어렵습니다. 그러므로 대체키를 사용하는 게 낫습니다.
-      + 대체키 - 비즈니스와 전혀 상관없는 키(@GeneratedValue나 난수 등)
-    + **예를 들어 주민등록번호도 기본 키로 적절하지 않습니다.**
+      + 대체키: 비즈니스와 전혀 상관없는 키(@GeneratedValue나 난수 등)
+    + 예를 들어 주민등록번호도 기본 키로 적절하지 않습니다.
 
 + **권장하는 방법**
   1. Type은 `Long`형
-  2. 대체키 사용 - (UUID 등)
+  2. 대체키 사용: `UUID` 등
   3. 키 생성전략 활용
   + 즉, `AUTO_INCREMENT`나 `Sequence Object` 둘 중에 하나 사용을 권장
 
