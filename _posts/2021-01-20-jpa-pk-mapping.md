@@ -23,7 +23,12 @@ tags: [jpa]
 
 ---
 
-## 2. 자동할당
+## 2. PK 자동할당 방법
+
+1. AUTO 전략
+2. IDENTITY 전략
+3. SEQUENCE 전략
+4. TABLE 전략
 
 ---
 
