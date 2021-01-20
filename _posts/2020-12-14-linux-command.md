@@ -161,7 +161,36 @@ $ sudo kill -2 PROCESS_ID
 $ sudo kill -9 PROCESS_ID     
 ```
 
+---
 
+## 7. echo (텍스트/문자열 표시)
+
++ Linux의 echo 명령어는 **인수로 전달되는 `텍스트/문자열`을 표시`하는데 사용**됩니다.
++ **이 명령어는 쉘 스크립트와 배치 파일에서 주로 현재 상태를 화면이나 파일로 출력하는데 사용되는 내장 명령어입니다.**
+
+```bash
+문법:
+
+echo [option] [string]
+
+텍스트나 문자열을 보여줍니다.
+```
+
+---
+
+## 7-1. echo [문자열]
+
++ 인수로 전달되는 텍스트/문자열을 출력합니다.
+
+![Desktop View](/assets/img/post/linux/2020-12-14-linux-echo-01.png)
+
+---
+
+## 7-2. echo *
+  
++ 이 명령어는 ls command와 유사하며 모든 파일/폴더를 출력합니다.
+
+![Desktop View](/assets/img/post/linux/2020-12-14-linux-echo-02.png)
 
 ---
 + 출처
@@ -171,3 +200,5 @@ $ sudo kill -9 PROCESS_ID
 	+ [cURL 소개, HTTP GET, POST 호출 방법](https://blog.naver.com/PostView.nhn?blogId=wideeyed&logNo=221350638501&proxyReferer=https:%2F%2Fwww.google.com%2F)
 	+ [curl GET/POST/DELETE 전송](https://developyo.tistory.com/11)
 	+ [Unix, Linux 에서 kill 명령어로 안전하게 프로세스 종료 시키는 방법](https://www.lesstif.com/system-admin/unix-linux-kill-12943674.html)
+	+ [Linux, Ubuntu : echo 명령어 : 사용법, 옵션, 예제](https://jjeongil.tistory.com/997)
+	+ [echo command in Linux with Examples](https://www.geeksforgeeks.org/echo-command-in-linux-with-examples/)
