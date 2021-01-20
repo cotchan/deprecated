@@ -2,7 +2,7 @@
 title: JPA_SUMMARY) 연관관계 매핑1. 단방향 연관 관계
 author: cotchan 
 date: 2021-01-21 08:30:21 +0800 
-categories: [JPA, JPA_Basic]
+categories: [JPA, JPA_Summary]
 tags: [jpa] 
 ---
 
