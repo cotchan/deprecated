@@ -6,6 +6,10 @@ categories: [JPA, JPA_Basic]
 tags: [jpa] 
 ---
 
++ **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
+
+---
+
 ![Desktop View](/assets/img/post/jpa/2020-12-10-spring-boot-how-to-build.png)
 
 
