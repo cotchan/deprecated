@@ -21,7 +21,7 @@ tags: [jpa]
   + **Member와 Team이 양쪽으로 `서로 참조할 수 있게` 만드는 것을 양방향 매핑이라고 합니다.**
   + 지금 Member => Team은 가능하지만 Team => Member는 불가능합니다.
   + **여기서 중요한 건 테이블 연관관계는 바뀐 점이 하나도 없습니다.**
-    + `단방향` 연관관계에서나 ` 양방향` 연관관계에서나 테이블의 연관관계는 동일합니다.
+    + `단방향` 연관관계에서나 `양방향` 연관관계에서나 테이블의 연관관계는 동일합니다.
       + 왜냐면 `JOIN`만 하면 알 수 있기 때문입니다.
     + 여기서 중요한 건 테이블에서는 단방향, 양방향의 개념이 없습니다(방향의 개념이 X)
     + **외래키 하나로 둘 다 처리가 가능합니다.**
@@ -29,7 +29,7 @@ tags: [jpa]
 ![Desktop View](/assets/img/post/jpa/2021-01-21-jpa-association-mapping-04.png)
 
 + **하지만 객체는 다릅니다.**
-  + 객체는 Team에다가 `List members`를 넣어줘야 양방향 매핑이 가능합니다.
+  + 객체는 Team에다가 새로운 필드로 `List members`를 넣어줘야 양방향 매핑이 가능합니다.
   + 이게 테이블의 외래키와 객체의 참조의 가장 큰 차이점입니다.
 
 ---
@@ -53,7 +53,9 @@ public class Member {
     @ManyToOne 
     @JoinColumn(name = "TEAM_ID") 
     private Team team;  
+
     //...
+}
 ```
 
 ---
@@ -77,6 +79,8 @@ public class Team { 
 }
 ```
 
+---
+
 + 이제는 양방향 매핑이므로 반대방향으로 객체 그래프 탐색이 가능합니다.
 
 ```java
@@ -97,8 +101,8 @@ int memberSize = findTeam.getMembers().size();
 
 ## 4. mappedBy의 정체
 
-+ 여기서 mappedBy의 의문
-  + 굳이 필요한 값? 
++ 여기서 mappedBy에 대해 드는 의문
+  + mappedBy는 굳이 필요한 값? 
 
 ```java
 @Entity
@@ -108,6 +112,9 @@ public class Team {
 
     @OneToMany(mappedBy = "team")
     private List<Member> members = new ArrayList<>();
+
+    //...
+}
 ```
 
 ![Desktop View](/assets/img/post/jpa/2021-01-21-jpa-association-mapping-05.png)
@@ -140,7 +147,7 @@ public class Team {
 
 ## 4-3. 테이블의 양방향 연관관계
 
-+ 테이블은 `외래 키 하나`로 두 테이블의 연관관계를 관리합니다.
++ 테이블은 `외래키` 하나로 두 테이블의 연관관계를 관리합니다.
 
 ![Desktop View](/assets/img/post/jpa/2021-01-21-jpa-association-mapping-08.png)
 
@@ -148,7 +155,7 @@ public class Team {
 
 ## 4-4. 둘의 차이에서 오는 딜레마
 
-+ 객체를 두 방향으로 만들어놓았습니다. (참조가 2개)
++ 양방향 관계 때문에 객체를 두 방향으로 만들어놓았습니다. (참조가 2개)
   + 그러면 우리는 객체의 참조 포인트 두 개중에 어떤 걸로 FK를 매핑??
   + **즉, 둘 중에 어떤 값을 UPDATE할 때 테이블의 FK값이 업데이트되게 해야하는지 문제가 발생합니다.**
     1. Member 객체의 team 값을 바꿀 때 FK 갱신?
@@ -173,7 +180,7 @@ public class Team {
 
 ## 4-6. 그러면 누구를 주인으로?
 
-+ 답은 정해져 있습니다. **테이블 형태 기준으로 `외래 키를 필드로 가지고 있는 곳`을 주인으로 정합니다.**
++ 답은 정해져 있습니다. **테이블 형태 기준으로 `외래키를 필드로 가지고 있는 곳`을 주인으로 정합니다.**
   + Member에서는 이미 @JoinColumn으로 TEAM_ID와 매핑을 해두었습니다.
   + **`mappedBy`가 적힌 곳은 `읽기만` 하는 것입니다.**
   + DB 테이블로 따져서 `다`쪽이 연관관계의 주인이 되면 됩니다.
@@ -223,7 +230,7 @@ public class Team {
 + 연관관계의 주인은 DB 테이블로 따져서 `다`쪽이 연관관계의 주인이 되면 됩니다.
   + 즉 `외래키`를 필드로 가지고 있는 곳을 의미합니다.
   + 비즈니스 로직과는 크게 무관한 내용
-  + 그냥 `자동차 - `자동차 바퀴`에서 자동차 바퀴가 연관관계의 주인이라는 것입니다.
+  + 그냥 `자동차` - `자동차 바퀴`에서 자동차 바퀴가 연관관계의 주인이라는 것입니다.
 
 ---
 
