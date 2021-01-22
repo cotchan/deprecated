@@ -19,6 +19,7 @@ tags: [jpa]
 + **연관관계의 주인에 값을 입력하지 않음**
 
 ```java
+//Member가 연관관계의 주인인데 Team_ID값 셋팅 X
 Member member = new Member();
 member.setUsername("member1");
 em.persist(member);
@@ -54,11 +55,13 @@ tx.commit();
 
 ---
 
+![Desktop View](/assets/img/post/jpa/2021-01-21-jpa-association-mapping-14.png)
+
+---
+
 ## 1-3. BASE CASE
 
 + **BEST CASE는 항상 양쪽에 모두 값을 입력하는 게 좋습니다.**
-
-![Desktop View](/assets/img/post/jpa/2021-01-21-jpa-association-mapping-14.png)
 
 + **양쪽에 값을 셋팅해주지 않으면 두 군데에서 문제가 발생합니다.**
   
@@ -72,14 +75,11 @@ tx.commit();
 
 + **결론은 양방향 연관관계 매핑을 사용한다면 `양쪽 모두에 값을 셋팅`해주는게 바람직합니다.**
 
-
----
-
-![Desktop View](/assets/img/post/jpa/2021-01-21-jpa-association-mapping-15.png)
-
 ---
 
 ## 2. 양방향 연관관계 사용 시 주의점
+
+![Desktop View](/assets/img/post/jpa/2021-01-21-jpa-association-mapping-15.png)
 
 ---
 
@@ -117,11 +117,15 @@ public class Member {
 }
 ```
 
+---
+
 + **추가로, 연관관계 편의 메서드나 JPA 상태를 변경하는 코드는 `SETTER 사용을 지양`합시다.**
-  + 단 이것 또한 `둘 중에 한군데에서만` 셋팅하는 것이 바람직합니다.
+  + SETTER를 연관관계 편의 메서드로 사용하는 게 아니라 별도로 함수명을 지어서 사용합니다.
+  + 또한 연관관계 편의 메서드도 `둘 중에 한군데에만` 셋팅하는 것이 바람직합니다.
 
 ```java
 //case1.
+//Member.changeTeam(team) 메서드로 추가하기
 @Entity
 public class Member {
     public void changeTeam(Team team) {
@@ -131,7 +135,7 @@ public class Member {
 }
 
 //case2.
-//또는 team.addMember(member) 메서드로 추가하기
+//또는 Team.addMember(member) 메서드로 추가하기
 @Entity
 public class Team {
     public void addMember(Member member) {
@@ -195,9 +199,9 @@ public class Team {
 + 비즈니스 로직을 기준으로 연관관계 주인을 선택하면 안됩니다.
   + 자동차 - 자동차 바퀴 관계에서 비즈니스 로직적으로 자동차가 더 중요하더라도, 연관관계 주인은 자동차 바퀴입니다.
 
-+ **연관관계의 주인은 `외래 키의 위치를 기준`으로 정해야 합니다.**
++ **연관관계의 주인은 `외래키의 위치를 기준`으로 정해야 합니다.**
   + 이러면 헷갈일 일이 없습니다.
-  + DB 설계를 생각했을 때 '어? 이 테이블에 외래키가 들어가네?' 그러면 얘를 연관관계 주인으로 정하면 됩니다.
+  + DB 설계를 생각했을 때 **'어? 이 테이블에 외래키가 들어가네?'** 그러면 얘를 연관관계 주인으로 정하면 됩니다.
     + 그 과정에서 반대쪽에도 값을 셋팅해야한다면 `연관관계 편의 메서드`를 사용합니다.
 
 ---
