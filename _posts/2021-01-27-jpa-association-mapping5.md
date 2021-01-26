@@ -176,7 +176,7 @@ public class Item {
 }
 ```
 
-+ 그러면 아래와 같이 생성되는 걸 볼 수 있습니다.
++ 그러면 테이블이 아래와 같이 생성되는 걸 볼 수 있습니다.
 
 ```java
 //SQL
@@ -190,7 +190,7 @@ create table CATEGORY_ITEM (
 
 ## 3. 기타 참고사항
 
-+ **테이블의 N:M 관계는 중간 테이블을 이용해서 1:N, N:1로 매핑해줍니다.**
++ **테이블의 N:M 관계는 `중간 테이블을 이용`해서 1:N, N:1로 매핑해줍니다.**
 + 실전에서는 @ManyToMany 사용 X
 
 ![Desktop View](/assets/img/post/jpa/2021-01-27-jpa-association-mapping5-01.png)
