@@ -18,7 +18,7 @@ tags: [jpa]
   + `주 테이블`에 외래 키
   + `대상 테이블`에 외래 키
 
-+ **외래 키에 데이터베이스 유니크(UNI) 제약조건 추가가 되어야 일대일 관계가 됩니다.**
++ **외래 키에 데이터베이스 `유니크(UNI) 제약조건` 추가가 되어야 일대일 관계가 됩니다.**
 
 ---
 
@@ -32,7 +32,7 @@ tags: [jpa]
 
 ## 1-2. 코드 예시
 
-+ 멤버가 Locker를 가지는 경우
++ **멤버가 Locker를 가지는 경우**
   + 아래와 같이 코드를 작성하면 일대일 관계가 끝납니다.
 
 ```java
@@ -54,7 +54,8 @@ public class Member {
 
 ## 2. 양방향으로의 전환을 원하는 경우
 
-+ ex. LOCKER도 Member가 누군지 알고싶은 경우
++ ex. Locker도 Member가 누군지 알고싶은 경우
++ ex. Locker에서도 Member를 참조하고 싶은 경우
 
 ![Desktop View](/assets/img/post/jpa/2021-01-26-jpa-association-mapping-1to1_02.png)
 
