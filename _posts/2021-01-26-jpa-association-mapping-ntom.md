@@ -23,11 +23,13 @@ tags: [jpa]
 
 ## 2. 다대다 매핑 - 객체
 
-+ **객체는 컬렉션을 사용해서 객체 2개로 다대다 관계를 나타낼 수 있습니다.**
++ **하지만 객체는 컬렉션을 사용해서 객체 2개로 다대다 관계를 나타낼 수 있습니다.**
 
 ![Desktop View](/assets/img/post/jpa/2021-01-26-jpa-association-mapping-ntom_02.png)
 
 ---
+
+## 3. 다대다 매핑 방법
 
 + @ManyToMany 사용
 + @JoinTable로 연결 테이블을 지정합니다.
@@ -35,19 +37,20 @@ tags: [jpa]
 
 ---
 
-## 3. 다대다 매핑의 한계
+## 3-1. 다대다 매핑의 한계
 
 + 편리해보이지만 실무에서 사용하지 않습니다.
 + 연결 테이블이 단순히 연결만 하고 끝나지 않습니다.
 + 주문시간, 수량 같은 데이터가 들어올 수 있습니다.
   + **그러나 중간테이블에는 오직 매핑 정보만 들어갈 수 있고, 추가정보를 넣을 수 없습니다.** 
+  + 중간테이블의 커스터마이징 한계로 추가 가공을 하기 위해서는 엄한 곳에서 쿼리가 나가게 됩니다.
 
 ---
 
 ## 4. 다대다 한계 극복 방법
 
 + **연결 테이블용 엔티티 추가 (연결 테이블을 엔티티로 승격)**
-+ `@ManyToMany` -> `@OneToMany`, `@ManyToOne`
++ `@ManyToMany` => `@OneToMany`, `@ManyToOne`
 
 ![Desktop View](/assets/img/post/jpa/2021-01-26-jpa-association-mapping-ntom_03.png)
 
@@ -55,7 +58,7 @@ tags: [jpa]
 
 ## 4-1. 코드 예시
 
-+ MemberProduct.java
++ MemberProduct.java **(연결 테이블용 엔티티)**
 
 ```java
 @Entity
