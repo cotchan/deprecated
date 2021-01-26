@@ -50,7 +50,7 @@ tags: [jpa]
 
 ## 4. 연관 관계 설계 변경
 
-+ **중요한 변동사항은 ORDER_ITEM이 FK값을 그대로 가지고 있는 게 아니라 객체를 가지고 있는 형태로 바꾼 것입니다.**
++ **중요한 변동사항은 ORDER_ITEM이 FK값을 그대로 가지고 있는 게 아니라 `객체를 가지고 있는 형태`로 바꾼 것입니다.**
 
 ![Desktop View](/assets/img/post/jpa/2021-01-25-jpa-association-mapping4-02.png)
 
@@ -120,8 +120,7 @@ public class OrderItem {
 ---
 
 + Member 수정 (Order와 양방향 연관관계로)
-
-+ Member에서도 자신의 주문 리스트를 확인할 수 있도록 위 사진처럼 필드에 `orders: List`를 추가합니다.
+  + Member에서도 자신의 주문 리스트를 확인할 수 있도록 위 사진처럼 필드에 `orders: List`를 추가합니다.
 
 ```java
 @Entity
