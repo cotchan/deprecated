@@ -12,7 +12,7 @@ tags: [jpa]
 
 ## 1. 연관관계 매핑 수정
 
-+ 먼저 가장 중요한 건, 단방향 매핑으로 모든 관계를 끝내는 것입니다.
++ **먼저 가장 중요한 건, `단방향 매핑`으로 모든 관계를 끝내는 것입니다.**
   + 단방향 매핑이 더 바람직합니다.
 
 + 설계할 때는 단방향으로 모든 관계를 마무리 짓는 것이 바람직합니다.
@@ -62,6 +62,17 @@ tags: [jpa]
 @Entity
 @Table(name = "ORDERS")
 public class Order {
+
+    /**
+     * Order 입장에서 Member는 ManyToOne
+     * Member입장에서는 하나의 회원이 여러개의 주문을 날리니까 일대다
+     * 반대로 Order 입장에서 나를 주문하는 회원은 1명이므로는 다대일
+     */
+    @ManyToOne
+    @JoinColumn(name = "MEMBER_ID")
+    private Member member;
+
+//수정한 부분
     /**
      * Order와 OrderItem 사이의 양방향 관계를 설정해주기 위함
      *
