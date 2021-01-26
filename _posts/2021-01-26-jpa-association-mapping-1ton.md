@@ -10,6 +10,12 @@ tags: [jpa]
 
 ---
 
+## 일대다[1:N] 매핑
+
+![Desktop View](/assets/img/post/jpa/2021-01-26-jpa-association-mapping-1ton_03.png)
+
+---
+
 ## 1. 일대다[1:N] 단방향
 
 + 연관관계의 주인이 `일`인 경우

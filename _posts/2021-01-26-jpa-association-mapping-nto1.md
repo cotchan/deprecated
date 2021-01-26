@@ -62,6 +62,8 @@ tags: [jpa]
 
 ## 2. 다대일[N:1] 매핑
 
+![Desktop View](/assets/img/post/jpa/2021-01-25-jpa-association-mapping-nto1_03.png)
+
 ---
 
 ## 2-1. 다대일[N:1] - 단방향
