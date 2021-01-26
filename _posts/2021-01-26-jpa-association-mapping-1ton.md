@@ -99,6 +99,7 @@ tx.commit();
 ---
 
 + 위 코드를 실행했을 때 생성되는 JPA Query 
+  + 문제가 되는 건 Team 엔티티의 필드를 갱신했는데 Member 테이블에서 UPDATE문이 나간 것입니다.
 
 ```java
 Hibernate: 
@@ -140,7 +141,7 @@ Hibernate:
   + **엔티티가 관리하는 외래 키가 다른 테이블에 있습니다.**
   + 연관관계 관리를 위해 추가로 UPDATE_SQL을 실행합니다.
   
-+ **그러므로 일대다 단방향 매핑보다는 `다대일 양방향 매핑을 사용`하는 게 낫습니다.**
++ **그러므로 일대다 단방향 매핑이 필요하다면 `다대일 양방향 매핑을 사용`하는 게 낫습니다.**
 
 ---
 
@@ -170,6 +171,7 @@ public class Member {
     @Column(name = "USERNAME")
     private String username;
 
+    //아래 필드가 추가되었습니다.
     @ManyToOne
     @JoinColumn(name="TEAM_ID", insertable = false, updatable = false)
     private Team team;
