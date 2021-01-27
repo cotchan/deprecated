@@ -41,7 +41,7 @@ tags: [jpa]
 
 ```java
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) //조인 전략
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) //싱글 테이블 전략
 @DiscriminatorColumn    //DTYPE COLUMN을 보여줍니다.
 public abstract class Item extends BaseEntity {
 
@@ -57,7 +57,7 @@ public abstract class Item extends BaseEntity {
 
 ---
 
-+ **Album**
++ **Album Entity**
 
 ```java
 @Entity
@@ -70,7 +70,7 @@ public class Album extends Item {
 
 ---
 
-+ **Book**
++ **Book Entity**
 
 ```java
 @Entity
@@ -83,7 +83,7 @@ public class Book extends Item {
 
 ---
 
-+ **Movie**
++ **Movie Entity**
 
 ```java
 @Entity
