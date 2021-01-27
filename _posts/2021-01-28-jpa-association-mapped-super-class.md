@@ -1,5 +1,5 @@
 ---
-title: JPA) 연관관계 매핑5. @MappedSuperclass
+title: JPA) 연관관계 매핑4. @MappedSuperclass
 author: cotchan 
 date: 2021-01-28 04:30:21 +0800 
 categories: [JPA, JPA_Basic]

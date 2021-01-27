@@ -1,7 +1,7 @@
 ---
 title: JPA) 연관관계 매핑4. 상속관계 매핑으로 코드 수정 
 author: cotchan 
-date: 2021-01-28 00:00:21 +0800 
+date: 2021-01-28 08:30:21 +0800 
 categories: [JPA, JPA_Basic]
 tags: [jpa] 
 ---
