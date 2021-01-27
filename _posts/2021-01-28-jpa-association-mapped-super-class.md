@@ -1,5 +1,5 @@
 ---
-title: JPA) 연관관계 매핑5. @MappedSuperClass
+title: JPA) 연관관계 매핑5. @MappedSuperclass
 author: cotchan 
 date: 2021-01-28 04:30:21 +0800 
 categories: [JPA, JPA_Basic]
@@ -23,7 +23,7 @@ tags: [jpa]
 + 특정 속성(정보)가 모든 테이블에 있어야 할 때 
 
 ```java
-//필드
+//모든 엔티티에서 공통으로 사용하고자 하는 필드
 private String createdBy;
 private LocalDateTime createdDate;
 private String lastModifiedBy;
@@ -70,6 +70,7 @@ public class Member extends BaseEntity {
 ---
 
 + **@MappedSuperclass는 속성을 같이 쓰고 싶을 때 사용합니다.**
+  + 생성된 SQL문을 보면 Member와 Team 모두 Base Entity 필드를 가지고 있는 것을 볼 수 있습니다.
 
 ```java
 create table Member (
