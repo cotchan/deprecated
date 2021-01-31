@@ -1,7 +1,7 @@
 ---
-title: JPQL) 페치 조인(fetch join)
+title: JPQL) 페치 조인1 - 기본
 author: cotchan 
-date: 2021-01-30 00:00:21 +0800 
+date: 2021-01-31 19:50:21 +0800 
 categories: [JPA, JPA_JPQL]
 tags: [jpql] 
 ---
