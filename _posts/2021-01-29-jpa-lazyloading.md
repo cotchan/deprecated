@@ -263,7 +263,7 @@ findMember = class jpabook.jpashop.domain.Team
 
 + 그러면 JPQL은 그러면 Member 쿼리가 나가고, Member를 가져온 후 나머지 값을 셋팅하기 위해 별도의 쿼리가 나가게 됩니다.
 
-+ **N+1이란
++ **N+1이란**
   + N이 결과를 의미합니다.
   + 최초로 날리는 쿼리가 1을 의미합니다.
   + **최초 쿼리를 날렸는데 그것 때문에 추가 쿼리가 N개가 나간다고 해서 N+1이라고 합니다.**
@@ -273,7 +273,7 @@ findMember = class jpabook.jpashop.domain.Team
 ## 5. 지연 로딩 활용
 
 + **실무에서는 `전부 지연 로딩`으로 셋팅해야 합니다.**
-+ 아래 내용은 이론 적인 것입니다.
++ 아래 내용은 이론적인 내용입니다.
 
 ![Desktop View](/assets/img/post/jpa/2021-01-29-jpa-lazyloading-08.png)
 
