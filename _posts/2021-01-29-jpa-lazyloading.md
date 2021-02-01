@@ -1,7 +1,7 @@
 ---
 title: JPA) 즉시 로딩과 지연 로딩
 author: cotchan 
-date: 2021-01-14 00:00:21 +0800 
+date: 2021-01-29 23:30:21 +0800 
 categories: [JPA, JPA_Basic]
 tags: [jpa] 
 ---
