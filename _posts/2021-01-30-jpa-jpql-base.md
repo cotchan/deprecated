@@ -1,7 +1,7 @@
 ---
 title: JPQL) 기본 문법(+ 기능)
 author: cotchan 
-date: 2021-01-30 00:00:21 +0800 
+date: 2021-01-30 23:00:21 +0800 
 categories: [JPA, JPA_JPQL]
 tags: [jpql] 
 ---
