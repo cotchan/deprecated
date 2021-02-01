@@ -1,7 +1,7 @@
 ---
 title: JPQL) 경로 표현식
 author: cotchan 
-date: 2021-01-30 00:00:21 +0800 
+date: 2021-01-31 20:30:21 +0800 
 categories: [JPA, JPA_JPQL]
 tags: [jpql] 
 ---
