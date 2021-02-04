@@ -43,29 +43,29 @@ sqlite3_stmt *databaseStatement;    // 쿼리구문 컴파일러
 + 또한 사용하려는 함수에서는 V2, V16 이런 접미사가 붙는 함수가 종종 있습니다.
   + `V16`은 `UTF-16` 인코딩을 사용한다는 의미입니다.
   + `V2`는 주로 sqlite3_prepare_v2()로 많이 쓰는데, 이 버전으로 생성한 stmt 객체에는 추후 `쿼리에 바인딩`을 붙일 수 있습니다.
-    + 바인딩시 인덱스는 1부터 시작합니다.
+    + 바인딩시 인덱스는 `1부터` 시작합니다.
 
 ---
 
 ## 2-1. sqlite3_open
 
-+ DB와 연결 생성
++ DB와 연결을 생성합니다.
 
 ---
 
 ## 2-2. sqlite3_prepare
 
-+ 쿼리 컴파일
++ **`쿼리를 컴파일`합니다.**
 
 ---
 
 ## 2-3. sqlite3_step
 
-+ 쿼리 실행. 각 row를 fetch 합니다.
++ **`쿼리를 실행`합니다. 각 row를 fetch 합니다.**
 
 ---
 
-## 2-4. sqlite3_column_???
+## 2-4. sqlite3_column
 
 + fetch한 row에 대해 각 컬럼의 데이터를 리턴합니다.
 + 특정 순번의 컬럼을 가져오기 위해서는 해당하는 데이터타입으로 받아와야합니다. 
@@ -81,7 +81,7 @@ field_value = (const char*) sqlite3_column_text(databaseStatement, 1);
 ## 2-5. sqlite3_finalize
 
 + 질의를 완료합니다.
-+ **데이터베이스에 커밋되고 prepared_statement(sqlite3_stmt) 객체가 해제됩니다.**
++ **`데이터베이스에 커밋`되고 prepared_statement(sqlite3_stmt) 객체가 해제됩니다.**
 
 ---
 

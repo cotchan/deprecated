@@ -28,17 +28,17 @@ tags: [sqlite]
 # .sqlite filePath: 
 # /Users/${USER_NAME}/Library/Developer/Xcode/DerivedData/${PROJECT_NAME}-bnkkfhpekokionecxsfblwmzdiii/Build/Products/Debug
 
-NSString *databasePath = @"./test001.sqlite";  //새로 생성할 데이터베이스 파일 또는 기존에 존재하는 데이터베이스 파일
-sqlite3 *database = nil;  //데이터베이스 연결정보        
-sqlite3_stmt *databaseStatement = nil;    //쿼리 구문 컴파일러        
+NSString *databasePath = @"./test001.sqlite";  # 새로 생성할 데이터베이스 파일 또는 기존에 존재하는 데이터베이스 파일
+sqlite3 *database = nil;  # 데이터베이스 연결정보        
+sqlite3_stmt *databaseStatement = nil;    # 쿼리 구문 컴파일러        
   
 if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
 {
     NSLog(@"SUCCESS: sqlite3_open");
 
-    //VER1
-    //반환 결과가 없는 QUERY
-    //1. CREATE
+    # VER1
+    # 반환 결과가 없는 QUERY
+    # 1. CREATE
     databaseQuery = @"CREATE TABLE IF NOT EXISTS 'TABLE1'('id' INTEGER PRIMARY KEY, 'value' TEXT);";
             
     if (sqlite3_exec(database, [databaseQuery UTF8String], NULL, NULL, &databaseMessage) == SQLITE_OK)
@@ -78,26 +78,26 @@ else
 ## 1-3. 반환 결과가 있는 SQL 쿼리 실행
 
 + **`SELECT` 구문은 레코드 집합을 결과로써 반환합니다.**
-+ 이를 실행하여 반환값을 얻기 위해서는 sqlite3_prepare_v2 함수를 사용합니다.
-+ SQL 쿼리가 UTF-16으로 인코딩 되어 있다면 sqlite3_prepare16_v2 함수를 사용합니다.
++ 이를 실행하여 반환값을 얻기 위해서는 `sqlite3_prepare_v2` 함수를 사용합니다.
++ SQL 쿼리가 UTF-16으로 인코딩 되어 있다면 `sqlite3_prepare16_v2` 함수를 사용합니다.
 + **이 함수의 실행 결과는 `sqlite3_stmt` 형 객체가 얻어집니다.**
   + 이 객체를 통해 구문분석 및 컴파일된 SQL 쿼리가 보관되므로 잘 보관해둡니다.
 
 ![Desktop View](/assets/img/post/sqlite/2021-02-04-sqlite-obj-c-query-sample-02.png)
 
 ```ruby
-NSString *databasePath = @"./test001.sqlite";  //새로 생성할 데이터베이스 파일 또는 기존에 존재하는 데이터베이스 파일
-sqlite3 *database = nil;  //데이터베이스 연결정보
-sqlite3_stmt *databaseStatement = nil;    //쿼리 구문 컴파일러
-NSString *databaseQuery = nil;  // SQL 구문
-char *databaseMessage = nil;    // 오류 메시지를 전달받을 포인터 변수
+NSString *databasePath = @"./test001.sqlite";  # 새로 생성할 데이터베이스 파일 또는 기존에 존재하는 데이터베이스 파일
+sqlite3 *database = nil;  # 데이터베이스 연결정보
+sqlite3_stmt *databaseStatement = nil;    # 쿼리 구문 컴파일러
+NSString *databaseQuery = nil;  # SQL 구문
+char *databaseMessage = nil;    # 오류 메시지를 전달받을 포인터 변수
         
 if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
 {
     NSLog(@"SUCCESS: sqlite3_open");
             
-    //VER2
-    //반환 결과가 있는 QUERY
+    # VER2
+    # 반환 결과가 있는 QUERY
     databaseQuery = @"SELECT * FROM 'TABLE1'";
     if (sqlite3_prepare_v2(database, [databaseQuery UTF8String], -1, &databaseStatement, nil) == SQLITE_OK)
     {
@@ -168,17 +168,17 @@ else
 
 ```ruby
 
-NSString *databasePath = @"./test001.sqlite";  //새로 생성할 데이터베이스 파일 또는 기존에 존재하는 데이터베이스 파일
-sqlite3 *database = nil;  //데이터베이스 연결정보
-sqlite3_stmt *databaseStatement = nil;    //쿼리 구문 컴파일러
-NSString *databaseQuery = nil;  // SQL 구문
-char *databaseMessage = nil;    // 오류 메시지를 전달받을 포인터 변수
+NSString *databasePath = @"./test001.sqlite";  # 새로 생성할 데이터베이스 파일 또는 기존에 존재하는 데이터베이스 파일
+sqlite3 *database = nil;  # 데이터베이스 연결정보
+sqlite3_stmt *databaseStatement = nil;    # 쿼리 구문 컴파일러
+NSString *databaseQuery = nil;  # SQL 구문
+char *databaseMessage = nil;    # 오류 메시지를 전달받을 포인터 변수
         
 if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
 {
     NSLog(@"SUCCESS: sqlite3_open");
             
-    //VER3. 파라미터 바인딩
+    # VER3. 파라미터 바인딩
     databaseQuery = @"SELECT * FROM 'TABLE1' WHERE (id = ? AND value like ?);";
             
     if (sqlite3_prepare_v2(database, [databaseQuery UTF8String], -1, &databaseStatement, nil) == SQLITE_OK)
