@@ -38,9 +38,10 @@ if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
 
     # VER1
     # 반환 결과가 없는 QUERY
+    
     # 1. CREATE
     databaseQuery = @"CREATE TABLE IF NOT EXISTS 'TABLE1'('id' INTEGER PRIMARY KEY, 'value' TEXT);";
-            
+         
     if (sqlite3_exec(database, [databaseQuery UTF8String], NULL, NULL, &databaseMessage) == SQLITE_OK)
     {
         NSLog(@"SUCCESS: sqlite3_exec: %@", databaseQuery);
@@ -50,7 +51,7 @@ if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
         NSLog(@"FAILURE: sqlite3_exec: %s", databaseMessage);
     }
          
-    //2. INSERT   
+    # 2. INSERT   
     databaseQuery = @"INSERT INTO 'TABLE1'('value') VALUES('foo')";
     if (sqlite3_exec(database, [databaseQuery UTF8String], NULL, NULL, &databaseMessage) == SQLITE_OK)
     {
@@ -98,6 +99,8 @@ if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
             
     # VER2
     # 반환 결과가 있는 QUERY
+    
+    # SELECT
     databaseQuery = @"SELECT * FROM 'TABLE1'";
     if (sqlite3_prepare_v2(database, [databaseQuery UTF8String], -1, &databaseStatement, nil) == SQLITE_OK)
     {
@@ -116,42 +119,15 @@ if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
         }
                 
             sqlite3_finalize(databaseStatement);
-        }
-        else
-        {
-            NSLog(@"FAILURE: sqlite3_prepare_v2");
-        }
-            
-        databaseQuery = @"SELECT * FROM 'TABLE1' WHERE (id = ? AND value like ?);";
-            
-        if (sqlite3_prepare_v2(database, [databaseQuery UTF8String], -1, &databaseStatement, nil) == SQLITE_OK)
-        {
-            int query_column = 0;
-            int field_index = 0;
-            const char *field_value = nil;
-                                
-            sqlite3_bind_int(databaseStatement, 1, 1);
-            sqlite3_bind_text(databaseStatement, 2, "foo", -1, nil);
-                
-            query_column = sqlite3_column_count(databaseStatement);
-            NSLog(@"SUCCESS: sqlite3_prepare_v2: %@, query_column = %d", databaseQuery, query_column);
-            while (sqlite3_step(databaseStatement) == SQLITE_ROW)
-            {
-                field_index = (int) sqlite3_column_int(databaseStatement, 0);
-                field_value = (const char*) sqlite3_column_text(databaseStatement, 1);
-                NSLog(@"SUCCESS: sqlite3_step: %d, %s", field_index, field_value);
-            }
-                
-            sqlite3_finalize(databaseStatement);
-        }
-        else
-        {
-            NSLog(@"FAILURE: sqlite3_prepare_v2");
-        }
-             
-        sqlite3_close(database);
-        database = nil;
     }
+    else
+    {
+        NSLog(@"FAILURE: sqlite3_prepare_v2");
+    }
+            
+    sqlite3_close(database);
+    database = nil;
+}
 else
 {
     NSLog(@"FAILURE: sqlite3_open");
@@ -167,7 +143,6 @@ else
 + `UPDATE SET ...` 구문이나 `SELECT ... WHERE` 구문과 같이 쿼리에 사용자 문자열이 들어가는 경우 파라미터 바인딩을 사용합니다.
 
 ```ruby
-
 NSString *databasePath = @"./test001.sqlite";  # 새로 생성할 데이터베이스 파일 또는 기존에 존재하는 데이터베이스 파일
 sqlite3 *database = nil;  # 데이터베이스 연결정보
 sqlite3_stmt *databaseStatement = nil;    # 쿼리 구문 컴파일러
