@@ -32,7 +32,7 @@ sqlite3_stmt *databaseStatement;    // 쿼리구문 컴파일러
 
 + **쿼리를 데이터베이스로 전송하기 전 컴파일을 하는 객체입니다.**
 + 데이터베이스에 보낼 질의를 컴파일한 객체입니다.
-+ ***`sqlite3_prepare()` 함수를 통해** 질의를 컴파일하면서 생성됩니다.
++ **`sqlite3_prepare()` 함수를 통해** 질의를 컴파일하면서 생성됩니다.
 + **`sqlite3_finalize()` 함수를 통해** 해제됩니다.
 
 ---
@@ -81,7 +81,7 @@ field_value = (const char*) sqlite3_column_text(databaseStatement, 1);
 ## 2-5. sqlite3_finalize
 
 + 질의를 완료합니다.
-+ **`데이터베이스에 커밋`되고 prepared_statement(sqlite3_stmt) 객체가 해제됩니다.**
++ **`데이터베이스에 커밋`되고 prepared_statement(sqlite3_stmt) `객체가 해제`됩니다.**
 
 ---
 
