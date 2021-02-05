@@ -20,7 +20,7 @@ tags: [sqlite]
 + **테이블을 대상으로 하는 `CREATE`, `DROP`**
 + **레코드를 대상으로하는 `INSERT`, `UPDATE`, `DELETE`**
 + 위 명령들은 별도로 반환값이 필요하지 않습니다.
-+ SQL을 실행하는 방법은 `sqlite3_exec` 함수를 사용합니다.
++ **SQL을 실행하는 방법은 `sqlite3_exec` 함수를 사용합니다.**
 
 ![Desktop View](/assets/img/post/sqlite/2021-02-04-sqlite-obj-c-query-sample-01.png)
 
