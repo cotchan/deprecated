@@ -1,5 +1,5 @@
 ---
-title: SQLITE) Objective-C에서 SQLite3 사용법2. (연결, Open)
+title: SQLITE) Objective-C에서 SQLite3 사용법2. (DB 연결, DB Open)
 author: cotchan
 date: 2021-02-04 15:30:00 +0800
 categories: [Sqlite, Sqlite_Obj-c]

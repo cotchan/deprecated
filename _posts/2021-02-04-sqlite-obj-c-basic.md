@@ -1,5 +1,5 @@
 ---
-title: SQLITE) Objective-C에서 SQLite3 사용법1. (핵심 객체, 함수)
+title: SQLITE) Objective-C에서 SQLite3 사용법1. (SQLite3 핵심 객체, 함수)
 author: cotchan
 date: 2021-02-04 15:00:00 +0800
 categories: [Sqlite, Sqlite_Obj-c]

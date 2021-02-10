@@ -1,5 +1,5 @@
 ---
-title: SQLITE) Objective-C에서 SQLite3 사용법3. (쿼리 샘플코드, 파라미터 바인딩)
+title: SQLITE) Objective-C에서 SQLite3 사용법3. (쿼리 날리는 법, 파라미터 바인딩)
 author: cotchan
 date: 2021-02-04 16:00:00 +0800
 categories: [Sqlite, Sqlite_Obj-c]
