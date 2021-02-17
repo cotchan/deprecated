@@ -13,7 +13,7 @@ tags: [macos]
 
 ## 1. XPC Service Agent 만들기
 
-+ 예시는 rdConsoleSequencer 라는 프로젝트를 만드는 것으로 진행합니다. 
++ 예시는 `rdConsoleSequencer`라는 프로젝트를 만드는 것으로 진행합니다. 
   + 자세한 사항은 `출처` 참고
 
 ```bash
@@ -87,7 +87,7 @@ import Foundation
 
 + 1-3의 Protocol을 실제로 구현한 클래스입니다.
   + The Implement of our service 
-+ Client가 Connection을 맺고 실제 사용하는 기능입니다.
++ Client가 Connection을 맺고 실제로 사용하는 기능을 구현하는 클래스입니다.
 
 ```swift
 //ConsoleSequencerXPC.swift
@@ -121,14 +121,14 @@ $ swift build
 + **가장 중요한 단계**
 
 + 프로젝트 빌드 후 생성되는 실행 파일 경로를 알고 있어야 합니다.
-  + 기본 경로: `{YOUR_PROJECT_NAME}/.build/debug/{YOUR_PROJECT_NAME}`
+  + 기본 경로: `{YOUR_PROJECT_NAME}/.build/debug/{YOUR_PROJECT_NAME}.app`
 
-+ `~/Library/LaunchAgents/` 경로에 Agent에 대한 `.plist` 파일을 생성해야합니다.
++ **`~/Library/LaunchAgents/` 경로에 Agent에 대한 `.plist` 파일을 생성해야합니다.**
   + Agent는 우리가 작성한 swift code를 의미합니다.
 
 ---
 
-+ com.rderik.rdconsolesequencerxpc.plist 파일 예시
++ `com.rderik.rdconsolesequencerxpc.plist` 파일 예시
   + Program key 값은 XPC Service swift 코드를 빌드한 후 실행 파일이 생성되는 위치입니다.
 
 ```xml
@@ -150,15 +150,13 @@ $ swift build
 ``` 
 
 + **중요사항**
-
-+ `MachServices` 필드
-  + Mach Service field on the Plist defines the Mach services **exposed by the agent.**
-    + MachServices Key값은 외부에서 Agent로 보일 이름을 의미합니다.
-  + The name of the service is the same name we registered when creating the listener in the `main.swift`
-    + listener로 등록하고, 외부에서 connection을 생성하는 Agent명은 모두 MachServices 필드 이름로 식별합니다.
-
-+ **.plist파일에 `interval` 필드, `run at launch` 필드가 필요 없습니다.** 
-  + 그 이유는 MachService는 요청이 시작될 때 on-demand로 launchd가 로드합니다.
+  + **`MachServices` 필드**
+    + Mach Service field on the Plist defines the Mach services **exposed by the agent.**
+      + MachServices Key값은 외부에서 Agent로 보일 이름을 의미합니다.
+    + The name of the service is the same name we registered when creating the listener in the `main.swift`
+      + listener로 등록하고, 외부에서 connection을 생성하는 Agent명은 모두 MachServices 필드 이름로 식별합니다.
+  + **.plist파일에 `interval` 필드, `run at launch` 필드가 필요 없습니다.** 
+    + 그 이유는 MachService는 요청이 시작될 때 on-demand로 launchd가 로드합니다.
 
 ---
 
@@ -238,7 +236,7 @@ while true {
 
 ---
 
-## 2-2. ConsoleSequencerXPCProtocol.swift
+## 2-2. YourServiceProtocol.swift
 
 + Client는 Agent의 Protocol만 알고 있으면 됩니다.
   + main 함수에서 볼 수 있듯이 remoteObjectProxy를 사용합니다.
@@ -257,7 +255,7 @@ import Foundation
 
 ## 2-3. XPC Agent 사용하기
 
-```swift
+```bash
 $ swift run
 ```
 
