@@ -3,7 +3,7 @@ title: Singleton) C++에서 Thread-Safe한 Singleton 적용방법
 author: cotchan
 date: 2020-12-24 14:48:21 +/-0800
 categories: [Design-Pattern, Singleton]
-tags: [singleton]
+tags: [design-pattern]
 ---
 
 계속 업데이트할 예정입니다.
