@@ -2,7 +2,7 @@
 title: macOS) XPC Service Agent 만드는 방법 
 author: cotchan
 date: 2021-02-17 17:42:00 +0800
-categories: [Macos, Macos_Develop]
+categories: [Macos, Macos_XPC]
 tags: [macos]   
 ---
 
