@@ -14,7 +14,7 @@ tags: [design-pattern]
 
 ## 1. Delegation Pattern이란
 
-+ 위임 패턴이란 Service Protocol을 매개로 Client와 Service Provider가 통신하는 방식입니다.
++ 위임 패턴이란 `Service Protocol`을 매개로 Client와 Service Provider가 통신하는 방식입니다.
   + Client는 Service Protocol을 Call
   + Service Provider는 Service Protocol을 Implement
 
@@ -39,12 +39,12 @@ tags: [design-pattern]
 ## 3. 컴포넌트들간의 관계
 
 + `Object Needing a Delegate` 와 `Delegate Protocol`
-  + Dependency 관계
-    + Object Needing a Delegate는 `weak property`로 delegate protocol을 소유함으로써 참조하지 않습니다.
+  + **Dependency 관계**
+    + Object Needing a Delegate는 `weak property`로 delegate protocol을 소유(참조 X)
     + 그러므로 Association 관계가 아니라 Dependency 관계를 가집니다.
 
 + `Delegate Protocol` 와 `Object Acting as a Delegate` 
-  + Implement 관계
+  + **Implement 관계**
 
 ---
 
