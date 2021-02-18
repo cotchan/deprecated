@@ -24,6 +24,8 @@ tags: [design-pattern]
 
 + Delegate Pattern을 구성하는 3가지 요소입니다.
 
+![Desktop View](/assets/img/post/jpa/design-pattern/2021-02-18-delegate-01.png)
+
 1. **`Object Needing a Delegate` (위임자)**
   + **Delegate가 필요한 객체이므로 Delegate Protocol을 소유합니다.**
   + Client에 해당하는 코드로 해당 서비스를 사용하려는 쪽입니다.
