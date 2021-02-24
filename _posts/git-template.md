@@ -1,9 +1,14 @@
 ---
 title: Git) 
 author: cotchan
-date: 2021-01-08 19:00:21 +0800 
-categories: [Git, Git_ETC]
+date: 2021-02-25 19:00:21 +0800 
+categories: [Git, Git_Basic]
 tags: [git]
+---
+
++ 이 글은 개인 공부 목적으로 작성하였습니다.
++ 계속 업데이트 될 예정입니다.
+
 ---
 
 
@@ -18,4 +23,4 @@ tags: [git]
 ---
 
 + 출처
-	+ []()
+    + 정호영, 진유림, 『팀 개발을 위한 Git-GitHub 시작하기』, 한빛미디어(2020), p94
