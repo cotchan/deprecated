@@ -14,7 +14,7 @@ tags: [git]
 ## 1. origin이란
 
 + **origin은 우리가 연결한 `GitHub 원격저장소의 닉네임`입니다.**
-+ 그래서 아래 명령어는 `"origin이란 이름으로 원격저장소를 추가하라"는 뜻`입니다.
++ 그래서 아래 명령어는 `"origin이란 이름으로 원격저장소의 주소를 추가해주세요"는 뜻`입니다.
 
 ```terminal
 $ git remote add origin https://github.com/cotchan/git-practice.git 
@@ -24,8 +24,8 @@ $ git remote add origin https://github.com/cotchan/git-practice.git
 
 ## 2. master란
 
-+ master란 우리가 커밋을 올리는 줄기(branch)의 이름입니다.
-+ **사용자가 따로 줄기(branch)를 생성하지 않으면 Git은 `master라는 기본 branch`에 커밋을 올립니다.**
++ master란 우리가 현재 커밋을 올리고 있는 줄기(branch)의 이름입니다.
++ **사용자가 따로 줄기(branch)를 생성하지 않으면, Git은 `master라는 기본 branch`에 커밋을 올립니다.**
 
 
 ---
@@ -33,14 +33,15 @@ $ git remote add origin https://github.com/cotchan/git-practice.git
 ## 3. [master] / [origin/master]
 
 + 그러므로 [master]는 내 컴퓨터 `로컬저장소의 버전`을 의미합니다.
-+ 그러므로 [origin/master]는 `GitHub 원격저장소의 버전`을 가리킵니다.
++ 그러므로 [origin/master]는 `GitHub 원격저장소의 버전`을 의미합니다.
 
 
 ---
 
 ## 4. git push origin master
 
-+ **이 명령은 "현재 로컬 저장소의 줄기(branch)인 `master의 모든 새로운 커밋을 원격 저장소에 올리겠다`"는 뜻입니다.**
++ **이 명령은 "`로컬 저장소의 master branch의 모든 새로운 커밋을 원격 저장소에 올리겠다`"는 뜻입니다.**
+  + master branch는 현재 로컬 저장소의 줄기(branch) 이름입니다 (Default).
 + 이 명령이 수행되면 로컬저장소의 branch와 원격 저장소 branch가 모두 같은 최신의 커밋을 가리키게 됩니다.
 
 
