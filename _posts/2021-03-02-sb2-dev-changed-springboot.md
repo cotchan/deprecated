@@ -14,7 +14,7 @@ tags: [spring-boot2]
 
 + `build.gradle`의 초기상태는 아래와 같습니다.
 
-```java
+```
 //삭제 예정
 plugins {
     id 'java'
@@ -40,7 +40,7 @@ dependencies {
 + 먼저 build.gradle 맨 위에 위치할 코드입니다.
 + 아래 코드를 새로 추가해줍니다.
 
-```java
+```
 buildscript {
     ext {
         springBootVersion = '2.1.7.RELEASE'
@@ -67,7 +67,7 @@ buildscript {
 + 아래 코드를 새로 추가해줍니다.
 + 다음은 앞서 선언한 플러그인 의존성들을 어떻게 적용할 것인지 결정합니다.
 
-```java
+```
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -85,7 +85,7 @@ apply plugin: 'io.spring.dependency-management'
 
 + 기존의 repositories {} 부분을 수정해줍니다.
 
-```java
+```
 repositories {
     mavenCentral()
     jcenter()
@@ -101,7 +101,7 @@ repositories {
 
 + 기존의 dependencies {} 부분을 수정해줍니다.
 
-```java
+```
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
@@ -127,7 +127,7 @@ dependencies {
 + 적용할 자바 버전을 적어줍니다.
   + 여기서는 JAVA8을 사용하겠습니다.
 
-```java
+```
 sourceCompatibility = 1.8
 ```
 
@@ -137,7 +137,7 @@ sourceCompatibility = 1.8
 
 + 수정을 완료한 최종 `build.gradle` 형태입니다.
 
-```java
+```
 buildscript {
     ext {
         springBootVersion = '2.1.7.RELEASE'
