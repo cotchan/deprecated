@@ -134,7 +134,35 @@ public class HelloControllerTest {
 
 ## 5. 코드 의미 해석
 
+---
 
+## mvc.perform(get("/hello/dto")) 
+
++ ` mvc.perform(get("/hello/dto"))`
++ MockMvc를 통해 /hello 주소로 HTTP GET 요청을 합니다.
++ 체이닝이 지원되어 여러 검증 기능을 이어서 선언할 수 있습니다.
+
+---
+
+
+## .param("name", name)
+
++ `.param("amount", String.valueOf(amount)))`
++ **API 테스트를 할 때 사용될 `요청 파라미터를 설정`합니다.**
++ **단, 값은 String만 허용됩니다.**
++ 그러므로 숫자/날짜 등의 데이터도 등록할 때는 문자열로 변경해야만 가능합니다.
+
+---
+
+## jsonPath("$.name", is(name))
+
++ `.andExpect(jsonPath("$.name", is(name)))`
++ **JSON 응답값을 필드별로 검증할 수 있는 메소드입니다.**
++ $를 기준으로 필드명을 명시합니다.
++ 여기서는 name과 amount를 검증하니 $.name, $.amount로 검증합니다. 
++ 이 메소드를 사용하여 `JSON이 리턴되는 API`를 검증합니다.
+
+---
 
 + 출처
   + 이동욱, 『스프링 부트와 AWS로 혼자 구현하는 웹 서비스』, 프리렉(2019) 
