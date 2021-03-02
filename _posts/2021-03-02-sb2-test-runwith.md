@@ -3,7 +3,7 @@ title: sb2) @RunWith(SpringRunner.class)
 author: cotchan 
 date: 2021-03-02 21:40:21 +0800 
 categories: [Spring-Boot2, Spring-Boot2_Test]
-tags: [@test] 
+tags: [test_annotation] 
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
