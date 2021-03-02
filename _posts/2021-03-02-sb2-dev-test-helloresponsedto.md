@@ -13,6 +13,7 @@ tags: [spring-boot2]
 ## 1. 롬복 설치
 
 + 롬복 설치는 아래 포스팅을 참고하면 됩니다.
+  + [sb2) Lombok 설치(with Intellij & Gradle)](https://cotchan.github.io/posts/sb2-setup-lombok/)
 
 ---
 

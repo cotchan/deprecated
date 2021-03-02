@@ -14,7 +14,7 @@ tags: []
 
 + `compile('org.projectlombok:lombok')` 을 추가합니다. 
 
-```java
+```
 dependencies {
     compile('org.projectlombok:lombok')
 }
@@ -25,8 +25,8 @@ dependencies {
 ## 2. 플러그인 설치
 
 + 단축키 플러그인으로 `Action`을 검색합니다.
-  + mac기준: cmd + shift + A
-  + 윈도우 기준: Ctrl + Shift + A
+  + mac기준: `cmd` + `shift` + `A`
+  + 윈도우 기준: `Ctrl` + `Shift` + `A`
 + **롬복 플러그인을 설치한 후 인텔리제이를 `재시작`합니다.**
 
 ---
