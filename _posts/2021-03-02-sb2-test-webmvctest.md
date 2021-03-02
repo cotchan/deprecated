@@ -22,6 +22,9 @@ tags: [test_annotation]
 
 ## 2. 샘플 코드
 
++ 코드의 의미는 아래의 출처에서 확인할 수 있습니다.
+  + [sb2) MockMvc mvc](https://cotchan.github.io/posts/sb2-test-mockmvc/)
+
 ```java
 package com.cotchan.review.springboot.web;
 
