@@ -1,5 +1,5 @@
 ---
-title: sb2) 4. helloResponseDto 테스트 코드 작성(Lombok 검증)  
+title: sb2) 4. helloResponseDto 테스트 코드 작성(응답 DTO 만들기 시작, Lombok 검증)  
 author: cotchan 
 date: 2021-03-02 22:00:21 +0800 
 categories: [Spring-Boot2, Spring-Boot2_DEV]
@@ -29,7 +29,12 @@ $ ./gradlew wrapper --gradle-version 4.10.2
 
 ## 3. HelloResponseDto 코드 작성
 
++ web 패키지에 dto 패키지를 추가해줍니다.
+  + web/dto
+  + **앞으로 `모든 응답 Dto는` 이 Dto 패키지에 추가합니다.**
+
 ```java
+package com.cotchan.review.springboot.web.dto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
