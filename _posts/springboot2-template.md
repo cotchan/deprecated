@@ -1,5 +1,5 @@
 ---
-title: SpringBoot2) 
+title: sb2) 
 author: cotchan 
 date: 2021-03-02 00:00:21 +0800 
 categories: [Spring-Boot2, Spring-Boot2_Controller]
