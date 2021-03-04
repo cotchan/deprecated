@@ -109,5 +109,16 @@ public class HelloController {
 
 ---
 
+## @Transactional
+
++ 스프링에서 어노테이션으로 **트랜잭션 처리를 지원하는 방식입니다.**
++ 클래스, 메서드 위에 `@Transactional`이 추가되면, 이 클래스에 트랜잭션 기능이 적용된 프록시 객체가 생성됩니다.
++ 이 프록시 객체는 `@Transactional`이 포함된 메소드가 호출 될 경우 트랜잭션을 시작하고, 정상 여부에 따라 `Commit` 또는 `Rollback` 합니다.
+
+
+
+---
+
 + 출처
   + 이동욱, 『스프링 부트와 AWS로 혼자 구현하는 웹 서비스』, 프리렉(2019) 
+  + [[Spring] Transactional 정리 및 예제](https://goddaehee.tistory.com/167)
