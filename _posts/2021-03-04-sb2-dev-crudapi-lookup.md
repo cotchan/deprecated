@@ -1,5 +1,5 @@
 ---
-title: sb2) 10. PostApiController, PostsResponseDTO, PostService (조회 기능 만들기)
+title: sb2) 11. PostApiController, PostsResponseDTO, PostService (조회 기능 만들기)
 author: cotchan 
 date: 2021-03-04 23:48:21 +0800 
 categories: [Spring-Boot2, Spring-Boot2_DEV]
