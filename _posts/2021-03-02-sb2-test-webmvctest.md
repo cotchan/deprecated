@@ -15,6 +15,8 @@ tags: [test_annotation]
 + Web(Spring MVC)에 집중할 수 있는 어노테이션입니다.
 + **선언할 경우 `@Controller`, `@ControllerAdvice` 등을 사용할 수 있습니다.**
 + **단, `@Service`, `@Component`, `@Repository` 등은 사용할 수 없습니다.**
++ **또한 @WebMvcTest의 경우 `JPA` 기능이 작동하지 않습니다.**
+  + 그러므로 JPA 기능까지 테스트할 때는 `@SpringBootTest`와 `@TestRestTemplate`을 사용하면 됩니다.
 + 아래 샘플 코드는 컨트롤러만 사용하기 때문에 선언합니다.
 
 ---
