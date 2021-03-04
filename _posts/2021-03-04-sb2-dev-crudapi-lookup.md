@@ -73,12 +73,7 @@ public class PostsApiController {
 public class PostsService {
 
     private final PostsRepository postsRepository;
-
-    @Transactional
-    public Long save(PostsSaveRequestDto requestDto) {
-        return postsRepository.save(requestDto.toEntity()).getId();
-    }
-
+    
     //...
 
     public PostsResponseDto findById(Long id) {
@@ -89,6 +84,57 @@ public class PostsService {
 }
 ```
 
+---
+
+## 4. 조회 기능 검증 테스트
+
++ **조회 기능은 실제로 톰캣을 실행**확인 해보겠습니다.
+
+---
+
+## 4-1. 웹 콘솔 옵션 활성화
+
++ `application.properties`
+
+```
+spring.h2.console.enabled=true
+```
+
+---
+
+## 4-2. 웹 콘솔에 접속
+
+1. main 메소드를 실행합니다.
+  + 정상적으로 실행됐다면 톰캣이 8080 포트로 실행됐습니다.
+2. **`http://localhost:8080/h2-console`**
+  + 위 주소로 접속하면 웹 콘솔화면이 등장합니다.
+
+![Desktop View](/assets/img/post/spring-boot2/2021-03-05-h2-web-console.png)
+
+---
+
+## 4-3. 쿼리 작성
+
++ 아래와 같이 `POSTS 테이블`이 보여야 합니다. 
+
+![Desktop View](/assets/img/post/spring-boot2/2021-03-05-posts-table.png)
+
+---
+
++ **간단하게 insert 쿼리를 실행해보고 이를 API로 조회해보겠습니다.**
+
+```
+insert into posts (author, content, title) values ('author', 'content', 'title');
+```
+
+---
+
+## 4-4. API로 검증 
+
++ 데이터가 제대로 DB에 반영되었는지 확인 후 API를 요청해봅니다.
++ `http://localhost:8080/api/v1/posts/1`
+
+![Desktop View](/assets/img/post/spring-boot2/2021-03-05-api-result.png)
 
 ---
 
