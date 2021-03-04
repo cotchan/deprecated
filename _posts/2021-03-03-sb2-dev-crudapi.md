@@ -138,6 +138,11 @@ public class PostsApiControllerTest {
     @Autowired
     private PostsRepository postsRepository;
 
+    @After
+    public void tearDown() throws Exception {
+        postsRepository.deleteAll();
+    }
+
     @Test
     public void Posts_등록된다() throws Exception {
         //given
