@@ -56,13 +56,18 @@ tags: [spring-boot2]
 
 + 경로: **`/src/main/resources/templates`**
 
-```html
++ **`{{>}}`**는 현재 머스테치 파일(`index.mustache`)을 기준으로 다른 파일을 가져옵니다.
+
+```
+
 {{>layout/header}}
 
 <h1>스프링 부트로 시작하는 웹 서비스</h1>
 
 {{>layout/footer}}
+
 ``` 
+
 
 ---
 
