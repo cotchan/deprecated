@@ -51,7 +51,7 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
 + `PostsService`에 코드를 추가합니다.
 
 + 새로 추가한 코드
-  + postsRepository 결과로 넘어온 Posts의 Stream을 map을 통해 PostsListResponseDto 변환 -> List로 반환하는 메소드
+  + postsRepository 결과로 넘어온 Posts의 Stream을 map을 통해 PostsListResponseDto 변환 -> List로 반환
 
 
 ```java
