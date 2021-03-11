@@ -56,18 +56,17 @@ tags: [spring-boot2]
 
 + 경로: **`/src/main/resources/templates`**
 
-+ **`{{>}}`**는 현재 머스테치 파일(`index.mustache`)을 기준으로 다른 파일을 가져옵니다.
+---
 
-```
+![Desktop View](/assets/img/post/spring-boot2/2021-03-11-layout.png)
 
-{{>layout/header}}
++ 이 표시의 의미는 현재 머스테치 파일(`index.mustache`)을 기준으로 다른 파일을 가져옵니다. 
 
-<h1>스프링 부트로 시작하는 웹 서비스</h1>
+---
 
-{{>layout/footer}}
++ **`index.mustache`**
 
-``` 
-
+![Desktop View](/assets/img/post/spring-boot2/2021-03-11-layout-index-mustache.png)
 
 ---
 
