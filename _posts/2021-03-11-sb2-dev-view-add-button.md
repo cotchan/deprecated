@@ -111,6 +111,7 @@ public class IndexController {
 2. 위 디렉토리에 `index.js`를 생성합니다.
 
 ```javascript
+//index.js
 var main = {
     init: function () {
         var _this = this;
@@ -151,7 +152,7 @@ main.init();
 
 + `footer.mustache`에 코드 추가
   + index.js 호출 코드를 보면 **절대 경로**(/)로 바로 시작합니다.
-  + ** 스프링 부트는 기본적으로 `src/main/resources/static`에 위치한 JS, CSS, 이미지 등 정적 파일들은 URL에서 `/`로 설정됩니다.**
+  + **스프링 부트는 기본적으로 `src/main/resources/static`에 위치한 JS, CSS, 이미지 등 정적 파일들은 URL에서 `/`로 설정됩니다.**
 
 ```html
 <script src="https://code.jquery.com/jquery-3.3.1.min.js">
