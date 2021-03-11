@@ -58,15 +58,15 @@ tags: [spring-boot2]
 
 ---
 
-![Desktop View](/assets/img/post/spring-boot2/2021-03-11-layout.png)
++ `index.mustache`
 
-+ 이 표시의 의미는 현재 머스테치 파일(`index.mustache`)을 기준으로 다른 파일을 가져옵니다. 
+![Desktop View](/assets/img/post/spring-boot2/2021-03-11-layout-index-mustache.png)
 
 ---
 
-+ **`index.mustache`**
++ 아래 표시의 의미는 현재 머스테치 파일(`index.mustache`)을 기준으로 다른 파일을 가져옵니다.
 
-![Desktop View](/assets/img/post/spring-boot2/2021-03-11-layout-index-mustache.png)
+![Desktop View](/assets/img/post/spring-boot2/2021-03-11-layout.png)
 
 ---
 
