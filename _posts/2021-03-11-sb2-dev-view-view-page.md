@@ -15,10 +15,10 @@ tags: [spring-boot2]
 + [index.mustache Code](https://gist.github.com/cotchan/6d6c1014aa529308d8ae8c74999dd25e)
 
 + 머스테치 문법
-  + **`{{#posts}}`**
+  + **`<<#posts>>`**
     + posts라는 List를 순회합니다.
     + Java등의 for문과 동일하다고 보면 됩니다.
-  + **`{{변수명}}`**
+  + **`<<변수명>>`**
     + List에서 뽑아낸 객체의 필드를 사용합니다.
 
 ---
@@ -100,7 +100,7 @@ public class PostsService {
 
 ## 4. PostsListResponseDto 만들기
 
-+ `/web/dto` 패키지에 생성합니다.
++ `/web/dto` 패키지에 DTO 클래스를 생성합니다.
 
 ```java
 package com.cotchan.review.springboot.web.dto;
