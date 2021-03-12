@@ -110,7 +110,7 @@ main.init();
 
 ## 3. 삭제 API 만들기1 - PostsService
 
-```
+```java
 @RequiredArgsConstructor
 @Service
 public class PostsService {
