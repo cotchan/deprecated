@@ -14,6 +14,8 @@ tags: [spring-boot2]
 
 + **앞으로 시큐리티 관련 클래스는 모두 이 곳에 담습니다.**
 
+![Desktop View](/assets/img/post/spring-boot2/2021-03-20-spring-security-config-auth.png)
+
 ---
 
 ## 2. SecurityConfig 클래스 생성
