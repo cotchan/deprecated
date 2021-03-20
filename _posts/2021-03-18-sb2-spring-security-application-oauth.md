@@ -39,5 +39,15 @@ application-oauth.properties
 
 ---
 
+## 3. application.properties 수정
+
++ `application.properties` 파일에 아래 한 줄을 추가해줍니다.
+
+```
+spring.profiles.include=oauth
+```
+
+---
+
 + 출처
   + 이동욱, 『스프링 부트와 AWS로 혼자 구현하는 웹 서비스』, 프리렉(2019) 
