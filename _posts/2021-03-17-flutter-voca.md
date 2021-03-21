@@ -67,5 +67,23 @@ tags: [flutter]
 
 ---
 
+## 8. runApp()
+
++ **`runApp()` 함수는 인수로 넘긴 위젯을 화면에 표시합니다.**
+
+```dart
+void main() {
+    runApp(MyApp());
+}
+``` 
+
+---
+
+## 9. =>
+
++ **`=>` 기호는 함수의 내용이 한 줄 일 때 중괄호({})를 대체하는 역할을 합니다.**
+
+---
+
 + 출처
   + [[flutter]프로젝트 구조](https://devlopsquare.tistory.com/81)
