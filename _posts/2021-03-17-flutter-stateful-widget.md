@@ -31,7 +31,7 @@ import 'package:flutter/material.dart';
 
 void main() =>
     runApp(MaterialApp(
-      title: 'Hello Flutter',
+      title: 'Stateless -> Stateful 위젯 데모',
       home: Scaffold(
         appBar: AppBar(title: Text('Stateless -> Stateful 위젯 데모')),
         body: _FirstStatefulWidget(),
