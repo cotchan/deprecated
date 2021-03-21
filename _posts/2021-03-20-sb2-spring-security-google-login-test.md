@@ -14,7 +14,7 @@ tags: [spring-boot2]
 
 + [수정된 index.mustache 코드](https://gist.github.com/cotchan/4ebba403a7cd00ce29151d3cfae32c04)
 
-+ **<<#userName>>**
++ **`<<#userName>>`**
   + 머스테치는 다른 언어와 같은 if문을 제공하지 않습니다.
   + `true/false` 여부만 판단할 뿐입니다.
   + 그래서 머스테치에서는 항상 최종값을 넘겨줘야 합니다.
