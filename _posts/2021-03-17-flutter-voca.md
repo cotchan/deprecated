@@ -2,7 +2,7 @@
 title: Flutter) 플러터 용어사전
 author: cotchan
 date: 2021-03-17 15:42:00 +0800
-categories: [Flutter]
+categories: [Flutter, Flutter_main]
 tags: [flutter]   
 ---
 
