@@ -98,12 +98,12 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
 }
 ```
 
-++ **`11111`**
++ **`11111`**
   + `supportsParameter()`
     + 컨트롤러 메서드의 특정 파라미터를 지원하는지 판단합니다.
     + 여기서는 파라미터에 @LoginUser 어노테이션이 붙어 있고, 파라미터 클래스 타입이 SessionUser.class인 경우 true를 반환합니다.
 
-++ **`22222`**
++ **`22222`**
   + `resolveArgument()`
     + 파라미터에 전달할 객체를 생성합니다.
     + 여기서는 세션에서 객체를 가져옵니다.
@@ -165,7 +165,7 @@ public String index(Model model, @LoginUser SessionUser user) {
 
 + **`@LoginUser SessionUser user`**
   + 기존에 `(SessionUser) httpSession.getAttribute("user")`로 가져오던 세션 정보 값이 개선되었습니다.
-  + 이제는 어느 컨트롤러든지 @LoginUser만 사용하면 세션 정보를 가져올 수 있게 되었습니다.
+  + 이제는 어느 컨트롤러든지 `@LoginUser`만 사용하면 세션 정보를 가져올 수 있게 되었습니다.
 
 ---
 
