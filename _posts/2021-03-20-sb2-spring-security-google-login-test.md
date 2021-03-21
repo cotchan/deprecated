@@ -1,5 +1,5 @@
 ---
-title: sb2) 22. [스프링 시큐리티] 구글 로그인 연동 - 3(로그인 테스트: index.mustache, IndexController 수정) 
+title: sb2) 22. [스프링 시큐리티] 구글 로그인 연동 - 3(로그인 테스트) 
 author: cotchan 
 date: 2021-03-20 21:00:21 +0800 
 categories: [Spring-Boot2, Spring-Boot2_DEV]
