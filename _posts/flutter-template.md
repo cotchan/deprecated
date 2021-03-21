@@ -11,5 +11,9 @@ tags: [flutter]
 
 ---
 
+![Desktop View](/assets/img/post/flutter/2021-03-21-text-widget-example-2.png)
+
+---
+
 + 출처
   + 유동환, 『처음 배우는 플러터』, 한빛미디어(2020) 
