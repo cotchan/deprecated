@@ -14,7 +14,7 @@ tags: [spring-boot2]
 
 + 현재 서비스는 **애플리케이션을 재실행하면 로그인이 풀립니다.**
 + 그 이유는 세션이 내장 톰캣의 메모리에 저장되기 때문입니다.
-+ **기본적으로 세션은 실행되는 WAS의 메모리에 저장되고 호출됩니다.**
++ **`기본적으로 세션은 실행되는 WAS의 메모리에 저장되고 호출됩니다.`**
 + 메모리에 저장되다 보니 내장 톰캣처럼 애플리케이션 실행 시 실행되는 구조에선 항상 초기화가 됩니다.
   + 즉, 배포할 때마다 톰캣이 재시작됩니다. 
 
@@ -24,7 +24,7 @@ tags: [spring-boot2]
 
 ---
 
-## 2-1. build.gradle
+## 2-1. build.gradle에 추가
 
 + `spring-session-jdbc`는 현재 상태에서는 바로 사용할 수 없습니다.
 + spring web, spring jpa와 마찬가지로 의존성이 추가되어야 사용할 수 있습니다.
@@ -39,7 +39,7 @@ dependencies {
 
 ---
 
-## 2-2. application.properties
+## 2-2. application.properties에 추가
 
 + **그리고 `application.properties`에 세션 저장소를 jdbc로 선택하도록 코드를 추가합니다.**
 
