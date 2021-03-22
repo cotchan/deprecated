@@ -41,7 +41,7 @@ public void Posts_수정된다() throws Exception {
 
 ## 3. MockMvc를 사용하도록 수정
 
-+ []()
++ [sb2) @SpringBootTest에서 MockMvc를 사용하는 방법](https://cotchan.github.io/posts/sb2-test-springboottest-using-mockmvc/)
 
 ---
 
