@@ -10,10 +10,6 @@ tags: [spring-boot2]
 
 ---
 
-![Desktop View](/assets/img/post/spring/2020-12-10-spring-boot-how-to-build.png){: width="350" class="normal"}
-
----
-
 ## 1. 테스트 코드 수정 이유
 
 + 끝으로 기존 테스트에 시큐리티 적용으로 문제가 되는 부분들을 수정하겠습니다.
