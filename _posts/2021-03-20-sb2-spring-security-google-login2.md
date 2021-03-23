@@ -189,6 +189,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
 ## 4. OAuthAttributes 클래스 생성
 
++ **리소스 서버(즉, 소셜 서비스들)에서 가져온 사용자 정보를 `CustomOAuth2UserService`에서 사용하기 위해 가공할 때 가장 먼저 사용하는 `dto 클래스`입니다.**
 + `config.auth.dto`
 
 ```java
@@ -265,6 +266,7 @@ public class OAuthAttributes {
 + **SessionUser는 직렬화 기능을 가진 세션 Dto입니다.**
 + SessionUser에는 `인증된 사용자 정보`만 필요합니다.
   + 그 외에 필요한 정보들은 없으니 name, email, picture만 필드로 선언합니다.
++ SessionUser DTO의 역할은 **`OAuthAttributes dto`로 한 번 가공한** 사용자 정보를 **`User Domain`에 저장한 뒤** 세션 생성을 위해 사용하는 dto 클래스입니다.
 
 
 ```java
