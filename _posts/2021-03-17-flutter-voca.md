@@ -85,5 +85,64 @@ void main() {
 
 ---
 
+## 10. ChangeNotifier
+
++ **리스너에게 변경 알림을 제공하는 클래스입니다.**
+  + 상태 관리를 ChangeNotifier로 하면 이점이 있습니다.
+
++ **임의의 A Class가 ChangeNotifier라면 `A를 구독할 수 있습니다.`**
+  + A를 구독하면 A의 변경사항을 콜백(?)으로 받을 수 있습니다.
+  + **`notifyListeners()`를 호출하면, 이 ChangeNotifier를 listening하고 있는 모든 위젯들을 `다시 build` 하도록 지시합니다.**
+  + **`notifyListeners()`를 사용하면 UI가 업데이트됩니다.**
+
+```dart
+class CartModel extends ChangeNotifier {
+  /// Internal, private state of the cart.
+  final List<Item> _items = [];
+
+  /// An unmodifiable view of the items in the cart.
+  UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
+
+  /// The current total price of all items (assuming all items cost $42).
+  int get totalPrice => _items.length * 42;
+
+  /// Adds [item] to cart. This and [removeAll] are the only ways to modify the
+  /// cart from the outside.
+  void add(Item item) {
+    _items.add(item);
+    // This call tells the widgets that are listening to this model to rebuild.
+    notifyListeners();
+  }
+
+  /// Removes all items from the cart.
+  void removeAll() {
+    _items.clear();
+    // This call tells the widgets that are listening to this model to rebuild.
+    notifyListeners();
+  }
+}
+```
+
+---
+
+## 11. ChangeNotifierProvider
+
++ **위젯입니다.**
++ **`ChangeNotifier 인스턴스를 자신의 하위 항목으로 제공`하는 위젯입니다.**
++ **DO** create a new ChangeNotifier inside create.
+
+```dart
+ChangeNotifierProvider(
+  create: (_) => new MyChangeNotifier(),
+  child: ...
+)
+```
+
+
+
+
+---
+
 + 출처
   + [[flutter]프로젝트 구조](https://devlopsquare.tistory.com/81)
+  + [ChangeNotifier, ChangeNotifierProvider](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple#changenotifier)
