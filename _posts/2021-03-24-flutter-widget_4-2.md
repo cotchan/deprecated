@@ -83,11 +83,11 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 Column(
-	children: <Widget>[
-		[위젯],
-		[위젯],
-		[위젯],
-	],
+  children: <Widget>[
+    [위젯],
+    [위젯],
+    [위젯],
+  ],
 ),
 ```
 
@@ -176,14 +176,14 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 Row(
-	mainAxisSize: MainAxisSize.max,  //가로로 꽉 채우기
-	mainAxisAlignment: MainAxisAlignment.center,  //가로 방향으로 가운데 정렬하기
-	crossAxisAlignment: CrossAxisAlignment.center, //세로 방향으로 가운데 정렬하기
-	children: <Widget>[
-		[위젯],
-		[위젯],
-		[위젯],
-	],
+  mainAxisSize: MainAxisSize.max,  //가로로 꽉 채우기
+  mainAxisAlignment: MainAxisAlignment.center,  //가로 방향으로 가운데 정렬하기
+  crossAxisAlignment: CrossAxisAlignment.center, //세로 방향으로 가운데 정렬하기
+  children: <Widget>[
+    [위젯],
+    [위젯],
+    [위젯],
+  ],
 ),
 ```
 
@@ -515,12 +515,12 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 GridView.count(
-	crossAxisCount: [열 수],
-	children: <Widget>[
-		[위젯],
-		[위젯],
-		[위젯],	
-	],
+  crossAxisCount: [열 수],
+  children: <Widget>[
+    [위젯],
+    [위젯],
+    [위젯],	
+  ],
 ),
 ```
 
@@ -605,11 +605,11 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 PageView(
-	children: <Widget>[
-		[위젯],
-		[위젯],
-		[위젯],
-	],
+  children: <Widget>[
+    [위젯],
+    [위젯],
+    [위젯],
+  ],
 ),
 ```
 
