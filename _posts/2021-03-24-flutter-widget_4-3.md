@@ -28,7 +28,7 @@ tags: [flutter]
 
 ```dart
 Center(
-	child: [위젯],	
+  child: [위젯],	
 )
 ```
 
@@ -95,8 +95,8 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 Padding(
-	padding: const EdgeInsets.all(40.0),
-	child: [위젯],
+  padding: const EdgeInsets.all(40.0),
+  child: [위젯],
 ),
 ```
 
@@ -171,8 +171,8 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 Align(
-	alignment: Alignment.bottomRight,
-	child: [위젯],	
+  alignment: Alignment.bottomRight,
+  child: [위젯],	
 ),
 ```
 
@@ -253,20 +253,20 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 Column(
-	children: <Widget>[
-		Expanded(
-			flex: [비율], //기본값은 1
-			child: [위젯],
-		),
-		Expanded(
-			//flex 프로퍼티 값을 안 줬으므로 1로 셋팅
-			child: [위젯],
-		),
-		Expanded(
-			//flex 프로퍼티 값을 안 줬으므로 1로 셋팅
-			child: [위젯],
-		),
-	]	
+  children: <Widget>[
+    Expanded(
+      flex: [비율], //기본값은 1
+      child: [위젯],
+    ),
+    Expanded(
+      //flex 프로퍼티 값을 안 줬으므로 1로 셋팅
+      child: [위젯],
+    ),
+    Expanded(
+      //flex 프로퍼티 값을 안 줬으므로 1로 셋팅
+      child: [위젯],
+    ),
+  ]	
 )
 ```
 
@@ -348,9 +348,9 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 SizedBox(
-	width: [가로 길이],
-	height: [세로 길이],
-	child: [위젯],	
+  width: [가로 길이],
+  height: [세로 길이],
+  child: [위젯],	
 ),
 ```
 
@@ -417,11 +417,11 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 Card(
-	shape: RoundedRectangleBorder(
-		borderRadius: BorderRadius.circular(16.0),
-	),
-	elevation: [실숫값],  //그림자 깊이
-	child: [위젯],
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16.0),
+  ),
+  elevation: [실숫값],  //그림자 깊이
+  child: [위젯],
 ),
 ```
 
