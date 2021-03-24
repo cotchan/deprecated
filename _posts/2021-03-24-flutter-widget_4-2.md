@@ -11,7 +11,7 @@ tags: [flutter]
 
 ---
 
-![Desktop View](/assets/img/post/flutter/2021-03-24-widget-01.png)
++ **화면 배치에 사용되는 기본 위젯입니다.**
 
 ---
 
