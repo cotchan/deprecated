@@ -3,7 +3,7 @@ title: HelloShop) 애플리케이션 아키텍쳐
 author: cotchan
 date: 2021-01-07 04:31:21 +0800
 categories: [Project, HelloShop]
-tags: # [TAG]     # TAG names should always be lowercase
+tags: [helloshop]     # TAG names should always be lowercase
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**

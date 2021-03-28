@@ -3,7 +3,7 @@ title: HelloShop) 엔티티 클래스 개발방법
 author: cotchan
 date: 2021-01-06 21:00:21 +0800
 categories: [Project, HelloShop]
-tags: # [TAG]     # TAG names should always be lowercase
+tags: [helloshop]     # TAG names should always be lowercase
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
