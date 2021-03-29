@@ -3,7 +3,7 @@ title: HelloShop) 도메인 분석 설계
 author: cotchan
 date: 2021-01-06 08:16:21 +0800
 categories: [Project, HelloShop]
-tags: # [TAG]     # TAG names should always be lowercase
+tags: [helloshop]     # TAG names should always be lowercase
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**   

@@ -3,7 +3,7 @@ title: HelloShop) 회원 도메인 개발(Entity, Repo, Service, Test)
 author: cotchan
 date: 2021-01-07 08:32:21 +0800
 categories: [Project, HelloShop]
-tags: # [TAG]     # TAG names should always be lowercase
+tags: [helloshop]     # TAG names should always be lowercase
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
