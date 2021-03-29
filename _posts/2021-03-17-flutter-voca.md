@@ -138,6 +138,88 @@ ChangeNotifierProvider(
 )
 ```
 
+---
+
+## 12. @required
+
++ **`@required`를 붙이면 필수 입력 인수를 나타냅니다.**
+  + **SecondPage 클래스의 생성자는 Person 객체를 반드시 받아야 합니다.**
+
++ 참고 Reference:
+  + [Flutter) [네비게이션] 6.1 새로운 화면으로 이동](https://cotchan.github.io/posts/flutter-navigation_6_1/)
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: FirstPage(), //첫 페이지를 시작 페이지로 지정
+    );
+  }
+}
+
+class Person {
+  String name;
+  int age;
+
+  Person(this.name, this.age);
+}
+
+class FirstPage extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First'),
+      ),
+      body: RaisedButton(
+        child: Text('다음 페이지로'),
+        onPressed: () {
+          final person = Person('홍길동', 20);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SecondPage(person: person)),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+
+  final Person person;
+
+  SecondPage({@required this.person});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second'),
+      ),
+      body: RaisedButton(
+        child: Text(person.name),
+        onPressed: () {
+          Navigator.pop(context);  //현재 화면을 종료하고 이전 화면으로 돌아가기
+        },
+      ),
+    );
+  }
+}
+```
 
 
 
