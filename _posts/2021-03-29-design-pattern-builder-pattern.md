@@ -141,7 +141,7 @@ final CompletableFuture<Boolean> storageResultFuture = urlStorageService.saveUrl
 
 ---
 
-## 5. 빌더 패턴의 중 한 특징
+## 5. 빌더 패턴의 중요한 특징
 
 + **빌더 패턴의 `가장 중요한 특징은 두 가지` 입니다.**
 
