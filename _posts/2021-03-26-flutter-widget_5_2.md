@@ -172,6 +172,19 @@ void _showDialog(BuildContext context) {
 
 ---
 
+## 2. DatePicker
+
++ 날짜를 선택할 때 사용합니다.
+
+---
+
+## 3. TimePicker
+
++ 시간을 선택할 때 사용하는 위젯입니다.
+
+
+---
+
 + 출처
   + 오준석, 『오준석의 플러터 생존코딩』, 한빛미디어(2020)
 
