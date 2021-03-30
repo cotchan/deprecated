@@ -1,7 +1,7 @@
 ---
 title: Flutter) [ui] 7.2 하단 탭 구성(BottomNavigationBar)
 author: cotchan
-date: 2021-03-30 00:00:00 +0800
+date: 2021-03-30 19:17:00 +0800
 categories: [Flutter, Flutter_ui]
 tags: [flutter]   
 ---

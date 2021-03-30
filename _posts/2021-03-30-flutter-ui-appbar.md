@@ -1,7 +1,7 @@
 ---
 title: Flutter) [ui] 7.3 상단 바 변경 방법(AppBar)
 author: cotchan
-date: 2021-03-30 00:00:00 +0800
+date: 2021-03-30 19:27:00 +0800
 categories: [Flutter, Flutter_ui]
 tags: [flutter]   
 ---

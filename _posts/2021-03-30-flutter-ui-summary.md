@@ -1,7 +1,7 @@
 ---
 title: Flutter) [ui] 7.1 UI 뼈대 작성(initialization)
 author: cotchan
-date: 2021-03-30 00:00:00 +0800
+date: 2021-03-30 19:07:00 +0800
 categories: [Flutter, Flutter_ui]
 tags: [flutter]   
 ---
