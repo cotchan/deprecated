@@ -9,7 +9,7 @@
 #--------------------------
 title: Cotchan                          # the main title
 
-tagline: CDUniverse # it will display as the sub-title
+tagline: Development archive # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
