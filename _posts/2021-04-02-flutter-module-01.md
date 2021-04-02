@@ -53,17 +53,17 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
 
   //TextField의 현재값을 얻는 데 필요합니다.
-  final myController = TextEditingController();
+  final myController = TextEditingController();    //11111
 
   void initState() {
     super.initState();
 
     //addListener로 상태를 모니터링 할 수 있음
-    myController.addListener(_printLatestValue);
+    myController.addListener(_printLatestValue);    //44444
   }
 
 
-  _printLatestValue() {
+  _printLatestValue() {     //55555
     // 컨트롤러의 text 프로퍼티로 연결된 TextField에 입력된 값을 얻음
     print("두 번째 Text field: ${myController.text}");
   }
@@ -71,7 +71,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   void dispose() {
     //화면이 종료될 때는 반드시 위젯 트리에서 컨트롤러를 해제해야 합니다.
-    myController.dispose();
+    myController.dispose();    //22222
     super.dispose();
   }
 
@@ -86,12 +86,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
         child: Column(
           children: <Widget>[
             TextField(
-              onChanged: (text) {
-                print("첫 번째 text field: $text");롤
+              onChanged: (text) {     //66666
+                print("첫 번째 text field: $text");
               },
             ),
             TextField(
-              controller: myController, //컨트러 지정
+              controller: myController, //33333 controller 지정
             ),
           ],
         ),
@@ -103,7 +103,31 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 ---
 
-## 4. 결과값
+## 4. 코드 해석
+
++ `11111`
+  + `TextField 위젯 수에 맞게` TextEditingController를 준비합니다.
+
++ `22222`
+  + 컨트롤러는 화면이 종료될 때 `dispose() 메서드로 반드시 해제`해야 합니다.
+
++ `33333`
+  + TextField 위젯에서는 `controller 프로퍼티`에 컨트롤러 변수를 설정합니다.
+  + 이렇게 하면 myController 컨트롤러 변수를 통해 TextField 인스턴스의 값을 얻거나 변경된 값을 모니터링 할 수 있습니다.
+
++ `44444`
+  + TextField 위젯의 값이 변경될 때마다 무언가를 수행하고 싶다면 `addListener() 메서드를 사용`합니다.
+  + myController 컨트롤러 변수가 연결된 두 번째 TextField의 값이 변경될 때마다 `_printLatestValue() 메서드가 실행`됩니다.
+
++ `55555`
+  + 컨트롤러가 연결된 TextField 위젯에 입력된 값은 `컨트롤러의 text 프로퍼티`를 통해 얻을 수 있습니다.
+
++ `66666`
+  + TextField 위젯 자체의 값 변경을 모니터링하는 것은 `onChanged` 프로퍼티로도 구현가능합니다.
+
+---
+
+## 5. 결과값
 
 ![Desktop View](/assets/img/post/flutter/2021-04-02-module-01.png)
 
