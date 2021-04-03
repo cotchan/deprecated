@@ -11,7 +11,9 @@ tags: [flutter_module]
 
 ---
 
-## 1. Form, TextFormField, TextEditingController
+## 1. Form
+## 2. TextFormField
+## 3. TextEditingController
 
 + **입력값을 검증하는데는 `Form`과 `TextFormField 위젯`을 사용합니다.**
 + `Form`과 `TextFormField`를 사용하면 회원 가입처럼 `사용자 입력값을 검증해야 할 때 유용`합니다.
@@ -24,7 +26,7 @@ tags: [flutter_module]
 
 ---
 
-## 2. 코드 예시
+## 4. 코드 예시
 
 + **키와 몸무게 입력값을 검증하고 결과 화면으로 값을 전달하도록 만들기**
 
