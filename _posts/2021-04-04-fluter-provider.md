@@ -13,10 +13,11 @@ tags: [flutter2]
 
 ## 1. Provider를 통한 상태 관리
 
-![Desktop View](/assets/img/post/flutter/2021-04-04-module-05.png)
-
-+ **`Provider`를 사용한 로그인 예시** 
++ **`Provider`를 사용한 로그인 과정 예시 코드**
   + [provider_sample_project](https://github.com/cotchan/provider_sample_project)
+  + 위 URL에 Provider를 사용한 상태 관리 내용이 잘 정리되어 있음
+
+![Desktop View](/assets/img/post/flutter/2021-04-04-module-05.png)
 
 ---
 
