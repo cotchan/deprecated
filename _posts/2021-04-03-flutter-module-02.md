@@ -1,9 +1,9 @@
 ---
-title: Flutter) [Module] 폼 입력값 검증 및 화면 전환
+title: Flutter) [Module] 폼(form) 입력값 검증 및 화면 전환
 author: cotchan
 date: 2021-04-03 15:40:00 +0800
 categories: [Flutter, Flutter_module]
-tags: [flutter_module]   
+tags: [flutter2]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**

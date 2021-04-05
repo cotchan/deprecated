@@ -1,9 +1,9 @@
 ---
-title: Flutter) [Module] 입력값 출력하기
+title: Flutter) [Module] 사용자로부터 입력받는 방법(form)
 author: cotchan
 date: 2021-04-02 20:44:00 +0800
 categories: [Flutter, Flutter_module]
-tags: [flutter_module]   
+tags: [flutter2]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
