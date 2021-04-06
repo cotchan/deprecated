@@ -35,22 +35,24 @@ public class Main {
 	}
 	
 	private static void permutation(int pickCnt){
-		if(pickCnt == C){
+		if(pickCnt == C)
+		{
 			int[] candiate = result.clone();
 			results.add(candiate);
 			return;
 		}
     
 		// 해당 자리에 뽑을 가능한 모든 수에 대해 시도
-		for(int i = 0; i < N; i++){
+		for(int i = 0; i < N; i++)
+		{
     
-			if(isSelected[i]) 
-          continue;
-          
+			if(isSelected[i]) continue;
+
 			result[pickCnt] = origin[i];
-
+			
+			//set isSelected true
 			permutation(pickCnt + 1); // 다음 자리의 순열 뽑기
-
+			//set isSelected false
 		}
 	}    
 }  
