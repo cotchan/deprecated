@@ -34,8 +34,7 @@ public class Main {
 		permutation(0);
 	}
 	
-	private static void permutation(int pickCnt)
-	{
+	private static void permutation(int pickCnt) {
 	
 		if(pickCnt == C)
 		{
