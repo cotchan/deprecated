@@ -8,7 +8,7 @@ tags: [jagorithm]
 
 + 아래 출처를 바탕으로 본인의 공부 목적으로 작성한 글입니다.    
 + **계속 업데이트할 예정입니다.**
-+ 
+
 ---
 
 ## 1. 순열 코드
@@ -67,20 +67,20 @@ public class Main {
 ```java
 public class Main {
 
-  //N개의 숫자에서 C개의 숫자로 순열을 만드는 경우
+  	//N개의 숫자에서 C개의 숫자로 순열을 만드는 경우
 	public static int N, C;
   
-  //origin: 주어진 N개의 숫자를 담는 배열
-  //result: 하나의 순열이 담기는 배열
+  	//origin: 주어진 N개의 숫자를 담는 배열
+  	//result: 하나의 순열이 담기는 배열
 	public static int origin[], result[];
   
-  //isSelected: 숫자 사용 여부 체크
+  	//isSelected: 숫자 사용 여부 체크
 	public static boolean isSelected[];
   
-  //results: result list
+  	//results: result list
 	public static List<int[]> results = new LinkedList<>();
 	
-	public static void main(String arg[]) throws IOException{
+	public static void main(String arg[]) throws IOException {
 				
 		origin = new int[N];
 		isSelected = new boolean[N];
@@ -89,14 +89,17 @@ public class Main {
 		permutation(0);
 	}
 	
-	private static void permutation(int pickCnt){
-		if(pickCnt == C){
+	private static void permutation(int pickCnt) {
+	
+		if(pickCnt == C)
+		{
 			int[] candiate = result.clone();
 			results.add(candiate);
 			return;
 		}
 		// 해당 자리에 뽑을 가능한 모든 수에 대해 시도
-		for(int i = 0; i < N; i++){
+		for(int i = 0; i < N; i++)
+		{
 			if(isSelected[i]) continue;
 			result[pickCnt] = origin[i];
 			isSelected[i] = true;
@@ -121,17 +124,17 @@ import java.util.*;
 
 public class BOJ15649 {
 
-  //N개의 숫자에서 C개의 숫자로 순열을 만드는 경우
+  	//N개의 숫자에서 C개의 숫자로 순열을 만드는 경우
 	public static int N, C;
   
-  //origin: 주어진 N개의 숫자를 담는 배열
-  //result: 하나의 순열이 담기는 배열
+  	//origin: 주어진 N개의 숫자를 담는 배열
+  	//result: 하나의 순열이 담기는 배열
 	public static int origin[], result[];
   
-  //isSelected: 숫자 사용 여부 체크
+  	//isSelected: 숫자 사용 여부 체크
 	public static boolean isSelected[];
   
-  //results: result list
+  	//results: result list
 	public static List<int[]> results = new LinkedList<>();
 	
 	public static void main(String arg[]) throws IOException{
