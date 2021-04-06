@@ -6,12 +6,14 @@ categories: [Algorithm, Algorithm_java]
 tags: [jagorithm]     
 ---
 
-아래 출처를 바탕으로 본인의 공부 목적으로 작성한 글입니다.    
-계속 업데이트할 예정입니다.
-
++ 아래 출처를 바탕으로 본인의 공부 목적으로 작성한 글입니다.    
++ **계속 업데이트할 예정입니다.**
++ 
 ---
 
-## 1. 순열
+## 1. 순열 코드
+
++ **`Main Logic`**
 
 ```java
 private static void permutation(int pickCnt);
@@ -46,7 +48,6 @@ public class Main {
 		// 해당 자리에 뽑을 가능한 모든 수에 대해 시도
 		for(int i = 0; i < N; i++)
 		{
-    
 			if(isSelected[i]) continue;
 
 			result[pickCnt] = origin[i];
@@ -60,6 +61,8 @@ public class Main {
 ```
 
 ---
+
++ **`Full Code`**
 
 ```java
 public class Main {
@@ -105,6 +108,12 @@ public class Main {
 ```
 
 ---
+
+## 1-2. 순열 예시 문제
+
++ [[BOJ15649번: N과M(1)]](https://www.acmicpc.net/problem/15649)
+
++ **정답 코드**
 
 ```java
 import java.io.*;
@@ -160,10 +169,7 @@ public class BOJ15649 {
 		}
 	}    
 }
-
 ```
-
-## 1-2. 순열 예시 문제
 
 ---
 
