@@ -17,9 +17,8 @@ tags: [jagorithm]
 
 ## 1-1. char[] to String
 
-+ **``**
-
-String.valueOf() 메소드에 매개변수로 char[]를 넣으면, String으로 곧바로 변환해줍니다.
++ **`String.valueOf()`**
++ String.valueOf() 메소드에 매개변수로 `char[]`를 넣으면, `String`으로 바로 변환해줍니다.
 
 ```java
 char[] ary = {'a','b','c','d','e'};
@@ -29,189 +28,16 @@ System.out.println(arrayString);
 
 ---
 
-+ **`조합`**
++ **`String 생성자`**
++ char 배열을 `String 생성자`의 인자로 넣고 String을 생성하면 됩니다.
 
 ```java
-//Header
-private static void combination(int idx, int pickCnt);
-
-//호출 시
-combination(0,0);
-```
-
----
-
-## 2. 순열 코드
-
-+ **`Main Logic`**
-
-```java
-private static void permutation(int pickCnt);
-
-
-public class Main {
-
-	public static int N, C;
-	public static int origin[], result[];
-	public static boolean isSelected[];
-  
-	public static List<int[]> results;
-	
-	public static void main(String arg[]) {
-				
-		origin = new int[N];
-		isSelected = new boolean[N];
-		result = new int[C];
-
-		permutation(0);
-	}
-	
-	private static void permutation(int pickCnt) {
-	
-		if(pickCnt == C)
-		{
-			int[] candiate = result.clone();
-			results.add(candiate);
-			return;
-		}
-    
-		// 해당 자리에 뽑을 가능한 모든 수에 대해 시도
-		for(int i = 0; i < N; i++)
-		{
-			if(isSelected[i]) continue;
-
-			result[pickCnt] = origin[i];
-			
-			//set isSelected true
-			permutation(pickCnt + 1); // 다음 자리의 순열 뽑기
-			//set isSelected false
-		}
-	}    
-}  
-```
-
----
-
-+ **`Full Code`**
-
-```java
-public class Main {
-
-  	//N개의 숫자에서 C개의 숫자로 순열을 만드는 경우
-	public static int N, C;
-  
-  	//origin: 주어진 N개의 숫자를 담는 배열
-  	//result: 하나의 순열이 담기는 배열
-	public static int origin[], result[];
-  
-  	//isSelected: 숫자 사용 여부 체크
-	public static boolean isSelected[];
-  
-  	//results: result list
-	public static List<int[]> results = new LinkedList<>();
-	
-	public static void main(String arg[]) throws IOException {
-				
-		origin = new int[N];
-		isSelected = new boolean[N];
-		result = new int[C];
-
-		permutation(0);
-	}
-	
-	private static void permutation(int pickCnt) {
-	
-		if(pickCnt == C)
-		{
-			int[] candiate = result.clone();
-			results.add(candiate);
-			return;
-		}
-		// 해당 자리에 뽑을 가능한 모든 수에 대해 시도
-		for(int i = 0; i < N; i++)
-		{
-			if(isSelected[i]) continue;
-			result[pickCnt] = origin[i];
-			isSelected[i] = true;
-			permutation(pickCnt + 1); // 다음 자리의 순열 뽑기
-			isSelected[i] = false;
-		}
-	}    
-}  
-```
-
----
-
-## 2-2. 순열 예시 문제
-
-+ [[BOJ15649번: N과M(1)]](https://www.acmicpc.net/problem/15649)
-
-+ **정답 코드**
-
-```java
-import java.io.*;
-import java.util.*;
-
-public class BOJ15649 {
-
-  	//N개의 숫자에서 C개의 숫자로 순열을 만드는 경우
-	public static int N, C;
-  
-  	//origin: 주어진 N개의 숫자를 담는 배열
-  	//result: 하나의 순열이 담기는 배열
-	public static int origin[], result[];
-  
-  	//isSelected: 숫자 사용 여부 체크
-	public static boolean isSelected[];
-  
-  	//results: result list
-	public static List<int[]> results = new LinkedList<>();
-	
-	public static void main(String arg[]) throws IOException{
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
-		String input[] = br.readLine().split(" ");
-		N = Integer.parseInt(input[0]);
-		C = Integer.parseInt(input[1]);
-		
-		origin = new int[N];
-		isSelected = new boolean[N];
-		result = new int[C];
-		
-		for (int i = 0; i < N; ++i)
-			origin[i] = i+1;
-		
-		permutation(0);
-	}
-	
-	private static void permutation(int idx){
-		if(idx == C){
-			int[] candiate = result.clone();
-			results.add(candiate);
-			return;
-		}
-		// 해당 자리에 뽑을 가능한 모든 수에 대해 시도
-		for(int i = 0; i < N; i++){
-			if(isSelected[i]) continue;
-			result[idx] = origin[i];
-			isSelected[i] = true;
-			permutation(idx + 1); // 다음 자리의 순열 뽑기
-			isSelected[i] = false;
-		}
-	}    
+public void charArrayToString1() {
+    char[] charArray = { 'H', 'e', 'l', 'l', 'o', 'W', 'o', 'r', 'l', 'd' };
+    String str = new String(charArray);
+    System.out.println(str);
 }
 ```
-
----
-
-## 3. 조합
-
----
-
-## 3-2. 조합 예시 문제
-
 
 ---
 
