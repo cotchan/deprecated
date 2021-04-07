@@ -11,7 +11,33 @@ tags: [jagorithm]
 
 ---
 
-## 1. 순열 코드
+## 1. 순열, 조합 코드 Summary 
+
++ **`순열`**
+
+```java
+//Header
+private static void permutation(int pickCnt);
+
+//호출 시
+permutation(0);
+```
+
+---
+
++ **`조합`**
+
+```java
+//Header
+private static void combination(int idx, int pickCnt);
+
+//호출 시
+combination(0,0);
+```
+
+---
+
+## 2. 순열 코드
 
 + **`Main Logic`**
 
@@ -112,7 +138,7 @@ public class Main {
 
 ---
 
-## 1-2. 순열 예시 문제
+## 2-2. 순열 예시 문제
 
 + [[BOJ15649번: N과M(1)]](https://www.acmicpc.net/problem/15649)
 
@@ -176,16 +202,13 @@ public class BOJ15649 {
 
 ---
 
-## 2. 조합
+## 3. 조합
 
 ---
 
-## 2-2. 조합 예시 문제
-
-
+## 3-2. 조합 예시 문제
 
 
 ---
 
 + 출처
-  + [정렬 HOW TO](https://docs.python.org/ko/3/howto/sorting.html)
