@@ -43,3 +43,4 @@ public void charArrayToString1() {
 
 + 출처
   + [자바 String을 Char로, Char를 String으로 변환하기](https://kutar37.tistory.com/entry/%EC%9E%90%EB%B0%94-String%EC%9D%84-Char%EB%A1%9C-Char%EB%A5%BC-String%EC%9C%BC%EB%A1%9C-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0) 
+  + [Java - Char 배열을 String으로 변환하는 방법](https://codechacha.com/ko/java-convert-chararray-to-string/)
