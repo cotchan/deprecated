@@ -1,7 +1,7 @@
 ---
-title: Java) 순열 / 조합 만드는 방법
+title: Java) 순열/조합 만드는 방법
 author: cotchan
-date: 2021-01-14 08:45:21 +0800
+date: 2021-04-07 08:20:21 +0800
 categories: [Algorithm, Algorithm_java]
 tags: [jagorithm]     
 ---
