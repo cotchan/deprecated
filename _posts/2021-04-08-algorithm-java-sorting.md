@@ -11,9 +11,13 @@ tags: [jagorithm]
 
 ---
 
-## 1. 순열, 조합 코드 Summary 
+## 1. Arrays.sort()
 
 + **`Arrays.sort()` 메서드를 사용합니다.**
+
+---
+
+## 1-1. 오름차순 정렬 
 
 ```java
 import java.util.Arrays;
