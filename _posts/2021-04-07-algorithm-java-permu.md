@@ -97,7 +97,7 @@ public class Main {
 	public static int N, C;
   
   	//origin: 주어진 N개의 숫자를 담는 배열
-  	//result: 하나의 순열이 담기는 배열
+  	//result: 완성된 하나의 순열이 담기는 배열
 	public static int origin[], result[];
   
   	//isSelected: 숫자 사용 여부 체크
@@ -208,43 +208,47 @@ public class BOJ15649 {
 + **`Main Logic`**
 
 ```java
-public static void combination(int idx, int pickCnt);
-
-	public static void combination(int idx, int pickCnt) {
-				
-		if (pickCnt == C)
-		{
-			int[] candidate = picked.clone();
-			results.add(candidate);
-			return;
-		}
-		
-		if (idx == N)
-		{
-			return;
-		}
-		
-		if (!isSelected[idx])
-		{
-			isSelected[idx] = true;
-			picked[pickCnt] = origin[idx];
-			//하나를 더 뽑고 다음 depth로 이동
-			combination(idx + 1, pickCnt + 1);
-			isSelected[idx] = false;
-		}
-		
-		//하나를 더 뽑지 않고 다음 depth로 이동
-		combination(idx + 1, pickCnt);
-	}
+public static int N,C;
+public static int[] origin;
+public static boolean[] isSelected;
+public static int[] picked;
+public static List<int[]> results = new LinkedList<>();
 	
-	public static void main(String[] args) throws IOException {
-			
-		origin = new int[N];
-		isSelected = new boolean[N];
-		picked = new int[C];
-		
-		combination(0,0);
+public static void combination(int idx, int pickCnt) {
+
+	if (pickCnt == C)
+	{
+		int[] candidate = picked.clone();
+		results.add(candidate);
+		return;
 	}
+
+	if (idx == N)
+	{
+		return;
+	}
+
+	if (!isSelected[idx])
+	{
+		isSelected[idx] = true;
+		picked[pickCnt] = origin[idx];
+		//하나를 더 뽑고 다음 depth로 이동
+		combination(idx + 1, pickCnt + 1);
+		isSelected[idx] = false;
+	}
+
+	//하나를 더 뽑지 않고 다음 depth로 이동
+	combination(idx + 1, pickCnt);
+}
+
+public static void main(String[] args) throws IOException {
+
+	origin = new int[N];
+	isSelected = new boolean[N];
+	picked = new int[C];
+
+	combination(0,0);
+}
 ```
 
 ---
@@ -252,6 +256,56 @@ public static void combination(int idx, int pickCnt);
 + **`Full Code`**
 
 ```java
+//N개의 숫자에서 C개의 숫자를 뽑아 조합을 만드는 경우
+public static int N,C;
+
+//origin: 주어진 N개의 숫자를 담는 배열
+public static int[] origin;
+
+//isSelected: 숫자 사용 여부 체크
+public static boolean[] isSelected;
+
+//result: 완성된 하나의 조합이 담기는 배열
+public static int[] picked;
+
+//results: result list
+public static List<int[]> results = new LinkedList<>();
+	
+public static void combination(int idx, int pickCnt) {
+
+	if (pickCnt == C)
+	{
+		int[] candidate = picked.clone();
+		results.add(candidate);
+		return;
+	}
+
+	if (idx == N)
+	{
+		return;
+	}
+
+	if (!isSelected[idx])
+	{
+		isSelected[idx] = true;
+		picked[pickCnt] = origin[idx];
+		//하나를 더 뽑고 다음 depth로 이동
+		combination(idx + 1, pickCnt + 1);
+		isSelected[idx] = false;
+	}
+
+	//하나를 더 뽑지 않고 다음 depth로 이동
+	combination(idx + 1, pickCnt);
+}
+
+public static void main(String[] args) throws IOException {
+
+	origin = new int[N];
+	isSelected = new boolean[N];
+	picked = new int[C];
+
+	combination(0,0);
+}
 ```
 
 ---
