@@ -97,7 +97,7 @@ public class Main {
 	public static int N, C;
   
   	//origin: 주어진 N개의 숫자를 담는 배열
-  	//result: 하나의 순열이 담기는 배열
+  	//result: 완성된 하나의 순열이 담기는 배열
 	public static int origin[], result[];
   
   	//isSelected: 숫자 사용 여부 체크
@@ -202,12 +202,205 @@ public class BOJ15649 {
 
 ---
 
-## 3. 조합
+## 3. 조합 코드
+
+
++ **`Main Logic`**
+
+```java
+public static void combination(int idx, int pickCnt);
+
+public class Main {
+
+	public static int N,C;
+	public static int[] origin;
+	public static boolean[] isSelected;
+	public static int[] picked;
+	public static List<int[]> results = new LinkedList<>();
+
+	public static void combination(int idx, int pickCnt) {
+
+		if (pickCnt == C)
+		{
+			int[] candidate = picked.clone();
+			results.add(candidate);
+			return;
+		}
+
+		if (idx == N)
+		{
+			return;
+		}
+
+		if (!isSelected[idx])
+		{
+			isSelected[idx] = true;
+			picked[pickCnt] = origin[idx];
+			//하나를 더 뽑고 다음 depth로 이동
+			combination(idx + 1, pickCnt + 1);
+			isSelected[idx] = false;
+		}
+
+		//하나를 더 뽑지 않고 다음 depth로 이동
+		combination(idx + 1, pickCnt);
+	}
+
+	public static void main(String[] args) throws IOException {
+
+		origin = new int[N];
+		isSelected = new boolean[N];
+		picked = new int[C];
+
+		combination(0,0);
+	}
+}
+```
+
+---
+
++ **`Full Code`**
+
+```java
+public class Main {
+
+	//N개의 숫자에서 C개의 숫자를 뽑아 조합을 만드는 경우
+	public static int N,C;
+
+	//origin: 주어진 N개의 숫자를 담는 배열
+	public static int[] origin;
+
+	//isSelected: 숫자 사용 여부 체크
+	public static boolean[] isSelected;
+
+	//result: 완성된 하나의 조합이 담기는 배열
+	public static int[] picked;
+
+	//results: result list
+	public static List<int[]> results = new LinkedList<>();
+
+	public static void combination(int idx, int pickCnt) {
+
+		if (pickCnt == C)
+		{
+			int[] candidate = picked.clone();
+			results.add(candidate);
+			return;
+		}
+
+		if (idx == N)
+		{
+			return;
+		}
+
+		if (!isSelected[idx])
+		{
+			isSelected[idx] = true;
+			picked[pickCnt] = origin[idx];
+			//하나를 더 뽑고 다음 depth로 이동
+			combination(idx + 1, pickCnt + 1);
+			isSelected[idx] = false;
+		}
+
+		//하나를 더 뽑지 않고 다음 depth로 이동
+		combination(idx + 1, pickCnt);
+	}
+
+	public static void main(String[] args) throws IOException {
+
+		origin = new int[N];
+		isSelected = new boolean[N];
+		picked = new int[C];
+
+		combination(0,0);
+	}
+}
+```
 
 ---
 
 ## 3-2. 조합 예시 문제
 
++ [[BOJ15649번: N과M(2)]](https://www.acmicpc.net/problem/15650)
+
++ **정답 코드**
+
+```java
+package BOJ;
+
+import java.io.*;
+import java.util.*;
+
+public class BOJ15650 {
+
+	public static int N,C;
+	public static int[] origin;
+	public static boolean[] isSelected;
+	public static int[] picked;
+	public static List<int[]> results = new LinkedList<>();
+	
+	public static void combination(int idx, int pickCnt) {
+				
+		if (pickCnt == C)
+		{
+			int[] candidate = picked.clone();
+			results.add(candidate);
+			return;
+		}
+		
+		if (idx == N)
+		{
+			return;
+		}
+		
+		if (!isSelected[idx])
+		{
+			isSelected[idx] = true;
+			picked[pickCnt] = origin[idx];
+			combination(idx + 1, pickCnt + 1);
+			isSelected[idx] = false;
+		}
+		
+		combination(idx + 1, pickCnt);
+	}
+	
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String[] info = br.readLine().split(" ");
+		N = Integer.parseInt(info[0]);
+		C = Integer.parseInt(info[1]);
+		
+		origin = new int[N];
+		isSelected = new boolean[N];
+		picked = new int[C];
+		
+		for (int i = 0; i < N; ++i)
+			origin[i] = i + 1;
+		
+		combination(0,0);
+		
+		for (int[] result : results)
+		{
+			StringBuilder sb = new StringBuilder();
+			
+			for (int number : result)
+			{
+				sb.append(number);
+				sb.append(" ");
+			}
+			
+			bw.append(sb.toString());
+			bw.newLine();
+		}
+		
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+}
+```
 
 ---
 
