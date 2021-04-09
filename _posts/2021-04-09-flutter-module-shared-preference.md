@@ -118,4 +118,5 @@ SharedPreferences.setMockInitialValues({});
 ---
 
 + 출처
+  + [shared_preferences](https://pub.dev/packages/shared_preferences)
   + [Flutter: Unhandled exception: MissingPluginException(No implementation found for method getAll on channel plugins.flutter.io/shared_preferences)](https://stackoverflow.com/questions/50687801/flutter-unhandled-exception-missingpluginexceptionno-implementation-found-for)
