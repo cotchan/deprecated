@@ -95,7 +95,12 @@ class User {
 
 ## 3-1. MissingPluginException
 
-+ Shared Preference를 사용하려고 하면 아래와 같은 에러가 발생했었음.
++ **Shared Preference를 사용하려고 하면 아래 코드 부분에서 `MissingPluginException` 발생**
+
+```dart
+//예외가 발생하는 지점
+SharedPreferences prefs = await SharedPreferences.getInstance();
+```
 
 ```dart
 //Error Message
