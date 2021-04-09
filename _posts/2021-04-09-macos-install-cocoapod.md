@@ -14,7 +14,7 @@ tags: [macos]
 ```
 //아래 코드를 터미널에서 실행
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ---
@@ -23,11 +23,14 @@ tags: [macos]
 
 ```
 //아래 코드를 터미널에서 실행
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+---
+
 ```
-brew update
+$ brew update
 ```
 
 ---
@@ -35,7 +38,7 @@ brew update
 ## 3. Gem을 통해 CocoaPods 설치
 
 ```
-sudo gem install cocoapods
+$ sudo gem install cocoapods
 ```
 
 ---
@@ -45,15 +48,17 @@ sudo gem install cocoapods
 + 2번 과정을 진행하면 아래와 같은 오류 메시지가 나옵니다.
 
 ```
+//Error Message
+
 Building native extensions. This could take a while... ERROR: Error installing cocoapods: ERROR: Failed to build gem native extension.
 ```
 
 ---
 
-+ **아래 코드를 복사 후 실행하면 문제를 해결할 수 있습니다.**
++ **`아래 코드를 복사 후 실행`하면 문제를 해결할 수 있습니다.**
 
 ```
-brew install cocoapods --build-from-source
+$ brew install cocoapods --build-from-source
 ```
 
 ---
