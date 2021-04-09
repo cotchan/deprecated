@@ -20,3 +20,4 @@ tags: [dart]
   + [Dart 언어 Future 알아보기](https://beomseok95.tistory.com/309)
   + [Asynchronous programming: futures, async, await](https://dart.dev/codelabs/async-await)
   + [다트 future, async, await](https://brunch.co.kr/@mystoryg/134)
+  + [Future<T> class](https://api.dart.dev/stable/2.10.5/dart-async/Future-class.html#constructors)
