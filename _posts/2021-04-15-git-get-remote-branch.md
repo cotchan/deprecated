@@ -51,6 +51,17 @@ $ git checkout -t origin/feature/create-meeting
 + 만약 branch 이름을 변경하여 가져오고 싶다면
   + `$ git checkout -b [생성할 branch 이름] [원격 저장소의 branch 이름]` 처럼 사용하면 됩니다.
 
+---
+
+## 3. 원격 branch clone 방법
+
+---
+
+## 3-1. git clone -b BRANCH_NAME
+
+```bash
+$ git clone -b {REMOTE_BRANCH_NAME} ${CLONE_URL}
+```
 
 ---
 
