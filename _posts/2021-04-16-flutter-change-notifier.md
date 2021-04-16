@@ -13,7 +13,7 @@ tags: [flutter2]
 
 ## 1. 세 컴포넌트의 관계
 
-![Desktop View](/assets/img/post/flutter/2021-04-16-flutter-01.png)
+![Desktop View](/assets/img/post/flutter/2021-04-16-flutter-01.jpg)
 
 ---
 
