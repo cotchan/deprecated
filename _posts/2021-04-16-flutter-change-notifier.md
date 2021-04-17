@@ -13,6 +13,12 @@ tags: [flutter2]
 
 ## 1. 세 컴포넌트의 관계
 
++ Provider를 사용한 상태관리를 이해하기 위해서는 알아야 할 3 가지 구성요소가 있습니다.
+
++ **`ChangeNotifier`**
++ **`ChangeNotifierProvider`**
++ **`Consumer`**
+
 ![Desktop View](/assets/img/post/flutter/2021-04-16-flutter-01.jpg)
 
 ---
