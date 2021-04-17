@@ -18,8 +18,8 @@ tags: [spring-boot3]
     - **관심사를 분리한다는 건 기능을 쪼갠다는 뜻입니다.**
     - 인터페이스를 도입하고 인터페이스만 의존하게 만듭니다.
         - 생성자를 통해 의존 관계를 느슨하게 한다.
-    - 객체에 대한 생성과 사용을 구분해서 사용하세요
-    - 보통 객체 생성에 대한 책임을 지는 애를 Factory라고 합니다.
+    - **객체에 대한 `생성과 사용을 구분해서 사용`하세요.**
+    - 보통 객체 생성에 대한 책임을 지는 애를 `Factory`라고 합니다.
         - ex. DaoFactory가 UserDao의 생성을 책임집니다.
 
 ![Desktop View](/assets/img/post/spring-boot3/2021-04-16-00.png)
@@ -31,10 +31,10 @@ tags: [spring-boot3]
 
 ---
 
-- 관심사의 분리를 위해
+- **`관심사의 분리`를 위해**
     - 기능을 쪼개서 중심 비즈니스 로직에 집중하기 위해
-    - 즉, 생성의 역할은 DI 클래스에게 맡겨버리는 것
-- 변경에 유연하게 대응할 수 있기 때문에
+    - **즉, 생성의 역할은 DI 클래스에게 맡겨버리는 것**
+- **`변경에 유연하게 대응`할 수 있기 때문에**
     - Application의 요구사항이 바뀌게 되면 의존을 주입하는 부분만 바꾸면 끝
     - 테스트 환경에서 Mock을 사용하여 특정 환경마다, 상황에 따라서 바꿀 수 있다.
 
@@ -47,7 +47,7 @@ tags: [spring-boot3]
 - 웹 서버를 개발하려면 http 서버를 만들어야 합니다.
 - 그러나 좀 더 비즈니스 로직에 집중할 수 있도록
     - **서블릿 스펙을 준수하면 → 우리는 서버랑 통신하는 기능을 가진 어플리케이션을 만들 수 있습니다.**
-    - **즉, 서블릿 스펙에 준수하면 다양한 서블릿 서버에서 내가 작성한 코드가 동작합니다.**
+    - **즉, 서블릿 스펙을 준수하면 다양한 서블릿 서버에서 내가 작성한 코드가 동작합니다.**
 - 근데 스프링 MVC에서는 Dispatcher Servlet을 제공해줍니다.
     - 그러면 사용자는 이 서블릿에 설정만 하면 (= 여기에 내가 작성한 컨트롤러를 등록하면)
         - 특정 URL 요청이 오면 디스패쳐 서블릿이 URL 매핑에 맞는 컨트롤러를 호출해줌
@@ -61,7 +61,7 @@ tags: [spring-boot3]
 
 ---
 
-- **Context란, 객체들이 들어가있는 공간을 의미합니다. (즉, 빈들이 모여있는 곳)**
+- **`Context란, 객체들이 들어가있는 공간을 의미`합니다. (즉, 빈들이 모여있는 곳)**
 - Context는 계층 구조를 가지고 있습니다. (각 Context는 독립적으로 존재하는 게 X)
     - 하나의 root Context가 있고, 여기 자식으로 Servlet Context가 만들어집니다.
     - 자손들 끼리는 서로의 Bean Scope를 침범할 수 없지만
@@ -78,13 +78,13 @@ tags: [spring-boot3]
 - 스프링부트는 최적의 Convention으로 스프링 애플리케이션을 빠르게 개발하고 시작하게 해줍니다.
 - 스프링부트는 web.xml이 없고, @SpringBootApplication만 있으면 뜹니다.
 - 장점
-    - Embedded WAS를 통해 main 클래스를 실행해서 서블릿을 바로 실행시킬 수 있습니다.
+    - `Embedded WAS`를 통해 main 클래스를 실행해서 서블릿을 바로 실행시킬 수 있습니다.
         - Embedded Tomcat, Embedded netty 등
-    - AutoConfiguration
+    - **`AutoConfiguration`**
         - Bean을 등록하기 위한 일종의 템플릿
         - 여러가지 빈들을 일일이 등록하는 게 아니라, 자동으로 빈이 등록되게 해줍니다.
         - 어떤 Bean이 AutoConfiguration을 통해 등록되는지 공부하는 게 좋습니다.
-    - Packaging Excutable Jar
+    - `Packaging Excutable Jar`
         - JAR를 묶어서 java JAR cmd로 바로 서버가 뜰 수 있게 해줍니다.
         - MSA, 클라우드 환경에 적합하게 발전
     - 쉬운 외부 환경 설정
@@ -95,8 +95,8 @@ tags: [spring-boot3]
 
 ---
 
-- 작업을 하나의 단위로 보는 것을 의미합니다.
-- 즉, 하나의 단위로 본다는 것은 단위 작업 중에 하나라도 실패하면 rollback되게 하는 것.
+- **`작업을 하나의 단위로 보는 것을 의미합니다.`**
+- 즉, 하나의 단위로 본다는 것은 단위 작업 중에 하나라도 실패하면 `rollback`되게 하는 것.
     - 이렇게 트랜잭션 단위로 묶습니다.
 
 ```java
@@ -145,8 +145,7 @@ public class User {
 ---
 
 - 도메인 모델에서의 Entity란
-    - Identifier가 있고,
-    - 시간에 따라서 내용이 계속 바뀌는 것을 Entity라 합니다.
+    - **`Identifier`가 있고, 시간에 따라서 내용이 계속 바뀌는 것을 Entity라 합니다.**
         - 바뀌는 이유 → 비즈니스 로직은 계속 변하기 때문
 - 어떠한 필드들이 불변이고, 가변인지를 고려해서 Entity를 작성해야 합니다.
 - setter를 주지 않습니다. 또한 setter가 필요하다면 명확한 로직(메서드)를 추가해야 합니다.
@@ -199,8 +198,8 @@ public class Email {
 
 ---
 
-- User input Validation은 Controller Layer에서 처리하기.
-- Controller 영역에서는 DTO 위주로
+- **`User input Validation`은 Controller Layer에서 처리하기.**
+- **Controller 영역에서는 `DTO 위주`로**
     - 그러므로 Controller에서는 parameter로 의미있는 dto를 사용하세요. (Entity X)
     - Controller에서 엔티티를 바로 전달받으면 안 됩니다. 꼭 DTO를 거치도록 한다.
         - → 그러면 엔티티에 비즈니스 로직을 위한 코드와 외부에 전달할 내용이 섞여버림
@@ -209,10 +208,9 @@ public class Email {
 
 ---
 
-- Throw Exception 여기서 던지기
+- **`Throw Exception` 여기서 던지기**
 - Business Role은 이 Layer에 적용됩니다.
 - Service 영역에서는 Entity 위주
-
 
 
 ---
