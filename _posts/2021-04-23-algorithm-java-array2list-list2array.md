@@ -22,6 +22,12 @@ tags: [jagorithm]
 + **`Arrays.asList(Object[])`**
 
 ```java
+ArrayList 리스트명 = new ArrayList<>(Arrays.asList(배열명));
+```
+
+---
+
+```java
 Integer arr[] = {1,2,3,4}; // 배열 생성
 		
 // 배열을 List로 변환
@@ -37,7 +43,23 @@ ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(arr2));
 
 ## 1. List 2 Array
 
-+ 향후 업데이트할 예정입니다.
++ **`리스트명.toArray(new 데이터타입[size])`**
+
+```java
+배열명 = 리스트명.toArray(new 데이터타입[리스트명.size()]);
+```
+
+---
+
+```java
+Integer arr[] = {1,2,3,4}; // 배열 생성
+		
+// 배열을 List로 변환
+ArrayList<Integer> list = new ArrayList<>(Arrays.asList(arr));
+		
+// List를 배열로 변환
+arr = list.toArray(new Integer[list.size()]);
+```
 
 
 ---
