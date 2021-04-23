@@ -24,11 +24,20 @@ tags: [wiki]
 + **`2021 OJT Flutter 프로젝트에서 사용했던 정규식 모음`**
 
 ```dart
-_unvalidUrlExpression = new RegExp(r'[^a-zA-Z0-9-\\./]'), //프로젝트 내에서 URL 유효성 판단 로직. 영어대소문자, 숫자, URL 표현을 위한 -, ., /만 허용
-_isAlphabet = new RegExp(r'[a-zA-Z]'), //is alpabet 의미. 주어진 문자가 최소 하나라도 영어대소문자를 포함하고 있는지 식별하기 위함
-_isDigit = new RegExp(r'\d'), //is digit 의미. 주어진 문자가 최소 하나라도 숫자를 포함하고 있는지 식별하기 위함
-_isNotDigit = new RegExp(r'\D'), //not digit 의미. hasMatch 함수를 적용해서 숫자가 아닌 문자를 식별하는 게 목적
-_isNonCharacter = new RegExp(r'\W'), //not word 의미. hasMatch 함수를 적용해서 숫자, 영어 대소문자를 제외한 특수문자를 전부 잡아내는 게 목적
+//프로젝트 내에서 URL 유효성 판단 로직. 영어대소문자, 숫자, URL 표현을 위한 -, ., /만 허용
+_unvalidUrlExpression = new RegExp(r'[^a-zA-Z0-9-\\./]');
+
+//is alpabet 의미. 주어진 문자가 최소 하나라도 영어대소문자를 포함하고 있는지 식별하기 위함
+_isAlphabet = new RegExp(r'[a-zA-Z]');
+
+//is digit 의미. 주어진 문자가 최소 하나라도 숫자를 포함하고 있는지 식별하기 위함
+_isDigit = new RegExp(r'\d');
+
+//not digit 의미. hasMatch 함수를 적용해서 숫자가 아닌 문자를 식별하는 게 목적
+_isNotDigit = new RegExp(r'\D');
+
+//not word 의미. hasMatch 함수를 적용해서 숫자, 영어 대소문자를 제외한 특수문자를 전부 잡아내는 게 목적
+_isNonCharacter = new RegExp(r'\W');
 ```
 
 ---
@@ -77,7 +86,7 @@ RegExp _isNonCharacter = new RegExp(r'\W');
 + **`isNotDigit` 사용**
 + **포트 번호는 `4자리 숫자`인 경우만 유효**
 
-```
+```dart
 //숫자가 아닌 애를 식별하는 정규식에 매칭되었다? -> false
 // 그게 아니라면 숫자로만 이루어져있다고 판단 
 bool _isValidPort(String portNumber) {
@@ -97,7 +106,7 @@ RegExp _isNotDigit = new RegExp(r'\D');
 
 ## 2-4. 숫자, 영문자 조합한 URL 유효성 판단
 
-+ 진짜 URL 식별을 위한 유명한 정규식을 적용한게 X
++ **진짜 URL 식별을 위한 유명한 정규식을 적용한게 X**
   + 숫자, 영문자 조합이어야 함
   + 그리고 URL 특성상 쓰일 수 밖에 없는 `.`, `/`, `-`는 포함
 
