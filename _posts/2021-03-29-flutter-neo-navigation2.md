@@ -39,6 +39,10 @@ class NavigationService {
 ---
 
 ```dart
+import 'package:get_it/get_it.dart';
+
+final GetIt locator = GetIt.instance;
+
 void setupLocator() {
   locator.registerLazySingleton(() => NavigationService());
 }
@@ -92,7 +96,7 @@ Widget build(BuildContext context) {
 
 ## 4. 설정 후 Navigation 하는 방법
 
-+ 샘플 페이지 2 개 가정
++ 샘플 페이지 2 개 `HomeView`, `LoginView` 가정
 
 ```dart
 class HomeView extends StatelessWidget {
