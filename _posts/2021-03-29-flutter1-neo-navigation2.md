@@ -3,7 +3,7 @@ title: Flutter) [네비게이션2] Clean Navigation without context (GlobalKey �
 author: cotchan
 date: 2021-03-29 20:10:00 +0800
 categories: [Flutter,Flutter_navigation]
-tags: [flutter]   
+tags: [flutter1]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
