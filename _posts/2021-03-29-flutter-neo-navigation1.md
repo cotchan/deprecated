@@ -15,9 +15,9 @@ tags: [flutter]
 ## 1. 플러터에서 Navigation을 사용하는 방법
 
 + **플러터에서는 Navigation하는 방법이 두 가지 있습니다.**
-  + 1. 명시적으로 경로를 설정하여 pushed Routes
-  + 2. `Named Routes` 사용 → 이 방법이 좀 더 바람직합니다.
-    + 그래서 이 포스팅에서는 Named Routes 방법을 설명할 것입니다.**
+  + 명시적으로 경로를 설정하여 pushed Routes
+  + **`Named Routes` 사용 → 이 방법이 좀 더 바람직합니다.**
+    + 그래서 이 포스팅에서는 Named Routes 방법을 설명할 것입니다.
 
 ---
 
@@ -102,6 +102,32 @@ class Router {
 }
 ```
 
+```dart
+NavigatorService.dart
+
+class NavigatorService {
+
+  static const String SPLASH_PAGE_ROUTE = '/';
+  static const String LOGIN_PAGE_ROUTE = '/login';
+  static const String MAIN_PAGE_ROUTE = '/main';
+  static const String FILE_DETAIL_VIEW_ROUTE = '/detail';
+
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case SPLASH_PAGE_ROUTE:
+        return MaterialPageRoute(builder: (_) => SplashPage());
+      case LOGIN_PAGE_ROUTE:
+        return MaterialPageRoute(builder: (_) => LoginPage());
+      case MAIN_PAGE_ROUTE:
+        return MaterialPageRoute(builder: (_) => MainPage());
+      case FILE_DETAIL_VIEW_ROUTE:
+        List<Map<String,String>> file = settings.arguments as List<Map<String,String>>;
+        return MaterialPageRoute(builder: (_) => FileDetailView(file));
+    }
+  }
+}
+```
+
 ---
 
 ## 2-3. Named Routes를 위해 MaterialApp 설정 방법
@@ -110,6 +136,8 @@ class Router {
 - 홈뷰 (`Home()`)를 시작 뷰로 정의하기 위해 홈 속성을 위젯을 설정하는 대신 `initialRoute`를 사용합니다.
 
 ```dart
+//main.dart
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
