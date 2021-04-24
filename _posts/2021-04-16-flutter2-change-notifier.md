@@ -1,5 +1,5 @@
 ---
-title: Flutter) changeNotifier, changeNotifierProvider, Consumer<>
+title: Flutter) changeNotifier, changeNotifierProvider, Consumer<changeNotifier>
 author: cotchan
 date: 2021-04-16 22:30:00 +0800
 categories: [Flutter, Flutter_main]
@@ -17,7 +17,7 @@ tags: [flutter2]
 
 + **`ChangeNotifier`**
 + **`ChangeNotifierProvider`**
-+ **`Consumer`**
++ **`Consumer<changeNotifier>`**
 
 ![Desktop View](/assets/img/post/flutter/2021-04-16-flutter-01.jpg)
 
