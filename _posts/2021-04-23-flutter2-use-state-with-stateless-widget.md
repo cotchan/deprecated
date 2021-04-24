@@ -1,5 +1,5 @@
 ---
-title: Flutter) MVVM에서 StateEnum 사용하여 상태 관리하는 법 (doStatementChangedWork)
+title: Flutter) MVVM에서 StateEnum을 사용하여 상태 관리하는 법 (doStatementChangedWork)
 author: cotchan
 date: 2021-04-23 23:44:00 +0800
 categories: [Flutter, Flutter_main]
@@ -13,16 +13,19 @@ tags: [flutter2]
 
 ## 1. INTRO
 
-+ 
+ 
 
 ---
 
 ## 2. doStatementChangedWork
 
 + **viewModel에서 doStatementChangedWork를 정의하여 `none`, `doing`, `done`에 대한 상태를 분기합니다.**
-  + **대표적인 사용처: `Progress bar`. doing일 때만 보여주고, none, done일 때는 보여주지 않기**
+  + **대표적인 사용처: `Progress bar`
+    + `doing`일 때만 보여주고, none, done일 때는 보여주지 않기**
 
-+ **중요한 점은 `doStatementChangedWork를 적용하게 되면` 화면 갱신을 얘가 전담하므로 `statementChangedWork function 부분은 비즈니스 로직만` 담기게 됩니다.**
++ **중요한 점**
+  + **`doStatementChangedWork를 적용하면` 화면 갱신을 얘가 전담
+    + 그러므로 `statementChangedWork function 부분은 비즈니스 로직만` 담기게 됩니다.**
 
 ```dart
 enum TaskState { none, doing, done }
