@@ -3,7 +3,7 @@ title: Wiki) h2 DB 설치 방법
 author: cotchan 
 date: 2021-02-17 20:19:21 +0800 
 categories: [Wiki, Wiki_Spring-boot]
-tags: [wiki] 
+tags: [spring-setting] 
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**

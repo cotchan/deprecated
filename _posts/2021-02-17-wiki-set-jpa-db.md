@@ -3,7 +3,7 @@ title: Wiki) JPA와 DB 설정, 동작 확인
 author: cotchan 
 date: 2021-02-17 20:21:21 +0800 
 categories: [Wiki, Wiki_Spring-boot]
-tags: [wiki] 
+tags: [spring-setting] 
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
