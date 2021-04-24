@@ -18,10 +18,48 @@ tags: [dart]
 + **생성자를 지정하지 않으면 기본 생성자를 제공합니다.**
 + **기본 생성자는 인수가 없으며 `수퍼 클래스에서 인수가 없는 생성자를 호출`합니다.**
 
+---
+
+## 2. 생성자 파라미터 { }
+
++ **생성자를 만들때 `{} 로 감싸고 각 멤버변수들을 초기화시켜줍니다.`** 
++ **그러면 매개변수를 `optional` 하게 만들 수 있습니다.**
+
+```dart
+import 'dart:math'; 
+
+class Rectangle { 
+  int width; 
+  int height; 
+  Point origin; 
+  Rectangle({this.origin = const Point(0,0), this.width = 0, this.height = 0}); 
+  
+  @override String toString() => 'origin x: ${origin.x} origin y : ${origin.y} width : $width height : $height'; 
+} 
+
+main() { 
+  print(Rectangle(origin: const Point(10, 20), width: 10, height: 20)); 
+  print(Rectangle(origin: const Point(10, 20), width: 10)); 
+  print(Rectangle(width: 10)); print(Rectangle(height: 10)); 
+  print(Rectangle()); 
+}
+```
 
 ---
 
-## 2. 인스턴스 변수에 생성자 인수 할당
++ 코드의 결과값 
+
+```
+origin x: 10 origin y : 20 width : 10 height : 20
+origin x: 10 origin y : 20 width : 10 height : 0
+origin x: 0 origin y : 0 width : 10 height : 0
+origin x: 0 origin y : 0 width : 0 height : 10
+origin x: 0 origin y : 0 width : 0 height : 0
+```
+
+---
+
+## 3. 인스턴스 변수에 생성자 인수 할당
 
 + dart 언어는 parameter로 받는 인스턴스 변수를 생성자 인수로 넘기는 것을 표현하는 고유한 방식이 있습니다.
 
@@ -50,7 +88,7 @@ class Point {
 
 ---
 
-## 3. 명명된 생성자
+## 4. 명명된 생성자
 
 + 명명 된 생성자를 사용하여 클래스에 대한 여러 생성자를 구현하거나 추가적인 명확성을 제공할 수 있습니다.
 
@@ -71,7 +109,7 @@ class Point {
 
 ---
 
-## 4. 목록 초기화
+## 5. 목록 초기화
 
 + `:(콜론)`을 통해 본문의 생성자가 실행되기 전에 값을 초기화할 수 있습니다.
 
@@ -104,7 +142,7 @@ main() {
 
 ---
 
-## 5. 팩토리 생성자
+## 6. 팩토리 생성자
 
 + **항상 클래스의 새 인스턴스를 생성하지는 않는 생성자를 구현할 때는 `factory 키워드를 사용` 바랍니다.**
 + 예를 들어 팩토리 생성자는 캐시에서 인스턴스를 반환하거나 하위 유형의 인스턴스를 반환 할 수 있습니다.
@@ -150,7 +188,7 @@ class Logger {
 
 ---
 
-## 6. 생성자 리다이렉팅
+## 7. 생성자 리다이렉팅
  
 + 특정 생성자에게 **처리를 `위임(delegating)` 할 수 있습니다.**
 
@@ -169,49 +207,10 @@ class Point {
 
 ---
 
-## 7. 생성자는 상속받지 않습니다.
+## 8. 생성자는 상속받지 않습니다.
 
 + **서브 클래스는 슈퍼 클래스에서 생성자를 상속받지 않습니다.**
 + 생성자(constructor)를 선언하지 않는 서브 클래스는, 디폴트 (인수 없음, 이름 없음)의 constructor 만을 가집니다.
-
----
-
-## 8. 생성자 파라미터 { }
-
-+ **생성자를 만들때 `{} 로 감싸고 각 멤버변수들을 초기화시켜줍니다.`** 
-+ 그러면 매개변수를 `optional` 하게 만들 수 있습니다.**
-
-```dart
-import 'dart:math'; 
-
-class Rectangle { 
-  int width; 
-  int height; 
-  Point origin; 
-  Rectangle({this.origin = const Point(0,0), this.width = 0, this.height = 0}); 
-  
-  @override String toString() => 'origin x: ${origin.x} origin y : ${origin.y} width : $width height : $height'; 
-} 
-
-main() { 
-  print(Rectangle(origin: const Point(10, 20), width: 10, height: 20)); 
-  print(Rectangle(origin: const Point(10, 20), width: 10)); 
-  print(Rectangle(width: 10)); print(Rectangle(height: 10)); 
-  print(Rectangle()); 
-}
-```
-
----
-
-+ 코드의 결과값 
-
-```
-origin x: 10 origin y : 20 width : 10 height : 20
-origin x: 10 origin y : 20 width : 10 height : 0
-origin x: 0 origin y : 0 width : 10 height : 0
-origin x: 0 origin y : 0 width : 0 height : 10
-origin x: 0 origin y : 0 width : 0 height : 0
-```
 
 ---
 
