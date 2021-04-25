@@ -61,7 +61,7 @@ public class AuthenticationRestController {
 
 ---
 
-## 2-1. request로부터 로그인 안 된 인증주체 만들기
+## 2-1. 로그인 안 된 인증주체 만들기
 
 + **컨트롤러는 사용자로부터 받은 요청에서(`@RequestBody`) 로그인 안 된 인증 주체(`Authentication`)를 만듭니다.**
   + `getPrincipal` 사용
@@ -90,21 +90,21 @@ public class AuthenticationRestController {
 
 ---
 
-## 3-1. Manager는 AuthenticationProvider를 통해 실제 인증 처리
+## 3-1. Manager는 Provider를 통해 인증 처리
 
 + AuthenticationManager는 AuthenticationProvider를 List로 가지고 있습니다.
 + 그리고 AuthenticationManager는 이 Provider List를 사용하여 실제 인증 처리를 합니다.
 
 ---
 
-## 3-2. AuthenticationProvider.supports == true ?
+## 3-2. Provider.supports == true ?
 
 + **AuthenticationManager는 `AuthenticationProvider를 하나 선택`해서 `실제 로그인 요청을 처리`합니다.**
 + AuthenticationProvider를 선택하는 방법은 **Provider의 `supports 메서드가 true를 리턴`하면 이 provider가 바로 로그인을 처리할 provider가 됩니다.**
 
 ---
 
-## 3-3. AuthenticationProvider.authenticate 호출
+## 3-3. Provider.authenticate 호출
 
 + 그래서 supports 메서드에서 true를 리턴한 provider가 `인증처리에 대한 메서드 authenticate를 호출`하게 됩니다.
   + authenticate 메서드가 실질적으로 로그인을 처리
@@ -115,13 +115,13 @@ public class AuthenticationRestController {
 
 ---
 
-## 3-5. 자신이 정한 인증주체로 타입 캐스팅
+## 3-5. 인증주체 타입 캐스팅
 
 + authentication 메서드에서는 parameter로 넘어온 authentication을 처리할 수 있다고 했기 때문에 자신이 정한 인증 주체로 authentication을 타입캐스팅합니다.
 
 ---
 
-## 3-6. 그 후 UserService를 이용해서 로그인 처리
+## 3-6. UserService 이용해서 로그인 처리
 
 + 그리고 나서 타입 캐스팅한 인증 주체를 실제 Service를 사용하여 로그인 처리를 합니다. 
 
@@ -181,11 +181,13 @@ private Authentication processUserAuthentication(AuthenticationRequest request) 
 
 ---
 
-## 3-8. authenticate 메서드에서 '로그인 된 인증주체' return
+## 3-8. '로그인 된 인증주체' return
+
++ **결국 AuthenticationManager.authenticate 메서드에서 `'로그인 된 인증주체'를 return 해줍니다.`**
 
 ---
 
-## 3-9. AuthenticationManager -> 다시 컨트롤러로 
+## 3-9. Manager -> 다시 컨트롤러로 
 
 + AuthenticationManager에게 `'로그인된 인증주체'`를 넘겨받은 컨트롤러는
 + `'로그인된 인증주체'`에서 아래의 정보만 꺼내서 응답에 포함시킵니다.
