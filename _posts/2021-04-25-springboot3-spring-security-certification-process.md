@@ -2,8 +2,8 @@
 title: Spring-Security) 인증 과정 정리
 author: cotchan 
 date: 2021-04-25 22:00:21 +0800 
-categories: [Spring-Boot3]
-tags: [spring-boot3] 
+categories: [Spring, Spring_Security]
+tags: [spring-security]
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
@@ -197,6 +197,14 @@ private Authentication processUserAuthentication(AuthenticationRequest request) 
 ## 3-10. 컨트롤러가 Response 내려줌
 
 + 3-9 과정에서 조립한 응답을 클라이언트에게 내려줍니다.
+
+---
+
+![img001](https://user-images.githubusercontent.com/75410527/115998762-c854d100-a623-11eb-8ae3-66df165f2a04.jpg)
+
+---
+
+![img002](https://user-images.githubusercontent.com/75410527/115998767-cab72b00-a623-11eb-8926-866ee87752e7.jpg)
 
 ---
 
