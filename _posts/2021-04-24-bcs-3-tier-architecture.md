@@ -11,7 +11,9 @@ tags: [bcs]
 
 ---
 
-## 1. 
+## 1. 3-tier-아키텍쳐란
+
++ **`REST API`를 만드는 대표적인 아키텍쳐 패턴입니다.**
 
 ![3-tier-architecture](https://user-images.githubusercontent.com/75410527/115984724-991e6f80-a5e3-11eb-958b-4ae26af9611f.PNG)
 
@@ -44,20 +46,18 @@ tags: [bcs]
 
 - 서버에 트래픽이 몰려서 서버가 죽을 때 해결할 수 있는 가장 쉬운 방법은?
     - **`Scale out` (Application Layer를 늘립니다.)**
-- 보통 로드 밸런서가 라운드 로빈방식으로 부하를 뿌려줍니다.
- 
-1. **각 Layer가 모듈화가 잘 되어있으면 다른 Layer에 영향을 안 주고 변화를 줄 수 있습니다.**
-2. **`Scale-out`이 쉽습니다.**
 
----
+![scale-out-01](https://user-images.githubusercontent.com/75410527/115984799-e00c6500-a5e3-11eb-8c55-c6052120428c.PNG)
 
-## 6. 3-tier 아키텍쳐의 단점
++ 왜 3-tier 아키텍쳐를 사용할까요?
+    + **Scale out(수평 확장)이 쉽기 때문입니다.**
+    + **즉, 각 Layer가 모듈화가 잘 되어있으면 다른 Layer에 영향을 안 주고 변화를 줄 수 있습니다.**
 
-- 특정 Load(서버)에 문제가 생겼을 때 대응을 해야합니다.
-  - 해결방법
-    1. **`세션 클러스터`**
-    2. **`JWT`**
-
++ 그런데 Scale out 아키텍쳐를 만들 때 신경써야 할 것은 **특정 노드에 장애가 발생했을 때 사용자 로그인이 풀리거나 하는 문제에 대응하는 것입니다.**
++ 대응하는 대표적인 방법 
+    + `세션 클러스터` 구성
+    + `JWT` 사용
 
 ---
 + 출처
+    + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
