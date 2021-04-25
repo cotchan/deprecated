@@ -13,14 +13,22 @@ tags: [spring-boot3]
 ---
 
 
-## 1. asdf
+## 1. JwtAuthenticationTokenFilter
 
++ **`웹 요청이 컨트롤러에 가기 전에` 먼저 수행됩니다.**
++ JwtAuthenticationTokenFilter에서
+  + `SecurityContextHolder를 뒤져보고` http 요청에 JwtToken이 있는지 확인해봅니다.
+  + 만약에 `Jwt가 있다면` Jwt 값을 검증하고 인증 정보를 생성해서 SecurityContextHolder에 추가합니다.
+
++ **SecurityContextHolder는 현재 로그인된 사용자 정보를 담고있습니다.**
 
 ---
 
 ## 2. AuthenticationRestController
 
 ```java
+//AuthenticationRestController.java
+
 @RestController
 @RequestMapping("api/auth")
 public class AuthenticationRestController {
@@ -111,6 +119,8 @@ public class AuthenticationRestController {
 
 ```java
 //3-5, 3-6에 해당하는 코드
+//JwtAuthenticationProvider.java
+
 
 //null이 아닌 값을 반환하면 인증 처리가 완료됩니다.
 @Override
@@ -138,6 +148,8 @@ public Authentication authenticate(Authentication authentication) throws Authent
   + **jwt를 발급받습니다.**
 
 ```java
+//JwtAuthenticationProvider.java
+
 private Authentication processUserAuthentication(AuthenticationRequest request) {
   try {
     //여기에 principal 부분은 email, credentials 부분은 비밀번호입니다.
