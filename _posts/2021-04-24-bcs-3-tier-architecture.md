@@ -13,6 +13,8 @@ tags: [bcs]
 
 ## 1. 
 
+![3-tier-architecture](https://user-images.githubusercontent.com/75410527/115984724-991e6f80-a5e3-11eb-958b-4ae26af9611f.PNG)
+
 ---
 
 ## 2. Presentation Layer
