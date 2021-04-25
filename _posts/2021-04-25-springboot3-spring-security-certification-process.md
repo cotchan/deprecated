@@ -17,7 +17,7 @@ tags: [spring-security]
 + **`웹 요청이 컨트롤러에 가기 전에` 먼저 수행됩니다.**
 + JwtAuthenticationTokenFilter에서
   + `SecurityContextHolder를 뒤져보고` http 요청에 JwtToken이 있는지 확인해봅니다.
-  + 만약에 `Jwt가 있다면` Jwt 값을 검증하고 인증 정보를 생성해서 SecurityContextHolder에 추가합니다.
+  + 만약에 `Jwt가 있다면` Jwt 값을 검증하고 인증 정보를 생성해서 SecurityContextHolder에 추가
 
 + **SecurityContextHolder는 현재 로그인된 사용자 정보를 담고있습니다.**
 
@@ -71,7 +71,7 @@ public class AuthenticationRestController {
 
 ## 2-2. 만든 인증주체에 대한 처리를 AuthenticationManager에게 위임
 
-+ 컨트롤러는 자신이 만든 `'로그인 안 된 인증주체'에 대한 처리`를 `AuthenticationManager에게 위임`합니다.
++ 컨트롤러는 자신이 만든 `'로그인 안 된 인증주체'에 대한 처리`를 `AuthenticationManager에게 위임`
 
 + **지금까지 설명하는 부분이 아래 이미지의 `빨간색 네모 박스에 해당하는 내용`입니다.**
 
@@ -90,23 +90,24 @@ public class AuthenticationRestController {
 
 ---
 
-## 3-1. Manager는 Provider를 통해 인증 처리
+## 3-1. Manager는 Provider로 인증 처리
 
 + AuthenticationManager는 AuthenticationProvider를 List로 가지고 있습니다.
-+ 그리고 AuthenticationManager는 이 Provider List를 사용하여 실제 인증 처리를 합니다.
++ **그리고 AuthenticationManager는 이 `Provider List를 사용하여 실제 인증 처리`를 합니다.**
 
 ---
 
 ## 3-2. Provider.supports == true ?
 
-+ **AuthenticationManager는 `AuthenticationProvider를 하나 선택`해서 `실제 로그인 요청을 처리`합니다.**
-+ AuthenticationProvider를 선택하는 방법은 **Provider의 `supports 메서드가 true를 리턴`하면 이 provider가 바로 로그인을 처리할 provider가 됩니다.**
++ **AuthenticationManager는 `AuthenticationProvider를 하나 선택`해서 `실제 로그인 요청을 처리`**
++ AuthenticationProvider를 선택하는 방법은 
+  + **Provider의 `supports 메서드가 true를 리턴`하면 이 provider가 로그인 요청을 처리합니다.**
 
 ---
 
 ## 3-3. Provider.authenticate 호출
 
-+ 그래서 supports 메서드에서 true를 리턴한 provider가 `인증처리에 대한 메서드 authenticate를 호출`하게 됩니다.
++ supports 메서드에서 true를 리턴한 provider가 `인증처리에 대한 메서드 authenticate를 호출`합니다.
   + authenticate 메서드가 실질적으로 로그인을 처리
 
 ---
@@ -117,7 +118,9 @@ public class AuthenticationRestController {
 
 ## 3-5. 인증주체 타입 캐스팅
 
-+ authentication 메서드에서는 parameter로 넘어온 authentication을 처리할 수 있다고 했기 때문에 자신이 정한 인증 주체로 authentication을 타입캐스팅합니다.
++ 우선, 자신이 정한 인증 주체로 authentication을 타입캐스팅합니다.
+  + 타입 캐스팅이 가능한 이유는 parameter로 넘어온 authentication을 처리할 수 있다고 했기 때문
+  + `Provider.supports == true` 이므로 
 
 ---
 
@@ -150,10 +153,10 @@ public Authentication authenticate(Authentication authentication) throws Authent
 ## 3-7. '로그인 후 인증 주체' 만들기
 
 + UserService를 이용하여 로그인을 처리하기 때문에
-+ 로그인이 정상처리 되어 UserService로부터 User Entity를 받으면 User Entity로부터 '로그인 후 인증 주체'를 만듭니다.
++ 로그인이 정상처리 되어 UserService로부터 User Entity를 받으면 
++ User Entity로부터 '로그인 후 인증 주체'를 만듭니다.
 + **`로그인 후 인증주체`는**
-  + **`principal` 타입이 String에서 `JwtAuthentication`으로 바뀝니다.**
-  + **jwt를 발급받습니다.**
+  + **`principal` 타입이 String에서 `JwtAuthentication`으로 바뀌고 `jwt를 발급`받습니다.**
 
 ```java
 //JwtAuthenticationProvider.java
@@ -187,7 +190,7 @@ private Authentication processUserAuthentication(AuthenticationRequest request) 
 
 ---
 
-## 3-9. Manager -> 다시 컨트롤러로 
+## 4. Manager -> 다시 컨트롤러로 
 
 + AuthenticationManager에게 `'로그인된 인증주체'`를 넘겨받은 컨트롤러는
 + `'로그인된 인증주체'`에서 아래의 정보만 꺼내서 응답에 포함시킵니다.
@@ -196,9 +199,9 @@ private Authentication processUserAuthentication(AuthenticationRequest request) 
 
 ---
 
-## 3-10. 컨트롤러가 Response 내려줌
+## 4-1. 컨트롤러가 Response 내려줌
 
-+ 3-9 과정에서 조립한 응답을 클라이언트에게 내려줍니다.
++ 바로 위의 `4` 과정에서 조립한 응답을 클라이언트에게 내려줍니다.
 
 ---
 
