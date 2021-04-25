@@ -156,7 +156,7 @@ public Authentication authenticate(Authentication authentication) throws Authent
 + 로그인이 정상처리 되어 UserService로부터 User Entity를 받으면 
 + User Entity로부터 '로그인 후 인증 주체'를 만듭니다.
 + **`로그인 후 인증주체`는**
-  + **`principal` 타입이 String에서 `JwtAuthentication`으로 바뀌고 `jwt를 발급`받습니다.**
+  + **`principal 타입`이 String에서 `JwtAuthentication`으로 바뀌고 `jwt를 발급`받습니다.**
 
 ```java
 //JwtAuthenticationProvider.java
@@ -193,17 +193,21 @@ private Authentication processUserAuthentication(AuthenticationRequest request) 
 ## 4. Manager -> 다시 컨트롤러로 
 
 + AuthenticationManager에게 `'로그인된 인증주체'`를 넘겨받은 컨트롤러는
-+ `'로그인된 인증주체'`에서 아래의 정보만 꺼내서 응답에 포함시킵니다.
-  + **`jwt`**
-  + `userInfomrmation`
++ `'로그인 된 인증주체'`에서 아래의 정보만 꺼내서 클라이언트에게 돌려줄 응답에 포함시킵니다.
+  + `jwt`
+  + `userInformation`
 
 ---
 
-## 4-1. 컨트롤러가 Response 내려줌
+## 4-1. 컨트롤러가 Response 응답 전달
 
-+ 바로 위의 `4` 과정에서 조립한 응답을 클라이언트에게 내려줍니다.
++ 바로 위의 `4` 과정에서 조립한 응답을 클라이언트에게 전달합니다.
 
 ---
+
+## 5. 원본 필기 내용
+
++ 아래 필기 내용을 바탕으로 작성한 포스팅입니다.
 
 ![img001](https://user-images.githubusercontent.com/75410527/115998762-c854d100-a623-11eb-8ae3-66df165f2a04.jpg)
 
