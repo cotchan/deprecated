@@ -1,5 +1,5 @@
 ---
-title: Spring-Security) 인증, 인가 과정 정리
+title: Spring-Security) 인증 과정 정리
 author: cotchan 
 date: 2021-04-25 22:00:21 +0800 
 categories: [Spring-Boot3]
@@ -8,7 +8,6 @@ tags: [spring-boot3]
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
 + **아래 출처를 참고하여 작성하였습니다.**
-
 
 ---
 
@@ -74,11 +73,20 @@ public class AuthenticationRestController {
 
 + 컨트롤러는 자신이 만든 `'로그인 안 된 인증주체'에 대한 처리`를 `AuthenticationManager에게 위임`합니다.
 
++ **지금까지 설명하는 부분이 아래 이미지의 `빨간색 네모 박스에 해당하는 내용`입니다.**
+
+<img width="2281" alt="스크린샷 2021-04-25 오후 10 20 37" src="https://user-images.githubusercontent.com/75410527/115995058-adc72b80-a614-11eb-9dc0-732c15357a88.png">
+
 ---
 
 ## 3. AuthenticationManager
 
 + AuthenticationManager는 인터페이스고, 실제 로직을 처리하는 구현체는 `ProviderManager` 입니다.
+
++ **지금부터 설명하는 부분은 아래 이미지의 `빨간색 네모 박스에 해당하는 내용`입니다.**
+
+<img width="2276" alt="스크린샷 2021-04-25 오후 10 21 13" src="https://user-images.githubusercontent.com/75410527/115995082-cd5e5400-a614-11eb-9f46-8708b7799da3.png">
+
 
 ---
 
