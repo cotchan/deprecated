@@ -1,5 +1,5 @@
 ---
-title: Java) 자료형 변환
+title: Java) 자료형 변환(형변환) 모음
 author: cotchan
 date: 2021-04-08 08:20:21 +0800
 categories: [Algorithm, Algorithm_java]
@@ -36,6 +36,32 @@ public void charArrayToString1() {
     char[] charArray = { 'H', 'e', 'l', 'l', 'o', 'W', 'o', 'r', 'l', 'd' };
     String str = new String(charArray);
     System.out.println(str);
+}
+```
+
+---
+
+## 1-2. char to String
+
++ **`한 글자 char`에 대해서 `String 연산을 적용`해야 할 때**
++ **`String s = char c + "";`**
+
+```
+//example1
+char c = 'a';
+String oneLetterString = c + "";
+```
+
+```
+//example2
+for (int idx = 0; idx < source.length(); ++idx)
+{
+    String target = source.charAt(idx) + "";
+    
+    if (target.compareTo("-") == 0 || target.compareTo("_") == 0 || target.compareTo(".") == 0)
+    {
+        //...
+    }
 }
 ```
 

@@ -1,9 +1,9 @@
 ---
-title: Flutter) 함수
+title: dart) 함수 (Optional param, Positional param)
 author: cotchan
-date: 2021-04-06 19:47:00 +0800
-categories: [Flutter, Flutter_main]
-tags: [flutter2]   
+date: 2021-04-15 15:43:00 +0800
+categories: [Dart]
+tags: [dart]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
@@ -73,4 +73,3 @@ assert(say('Bob', 'Howdy', 'smoke signal') ==
   + [[Dart] Functions(함수)](https://joycestudios.tistory.com/73)
   + 유동환, 『처음 배우는 플러터』, 한빛미디어(2020) 
   + 오준석, 『오준석의 플러터 생존코딩』, 한빛미디어(2020)
-
