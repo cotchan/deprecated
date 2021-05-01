@@ -75,12 +75,12 @@ public class UsersApiControllerTest {
 ## 5. Controller 테스트 함수 구조
 
 + **Controller를 테스트하는 함수의 구조라 하면 아래와 같습니다.**
-  + **`사용할 Service 객체 모킹`**
-    + Controller에서 사용하는 Service Layer function을 모킹합니다.
+  + **`사용할 Service 객체 Mocking`**
+    + Controller에서 사용하는 Service Layer function을 Mocking합니다.
   + **`mockMvc.perform call`**
     + 이 시점에 GET, POST 등 HTTP 메서드로 API를 호출합니다.
   + **`verify`**
-    + 모킹했던 Service Layer function이 실제 호출되었는지 확인합니다.
+    + Mocking 했던 Service Layer function이 실제 호출되었는지 확인합니다.
 
 ---
 
@@ -162,7 +162,7 @@ public class UsersApiControllerTest {
 
 ## 5-3. join 테스트 예시(POST)
 
-```
+```java
 @WebMvcTest(controllers = UsersApiController.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UsersApiControllerTest {
