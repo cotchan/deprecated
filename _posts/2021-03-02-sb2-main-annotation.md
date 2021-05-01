@@ -176,3 +176,4 @@ public class HelloController {
 + 출처
   + 이동욱, 『스프링 부트와 AWS로 혼자 구현하는 웹 서비스』, 프리렉(2019) 
   + [[Spring] Transactional 정리 및 예제](https://goddaehee.tistory.com/167)
+  + [Spring에서 @RequestParam과 @PathVariable](https://elfinlas.github.io/2018/02/18/spring-parameter/)
