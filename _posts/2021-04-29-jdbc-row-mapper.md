@@ -90,8 +90,8 @@ while(rs.next()) {
 public User mapRow(ResultSet rs, int count) throws SQLException {
     // ResultSet 값을 User 객체에 저장
     User user = new User();
-    actor.setFirstName(resultSet.getString("name"));
-    actor.setLastName(resultSet.getString("description"));
+    user.setFirstName(rs.getString("name"));
+    user.setLastName(rs.getString("description"));
     
     // user 반환
     return user;
@@ -138,6 +138,8 @@ public class UserRepositoryImpl implements UserRepository {
         .lastLoginAt(dateTimeOf(rs.getTimestamp("last_login_at")))
         .createAt(dateTimeOf(rs.getTimestamp("create_at")))
         .build();
+
+}
 ```
 
 ---
