@@ -111,7 +111,7 @@ public class UsersApiController {
 
 ## @RequestParam
 
-+ `/read?no=1`와 같이 url이 전달될 때 `no` 파라메터를 받아오게 됩니다.
++ `/read?no=1`와 같이 url이 전달될 때 `no` 파라메터를 받아오게 됩니다.
 
 ```java
 @GetMapping("read")
