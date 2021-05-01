@@ -67,7 +67,61 @@ tags: [dev_annotation]
 
 ---
 
+## @PathVariable
+
+```java
+@PostMapping("delete/{idx}")
+@ResponseBody
+public JsonResultVo postDeleteFactory(@PathVariable("idx") int factoryIdx) {
+	return factoryService.deleteFacotryData(factoryIdx);
+}
+```
+
+
+---
+
+```java
+@RestController
+@RequestMapping("/api/users")
+public class UsersApiController {
+
+    private final UsersService usersService;
+
+    @Autowired
+    public UsersApiController(UsersService usersService) {
+        this.usersService = usersService;
+    }
+
+    @GetMapping(value = "")
+    public Result findAll() {
+    }
+
+    @GetMapping(value = "/{id}")
+    public UsersResponseDto findById(@PathVariable("id") Long userId) {
+    }
+
+    @PostMapping("/join")
+    public UsersJoinResponseDto save(@RequestBody UsersJoinRequestDto requestDto) {
+    }
+
+}
+```
+
+---
+
 ## @RequestParam
+
++ `/read?no=1`와 같이 url이 전달될 때 `no` 파라메터를 받아오게 됩니다.
+
+```java
+@GetMapping("read")
+public ModelAndView getFactoryRead(@RequestParam("no") int factroyId, SearchCriteria criteria) 
+{
+  //...    
+}
+```
+
+---
 
 + **외부에서 API로 넘긴 파라미터를 가져오는 어노테이션입니다.**
 + 여기서는 외부에서 name (@RequestParam("name")) 이란 이름으로 넘긴 파라미터를 메소드 파라미터 name(String name)에 저장하게 됩니다.
