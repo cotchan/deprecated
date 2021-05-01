@@ -8,6 +8,7 @@ tags: [spring-setting]
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
 + **아래 출처를 참고하여 작성한 글입니다.**
++ [Maven 정복 by WikiDocs](https://wikidocs.net/book/1910)
 
 ---
 
