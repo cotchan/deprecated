@@ -86,6 +86,12 @@ List<Member> members = memberService.findMembers();
 
 ---
 
+## 11. 인텔리제이에서 특정 문자열 검색
+
++ **`cmd` + `shift` + `F`**
+  + 인텔리제이에서 특정 문자열을 검색하기 위한 커맨드입니다.
+
+
 
 
 
