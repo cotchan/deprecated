@@ -203,3 +203,4 @@ public class UsersApiControllerTest {
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
     + [Testing Spring Boot RESTful APIs using MockMvc/Mockito, Test RestTemplate and RestAssured](https://medium.com/swlh/https-medium-com-jet-cabral-testing-spring-boot-restful-apis-b84ea031973d)
     + [Testing the Web Layer](https://spring.io/guides/gs/testing-web/)
+    + [How to use MockMvcResultMatchers.jsonPath](https://stackoverflow.com/questions/42725199/how-to-use-mockmvcresultmatchers-jsonpath)
