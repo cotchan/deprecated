@@ -211,5 +211,26 @@ public class UsersApiController {
 
 ---
 
+## 5. 메시지 (정상 처리 시)
+
+<img width="473" alt="스크린샷 2021-05-01 오후 8 46 27" src="https://user-images.githubusercontent.com/75410527/116781871-bf02b300-aac0-11eb-9a5c-da0bbff6bda2.png">
+
+---
+
+<img width="634" alt="스크린샷 2021-05-01 오후 8 47 01" src="https://user-images.githubusercontent.com/75410527/116781873-c1650d00-aac0-11eb-8064-d213b1e284bb.png">
+
+
+---
+
+## 6. 메시지 (예외 발생 시)
+
+<img width="514" alt="스크린샷 2021-05-01 오후 8 59 49" src="https://user-images.githubusercontent.com/75410527/116781876-c45ffd80-aac0-11eb-8cae-a79c06d53574.png">
+
+---
+
+<img width="699" alt="스크린샷 2021-05-01 오후 9 02 06" src="https://user-images.githubusercontent.com/75410527/116781877-c6c25780-aac0-11eb-82af-d8a4972147be.png">
+
+---
+
 + 출처
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 

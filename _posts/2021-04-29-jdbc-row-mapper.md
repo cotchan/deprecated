@@ -21,6 +21,9 @@ tags: [java]
 
 ## 2. RowMapper란?
 
++ **템플릿으로부터 `ResultSet을 전달받고`, `필요한 정보를 추출해서 리턴하는 방식으로 동작`합니다.**
++ ResultSet의 로우 하나만을 매핑하기 위해 사용됩니다.
+
 + **RowMapper를 사용하면, `원하는 형태의 결과값을 반환`할 수 있습니다.**
 
 + **`SELECT로 나온 여러개의 값을 반환`할 수 있을 뿐만 아니라, `사용자가 원하는 형태로도 얼마든지 받을 수 있습니다.`**
@@ -167,3 +170,4 @@ User user = jdbcTemplate.queryForObject(
 
 + 출처
   + [RowMapper에 대해!](https://velog.io/@seculoper235/RowMapper%EC%97%90-%EB%8C%80%ED%95%B4)
+  + [[Spring] JdbcTemplate 사용법 - update(), queryForInt(), queryForObject(), query()](https://withseungryu.tistory.com/92#%F0%9F%92%A1%20update())
