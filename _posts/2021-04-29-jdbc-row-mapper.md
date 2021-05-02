@@ -3,7 +3,7 @@ title: JDBC) Row Mapper
 author: cotchan
 date: 2021-04-29 08:40:00 +0800
 categories: [Java]
-tags: [java]   
+tags: [jdbc]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
