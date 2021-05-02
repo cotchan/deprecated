@@ -14,7 +14,7 @@ tags: [spring-module]
 
 + ApplicationContext의 다양한 기능 중 한 가지인 MessageSource 입니다.
 + ApplicationContext는 다양한 기능을 상속하고 있습니다.
-  +  **그중에 MessageSource는 `다국어 처리를 할 때 사용되는 객체`입니다. 
+  +  **그중에 MessageSource는 `다국어 처리를 할 때 사용되는 객체`입니다.**
 + 지금부터 MessageSource의 사용 방법을 알아보겠습니다.
 
 ---
@@ -28,7 +28,7 @@ tags: [spring-module]
 + **`resources 밑에 messages.properties` 파일을 만듭니다.**
 
 + messages.properties 파일의 내용은 `key값=value값이 기본입니다.`
-  + **원한다면 {0}, {1} 등을 추가**하여 원하는 string을 parameter로 바인딩하여 사용할 수 있습니다.
+  + **원한다면 {0}, {1} 등을 추가하여 원하는 string을 parameter로 바인딩하여 사용할 수 있습니다.**
 
 ```
 //messages.properties
