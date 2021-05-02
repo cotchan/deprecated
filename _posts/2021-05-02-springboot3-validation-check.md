@@ -12,7 +12,7 @@ tags: [spring-boot3]
 
 ## 1. Intro
 
-+ **`원칙`: 기본적으로 `사용자의 모든 입력값은 Validation Check`가 이뤄져야 합니다.**
++ **Validation Check의 기본 원칙은 `사용자의 모든 입력값은 Validation Check`가 이뤄져야 합니다.**
 
 ---
 
@@ -26,7 +26,7 @@ tags: [spring-boot3]
 
 ## 3. Validation은 어디에서?
 
-- 원칙적으로 `Controller`, `Service`, `Repository` Layer 모두에서 입력값 검증을 수행해야 합니다.
+- 원칙적으로 `Controller`, `Service`, `Repository Layer` 모두에서 입력값 검증을 수행해야 합니다.
   - 그러나 비슷한 검증 로직이 반복되고, 관리가 어려워집니다.
   - 비슷한 로직이 반복되며 성능한 비효율적입니다.
 
@@ -35,10 +35,10 @@ tags: [spring-boot3]
 ## 4. Validation 우선순위 Layer
 
 + **`Service Layer`와 `Domain Model의 생성자`**
-  + 이거는 Validation의 최소 필수치입니다.
+  + 이 두 곳은 Validation Check가 이뤄져야 할 최소영역이자 필수영역입니다.
 
 + Layer 별 우선순위를 정하자면 
-  + **`최소 Service Layer에서는 Validation Check`을 합니다`**
+  + **`최소 Service Layer에서는 Validation Check`을 합니다.**
   + **그리고 필요하다면 Controller Layer에서도 Validation Check를 합니다.**
     - 이유: Service는 Controller가 호출하기도 하지만, 다른 Service가 Service를 호출하기 때문입니다.
 
@@ -46,9 +46,9 @@ tags: [spring-boot3]
 
 ## 5. Validation Check 우선순위 정리
 
-+ 1st. `Model의 생성자`에서 인자들에 대한 Validation
-+ 2nd. `Service Layer`에서의 Validation
-+ 3rd. Controller Layer
++ 1st. `Model의 생성자에서` 인자들에 대한 Validation
++ 2nd. `Service Layer에서` Validation
++ 3rd. `Controller Layer`
 
 ---
 
