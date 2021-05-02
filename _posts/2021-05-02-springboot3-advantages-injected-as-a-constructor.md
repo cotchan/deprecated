@@ -1,7 +1,7 @@
 ---
 title: sb3) 코드 재사용성을 높이는 방법(feat. 생성자로 주입받기)
 author: cotchan 
-date: 2021-05-01 19:41:21 +0800 
+date: 2021-05-02 20:00:21 +0800 
 categories: [Spring-Boot3]
 tags: [spring-boot3] 
 ---
