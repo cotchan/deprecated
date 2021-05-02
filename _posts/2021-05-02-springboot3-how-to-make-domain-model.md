@@ -3,7 +3,7 @@ title: sb3) 도메인 모델 모델링 순서(방법)
 author: cotchan 
 date: 2021-05-02 20:05:21 +0800 
 categories: [Spring-Boot3]
-tags: [spring-module] 
+tags: [spring-boot3] 
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
