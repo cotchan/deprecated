@@ -13,7 +13,7 @@ tags: [database]
 
 ## 1. ON 의미
 
-```sql
+```
 SELECT * 
   FROM 테이블1 T1 
   LEFT JOIN 테이블2 T2 ON (T2.테이블을 연결할 컬럼 = T1.테이블을 연결할 컬럼 );
