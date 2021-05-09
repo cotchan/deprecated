@@ -47,8 +47,8 @@ tags: [spring-boot3]
 ## 5. Validation Check 우선순위 정리
 
 + 1st. `Model의 생성자`에서 인자들에 대한 Validation
-+ 2nd. `Service Layer`에서의 Validation
-+ 3rd. Controller Layer
++ 2nd. `Service Layer`에서 Validation
++ 3rd. `Controller Layer`에서 Validation
 
 ---
 
