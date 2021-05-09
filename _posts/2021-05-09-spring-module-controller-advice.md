@@ -258,3 +258,4 @@ public class GeneralExceptionHandlerTest {
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
     + [스프링부트 : REST 어플리케이션에서 예외처리하기](https://springboot.tistory.com/33)
     + [Assert an Exception is Thrown in JUnit 4 and 5](https://www.baeldung.com/junit-assert-exception)
+    + [[Junit] Spring boot 에서 @ControllerAdvice 를 테스트하는 방법](https://sanghye.tistory.com/29)
