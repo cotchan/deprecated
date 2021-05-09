@@ -34,3 +34,4 @@ tags: [spring-boot3]
 
 + 출처
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
+    + [DataAccessException이란? (What is DataAccessException?)](https://withseungryu.tistory.com/95)
