@@ -14,6 +14,8 @@ tags: [spring-module]
 
 + **@ControllerAdvice는 당신의 스프링 어플리케이션에게 이 클래스가 당신의 어플리케이션의 예외 처리를 맡을거라고 알려주게 됩니다.**
 
+<img width="1311" alt="스크린샷 2021-05-09 오후 7 14 05" src="https://user-images.githubusercontent.com/75410527/117568389-e548d400-b0fa-11eb-97cc-fb7e7364f7d9.png">
+
 ---
 
 ## 2. @ExceptionHandler
@@ -23,6 +25,8 @@ tags: [spring-module]
 ---
 
 ## 3. GeneralExceptionHandler
+
+<img width="1219" alt="스크린샷 2021-05-09 오후 7 13 08" src="https://user-images.githubusercontent.com/75410527/117568395-f1cd2c80-b0fa-11eb-9442-7255606cfc33.png">
 
 + `controller 패키지`에 선언합니다.
 
