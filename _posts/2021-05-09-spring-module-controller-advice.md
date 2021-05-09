@@ -30,6 +30,8 @@ tags: [spring-module]
 
 <img width="1219" alt="스크린샷 2021-05-09 오후 7 13 08" src="https://user-images.githubusercontent.com/75410527/117568395-f1cd2c80-b0fa-11eb-9442-7255606cfc33.png">
 
+---
+
 + `controller 패키지`에 선언합니다.
 
 ```java
@@ -93,11 +95,13 @@ public class GeneralExceptionHandler {
 }
 ```
 
-+ **`handleBadRequestException` method**
-  + 위에 @ExceptionHandler으로 선언한 IllegalStateException부터, MultipartException까지 예외를 잡습니다.
+---
 
-+ **`handleException` method**
-  + Exception 클래스의 자식들의 모든 예외를 처리합니다.
++ **코드 설명**
+    + **`handleBadRequestException` method**
+      + 위에 @ExceptionHandler으로 선언한 IllegalStateException부터, MultipartException까지 예외를 잡습니다.
+    + **`handleException` method**
+      + Exception 클래스의 자식들의 모든 예외를 처리합니다.
 
 ---
 
