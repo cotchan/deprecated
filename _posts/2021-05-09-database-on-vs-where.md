@@ -46,7 +46,7 @@ FROM dept d LEFT OUTER JOIN emp e
 ON d.deptno = e.deptno;
 ```
 
- 
+![스크린샷 2021-05-09 오후 8 46 11](https://user-images.githubusercontent.com/75410527/117571077-f64c1200-b107-11eb-8775-3da3312b681c.png)
 
 ---
 
@@ -61,6 +61,8 @@ GROUP BY d.deptno
 ORDER BY d.deptno;
 ```
 
+![스크린샷 2021-05-09 오후 8 46 34](https://user-images.githubusercontent.com/75410527/117571083-fd732000-b107-11eb-9119-5488b0dfa064.png)
+
 ---
 
 + case2. ON절에 조건문이 있는 경우
@@ -72,6 +74,8 @@ ON d.deptno = e.deptno AND e.sal > 2000
 GROUP BY d.deptno
 ORDER BY d.deptno;
 ```
+
+![스크린샷 2021-05-09 오후 8 46 43](https://user-images.githubusercontent.com/75410527/117571088-019f3d80-b108-11eb-880a-83d79a0f3653.png)
 
 ---
 
