@@ -16,7 +16,7 @@ tags: [database]
 ```
 SELECT * 
   FROM 테이블1 T1 
-  LEFT JOIN 테이블2 T2 ON (T2.테이블을 연결할 컬럼 = T1.테이블을 연결할 컬럼 );
+  LEFT JOIN 테이블2 T2 ON (T1.테이블을 연결할 컬럼 = T2.테이블을 연결할 컬럼);
 ```
 
 + **`조인문을 사용할 때 ON절을 이용해서 해당 조건으로 테이블을 조인하게 됩니다.`**
@@ -50,7 +50,7 @@ ON d.deptno = e.deptno;
 
 ---
 
-+ case1. WHERE절에 조건문이 있는 경우
++ case1. **`WHERE절에 조건문이 있는 경우`**
     + dept 테이블에 DEPTNO 40인 값이 존재하지만 where 절을 만족하지 못하므로 결과에서 삭제해버립니다. 
 
 ```sql
@@ -66,7 +66,7 @@ ORDER BY d.deptno;
 
 ---
 
-+ case2. ON절에 조건문이 있는 경우
++ case2. **`ON절에 조건문이 있는 경우`**
     + dept 테이블에 DEPTNO 40인 값이 e.sal > 2000 조건을 만족하지 못하지만 WHERE절 없는 OUTER JOIN의 이므로 결과에 나옵니다.
 
 ```sql
