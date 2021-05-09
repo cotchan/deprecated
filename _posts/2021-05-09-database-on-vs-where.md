@@ -51,6 +51,7 @@ ON d.deptno = e.deptno;
 ---
 
 + case1. WHERE절에 조건문이 있는 경우
+    + dept 테이블에 DEPTNO 40인 값이 존재하지만 where 절을 만족하지 못하므로 결과에서 삭제해버립니다. 
 
 ```sql
 SELECT d.deptno, sum(e.sal)
@@ -66,6 +67,7 @@ ORDER BY d.deptno;
 ---
 
 + case2. ON절에 조건문이 있는 경우
+    + dept 테이블에 DEPTNO 40인 값이 e.sal > 2000 조건을 만족하지 못하지만 WHERE절 없는 OUTER JOIN의 이므로 결과에 나옵니다.
 
 ```sql
 SELECT d.deptno, sum(e.sal)
