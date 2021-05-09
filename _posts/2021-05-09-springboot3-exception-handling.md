@@ -30,6 +30,7 @@ tags: [spring-boot3]
 + **반면에 `UnChecked-Exception`은 throws를 하거나 try-catch를 강제하지 않습니다.**
   + **그러므로 함수에서는 throws를 하고 있는데, 따로 처리를 해주지 않아도 컴파일 에러가 발생하지 않습니다.**
 
+<img width="697" alt="스크린샷 2021-05-09 오후 5 01 03" src="https://user-images.githubusercontent.com/75410527/117564690-41eec380-b0e8-11eb-8e10-b5fae4efa01a.png">
 
 ---
 
