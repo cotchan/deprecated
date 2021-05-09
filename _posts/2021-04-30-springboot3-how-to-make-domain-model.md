@@ -1,7 +1,7 @@
 ---
 title: sb3) 도메인 모델 모델링 순서(방법)
 author: cotchan 
-date: 2021-05-02 20:05:21 +0800 
+date: 2021-04-30 20:05:21 +0800 
 categories: [Spring-Boot3]
 tags: [spring-boot3] 
 ---

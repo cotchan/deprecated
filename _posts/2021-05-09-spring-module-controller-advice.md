@@ -14,6 +14,8 @@ tags: [spring-module]
 
 + **@ControllerAdvice는 당신의 스프링 어플리케이션에게 이 클래스가 당신의 어플리케이션의 예외 처리를 맡을거라고 알려주게 됩니다.**
 
+<img width="1311" alt="스크린샷 2021-05-09 오후 7 14 05" src="https://user-images.githubusercontent.com/75410527/117568389-e548d400-b0fa-11eb-97cc-fb7e7364f7d9.png">
+
 ---
 
 ## 2. @ExceptionHandler
@@ -24,13 +26,13 @@ tags: [spring-module]
 
 ## 3. GeneralExceptionHandler
 
++ **요구사항**
+
+<img width="1219" alt="스크린샷 2021-05-09 오후 7 13 08" src="https://user-images.githubusercontent.com/75410527/117568395-f1cd2c80-b0fa-11eb-9442-7255606cfc33.png">
+
+---
+
 + `controller 패키지`에 선언합니다.
-
-+ **`handleBadRequestException` method**
-  + 위에 @ExceptionHandler으로 선언한 IllegalStateException부터, MultipartException까지 예외를 잡습니다.
-
-+ **`handleException` method**
-  + Exception 클래스의 자식들의 모든 예외를 처리합니다.
 
 ```java
 //GeneralExceptionHandler.java
@@ -92,6 +94,14 @@ public class GeneralExceptionHandler {
 
 }
 ```
+
+---
+
++ **코드 설명**
+    + **`handleBadRequestException` method**
+      + 위에 @ExceptionHandler으로 선언한 IllegalStateException부터, MultipartException까지 예외를 잡습니다.
+    + **`handleException` method**
+      + Exception 클래스의 자식들의 모든 예외를 처리합니다.
 
 ---
 
@@ -246,4 +256,5 @@ public class GeneralExceptionHandlerTest {
 
 + 출처
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
-    + []()
+    + [스프링부트 : REST 어플리케이션에서 예외처리하기](https://springboot.tistory.com/33)
+    + [Assert an Exception is Thrown in JUnit 4 and 5](https://www.baeldung.com/junit-assert-exception)
