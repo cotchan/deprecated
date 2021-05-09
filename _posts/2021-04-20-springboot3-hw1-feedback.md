@@ -1,5 +1,5 @@
 ---
-title: sb3) 첫 번째 과제 피드백(잘 몰랐던 서버 상식 ver.1) 
+title: sb3) 첫 번째 과제 피드백(잘 몰랐던 상식 ver.1) 
 author: cotchan 
 date: 2021-04-20 00:20:21 +0800 
 categories: []
