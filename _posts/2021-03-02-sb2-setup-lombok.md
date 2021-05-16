@@ -3,7 +3,7 @@ title: sb2) Lombok 설치(with Intellij & Gradle)
 author: cotchan 
 date: 2021-03-03 00:35:21 +0800 
 categories: [Spring-Boot2, Spring-Boot2_Setup]
-tags: [] 
+tags: [spring-setting] 
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
