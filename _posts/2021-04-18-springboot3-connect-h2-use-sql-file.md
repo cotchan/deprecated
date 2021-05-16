@@ -38,7 +38,8 @@ spring.h2.console.enabled=false
 + **H2 는 따로 설정하지 않으면 위와 같은 값으로 기본 설정을 합니다.**
   + 즉, `application.properity를 비워놔도 위와 같이 셋팅이 된다`는 뜻입니다.
 
-+ datasource.url의 jdbc:h2:mem:testdb는 testdb 스키마에 `mem` 인 메모리 데이터베이스로 동작하라는 설정
++ `datasource.url`의 `jdbc:h2:mem:testdb`는 
+  + testdb 스키마에 `mem` 인 메모리 데이터베이스로 동작하라는 설정
 
 + application.properties을 수정하여 `H2 콘솔을 사용`하게 할 수 있습니다.
   + `http://localhost:8080/h2-console` 을 통해 로그인
