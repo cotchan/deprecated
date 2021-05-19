@@ -347,9 +347,11 @@ public class SubscribeController {
 + **Consumer Kafka를 사용할 때는 그냥 사용하고자 하는 `Function에 아래 2개의 어노테이션을 달아주면 끝`입니다.**
   + 생성자 주입 등 Function에서 사용하기 위한 별도의 절차는 없습니다.
 
-+ @KafkaListener에는 Producer Kafka가 요청을 보낼 때 사용하는 Topic을 등록합니다.
++ **`@KafkaListener`**
+  + @KafkaListener에는 Producer Kafka가 요청을 보낼 때 사용하는 Topic을 등록합니다.
   + 즉, 이 예시에서는 Producer가 requestTopic을 통해서 요청을 보내므로 requestTopic을 등록합니다. 
-+ @SendTo
+
++ **`@SendTo`**
   + **이 어노테이션은 Function의 리턴값과 연관있습니다. 이 어노테이션은 `Reply Topic으로 Model을 리턴합니다.`**
   + 즉, Reply Topic을 통해 돌려주고자 하는 응답값을 리턴으로 줍니다. 
 
@@ -366,7 +368,7 @@ public Model listen(Model request) throws InterruptedException {
 
 ---
 
-+ **중요한 점은 Consumer Kafka를 사용하는 클래스에서는 `필드에 Kafka 관련 의존을 주입받지 않습니다.**
++ **중요한 점은 Consumer Kafka를 사용하는 클래스에서는 `필드에 Kafka 관련 의존을 주입받지 않습니다.`**
 + **사용하려는 함수에 `2개 어노테이션`만 달아주고 `함수의 Parameter와 리턴값을 맞춰주면` 알아서 Reply Topic으로 함수 결과값을 Producer Kafka에게 쏴줍니다.**
 + **그러면 Consumer Kafka로부터 받은 응답은 `sendAndReceive의 결과값으로 셋팅됩니다.`**
 
