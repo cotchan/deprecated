@@ -18,6 +18,13 @@ tags: [spring-module]
 
 ---
 
++ **`@ControllerAdvice 사용 시 주의사항`** 
+  + **@ControllerAdvice에서 예외를 잡는 건 `Controller 코드를 실행한 쓰레드에서 예외가 throw 됐을 때 입니다.`**
+  + **만약 Controller에서 비동기 처리를 위해 다른 스레드에게 작업을 위임했다면 `거기서 발생한 예외는 Controller에서 발생한 예외가 아닙니다.`**
+    + 그러므로 비동기 처리한 코드는 `.exceptionally` 등을 사용해서 별도의 예외 핸들링이 필요합니다.
+
+---
+
 ## 2. @ExceptionHandler
 
 + **이 어노테이션을 사용하면 예외를 처리할 클래스를 정의합니다.**
