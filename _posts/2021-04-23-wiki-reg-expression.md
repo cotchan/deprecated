@@ -14,6 +14,17 @@ tags: [wiki]
 
 ---
 
+## 1-1. 이메일 정규 표현식
+
+```
+import static java.util.regex.Pattern.matches;
+
+  private static boolean checkEmailAddress(String address) {
+    return matches("[\\w~\\-.+]+@[\\w~\\-]+(\\.[\\w~\\-]+)+", address);
+  }
+```
+---
+
 
 ## 2. Dart(Flutter)에서 사용한 예제
 
@@ -126,5 +137,75 @@ RegExp _unvalidUrlExpression = new RegExp(r'[^a-zA-Z0-9-\\./]');
 
 ---
 
+## 3. 실제로 사용했던 표현식
+
+---
+
+## 3-1. 앵커 ^ 와 $
+
++ 앵커는 입력된 정규식이 어떤 특정 위치에서 동작할지를 제한하는 역할의 문자입니다. 
++ 즉, `위치만 제한할 뿐 검색 결과에는 포함되지 않습니다.`
+
++ **`패턴 시작 앵커(^)`는 해당 정규식이 줄의 시작 부분인지를 확인하는 역할을 합니다.** 
+  + **보통 정규식의 가장 앞에 붙여서 사용합니다.**
+
++ **`패턴 종료 앵커($)`는 해당 정규식이 줄의 마지막 부분인지를 확인하는 역할을 합니다.**
+  + **보통 정규식의 가장 마지막에 붙여서 사용합니다.**
+
+```javascript
+// 여러 `w` 중에서 문자열의 시작 부분과 일치하는지를 확인합니다
+const str = "www";
+
+// 가장 첫 번째 `w` 만 반환됩니다
+str.match(/^w/);
+// ["w", index: 0, input: "www", groups: undefined]
+
+// 가장 마지막 `w` 만 반환됩니다
+str.match(/w$/);
+// ["w", index: 2, input: "www", groups: undefined]
+```
+
+---
+
+## 3-2. ( )
+
++ **괄호는 `문자 그룹`을 정의하여, `괄호 내 쌍이 그룹을 형성`합니다.**
++ 즉, ( ) 괄호 안의 문자열은 하나의 의미로 처리됩니다.
+
++ 예시
+  + /api/user/{userId}/** 이하 URL 패턴을 감지한다고 가정하겠습니다.
+  + userId는 하나의 숫자로 처리되어야 합니다. 하지만 몇 글자의 숫자가 입력될지 모릅니다.
+  + 이런 경우에 정규식은 아래와 같이 작성됩니다.
+  + **`"^/api/user/(\\d+)/..."`** 
+  + ( ) 괄호 안의 표현이 하나로 묶여서 다음 / 이전까지 {userId}를 하나의 의미로 처리합니다.
+
+---
+
+## 3-3. +
+
++ **`'문자가 1개 이상 나타남'`을 의미합니다.**
+
++ 예시
+  + 몇 개의 숫자가 입력될지는 모르지만, 숫자만 입력되는 경우
+  + 0123456789 범위의 모든 한 자리 숫자와 일치하는 '\d'와 '+' 의 의미가 합쳐지면 '한 글자 이상의 숫자'를 캐치할 수 있습니다.
+  + 그래서 한 글자 이상의 숫자를 판별하는 정규식은 아래와 같이 작성됩니다.
+  + **`"(\\d+)"`**
+
+---
+
+## 3-4. . 와 *
+
++ `.`는 모든 문자 하나와 일치합니다.
++ `*`는 문자 또는 숫자가 0개 이상 나타남을 의미합니다.
+
++ 그러므로 URL에서 '/**'처럼 뒤에 아무 URL이 와도 되는 경우를 나타낼 때 아래와 같이 정규식을 작성합니다.
++ **`^.*$`**
+
+---
+
 + 출처
   + [regexr](https://regexr.com/)
+  + [정규 표현식(regex) 기초](https://support.cognex.com/docs/vidi_341/web/KO/vidisuite/Content/ViDi_Topics/1_Overview/images_display_filters_regex_basics.htm)
+  + [정규표현식 완전정복](https://wormwlrm.github.io/2020/07/19/Regular-Expressions-Tutorial.html)
+  + [SQL 정규표현식 괄호의 차이](https://velog.io/@sunjoo/SQL-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EA%B4%84%ED%98%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4)
+  + [Javascript : 정규식 도메인 URL 추출 ( http , https )](https://m.blog.naver.com/PostView.nhn?blogId=psj9102&logNo=221203659771&proxyReferer=https:%2F%2Fwww.google.com%2F)
