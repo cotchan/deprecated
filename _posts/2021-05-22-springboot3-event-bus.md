@@ -1,5 +1,5 @@
 ---
-title: sb3) Event Bus
+title: sb3) EventBus 사용법
 author: cotchan 
 date: 2021-05-22 15:00:21 +0800 
 categories: [Spring-Boot3]
@@ -12,7 +12,8 @@ tags: [spring-boot3]
 
 ## 1. EventBus
 
-+ **스프링 안에 있는 여러 서비스들 간에 이벤트를 전달할 때 `이벤트 버스`가 필요합니다.**
++ **`하나의 서비스 내에서 이벤트를 전파할 때 EventBus를 사용합니다.`**
+  + **스프링 안에 있는 여러 서비스들 간에 이벤트를 전달할 때 `이벤트 버스`가 필요**
 + 이 포스팅에서는 `Google의 guava`를 통해 이벤트 버스를 구현하는 것을 다룹니다. (Maven 사용)
 
 ---
