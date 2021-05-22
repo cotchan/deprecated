@@ -1,5 +1,5 @@
 ---
-title: sb3) KafkaTemplate 사용 방법(메시지 전파, 수신 방법)
+title: sb3) KafkaTemplate 사용 방법
 author: cotchan 
 date: 2021-05-19 21:09:21 +0800 
 categories: [Spring-Boot3]
@@ -194,4 +194,6 @@ public class NotificationService {
 + 출처
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
     + [Using Kafka with Spring Boot](https://reflectoring.io/spring-boot-kafka/)
+    + [Spring Boot and Kafka – Practical Example](https://thepracticaldeveloper.com/spring-boot-kafka-config/)
+    + [Intro to Apache Kafka with Spring](https://www.baeldung.com/spring-kafka)
 
