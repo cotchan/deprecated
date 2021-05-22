@@ -1,5 +1,5 @@
 ---
-title: sb3) EventListsner 사용 방법(feat.JoinEvent, JoinEventListener)
+title: sb3) EventListsner 사용법(feat.JoinEvent, JoinEventListener)
 author: cotchan 
 date: 2021-05-22 15:30:21 +0800 
 categories: [Spring-Boot3]
