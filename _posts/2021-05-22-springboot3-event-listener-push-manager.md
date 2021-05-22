@@ -143,6 +143,41 @@ public void handleSendMail(JoinEvent event) {
 2. newEventListener 빈으로 등록
 2. @Subscribe 메서드를 선언하고 JoinEvent를 Parameter로 받기
 
+
+---
+
+## 5. JoinEventListener FullCode
+
+```java
+//JoinEventListener.java
+
+public class JoinEventListener implements AutoCloseable {
+
+  private final EventBus eventBus;
+
+  private final KafkaTemplate<String, String> kafkaTemplate;
+
+  private final ObjectMapper objectMapper;
+
+  public JoinEventListener(EventBus eventBus, KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {
+    this.eventBus = eventBus;
+    this.kafkaTemplate = kafkaTemplate;
+    this.objectMapper = objectMapper;
+
+    eventBus.register(this);
+  }
+
+  @Subscribe
+  public void handleJoinEvent(JoinEvent event) {
+  }
+
+  @Override
+  public void close() throws Exception {
+    eventBus.unregister(this);
+  }
+}
+```
+
 ---
 
 + 출처
