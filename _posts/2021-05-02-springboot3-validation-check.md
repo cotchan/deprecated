@@ -26,6 +26,15 @@ tags: [spring-boot3]
 
 ## 3. Validation은 어디에서?
 
++ **아래 세 군데에서 Validation Check를 하면 됩니다.**
+  1. **`생성자`**
+  2. **`내부 필드를 변경하는 모든 setter`**
+  3. **`Service Layer`**
+
++ 여기에 전부 Validation 코드를 넣으면 됩니다.
++ **생각할 수 있는 모든 비관적인 케이스를 넣으면 됩니다.**
++ **Validation Check 코드는 안 넣는 것보다 중복되는 게 낫습니다.**
+
 - 원칙적으로 `Controller`, `Service`, `Repository Layer` 모두에서 입력값 검증을 수행해야 합니다.
   - 그러나 비슷한 검증 로직이 반복되고, 관리가 어려워집니다.
   - 비슷한 로직이 반복되며 성능한 비효율적입니다.
