@@ -1,5 +1,5 @@
 ---
-title: sb3) Health Check API
+title: sb3) Health Check API (feat. ApiResult)
 author: cotchan 
 date: 2021-05-23 02:31:21 +0800 
 categories: [Spring-Boot3]
