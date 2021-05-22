@@ -10,7 +10,9 @@ tags: [kafka]
 
 ---
 
-![Desktop View](/assets/img/post/spring/2020-12-10-spring-boot-how-to-build.png){: width="350" class="normal"}
+## 0. INTRO
+
++ **KafkaTemplate를 사용하여 `어떻게 메시지를 전파하고, 수신하는지` 알아보겠습니다.**
 
 ---
 
@@ -181,38 +183,11 @@ public class NotificationService {
   @KafkaListener(topics = "v1.event.comment-created")
   public void subscribeCommentCreateEvent(String data) throws JsonProcessingException {
 
-      //1st. data 파싱
-      Map<String, Object> commentEventMap = objectMapper.readValue(data, new TypeReference<Map<String, Object>>() {});
-      Map<String, Object> postWriterMap = (Map<String, Object>)commentEventMap.get("postWriterId");
-
-      int userId = (int)postWriterMap.get("value");
-      Long postWriterId = NumberUtils.toLong(String.valueOf(userId));
-
-      Map<String, Object> commentWriterMap = (Map<String, Object>)commentEventMap.get("commentWriter");
-      String commentWriter = (String)commentWriterMap.get("name");
-
-      //2nd. Do Business Logic
-      userService.findById(Id.of(User.class, postWriterId)).map(user -> {
-        try {
-          notifyUser(user, new PushMessage( commentWriter + "CommentCreateEvent",
-                                      "/friends/" + postWriterId,
-                                        commentWriter + "가 댓글을 달았습니다."));
-          log.info("in subscribeCommentCreateEvent, notifyUser method call success");
-        } catch (Exception e) {
-          log.debug("in subscribeCommentCreateEvent, notifyUser method call failed, {}", e.getMessage(), e);
-        }
-        return null;
-      });
+      //do something...
+      //ex. parameter data 파싱
   }
-
-  //...
 }
 ```
-
-
-
-
-
 
 ---
 
