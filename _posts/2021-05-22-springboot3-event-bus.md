@@ -243,4 +243,5 @@ public class JoinEventListener implements AutoCloseable {
 
 + 출처
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
-
+    + [Guide to Guava’s EventBus](https://www.baeldung.com/guava-eventbus)
+    + [EventBusExplained](https://github.com/google/guava/wiki/EventBusExplained)
