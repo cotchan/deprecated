@@ -12,10 +12,13 @@ tags: [spring-boot3]
 
 ## 1. 도메인 이벤트란?
 
+<img width="645" alt="스크린샷 2021-05-22 오후 8 28 33" src="https://user-images.githubusercontent.com/75410527/119225033-67de8400-bb3c-11eb-860c-2528173b97ba.png">
+
 ---
 
 ## 2. 도메인 이벤트 처리시 장점
 
+<img width="646" alt="스크린샷 2021-05-22 오후 8 28 43" src="https://user-images.githubusercontent.com/75410527/119225036-6b720b00-bb3c-11eb-98cc-f616db140e9e.png">
 
 ---
 
@@ -41,9 +44,11 @@ tags: [spring-boot3]
 + 여러 서비스들끼리 Message Queue로 연결할 때는 `TCP 기반으로 통신`합니다.
 + 소켓이 연결되어 있고, 내부적으로 연결되어 있는 형태(HTTP X)
 
-[카프카를 이용한 도메인 이벤트 전파]
+---
 
+<img width="646" alt="스크린샷 2021-05-22 오후 8 29 00" src="https://user-images.githubusercontent.com/75410527/119225043-70cf5580-bb3c-11eb-98c8-2a8449aeb59e.png">
 
+<img width="646" alt="스크린샷 2021-05-22 오후 8 29 07" src="https://user-images.githubusercontent.com/75410527/119225045-73ca4600-bb3c-11eb-825c-c40b823d5c76.png">
 
 ---
 
