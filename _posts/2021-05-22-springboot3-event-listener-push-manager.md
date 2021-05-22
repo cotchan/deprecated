@@ -49,6 +49,7 @@ public class JoinEventListener implements AutoCloseable {
     this.kafkaTemplate = kafkaTemplate;
     this.objectMapper = objectMapper;
 
+    //eventBus에다가 대고 자기 자신을 regist 
     eventBus.register(this);
   }
 
@@ -96,7 +97,7 @@ public class EventConfigure {
 ## 4-1. @Subscribe로 메소드 자동 호출
 
 + **`@Subscribe`이라는 키워드를 써서 메서드를 선언하면, `param 타입으로 있는 이벤트가 발생`하면 `eventBus에 의해 이 메서드가 호출됩니다.`**
-  + 즉, JoinEventListener의 경우, 나중에 JoinEvent가 발생하면 이벤트 버스에 의해 호출됩니다.
+  + **즉, JoinEventListener의 `handleJoinEvent` 메서드는, 나중에 JoinEvent가 발생하면 이벤트 버스에 의해 호출됩니다.**
   + 언제? param type으로 있는 JoinEvent가 발생했을 때
 
 ```java
