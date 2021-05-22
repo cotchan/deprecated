@@ -25,7 +25,9 @@ tags: [kafka]
 
 + **카프카는 내부적으로 `분산커밋 로그라고 하는 큐`를 가지고 있습니다.**
 
-[카프카 구성 요소 이미지]
+<img width="620" alt="스크린샷 2021-05-22 오후 8 00 42" src="https://user-images.githubusercontent.com/75410527/119224240-7cb91880-bb38-11eb-9367-7a08a47ebf3c.png">
+
+<img width="639" alt="스크린샷 2021-05-22 오후 8 01 07" src="https://user-images.githubusercontent.com/75410527/119224246-7f1b7280-bb38-11eb-9ffc-cf760690b9ab.png">
 
 ---
 
@@ -37,13 +39,13 @@ tags: [kafka]
 
 ---
 
-## 2. about DATA
+## 3. about DATA
 
-[토픽/파티션 이미지]
+<img width="650" alt="스크린샷 2021-05-22 오후 8 01 54" src="https://user-images.githubusercontent.com/75410527/119224266-978b8d00-bb38-11eb-984a-e95c17fa08e0.png">
 
 ---
 
-## 2-1. 파티션
+## 3-1. 파티션
 
 + **`카프카에서 실제 데이터는 파티션에 저장되어 있습니다.`**
 + 파티션에는 순차적이고 불변적인 일련의 메시지들이 추가됩니다.
@@ -58,7 +60,7 @@ tags: [kafka]
 
 --- 
 
-## 2-2. Topic
+## 3-2. Topic
 
 + **토픽은 일종의 `URL` 같은 개념입니다.**
 
@@ -83,7 +85,7 @@ tags: [kafka]
 
 ---
 
-## 3. 컨슈머의 Offset 포인팅
+## 4. 컨슈머의 Offset 포인팅
 
 + 컨슈머는 offset 포인터(메시지 아이디)를 이용해서 어디까지 메시지를 읽었는지를 기록합니다.
   + 컨슈머들은 offset, partition, topic으로 메시지를 추적합니다.
@@ -91,11 +93,11 @@ tags: [kafka]
 
 ---
 
-[컨슈머의 offset 포인팅 이미지]
+<img width="649" alt="스크린샷 2021-05-22 오후 8 02 35" src="https://user-images.githubusercontent.com/75410527/119224286-b25e0180-bb38-11eb-875b-34a55cdcb18c.png">
 
 ---
 
-## 4. 컨슈머와 컨슈머 그룹 
+## 5. 컨슈머와 컨슈머 그룹 
   
 + **파티션은 `컨슈머 그룹 당 오로지 하나의 컨슈머`의 접근만 허용합니다.**
   + 해당 컨슈머를 `파티션 오너`라고 합니다.
@@ -116,12 +118,11 @@ tags: [kafka]
 
 ---
 
-[컨슈머와 컨슈머 그룹 이미지]
- 
+<img width="648" alt="스크린샷 2021-05-22 오후 8 03 16" src="https://user-images.githubusercontent.com/75410527/119224314-ca358580-bb38-11eb-86d0-83308369d180.png">
 
 ---
 
-## 5. 리플리카(Replicas)
+## 6. 리플리카(Replicas)
 
 + **파티션의 "백업" 개념**
 + **특정 파티션에 대한 `복제 파티션`을 만드는 것입니다.**
@@ -138,17 +139,17 @@ tags: [kafka]
 
 ---
 
-[파티션 복제 이미지] 
+<img width="575" alt="스크린샷 2021-05-22 오후 8 03 54" src="https://user-images.githubusercontent.com/75410527/119224342-e76a5400-bb38-11eb-8001-7cf29d32327e.png">
 
 ---
 
 
-## 6. 렉(lag) 현상
+## 7. 렉(lag) 현상
 
 + 컨슈머가 읽는 것보다 프로듀서가 메시지를 쏘는 게 더 빠를 때 발생하는 현상
 + ex. 나는 13번까지 밖에 못 읽었는데 파티션에 이미 20번까지 꽂혀있는 경우
 
-[렉 이미지]
+<img width="648" alt="스크린샷 2021-05-22 오후 8 04 04" src="https://user-images.githubusercontent.com/75410527/119224346-ecc79e80-bb38-11eb-9dcb-89b2d3cd1651.png">
 
 ---
 
