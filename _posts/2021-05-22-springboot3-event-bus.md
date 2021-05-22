@@ -13,7 +13,7 @@ tags: [spring-boot3]
 ## 1. EventBus
 
 + **`하나의 서비스 내에서 이벤트를 전파할 때 EventBus를 사용합니다.`**
-  + **스프링 안에 있는 여러 서비스들 간에 이벤트를 전달할 때 `이벤트 버스`가 필요**
+  + **스프링 안에 있는 여러 컴포넌트 간에 이벤트를 전달할 때 `이벤트 버스`가 필요합니다.**
 + 이 포스팅에서는 `Google의 guava`를 통해 이벤트 버스를 구현하는 것을 다룹니다. (Maven 사용)
 
 ---
@@ -36,7 +36,8 @@ tags: [spring-boot3]
 
 ## 3. EventConfiguration 작성
 
-+ guava를 추가하면 EventConfigur를 작성할 수 있습니다.
++ guava를 추가하면 이벤트 처리를 위한 설정 클래스를 작성합니다.
+  + `EventConfigure.java`
 
 ---
 
@@ -142,8 +143,8 @@ public class EventConfigure {
 
 ## 3.3 EventBus Bean 등록
 
-+ **여기서 중요한 건 `EventBus를 빈으로 등록`한다는 점입니다.**
-+ 여기서 `AsyncEventBus`로 등록을 하면 비동기로 처리가 되기 때문에 Blocking이 되지 않습니다.
++ **여기서 중요한 건 `EventBus를 빈으로 등록한다는 점`입니다.**
++ 여기서 `AsyncEventBus`로 등록하면 비동기로 처리가 되기 때문에 Blocking이 되지 않습니다.
   + 하나의 이벤트를 여러 컴포넌트가 구독하는데, 이걸 순차적으로 처리하는 게 아니라 비동기로 처리할 수 있게 합니다.
 + 이 때 별도로 `eventTaskExecutor`를 전달할 수 있습니다.
 + 또한 `eventExceptionHandler`를 전달할 수 있습니다.
@@ -169,7 +170,7 @@ public class EventConfigure {
 ## 3-4. EventListener Bean 등록
 
 + 이벤트를 전파하기 전에 필요한 EventListener를 만들고 빈으로 등록해줍니다.
-  + **EventListener에서 제일 중요한 건 `특정 이벤트를 든는 리스너`를 만들 수 있습니다.**
+  + **EventListener에서 제일 중요한 건 `특정 이벤트를 듣는 리스너`를 만들 수 있습니다.**
   + 이 내용은 EventBus 자체와는 무관하므로 아래 출처에서 다룹니다.
     + [EventListener 빈 등록 및 사용방법](https://cotchan.github.io/posts/springboot3-event-listener-push-manager/)
 
@@ -186,7 +187,7 @@ public class EventConfigure {
 
 ## 4-1. 서비스 코드에서 EventBus에다가 JoinEvent 전파 
 
-+ **서비스 코드(예시: `UserService`)에서 서비스 로직을 마친 다음에 `이벤트 버스에다가 JoinEvent를 발생시킵니다.`**
++ **`서비스 코드(UserService)에서` 서비스 로직을 마친 다음에 `이벤트 버스에다가 JoinEvent를 발생시킵니다.`**
   + 추가로 UserService를 만들 때 EventBus를 같이 주입받습니다.
 
 ```java
