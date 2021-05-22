@@ -36,9 +36,11 @@ tags: [java]
 
 ---
 
+<img width="740" alt="스크린샷 2021-05-23 오전 2 20 28" src="https://user-images.githubusercontent.com/75410527/119235541-ff0fff80-bb6d-11eb-8a22-77e89b100d11.png">
 
 ---
 
+<img width="800" alt="스크린샷 2021-05-23 오전 2 20 47" src="https://user-images.githubusercontent.com/75410527/119235548-03d4b380-bb6e-11eb-9457-54aff6830723.png">
 
 ---
 
