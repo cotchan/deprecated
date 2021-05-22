@@ -14,11 +14,14 @@ tags: [java]
 ## 1. Matcher.group(int group)
 
 + 아래 코드에서 `matcher.group(1)`은 어느 부분을 의미하는 것일까요?
-  + **그건 바로 정규표현식에서 `(\\d+)` 부분을 의미합니다.**
+  + **그건 바로 targetUrl에서 `{userId}` 부분을 의미합니다.**
+  + **즉, 정규표현식에서 `(\\d+)` 부분입니다.**
 
 ```java
   @Bean
   public ConnectionBasedVoter connectionBasedVoter() {
+    
+    //target url: "/api/user/{userId}/**"
     final String regex = "^/api/user/(\\d+)/post/.*$";
     final Pattern pattern = Pattern.compile(regex);
     RequestMatcher requiresAuthorizationRequestMatcher = new RegexRequestMatcher(pattern.pattern(), null);
