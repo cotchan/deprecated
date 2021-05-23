@@ -11,6 +11,12 @@ tags: [spring-security]
 
 ---
 
+## 0. 인증이란?
+
++ **인증이란 `현재 사용자가 누구인지 식별하는 것`을 의미합니다.**
++ **인증 과정에서 사용하는 주요 컴포넌트는 `AuthenticationManager`, `AuthenticationProvider` 입니다.**
+
+---
 
 ## 1. JwtAuthenticationTokenFilter
 
@@ -73,7 +79,7 @@ public class AuthenticationRestController {
 
 + 컨트롤러는 자신이 만든 `'로그인 안 된 인증주체'에 대한 처리`를 `AuthenticationManager에게 위임`
 
-+ **지금까지 설명하는 부분이 아래 이미지의 `빨간색 네모 박스에 해당하는 내용`입니다.**
++ **지금까지 설명한 부분이 아래 이미지의 `빨간색 네모 박스에 해당하는 내용`입니다.**
 
 <img width="2281" alt="스크린샷 2021-04-25 오후 10 20 37" src="https://user-images.githubusercontent.com/75410527/115995058-adc72b80-a614-11eb-9dc0-732c15357a88.png">
 
