@@ -14,6 +14,8 @@ tags: [spring-security]
 ## 인증이란?
 
 + **인증이란 `현재 사용자가 누구인지 식별하는 것`을 의미합니다.**
+  + 사용자의 신원을 식별하는 것
+  + 예시) 아이디/패스워드 로그인
 + **인증 과정에서 사용하는 주요 컴포넌트는 `AuthenticationManager`, `AuthenticationProvider` 입니다.**
 
 ---

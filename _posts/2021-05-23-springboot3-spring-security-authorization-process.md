@@ -14,6 +14,8 @@ tags: [spring-security]
 ## 인가란?
 
 + **인가란 `현재 사용자가 보호된 리소스에 권한이 있는지를 검사하는 것`입니다.**
+  + 특정 리소스에 접근할 수 있는 역할(Role)을 부여하는 것
+  + 예시) ROLE_USER 역할의 사용자는 어드민 페이지에 접근할 수 없다.
 + **인가 과정에서 사용하는 주요 컴포넌트는 `AccessDecisionManager`, `AccessDecisionVoter` 입니다.**
 
 ---
