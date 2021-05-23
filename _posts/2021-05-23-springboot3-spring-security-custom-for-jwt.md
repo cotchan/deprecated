@@ -10,7 +10,9 @@ tags: [spring-security]
 
 ---
 
-## 1. Spring Security 커스터마이징을 위한 핵심 컴포넌트 분석
+## 1. 핵심 컴포넌트 분석 
+
++ **Spring Security 커스터마이징을 위한 핵심 컴포넌트 분석**
 
 ---
 
