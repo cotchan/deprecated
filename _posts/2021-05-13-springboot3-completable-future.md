@@ -28,7 +28,7 @@ tags: [spring-boot3]
 
 ## 2-1. 반환값이 필요없을 때
 
-+ **`runAsync(Runnable runnable)`**
++ **`runAsync`**
 
 ```java
 static CompletableFuture<Void> runAsync(Runnable runnable)
@@ -38,7 +38,7 @@ static CompletableFuture<Void> runAsync(Runnable runnable)
 
 ## 2-2. 반환값이 필요할 때
 
-+ **`supplyAsync(Supplier<U> supplier)`**
++ **`supplyAsync`**
 
 ```java
 static<U> CompletableFuture<U> supplyAsync(Supplier<U> supplier)
@@ -53,7 +53,7 @@ static<U> CompletableFuture<U> supplyAsync(Supplier<U> supplier)
 ## 3-1. .thenAcceept
 
 + **비동기 작업이 완료됐을 때 완료 결과를 소비(Consume) 처리함.**
-+ 즉, 작업의 끝을 의미합니다.
++ 즉, `작업의 끝을 의미`합니다.
 
 ```java
 CompletableFuture<Void> thenAccept(Consumer<? super T> action)
@@ -63,7 +63,7 @@ CompletableFuture<Void> thenAccept(Consumer<? super T> action)
 
 ## 3-2. .thenApply
 
-+ **비동기 작업이 완료됐을 때, `결과 T`를 `새로운 값 U로 변환`하는 함수를 실행**
++ **비동기 작업이 완료됐을 때, `결과 T를` `새로운 값 U로 변환`하는 함수를 실행**
   + 결과값은 다시 `CompletableFuture`
 
 ```java
