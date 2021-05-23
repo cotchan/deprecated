@@ -11,10 +11,41 @@ tags: [spring-security]
 
 ---
 
-## 0. 인증이란?
+## 인증이란?
 
 + **인증이란 `현재 사용자가 누구인지 식별하는 것`을 의미합니다.**
 + **인증 과정에서 사용하는 주요 컴포넌트는 `AuthenticationManager`, `AuthenticationProvider` 입니다.**
+
+---
+
+## 인증 처리(과정) 요약
+
++ **인증처리를 위한 핵심 컴포넌트**
+
++ **`UsernamePasswordAuthenticationFilter`** (디폴트 인증필터)
+  + **사용자 인증 요청을 Authentication 인터페이스로 추상화하고, AuthenticationManager를 호출합니다.**
+    + 1) 사용자로부터 받은 요청에서(@RequestBody) '로그인 안된 인증 주체'(Authentication)을 만듭니다.
+      + getPrincipal 사용
+      + getCredential 사용
+    + 2) 만든 '로그인 안된 인증주체'에 대한 처리를 AuthenticationManager에게 위임합니다.
+
++ **`AuthenticationManager`**
+  + **사용자 아이디/비밀번호를 인증하기 위해 적절한 AuthenticationProvider를 찾아 처리를 위임합니다.**
+    + 1) AuthenticationManager는 AuthenticationProvider를 List로 가지고 있습니다.
+    + 2) AuthenticationManager는 AuthenticationProvider를 하나 선택해서 실제 로그인 요청을 처리합니다.
+
++ **`AuthenticationProvider`**
+  + **실질적으로 사용자 인증을 처리하고, 인증 결과를 Authentication 인터페이스로 반환합니다.**
+    + 1) AuthenticationProvider는 요청으로 들어온 '로그인 안 된 인증주체'를 `타입캐스팅`합니다.
+    + 2) 그리고 UserService를 이용해서 로그인 처리를 해봅니다.
+    + 3) 로그인이 정상처리 되어 UserService로부터 UserEntity를 받으면 UserEntity로부터 `'로그인된 인증주체'`를 만듭니다.
+    + 4) '로그인 된 인증주체'는 principal 타입이 String에서 JwtAuthentication으로 바뀌고 jwt를 발급받습니다. 
+    + 5) '로그인 된 인증주체'를 리턴해줍니다.
+
++ 기타
+  + AuthenticationManager에게 '로그인된 인증주체'를 넘겨받은 컨트롤러는 '로그인된 인증주체'에서 아래의 정보만 꺼내서 클라이언트에게 돌려줄 응답에 포함시킵니다.
+    + jwt
+    + userInformation
 
 ---
 
