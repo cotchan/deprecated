@@ -3,7 +3,7 @@ title: Flutter) [네비게이션2] Navigator Class (공식 홈페이지 내용)
 author: cotchan
 date: 2021-03-29 19:59:00 +0800
 categories: [Flutter,Flutter_navigation]
-tags: [flutter1]   
+tags: [flutter2]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
