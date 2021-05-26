@@ -3,7 +3,7 @@ title: Flutter) locator (의존성 주입 라이브러리)
 author: cotchan
 date: 2021-04-24 15:33:00 +0800
 categories: [Flutter]
-tags: [flutter1]   
+tags: [flutter2]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
