@@ -30,6 +30,8 @@ String dateFormatted = DateFormat('yyyy-MM-dd').format(now);
 ```dart
 import 'package:intl/intl.dart';
 
+//final DateTime item.submittedTime;
+
 Text(DateFormat('yyyy-MM-dd hh:mm').format(item.submittedTime),
   textAlign: TextAlign.center,
   style: const TextStyle(color: Color(0xff868F9B), fontSize: 12, fontFamily: 'NotoSansKR'))
@@ -41,6 +43,8 @@ Text(DateFormat('yyyy-MM-dd hh:mm').format(item.submittedTime),
 
 ```dart
 import 'package:intl/intl.dart';
+
+//final DateTime item.submittedTime;
 
 Text(DateFormat('yyyy-MM-dd hh:mm:ss').format(item.submittedTime),
   textAlign: TextAlign.center,
