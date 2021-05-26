@@ -15,3 +15,4 @@ tags: [flutter-and_ios]
 
 + 출처
   + [[Flutter] 앱 아이콘 적용하기](https://velog.io/@jjikkyu/Flutter-%EC%95%B1-%EC%95%84%EC%9D%B4%EC%BD%98-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0-9sk5ujq2pz)
+  + [appicon.co](https://appicon.co/)
