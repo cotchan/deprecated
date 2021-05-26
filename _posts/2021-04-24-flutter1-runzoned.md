@@ -3,7 +3,7 @@ title: Flutter) runZoned
 author: cotchan
 date: 2021-04-24 16:04:00 +0800
 categories: [Flutter]
-tags: [flutter1]   
+tags: [flutter2]   
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
