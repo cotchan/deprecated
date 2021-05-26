@@ -16,7 +16,7 @@ tags: [flutter1]
 + main 파일에 아래와 같이 딱 두 줄만 추가하면 됩니다. 
   + **단, `setPreferredOrientations` 함수는 아래 Usage 코드와 같이 `최상위 build 함수에서 실행하면 됩니다.`**
 
-```
+```dart
 //Sample
 import 'package:flutter/services.dart'; < 서비스 라이브러리
 
@@ -25,7 +25,7 @@ SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]); < 세로�
 
 ---
 
-```
+```dart
 //Usage
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // 서비스 라이브러리 가져오기
