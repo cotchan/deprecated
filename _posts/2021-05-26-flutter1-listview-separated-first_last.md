@@ -52,4 +52,4 @@ Widget _drawPrintListBody() {
 
 + 출처
   + [Flutter - How to add first top and last bottom list with divider() on ListView.separated()](https://stackoverflow.com/questions/60826670/flutter-how-to-add-first-top-and-last-bottom-list-with-divider-on-listview-s)
-
+  + [Adding top and bottom separators with ListView.separated](https://codewithandrea.com/tips/list-view-separated-top-bottom/)
