@@ -11,11 +11,38 @@ tags: [dart]
 
 ---
 
-## 1. ?? (if null)
+## 1. '좌항' ?? '우항'의 형태
+ 
++ **`좌항 ?? 우항` 형태의 연산자 입니다.**
++ 좌항이 `null이 아니면 좌항을 리턴`하고 `null이면 우항을 리턴` 합니다.
+
+```dart
+// 좌항이 null인 경우
+main(){
+    String name;
+
+    // 비어있습니다.
+    print(name ?? "비어있습니다."); 
+}
+```
+
+```dart
+//좌항이 null이 아닌 경우
+main(){
+    String name;
+
+    name = "sneakstarberry"
+
+    // sneakstarberry
+    print(name ?? "비어있습니다."); 
+}
+```
+
+---
+
+## 2. ?? (if null)
 
 + 널인지 여부 검사
-
-
 
 ```dart
 //객체가 null이 아니면 길이를, null이면 0을 반환하는 코드
@@ -42,5 +69,6 @@ x?.foo();
   + [[FLUTTER] DART 언어 기초과정 - 2 / A Tour of the Dart Language](https://steemit.com/dart/@wonsama/flutter-dart-2-a-tour-of-the-dart-language)
   + [Null-aware operators in Dart
 ](http://blog.sethladd.com/2015/07/null-aware-operators-in-dart.html)
+  + [[DART]다트(3) - 특이한 연산자](https://sneakstarberry.github.io/posts/dart03-operand/)
   + 유동환, 『처음 배우는 플러터』, 한빛미디어(2020) 
   + 오준석, 『오준석의 플러터 생존코딩』, 한빛미디어(2020)
