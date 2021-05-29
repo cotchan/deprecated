@@ -1,5 +1,5 @@
 ---
-title: dart) DateTime Formatting in dart(DateTime을 원하는 형식의 String으로 변환)
+title: dart) DateTime Formatting (DateTime을 원하는 형식의 String으로 변환)
 author: cotchan
 date: 2021-05-26 20:51:00 +0800
 categories: [Dart]
