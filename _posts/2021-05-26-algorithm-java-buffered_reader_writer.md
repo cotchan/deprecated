@@ -31,8 +31,11 @@ int start = Integer.parseInt(br.readLine());
 + **결과값을 콘솔로 찍을 때는 `BufferedWriter`를 사용합니다.**
 + 크게 아래 3개의 메소드를 사용합니다.
   + **`.append(CharSequence csq)`**
+    + BufferedWriter에 문자열 넣기
   + **`.newLine()`**
+    + 개행
   + **`.flush()`**
+    + 콘솔에 출력 
 
 ```java
 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
