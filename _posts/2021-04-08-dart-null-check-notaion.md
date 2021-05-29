@@ -70,5 +70,3 @@ x?.foo();
   + [Null-aware operators in Dart
 ](http://blog.sethladd.com/2015/07/null-aware-operators-in-dart.html)
   + [[DART]다트(3) - 특이한 연산자](https://sneakstarberry.github.io/posts/dart03-operand/)
-  + 유동환, 『처음 배우는 플러터』, 한빛미디어(2020) 
-  + 오준석, 『오준석의 플러터 생존코딩』, 한빛미디어(2020)
