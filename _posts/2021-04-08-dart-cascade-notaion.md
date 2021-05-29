@@ -21,6 +21,9 @@ tags: [dart]
 
 ## 2. 예시 코드
 
++ **`’..’`를 통해 연속으로 해당 객체의 속성을 지정해 주었습니다.**
++ **`‘;’ 표기를 마지막에 한번` 해주어야 합니다.**
+
 ```dart
 class Demo {
   var a;
@@ -58,4 +61,5 @@ void main() {
 
 + 출처
   + [Dart Cascade notation(..) Operator](https://www.w3adda.com/dart-tutorial/dart-cascade-notation)
+  + [다트(3) - 특이 연산자](https://sneakstarberry.github.io/posts/dart03-operand/)
 
