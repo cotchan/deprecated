@@ -18,9 +18,12 @@ tags: [flutter1]
 
 ```dart
 //Sample
-import 'package:flutter/services.dart'; < 서비스 라이브러리
 
-SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]); < 세로로만 UI 표시 설정
+// 서비스 라이브러리
+import 'package:flutter/services.dart'; 
+
+// 세로로만 UI 표시 설정
+SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]); 
 ```
 
 ---
