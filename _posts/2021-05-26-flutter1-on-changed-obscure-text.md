@@ -13,7 +13,7 @@ tags: [flutter1]
 
 ## 1. Intro
 
-+ **비밀번호 Field가 버튼 클릭에 따라 `obscureText 처리 되었다가 안 되었다가를 반복`하는 코드 완성하기** 
++ **비밀번호 Field가 버튼 클릭에 따라 `obscureText 처리 되었다가 안 되었다가를 반복`하는 코드 완성** 
 
 ---
 
