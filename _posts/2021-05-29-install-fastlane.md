@@ -29,9 +29,9 @@ $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
 ## 2-1. Ruby version
 
-+ fastlane은 `Ruby versions 2.5 이상 버전`을 지원합니다. 아래 명령어를 통한 버전을 확인합니다.
++ fastlane은 `Ruby versions 2.5 이상 버전`을 지원합니다. 아래 명령어를 통해 버전을 확인합니다.
 
-``` bash
+```bash
 $ ruby --version
 ```
 
@@ -39,7 +39,7 @@ $ ruby --version
 
 ## 2-2. Bundler install
 
-+ Bundelr가 없다면 아래의 오류 메시지가 나올 수 있습니다.
++ Bundler가 없다면 아래의 오류 메시지가 나올 수 있습니다.
   + `You have to install development tools first.`
 
 + **Bundler 설치 방법**
@@ -111,7 +111,7 @@ brew install fastlane
 
 ---
 
-+ **3) Xcode 내가 지워버려서 다시 깔고 아래 명령어 입력**
++ **3) Xcode 지워버려서 다시 깔고 아래 명령어 입력**
 
 ```bash
 $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
@@ -122,9 +122,13 @@ $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
 + **4) 통곡의 오류 메시지**
 
++ 아래 명령어를 치면
+
 ```bash
 $ bundle exec fastlane release
 ```
+
++ 아래의 오류 메시지 발생
 
 ```bash
 Could not locate Gemfile or .bundle/ directory
@@ -132,7 +136,7 @@ Could not locate Gemfile or .bundle/ directory
 
 ---
 
-+ **5) Gemfile이 원인지 bundler가 없는 게 문제인지 모르니 bundler 설치**
++ **5) Gemfile이 문제인지 bundler가 없는 게 문제인지 모르니 bundler 설치**
 
 ```bash
 $ sudo gem install bundler
