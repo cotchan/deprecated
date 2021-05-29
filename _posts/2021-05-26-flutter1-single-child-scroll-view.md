@@ -50,7 +50,7 @@ Widget _drawPrintListBody() {
 
 ## 2. Sample2
 
-+ **`SingleChildScrollVie` 사용**
++ **`SingleChildScrollView` 사용**
 
 ```dart
 Widget build(BuildContext context) {
