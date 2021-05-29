@@ -12,7 +12,11 @@ tags: [dart]
 
 ---
 
-## 1. Sample 1
+## 1. DateTime to String
+
+---
+
+## 1-1. Sample 1
 
 ```dart
 import 'package:intl/intl.dart';
@@ -23,7 +27,7 @@ String dateFormatted = DateFormat('yyyy-MM-dd').format(now);
 
 ---
 
-## 2. Sample 2
+## 1-2. Sample 2
 
 + **분까지 나타내는 경우**
 
@@ -50,6 +54,13 @@ Text(DateFormat('yyyy-MM-dd hh:mm:ss').format(item.submittedTime),
   textAlign: TextAlign.center,
   style: const TextStyle(color: Color(0xff868F9B), fontSize: 12, fontFamily: 'NotoSansKR'))
 ```
+
+---
+
+## 2. String to DateTime
+
++ **`String to DateTime Formatting`은 아래 링크를 참고**
+  + [unable to convert string date in Format yyyyMMddHHmmss to DateTime dart](https://stackoverflow.com/questions/51042621/unable-to-convert-string-date-in-format-yyyymmddhhmmss-to-datetime-dart)
 
 ---
 
