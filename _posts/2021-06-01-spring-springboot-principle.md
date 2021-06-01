@@ -12,7 +12,7 @@ tags: [spring]
 
 ## 1. 자동설정이란
 
-+ 스프링 부트는 스프링에서 어플리케이션을 만들 때 주로 사용하는 설정을 자동으로 설정할 수 있습니다.
++ 스프링 부트는 `스프링에서 어플리케이션을 만들 때 주로 사용하는 설정을 자동으로 설정할 수 있습니다.`
 + **이 기능은 자바의 `main 진입점에 @SpringBootApplication을 붙임`으로써 사용이 가능합니다.**
 
 ```java
@@ -63,15 +63,16 @@ public class Application {
 
 ## 4. @EnableAutoConfiguration 
 
-+ **`@EnableAutoConfiguration`은 스프링 부트에서, 스프링에서 많이 쓰이는 스프링 빈을 자동으로 컨테이너에 등록하는 역할을 하는 어노테이션.**
++ **스프링 부트에서, `스프링에서 많이 쓰이는 스프링 빈을 자동으로 컨테이너에 등록하는 역할`을 하는 어노테이션.**
 + @EnableAutoConfiguration이 등록하는 빈들의 목록은 `spring-boot-autoconfigure-2.X.X.RELEASE.jar 파일에 포함`되어 있습니다.
-+ 위 목록 중에는 @EnableAutoConfiguration을 붙였을 시 스프링 부트 프로젝트를 `웹 프로젝트로 만들 수 있는 기본값이 설정`되어 있습니다.
++ **위 목록 중에는 `@EnableAutoConfiguration을 붙였을 시` 스프링 부트 프로젝트를 `웹 프로젝트로 만들 수 있는 기본값이 설정`되어 있습니다.**
 
 ---
 
 ## 5. 이 클래스의 적정 위치
 
 + **@SpringBootApplication의 적정한 위치**
+  + 디폴트 패키지의 entryPoint class
 
 ![springbootapplication](https://user-images.githubusercontent.com/75410527/120337224-14cfb280-c32e-11eb-8904-5a413257cee6.png)
 
