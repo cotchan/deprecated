@@ -73,7 +73,7 @@ public class Application {
 
 + **@SpringBootApplication의 적정한 위치**
 
-
+![springbootapplication](https://user-images.githubusercontent.com/75410527/120337224-14cfb280-c32e-11eb-8904-5a413257cee6.png)
 
 ---
 
