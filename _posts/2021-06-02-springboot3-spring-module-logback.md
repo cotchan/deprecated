@@ -26,6 +26,8 @@ tags: [spring-module]
 3. **로거 객체를 이용해서 원하는 위치에 로그를 찍습니다.**
 
 ```xml
+<!-- pom.xml -->
+
     <dependency>
       <groupId>org.lazyluke</groupId>
       <artifactId>log4jdbc-remix</artifactId>
