@@ -12,13 +12,13 @@ tags: [git]
 
 ---
 
+## 1. git reset 
 
-
-
-
-
-
-
+```bash
+//example
+$ git log
+$ git reset --hard 5425f1b
+```
 
 ---
 
