@@ -97,6 +97,7 @@ public class TestController {
 
   <!-- root 레벨 설정 -->
   <root level="INFO">
+    <!-- appender-ref로 "appender name" 지정 -->
     <appender-ref ref="console"/>
   </root>
 </configuration>
@@ -150,6 +151,26 @@ public class TestController {
   + **`%n`** : 줄바꿈(new line)
   + **`%%`** : %를 출력
   + **`%r`** : 애플리케이션 시작 이후부터 로깅이 발생한 시점까지의 시간(ms)
+
+---
+
+## 6. root, logger
+
++ **`설정한 appender를 참조`하여 package와 level을 설정합니다.** 
+
+---
+
+## 6-1. root
+
++ **`전역 설정`이라고 볼 수 있습니다.**
++ 지역적으로 선언된 logger 설정이 있다면 해당 logger 설정이 기본으로 적용됩니다.
+
+---
+
+## 6-2. logger
+
++ **`지역 설정`이라고 볼 수 있습니다.**
++ `additivity` 값은 root 설정 상속 유무(default == `true`)
 
 ---
 
