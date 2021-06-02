@@ -1,5 +1,5 @@
 ---
-title: sb3) SpringBoot 로그백 설정 방법(Logback)
+title: sb3) 로그백 설정 방법(Logback)
 author: cotchan 
 date: 2021-06-02 22:13:21 +0800 
 categories: [Spring-Boot3]
@@ -25,6 +25,10 @@ tags: [spring-module]
 2. **로거 객체를 이용해서 원하는 위치에 로그를 찍습니다.**
 
 ```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 @Controller 
 public class TestController { 
   
@@ -47,6 +51,8 @@ public class TestController {
 ---
 
 ## 3. Logback Code
+
++ **`logback.xml`**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -101,7 +107,7 @@ public class TestController {
 ## 4. appender
 
 + **`log의 형태를 설정합니다.` 로그 메시지가 출력될 대상을 결정하는 요소입니다.**
-  + 콘솔에 출력할지, 파일로 출력할지 등의 설정을 합니다.
+  + `콘솔에 출력할지`, `파일로 출력할지` 등의 설정을 합니다.
 
 ---
 
@@ -126,26 +132,24 @@ public class TestController {
 ## 5-1. Pattern
 
 + **패턴에 사용되는 요소**
-
-+ **`%Logger{length}`** : Logger name을 축약할 수 있다. {length}는 최대 자리 수, ex)logger{35}
-+ **`%-5level`** : 로그 레벨, -5는 출력의 고정폭 값(5글자)
-+ **`%msg`** : - 로그 메시지 (=%message)
-+ **`${PID:-}`** : 프로세스 아이디
-+ **`%d`** : 로그 기록시간
-+ **`%p`** : 로깅 레벨
-+ **`%F`** : 로깅이 발생한 프로그램 파일명
-+ **`%M`** : 로깅일 발생한 메소드의 명
-+ **`%l`** : 로깅이 발생한 호출지의 정보
-+ **`%L`** : 로깅이 발생한 호출지의 라인 수
-+ **`%thread`** : 현재 Thread 명
-+ **`%t`** : 로깅이 발생한 Thread 명
-+ **`%c`** : 로깅이 발생한 카테고리
-+ **`%C`** : 로깅이 발생한 클래스 명
-+ **`%m`** : 로그 메시지
-+ **`%n`** : 줄바꿈(new line)
-+ **`%%`** : %를 출력
-+ **`%r`** : 애플리케이션 시작 이후부터 로깅이 발생한 시점까지의 시간(ms)
-
+  + **`%Logger{length}`** : Logger name을 축약할 수 있다. {length}는 최대 자리 수, ex)logger{35}
+  + **`%-5level`** : 로그 레벨, -5는 출력의 고정폭 값(5글자)
+  + **`%msg`** : - 로그 메시지 (=%message)
+  + **`${PID:-}`** : 프로세스 아이디
+  + **`%d`** : 로그 기록시간
+  + **`%p`** : 로깅 레벨
+  + **`%F`** : 로깅이 발생한 프로그램 파일명
+  + **`%M`** : 로깅일 발생한 메소드의 명
+  + **`%l`** : 로깅이 발생한 호출지의 정보
+  + **`%L`** : 로깅이 발생한 호출지의 라인 수
+  + **`%thread`** : 현재 Thread 명
+  + **`%t`** : 로깅이 발생한 Thread 명
+  + **`%c`** : 로깅이 발생한 카테고리
+  + **`%C`** : 로깅이 발생한 클래스 명
+  + **`%m`** : 로그 메시지
+  + **`%n`** : 줄바꿈(new line)
+  + **`%%`** : %를 출력
+  + **`%r`** : 애플리케이션 시작 이후부터 로깅이 발생한 시점까지의 시간(ms)
 
 ---
 
