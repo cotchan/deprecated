@@ -21,8 +21,19 @@ tags: [spring-module]
 
 ## 2. 사용 방법
 
-1. **`LoggerFactory`에서 로거 객체를 불러옵니다.**
-2. **로거 객체를 이용해서 원하는 위치에 로그를 찍습니다.**
+1. **`pom.xml`에 로거를 등록합니다.**
+2. **`LoggerFactory`에서 로거 객체를 불러옵니다.**
+3. **로거 객체를 이용해서 원하는 위치에 로그를 찍습니다.**
+
+```xml
+    <dependency>
+      <groupId>org.lazyluke</groupId>
+      <artifactId>log4jdbc-remix</artifactId>
+      <version>0.2.7</version>
+    </dependency>
+```
+
+---
 
 ```java
 import org.slf4j.Logger;
@@ -169,8 +180,11 @@ public class TestController {
 
 ## 6-2. logger
 
-+ **`지역 설정`이라고 볼 수 있습니다.**
-+ `additivity` 값은 root 설정 상속 유무(default == `true`)
++ **실제 로그 기능을 수행하는 객체로 각 Logger마다 이름을 부여하여 사용합니다.**
+  + `지역 설정`이라고 볼 수 있습니다.
++ 각 logger마다 원하는 출력 레벨값을 설정할 수 있으며, 0개 이상의 Appender를 지정할 수 있습니다.
++ **각 소스로부터 입력받은 로깅 메시지는 `로그 레벨에 따라 Appender로 전달됩니다.`**
++ 기본적으로 최상위 로거인 `Root Logger`를 설정해 주어야하며, 추가로 필요한 로거에 대해 String 또는 클래스명 형식으로 `Logger name`을 추가하여 사용할 수 있습니다. 
 
 ---
 
@@ -181,4 +195,5 @@ public class TestController {
   + [log4j2.xml example](https://mkyong.com/logging/log4j2-xml-example/)
   + [Spring 에서 Logback 사용하기](https://gs.saro.me/dev?tn=479)
   + [Logback - 3. Logback의 설정(2).configuration 파일 구성](https://ckddn9496.tistory.com/79)
+  + [[JAVA] Logback 사용법](https://hochoon-dev.tistory.com/entry/JAVA-Logback-%EC%82%AC%EC%9A%A9%EB%B2%95)
 
