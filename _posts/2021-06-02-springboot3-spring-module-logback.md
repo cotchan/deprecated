@@ -7,24 +7,46 @@ tags: [spring-module]
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
++ **아래 포스팅을 참고하여 작성한 글입니다.**
++ **계속 업데이트할 예정입니다.**
 
 ---
 
-## 1. 사용 방법
+## 1. Logback 파일 위치
 
 + **`logback.xml` 파일을 `resources 디렉토리`에 만들어서 참조합니다.**
 + **`logback-spring.xml` 파일을 `resources 디렉토리`에 만들어서 참조합니다.**
 
+---
+
+## 2. 사용 방법
+
+1. **`LoggerFactory`에서 로거 객체를 불러옵니다.**
+2. **로거 객체를 이용해서 원하는 위치에 로그를 찍습니다.**
+
+```java
+@Controller 
+public class TestController { 
+  
+  private final Logger logger = LoggerFactory.getLogger(getClass()); 
+
+  @RequestMapping(value = "/test") 
+  public ModelAndView test() throws Exception { 
+
+    logger.trace("Trace Level 테스트"); 
+    logger.debug("DEBUG Level 테스트"); 
+    logger.info("INFO Level 테스트"); 
+    logger.warn("Warn Level 테스트"); 
+    logger.error("ERROR Level 테스트"); 
+
+    return mav; 
+  } 
+}
+```
 
 ---
 
-## 2.
-
----
-
----
-
-##
+## 3. Logback Code
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -76,28 +98,62 @@ tags: [spring-module]
 
 ---
 
-## 3. Appender
+## 4. appender
 
-+ **log의 형태를 설정합니다. 로그 메시지가 출력될 대상을 결정하는 요소입니다.**
++ **`log의 형태를 설정합니다.` 로그 메시지가 출력될 대상을 결정하는 요소입니다.**
   + 콘솔에 출력할지, 파일로 출력할지 등의 설정을 합니다.
 
 ---
 
-## 4. Encoder
+## 4-1. appender-class
 
-+ **Appender에 포함되어 `사용자가 지정한 형식으로 표현될 로그메시지를 변환하는 역할`을 담당합니다.**
+1. **`ch.qos.logback.core.ConsoleAppender` : 콘솔에 로그를 찍음, 로그를 OutputStream에 작성하여 콘솔에 출력되도록 합니다.**
+2. `ch.qos.logback.core.FileAppender` : 파일에 로그를 찍음, 최대 보관 일 수 등를 지정할 수 있습니다.
+3. **`ch.qos.logback.core.rolling.RollingFileAppender` : 여러개의 파일을 롤링, 순회하면서 로그를 찍습니다.**
+  + (FileAppender를 상속 받는다. 지정 용량이 넘어간 Log File을 넘버링 하여 나누어 저장할 수 있다.)
+4. `ch.qos.logback.classic.net.SMTPAppender` : 로그를 메일에 찍어 보냅니다.
+5. `ch.qos.logback.classic.db.DBAppender` : DB(데이터베이스)에 로그를 찍습니다. 
+
+---
+
+## 5. encoder
+
++ **appender에 포함되어 `사용자가 지정한 형식으로 표현될 로그메시지를 변환하는 역할`을 담당합니다.**
 + Encoder는 바이트를 소유하고 있는 Appender가 관리하는 OutputStream에 쓸 시간과 내용을 제어할 수 있습니다.
 
 ---
 
-## 4-1. Pattern
+## 5-1. Pattern
 
++ **패턴에 사용되는 요소**
 
-
++ **`%Logger{length}`** : Logger name을 축약할 수 있다. {length}는 최대 자리 수, ex)logger{35}
++ **`%-5level`** : 로그 레벨, -5는 출력의 고정폭 값(5글자)
++ **`%msg`** : - 로그 메시지 (=%message)
++ **`${PID:-}`** : 프로세스 아이디
++ **`%d`** : 로그 기록시간
++ **`%p`** : 로깅 레벨
++ **`%F`** : 로깅이 발생한 프로그램 파일명
++ **`%M`** : 로깅일 발생한 메소드의 명
++ **`%l`** : 로깅이 발생한 호출지의 정보
++ **`%L`** : 로깅이 발생한 호출지의 라인 수
++ **`%thread`** : 현재 Thread 명
++ **`%t`** : 로깅이 발생한 Thread 명
++ **`%c`** : 로깅이 발생한 카테고리
++ **`%C`** : 로깅이 발생한 클래스 명
++ **`%m`** : 로그 메시지
++ **`%n`** : 줄바꿈(new line)
++ **`%%`** : %를 출력
++ **`%r`** : 애플리케이션 시작 이후부터 로깅이 발생한 시점까지의 시간(ms)
 
 
 ---
 
 + 출처
-    + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
+  + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
+  + [[스프링부트 (5)] Spring Boot 로그 설정(1) - Logback](https://goddaehee.tistory.com/206)
+  + [logback.xml Example](https://mkyong.com/logging/logback-xml-example/)
+  + [log4j2.xml example](https://mkyong.com/logging/log4j2-xml-example/)
+  + [Spring 에서 Logback 사용하기](https://gs.saro.me/dev?tn=479)
+  + [Logback - 3. Logback의 설정(2).configuration 파일 구성](https://ckddn9496.tistory.com/79)
 
