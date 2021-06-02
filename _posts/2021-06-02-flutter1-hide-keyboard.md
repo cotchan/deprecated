@@ -13,7 +13,7 @@ tags: [flutter1]
 
 ## 1. 키보드 숨기는 방법
 
-+ 키보드를 사라지게 하고 싶은 타이밍(onTap, onPress 등)에 아래코드를 적용하면 됩니다.
++ 키보드를 사라지게 하고 싶은 타이밍(onTap, onPress 등)에 아래 코드를 적용하면 됩니다.
 
 ```dart
 FocusScopeNode currentFocus = FocusScope.of(context);
