@@ -65,7 +65,7 @@ public class TestController {
 
 ## 3. Logback Code
 
-+ **`logback.xml`**
++ **`resources/logback.xml`**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
