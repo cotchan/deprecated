@@ -16,6 +16,7 @@ tags: [ios]
 + **`Supported interface orientations`**
   + **Supported interface orientations (iPad) `Portrait`(bottom home button)만 선택해서 가로 보기 방지가 가능합니다.**
 
+![스크린샷 2021-06-04 오전 9 13 44](https://user-images.githubusercontent.com/75410527/120727730-44d9aa00-c516-11eb-90f5-1b3230ce8d6c.png)
 
 + 앱은 기본적으로 `Info.plist`의 `Supported interface orientations`을 참조합니다.
 + 여기에 Info.plist 값을 지우거나 더함으로써 앱의 기본방향을 정해줄 수 있습니다.
