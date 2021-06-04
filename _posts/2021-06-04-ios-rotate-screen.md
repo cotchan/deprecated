@@ -29,9 +29,8 @@ tags: [ios]
 + 가로보기 방지를 위해서는 추가적으로 Status Bar Style => `Requires full screen` YES 옵션이 필요합니다.
 
 + 이 옵션이 필요한 이유는 iPad는 multitasking feature라는 게 있습니다.
-+ 그러나 multitasking feature를 사용하는 경우 Supported interface orientations (iPad) 4가지 속성을 전부 지원해야하는 문제가 있습니다.
-
-+ **multitasking feature를 사용하지 않는 App은 `Status Bar Style` => `Requires full screen`을 선택하면 Supported interface orientations (iPad) 속성을 전부 선택하지 않아도 됩니다.**
++ **그러나 multitasking feature를 사용하는 경우 Supported interface orientations (iPad) 4가지 속성을 전부 지원해야하는 문제가 있습니다.**
++ **그러므로 multitasking feature를 사용하지 않는 App은 `Status Bar Style` => `Requires full screen`을 선택하면 Supported interface orientations (iPad) 속성을 전부 선택하지 않아도 됩니다.**
 
 
 ---
