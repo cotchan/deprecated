@@ -57,7 +57,7 @@ child: ListTile(
 
 ```dart
 //after
-bool updateRowState(int idx)
+bool updateRowState(int idx);
 
 
 Widget _drawSelectButton(int idx) {
