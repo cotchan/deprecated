@@ -17,12 +17,13 @@ tags: [flutter1]
 
 ---
 
-## 2. 시나리오 정리
+## 2. 해결 시나리오 정리
 
-1. **버튼을 눌렀을 때 `onPressed`가 실행되면서 widget.obscureText 값이 바뀜**
-2. **바뀐 값은 onChangedObscureText: (`value`)에 들어오면서 이 `value`값이 viewModel.updateObscureState 메서드의 `파라미터로 들어감`**
-3. **파라미터로 들어간 value는 updateObscureState 메서드 내부에서 `_isObscureText 값으로 셋팅되고` notifyListeners 를 통해 화면의 obscureText 플래그 값이 갱신됨**
-4. **3번에 따라서 PasswordTextFormField 필드의 obscureText 플래그가 바뀌면서, 화면에 * 처리가 되었다가, 다시 보이는 형태로 바뀜**
++ **해결하고자 한 시나리오**
+  1. **버튼 UI를 눌렀을 때 `onPressed`가 실행되면서 widget.obscureText 값이 바뀜**
+  2. **바뀐 값은 onChangedObscureText: (`value`)에 들어오면서 이 `value`값이 viewModel.updateObscureState 메서드의 `파라미터로 들어감`**
+  3. **파라미터로 들어간 value는 updateObscureState 메서드 내부에서 `_isObscureText 값으로 셋팅되고` notifyListeners 를 통해 화면의 obscureText bool 값이 바뀜**
+  4. **3번 과정으로 인해 PasswordTextFormField 필드의 obscureText bool값이 바뀌면서, 화면에 * 처리가 되었다가, 다시 보이는 형태로 바뀜**
 
 ---
 
