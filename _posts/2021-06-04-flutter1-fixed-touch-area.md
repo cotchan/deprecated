@@ -51,7 +51,7 @@ child: ListTile(
 
 ---
 
-## 3. After
+## 3. AFTER
 
 + **`onTap 프로퍼티를 추가`하여 해당 줄 전체를 터치영역으로 조정**
 
