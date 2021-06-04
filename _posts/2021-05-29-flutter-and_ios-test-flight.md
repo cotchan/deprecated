@@ -16,6 +16,7 @@ tags: [flutter-and_ios]
 + 출처
   + [iOS앱 TestFlight 앱 업로드 및 테스트 준비하기](https://0urtrees.tistory.com/59)
   + [iOS의 TestFlight를 이용하여 개발한 어플을 테스터를 통해 테스트해 보자.](https://dev-yakuza.posstree.com/ko/react-native/ios-testflight/)
+  + [TestFlight Tutorial: iOS Beta Testing](https://www.raywenderlich.com/10868372-testflight-tutorial-ios-beta-testing)
   + [앱 빌드 상태](https://help.apple.com/app-store-connect/#/dev3d6869aff)
   + [TestFlight로 앱 테스트하기](https://testflight.apple.com/)
   + [TestFlight로 더욱 간편해진 베타 테스트](https://developer.apple.com/kr/testflight/)
