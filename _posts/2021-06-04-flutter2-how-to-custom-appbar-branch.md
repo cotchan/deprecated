@@ -50,6 +50,8 @@ AppBar CustomAppBar(BuildContext) {
 + **`of` (Static Methods)**
   + Returns the modal route most closely associated with the given context.
 
+<img width="531" alt="스크린샷 2021-06-04 오전 10 18 38" src="https://user-images.githubusercontent.com/75410527/120731309-50c96a00-c51e-11eb-843c-2713ad96cc2d.png"> 
+  
 ---
 
 + 출처
