@@ -8,15 +8,17 @@ tags: [flutter-and_ios]
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
 + **아래 출처 글을 바탕으로 작성하였습니다.**
++ **계속 업데이트 할 예정입니다.**
 
 ---
 
 ## 1. Flutter Boundary
 
+---
+
 ## 1-1. MethodChannel 오픈
 
-+ flutter에서 
-+ flutter에서 Native call을 할 method를 선업하빈다.
++ flutter에서 Native call을 할 `MethodChannel`을 선언합니다.
 
 ```dart
   static const MethodChannel _migrationMethodChannel = MethodChannel
@@ -68,7 +70,7 @@ tags: [flutter-and_ios]
 
 ## 2-2. Call FlutterChannel
 
-+ **`FlutterMethodChannel` 함수를 사용하여 Flutter에서 선언한 아래의 메소드 채널과 Native 함수 함수를 연결합니다.**
++ **`FlutterMethodChannel` 함수를 사용하여 Flutter에서 선언한 아래의 메소드 채널과 Native 함수를 연결합니다.**
   + MethodChannel(`'app/crypto'`) 
   + MethodChannel(`'app/migration'`)
 
@@ -117,9 +119,9 @@ enum ChannelName {
 cryptoChannel.setMethodCallHandler {
     (call: FlutterMethodCall, result: FlutterResult) -> Void in
     switch (call.method) {
-    case MethodName.encodeRc4Message:
-    case MethodName.decodeRc4Message:
-    default: 
+      case MethodName.encodeRc4Message:
+      case MethodName.decodeRc4Message:
+      default: 
 ```
 
 ---
@@ -193,7 +195,7 @@ enum MethodName {
 
 ## 2-4. 메서드 결과값 return 받는 법
 
-+ **`result()`에 메서드의 결과값을 담아서 리턴합니다.**
++ **`result()`에 메서드의 결과값을 담아줍니다.**
   + **그러면 이제 flutter에서 해당 plugin의 return value를 사용할 수 있습니다.**
 
 ```swift
