@@ -88,3 +88,4 @@ end
 
 + 출처
   + [iOS Not Working after upgrading to flutter 1.20.1](https://github.com/Baseflow/flutter-permission-handler/issues/365)
+  + [iOS App Permission Usage Description Keys](https://www.iosdev.recipes/info-plist/permissions/)
