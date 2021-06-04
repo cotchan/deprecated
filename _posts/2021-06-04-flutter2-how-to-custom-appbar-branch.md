@@ -42,3 +42,15 @@ AppBar CustomAppBar(BuildContext) {
 ```
 
 ---
+
+## 3. ModalRoute<T> class
+
++ ModalRoutes cover the entire Navigator.
+
++ **`of` (Static Methods)**
+  + Returns the modal route most closely associated with the given context.
+
+---
+
++ 출처
+  + [ModalRoute<T> class](https://api.flutter.dev/flutter/widgets/ModalRoute-class.html)
