@@ -23,6 +23,8 @@ tags: [jwt]
 
 + JWT의 구조는 **`HEADER.PAYLOAD.SIGNATURE`** 입니다.
 
+![스크린샷 2021-06-05 오후 6 27 52](https://user-images.githubusercontent.com/75410527/120887060-d5ee7500-c62b-11eb-87e6-ba63ddf24e61.png)
+
 ---
 
 ## 2-1. Header
