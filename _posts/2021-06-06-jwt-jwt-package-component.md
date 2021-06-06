@@ -144,6 +144,9 @@ public class JwtAuthentication {
 
 ## 4. Component Image
 
++ Component1 : `JwtAuthenticationProvider`
++ Component2 : `JwtAuthenticationTokenFilter`
+
 ![KakaoTalk_20210606_205014685](https://user-images.githubusercontent.com/75410527/120923432-71a1e300-c709-11eb-9461-68e4d7e6c987.jpg)
 
 ---
