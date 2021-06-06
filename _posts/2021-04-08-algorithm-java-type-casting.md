@@ -13,7 +13,7 @@ tags: [jagorithm]
 
 ## 1. String
 
-+ **임의의 다른 자료형을 String으로 만들 때는 `String.valueOf(${targetValue})` 연산을 적용합니다.**
++ **임의의 다른 자료형을 String으로 만들 때는 `String.valueOf()` 연산을 적용합니다.**
 
 ---
 
