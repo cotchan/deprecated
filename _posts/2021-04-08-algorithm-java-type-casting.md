@@ -13,6 +13,8 @@ tags: [jagorithm]
 
 ## 1. String
 
++ **임의의 다른 자료형을 String으로 만들 때는 `String.valueOf(${targetValue})` 연산을 적용합니다.**
+
 ---
 
 ## 1-1. char[] to String
@@ -46,13 +48,13 @@ public void charArrayToString1() {
 + **`한 글자 char`에 대해서 `String 연산을 적용`해야 할 때**
 + **`String s = char c + "";`**
 
-```
+```java
 //example1
 char c = 'a';
 String oneLetterString = c + "";
 ```
 
-```
+```java
 //example2
 for (int idx = 0; idx < source.length(); ++idx)
 {
@@ -63,6 +65,22 @@ for (int idx = 0; idx < source.length(); ++idx)
         //...
     }
 }
+```
+
+---
+
+## 1. Long & Integer
+
+---
+
+## 1-1. Long to int
+
++ **`int Long.valueOf(${long value}).intValue();`연산을 통해서 형변환이 가능합니다.**
+
+```java
+Long oper = Long.parseLong(oper[2]);
+
+int intValue = Long.valueOf(oper).intValue();
 ```
 
 ---
