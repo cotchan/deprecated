@@ -14,7 +14,7 @@ tags: [jwt]
 
 ## 1. 등록된 클레임
 
-+ 등록된 클레임들은 서비스에서 필요한 정보들이 아닌, `토큰에 대한 정보를 담기위하여 이름이 이미 정해진 클레임들`입니다.
++ 등록된 클레임들은 서비스에서 필요한 정보들이 아닌, `토큰에 대한 정보를 담기 위하여 이름이 이미 정해진 클레임들`입니다.
 + 등록된 클레임의 사용은 모두 선택적(optional)입니다.
 
 ---
@@ -49,7 +49,53 @@ tags: [jwt]
 
 ---
 
-## 2. JWTVerifier (do verify)
+## 2. JWTCreator (do create)
+
++ **JWT를 만드는 역할을 합니다.**
+
++ Example 1
+
+```java
+  public String newToken(Claims claims) {
+    Date now = new Date();
+    JWTCreator.Builder builder = com.auth0.jwt.JWT.create();
+    builder.withIssuer(issuer);
+    builder.withIssuedAt(now);
+    if (expirySeconds > 0) {
+      builder.withExpiresAt(new Date(now.getTime() + expirySeconds * 1_000L));
+    }
+    builder.withClaim("userKey", claims.userKey);
+    builder.withClaim("name", claims.name);
+    builder.withClaim("email", claims.email.getAddress());
+    builder.withArrayClaim("roles", claims.roles);
+    return builder.sign(algorithm);
+  }
+```
+
+---
+
++ Example 2
+
+```java
+public static String createJWT(Long id, String subject,LocalDateTime afterDate) {
+    try {
+        Algorithm algorithm = Algorithm.HMAC256(SECRET);
+        JWTCreator.Builder builder = JWT.create()
+                                        .withJWTId(id.toString())
+                                        .withSubject(subject)
+                                        .withIssuer(ISSUER)
+                                        .withIssuedAt(DateUtil.convertLdtToDate(DateUtil.getCurrentTime()))
+                                        .withExpiresAt(DateUtil.convertLdtToDate(afterDate));
+        return builder.sign(algorithm);
+    } catch (IllegalArgumentException ex) {
+        throw new RuntimeException(ex);
+    }
+}
+```
+
+---
+
+## 3. JWTVerifier (do verify)
 
 + **jwt를 검증할 수 있는 메소드입니다.** 
   + 내부적으로 `decode`도 같이합니다.
@@ -85,9 +131,11 @@ public final class Jwt {
 
 ---
 
++ **외부에서 사용할 때**
+
 ```java
-//외부에서 사용할 때
 //JwtAuthenticationTokenFilter.java
+
 public class JwtAuthenticationTokenFilter extends GenericFilterBean {
 
   //...
@@ -116,3 +164,4 @@ public class JwtAuthenticationTokenFilter extends GenericFilterBean {
   + [auth0 JWT 활용하기](https://heowc.tistory.com/45)
   + [[JWT] JSON Web Token 소개 및 구조](https://velopert.com/2389)
   + [What format is the exp (Expiration Time) claim in a JWT](https://stackoverflow.com/questions/39926104/what-format-is-the-exp-expiration-time-claim-in-a-jwt)
+  + [Java Code Examples for com.auth0.jwt.JWTCreator](https://www.programcreek.com/java-api-examples/?api=com.auth0.jwt.JWTCreator)
