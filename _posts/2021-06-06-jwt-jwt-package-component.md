@@ -144,3 +144,5 @@ public class JwtAuthentication {
 ---
 
 + 출처
+  + [[Spring/Security] 초보자가 이해하는 Spring Security - 퍼옴](https://postitforhooney.tistory.com/entry/SpringSecurity-%EC%B4%88%EB%B3%B4%EC%9E%90%EA%B0%80-%EC%9D%B4%ED%95%B4%ED%95%98%EB%8A%94-Spring-Security-%ED%8D%BC%EC%98%B4)
+  + [8. [springboot] Spring Security 간단 권한관리 예제 - AuthenticationProvider 방식](https://dkyou.tistory.com/20)
