@@ -68,7 +68,11 @@ tags: [bcs]
 
 ## 6. Http 응답 코드 정리
 
+<img width="889" alt="스크린샷 2021-06-10 오전 11 07 38" src="https://user-images.githubusercontent.com/75410527/121453823-bc0eb280-c9dc-11eb-8a22-2674f94349e4.png">
 
+---
+
+![http_response](https://user-images.githubusercontent.com/75410527/121453829-be710c80-c9dc-11eb-9830-4629fddea224.png)
 
 ---
 + 출처
