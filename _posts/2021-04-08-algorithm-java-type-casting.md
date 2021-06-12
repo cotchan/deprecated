@@ -101,7 +101,7 @@ public class SimpleTesting {
         int node = 0;
         int alphaValue = node + ASCII_OFFSET;
         char alpha = (char)alphaValue;
-        System.out.println(alpha );
+        System.out.println(alpha);
         //'A'
     }
 }
