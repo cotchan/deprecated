@@ -1,7 +1,7 @@
 ---
 title: Swift2) UIWindow, UIView
 author: cotchan 
-date: 2021-06-25 00:00:21 +0800 
+date: 2021-06-25 15:08:21 +0800 
 categories: [Swift, Swift_Basic] 
 tags: [swift2] 
 ---
