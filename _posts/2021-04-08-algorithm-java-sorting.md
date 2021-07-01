@@ -11,13 +11,13 @@ tags: [jagorithm]
 
 ---
 
-## 1. Arrays.sort()
-
-+ **`Arrays.sort()` 메서드를 사용합니다.**
+## 1. 배열 정렬
 
 ---
 
-## 1-1. 오름차순 정렬 
+## 1-1. Arrays.sort()
+
++ **`배열` 오름차순(기본) 정렬**
 
 ```java
 import java.util.Arrays;
@@ -66,5 +66,20 @@ public class Foo {
 
 ---
 
+## 2. 리스트 정렬
+
+---
+
+## 2-1. Collections.reverse
+
++ **`리스트 역순 정렬`**
+
+```java
+Collections.reverse(List<?> list);
+```
+
+---
+
 + 출처
   + [java - 문자열, 숫자, 영문 배열 및 list 정렬(sort)](https://linuxism.ustd.ip.or.kr/964) 
+  + [Sort List in reverse in order](https://stackoverflow.com/questions/18073590/sort-list-in-reverse-in-order)
