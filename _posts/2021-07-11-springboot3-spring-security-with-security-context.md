@@ -1,5 +1,5 @@
 ---
-title: sb3) 권한을 이용한 테스트 코드 작성하기(Feat. @WithMockCustomUser, @WithSecurityContext) 
+title: sb3) 권한을 이용한 테스트 코드 작성(@WithMockCustomUser, @WithSecurityContext) 
 author: cotchan 
 date: 2021-07-11 22:07:21 +0800 
 categories: [Spring, Spring_Security]
