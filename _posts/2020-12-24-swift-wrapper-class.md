@@ -3,7 +3,7 @@ title: Swift) Wrapper 클래스 사용방법
 author: cotchan
 date: 2020-12-24 16:30:21 +0800
 categories: [Swift, Swift_Basic]
-tags: [swift]
+tags: [swift_etc]
 ---
 
 ## 1. wrapper 클래스 사용이유

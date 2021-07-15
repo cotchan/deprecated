@@ -1,9 +1,9 @@
 ---
-title: Swift) 변수 <=> 문자열 파싱 방법
+title: Swift2) 변수 <=> 문자열 파싱 방법
 author: cotchan
 date: 2021-01-05 14:24:21 +0800
 categories: [Swift, Swift_ETC]
-tags: [swift]
+tags: [swift2]
 ---
 
 ## \() 사용하기

@@ -3,7 +3,7 @@ title: Swift) Bridge Header 적용방법
 author: cotchan
 date: 2020-12-24 10:00:21 +0800
 categories: [Swift, Swift_Basic]
-tags: [swift] 
+tags: [swift_etc] 
 ---
 
 이 글은 아래 출처를 바탕으로 작성한 내용입니다.

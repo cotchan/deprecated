@@ -1,12 +1,13 @@
 ---
-title: Swift) Swift 기본 기능 코드
+title: Swift2) Swift 기본 기능 코드
 author: cotchan 
 date: 2020-12-08 20:38:21 +0800 
 categories: [Swift, Swift_Basic] 
-tags: [swift] 
+tags: [swift2] 
 ---
 
-내용이 계속 추가 될 예정입니다. :)
++ **개인 공부 목적으로 작성한 글입니다.**
++ 내용이 계속 추가 될 예정입니다. :)
 
 ---
 
