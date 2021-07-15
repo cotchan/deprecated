@@ -13,6 +13,8 @@ tags: [ios]
 
 ## 1. Overview
 
+![스크린샷 2021-07-15 오후 3 17 15](https://user-images.githubusercontent.com/75410527/125739569-bae88e1d-0f08-4b59-b8a8-6996ded83be5.png)
+
 ---
 
 ## 2. 라이프싸이클 설명
