@@ -1,9 +1,9 @@
 ---
-title: Swift2) UIScreen.main.bounds 
+title: ios) UIScreen.main.bounds 
 author: cotchan 
 date: 2021-06-25 15:30:21 +0800 
-categories: [Swift, Swift_Basic] 
-tags: [swift2] 
+categories: [ios] 
+tags: [ios] 
 ---
 
 + **개인 공부 목적으로 작성한 글입니다.**
