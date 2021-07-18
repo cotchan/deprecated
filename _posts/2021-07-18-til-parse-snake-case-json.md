@@ -40,7 +40,7 @@ public class UserDTO {
 
 ## 2-2. application.property
 
-+ **application.property에 아래 코드를 추가해줍니다.** 
++ **`application.property`에 아래 코드를 추가해줍니다.**
 
 ```
 spring.jackson.property-naming-strategy=SNAKE_CASE
