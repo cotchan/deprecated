@@ -104,5 +104,5 @@ tags: [bcs]
 
 ---
 + 출처
-    + []()
+    + [Blocking, Non-Blocking, Synchronous, Asynchronous, C10K](https://velog.io/@jsj3282/Blocking-IO-vs-Non-Blocking-IO-synchronous-IO-vs-asynchronous-IO-10k-problem)
     + []()
