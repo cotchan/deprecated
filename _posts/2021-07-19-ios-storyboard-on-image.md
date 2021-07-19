@@ -19,7 +19,5 @@ tags: [ios]
 
 ---
 
----
-
 + 출처
   + [Launch Screen Storyboard with centered image iOS](https://stackoverflow.com/questions/37951817/launch-screen-storyboard-with-centered-image-ios)
