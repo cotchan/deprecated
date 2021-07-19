@@ -67,6 +67,8 @@ tags: [bcs]
 
 ## 3-1. 블로킹 I/O 장점
 
++ CPU 연산이 많은 경우에 대해서는 Non-Blocking 방식의 싱글스레드로 처리하는 것보다는(?)
+
 ---
 
 ## 3-2. 블로킹 I/O 단점
@@ -93,15 +95,17 @@ tags: [bcs]
 
 ## 4-1. 논블로킹 I/O 장점
 
++ **논블로킹 I/O 방식은 싱글스레드 방식으로, 이벤트 디멀티플렉싱(busy waiting X) 방법을 사용하기 때문에 `cpu 유휴시간을 최소화할 수 있습니다.`**
+
 ---
 
 ## 4-2. 논블로킹 I/O 단점
 
-
-
++ **논블로킹 방식의 경우에는 cpu의 할 일(주문을 받는 일)이 많아지면 많아 질 수록 뒤에 주문을 기다리는 사람들이 불편하기 때문에 `cpu가 할 일이 많은 작업 같은 경우에는 적합하지 않습니다.`**
+  + **그러므로 논블로킹 I/O는 file reading, writing과 같이 `cpu연산보다 I/O 작업이 많은 경우에 사용하는 것이 좀 더 유리`합니다.**
 
 
 ---
 + 출처
     + [Blocking, Non-Blocking, Synchronous, Asynchronous, C10K](https://velog.io/@jsj3282/Blocking-IO-vs-Non-Blocking-IO-synchronous-IO-vs-asynchronous-IO-10k-problem)
-    + []()
+    + [Node.js의 논블로킹 I/O 방식의 장점, 단점](https://coding-god.tistory.com/85)
