@@ -1,9 +1,9 @@
 ---
-title: bcs) Blocking IO vs Non-Blocking IO(feat. Sync, Async)
+title: cs) Blocking IO vs Non-Blocking IO(feat. Sync, Async)
 author: cotchan 
 date: 2021-07-19 01:31:21 +0800 
-categories: [ComputerScience, BCS]
-tags: [bcs]
+categories: [ComputerScience]
+tags: [cs]
 ---
 
 + **아래 출처의 내용들을 바탕으로 작성한 내용입니다.**
