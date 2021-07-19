@@ -1,5 +1,5 @@
 ---
-title: ios) 화면 전환 방법(3가지)
+title: ios) 화면 전환 방법(feat. VC 만들기, VC 전환)
 author: cotchan
 date: 2021-07-15 15:41:00 +0800
 categories: [ios]
