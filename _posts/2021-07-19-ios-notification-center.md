@@ -15,6 +15,8 @@ tags: [ios]
 
 + NotificationCenter 에 등록된 event 가 발생하면 해당 event에 대한 행동을 취합니다.
 
+![스크린샷 2021-07-19 오전 9 36 52](https://user-images.githubusercontent.com/75410527/126100319-40968d16-d09b-4e2e-8cad-651fce8722a0.png)
+
 ---
 
 ## 2. 객체 얻어오는 방법
