@@ -34,6 +34,11 @@ tags: [swift2]
 enum NetworkError: Error {
     case badURL
 }
+
+public enum APIError: Error {
+    case failed(code: String, message: String)
+}
+
 ```
 
 ---
