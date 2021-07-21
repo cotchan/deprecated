@@ -24,8 +24,8 @@ tags: [swift2]
     + `위임자`
 + **`일을 하는 컴포넌트`**
   + 아래와 같이 불립니다.
-    + `수신자`
     + `Receiver`
+    + `수신자`
 
 ---
 
@@ -33,7 +33,7 @@ tags: [swift2]
 
 + Object Needing a Delegate 입니다.
 + **`가장 큰 특징`은, 일을 시키기 위해서는 요구사항에 해당하는 기능을 알아야하므로 `Delegate Protocol을 소유`합니다.**
-+ **클라이언트에 해당하며 `DelegateProtocol 서비스를 사용하려는 쪽`입니다.**
++ **클라이언트에 해당하며 `DelegateProtocol 서비스를 사용하는 쪽`입니다.**
 
 ```swift
 //일을 시키는 애 구현
@@ -54,8 +54,8 @@ class ObjectNeedingDelegate {
 ## 3. 일을 하는 애(Receiver)
 
 + Object Acting as a Delegate 입니다.
-+ **`Delegate Protocol을 구현`한 클래스입니다.**
-+ **`가장 큰 특징`은 일을 하는 애는 대리자(일을 시키는 애)에게 `자기 자신을 전달`합니다.**
++ **`Delegate Protocol을 구현한 클래스`입니다.**
++ **`가장 큰 특징`은 일을 하는 애(Receiver)는 `일을 시키는 애에게` `자기 자신을 전달`합니다.**
 
 ```swift
 //요구사항에 해당하는 protocol 디자인
