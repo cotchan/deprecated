@@ -38,7 +38,6 @@ enum NetworkError: Error {
 public enum APIError: Error {
     case failed(code: String, message: String)
 }
-
 ```
 
 ---
