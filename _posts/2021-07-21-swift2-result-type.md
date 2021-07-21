@@ -38,6 +38,9 @@ enum NetworkError: Error {
 public enum APIError: Error {
     case failed(code: String, message: String)
 }
+
+//아래와 같이 호출합니다.
+throw APIError.failed(code: "Invalid Data", message: "Invalid Data")
 ```
 
 ---
