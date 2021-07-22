@@ -17,7 +17,7 @@ $ pod init
 + **그러면 프로젝트 경로에 `Podfile`이 생성됩니다.**
 
 ```
-//Podfile 내부
+//$ vim Podfile
 
 target 'MyApp' do
   use_frameworks!
@@ -37,7 +37,7 @@ end
 pod 'RealmSwift' 
 pod 'AFNetworking', '~> 2.6'
 
-//이렇게 뒤에 ~>가 붙은 코드를 보셨을거에요. 저 숫자는 버전을 의미합니다. 
+//이렇게 뒤에 ~>가 붙은 코드를 보셨을겁니다. 저 숫자는 버전을 의미합니다. 
 ```
 
 ---
