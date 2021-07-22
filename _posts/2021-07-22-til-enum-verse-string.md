@@ -88,7 +88,6 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-            // write your code here
 
         System.out.println(Level.GOLD);  //GOLD
         System.out.println(Level.SILVER);    //SILVER
