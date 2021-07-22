@@ -37,7 +37,31 @@ tags: [java]
 
 ---
 
-## 2-3. .orElseThrow
+## 2-3. .orElseThrow(Function)
+
++ `orElseThrow`는 아래와 같은 방식으로 사용합니다.
+
+```java
+//Optional<User> findById(Long id);
+
+//example
+UserDto result = userService.findById(userId)
+                              .map(UserDto::new)
+                              .orElseThrow(() -> new NotFoundException(User.class, userId))
+```
+
+```java
+public class StTest {
+    public static String get() throws Exception {
+        Optional<String> opt = Optional.of("hello");
+        return opt.orElseThrow(() -> new Exception("throw exception"));
+    }
+
+    public static void main(String[] args) throws Exception {
+        String hello = get();
+    }
+}
+```
 
 ---
 
@@ -177,3 +201,4 @@ public class UsersApiController {
 
 + 출처
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
+    + [Optional .orElseThrow(Function) 사용법](https://krksap.tistory.com/1515)
