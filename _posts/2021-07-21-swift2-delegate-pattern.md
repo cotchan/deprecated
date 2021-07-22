@@ -32,13 +32,13 @@ tags: [swift2]
 ## 2. 일을 시키는 애(Delegate)
 
 + Object Needing a Delegate 입니다.
-+ **`가장 큰 특징`은, 일을 시키기 위해서는 요구사항에 해당하는 기능을 알아야하므로 `Delegate Protocol을 소유`합니다.**
++ **`가장 큰 특징은`, 일을 시키기 위해서는 요구사항에 해당하는 기능을 알아야하므로 `Delegate Protocol을 소유`합니다.**
 + **클라이언트에 해당하며 `DelegateProtocol 서비스를 사용하는 쪽`입니다.**
 
 ```swift
 //일을 시키는 애 구현
-//또는 Delegate 구현
-//또는 Sender 구현
+//Delegate 구현
+//Sender 구현
 
 class ObjectNeedingDelegate {
     weak var delegate: DelegateProtocol?
@@ -55,7 +55,7 @@ class ObjectNeedingDelegate {
 
 + Object Acting as a Delegate 입니다.
 + **`Delegate Protocol을 구현한 클래스`입니다.**
-+ **`가장 큰 특징`은 일을 하는 애(Receiver)는 `일을 시키는 애에게` `자기 자신을 전달`합니다.**
++ **`가장 큰 특징은`, 일을 하는 애(Receiver)는 `일을 시키는 애(Delegate)에게` `자기 자신을 전달`합니다.**
 
 ```swift
 //요구사항에 해당하는 protocol 디자인
@@ -66,7 +66,7 @@ protocol DelegateProtocol {
 
 ```swift
 //일을 하는 애 구현
-//또는 Receiver 구현
+//Receiver 구현
 
 class Receiver: DelegateProtocol {
     let button = ObjectNeedingDelegate()
