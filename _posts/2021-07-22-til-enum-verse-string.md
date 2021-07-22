@@ -7,7 +7,6 @@ tags: [til]
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
-+ **아래 출처 글을 바탕으로 작성하였습니다.**
 
 ---
 
@@ -37,7 +36,6 @@ public enum Level {
 + **예를 들어 위 코드를 아래와 같이 바꾸면 `GOLD와 SILVER의 의미가 어떻게 되는지 헷갈림`**
 
 ```java
-```java
 public enum Level {
 
     GOLD("GOLD"), SILVER("SILVER");
@@ -50,7 +48,6 @@ public enum Level {
 
     public String getValue() { return value; }
 }
-```
 ```
 
 ---
@@ -134,5 +131,3 @@ FSSLevel.GOLD.getValue().equals("Gold") is true
 
 ---
 
-+ 출처
-  + []()
