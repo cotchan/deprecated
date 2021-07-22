@@ -7,6 +7,7 @@ tags: [java]
 ---
 
 + **이 포스팅은 개인 공부 목적으로 작성한 포스팅입니다**
++ 아래 출처를 참고하여 작성한 글입니다.
 
 ---
 
@@ -33,7 +34,55 @@ tags: [java]
 
 ---
 
-## 2-2. .orElse
+## 2-2. .orElse / .orElseGet
+
++ **차이점**
+  + **orElse()는 `Optional 내부 객체의 상태와 상관없이 무조건 실행`됩니다.**
+    + Optional 내부 객체가 not null이라서 orElse가 `결과값을 반환하지는 않더라도 실행된다는 점이 중요`합니다.
+  + **orElseGet()은 `내부 객체가 null인 경우에만 실행`됩니다.**
+
+---
+
++ **`.orElse()`**
+
+```java
+private static String wontRunThis() { 
+    System.out.println("Won't run this"); 
+    return "foo"; 
+} 
+
+public void optional1() { 
+    String o = Optional.of("Hello World!").orElse(wontRunThis()); 
+    System.out.println("Result : " + o); 
+}
+
+
+//Result
+Won't run this 
+Result : Hello World!
+```
+
+---
+
++ **`.orElseGet()`**
+
+```java
+public void optional2() { 
+    String o = Optional.of("Hello World!").orElseGet(() -> wontRunThis()); 
+    System.out.println("Result : " + o); 
+}
+
+
+//Result
+Result : Hello World!
+```
+
+---
+
++ **결과에서 확인할 수 있듯이 두 메서드 모두 내부 객체가 null이 아니기 때문에 foo는 반환하지 않고 Hello World!를 반환합니다.**
++ 하지만 orElse()는 Optional 내부 객체의 상태와 상관없이 무조건 실행되어 Won't run this를 출력합니다.
+  + 그 이유는 orElse()의 인자로 T other를 받기 때문입니다. 
++ orElseGet()은 내부 객체가 null인 경우에만 실행됩니다.
 
 ---
 
@@ -202,3 +251,4 @@ public class UsersApiController {
 + 출처
     + [[스터디/9기] 단순 CRUD는 그만! 웹 백엔드 시스템 구현(Spring Boot)](https://programmers.co.kr/learn/courses/11694) 
     + [Optional .orElseThrow(Function) 사용법](https://krksap.tistory.com/1515)
+    + [[Java 8] Optional.orElse() vs Optional.orElseGet()](https://itstory.tk/entry/Java-8-OptionalorElse-vs-OptionalorElseGet)
