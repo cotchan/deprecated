@@ -45,9 +45,9 @@ tags: [java]
 //Optional<User> findById(Long id);
 
 //example
-UserDto result = userService.findById(userId)
-                              .map(UserDto::new)
-                              .orElseThrow(() -> new NotFoundException(User.class, userId))
+UserDto ret = userService.findById(userId)
+                           .map(UserDto::new)
+                           .orElseThrow(() -> new NotFoundException(User.class, userId));
 ```
 
 ```java
