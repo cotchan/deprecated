@@ -58,8 +58,8 @@ public void optional1() {
 
 
 //Result
-Won't run this 
-Result : Hello World!
+// Won't run this 
+// Result : Hello World!
 ```
 
 ---
@@ -74,7 +74,7 @@ public void optional2() {
 
 
 //Result
-Result : Hello World!
+// Result : Hello World!
 ```
 
 ---
