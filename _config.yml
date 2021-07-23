@@ -76,7 +76,6 @@ disqus:
 #     dark   - Use the dark color scheme
 #
 theme_mode: dark
-remote_theme: https://github.com/cotes2020/jekyll-theme-chirpy
 
 # boolean type, the global switch for ToC in posts.
 toc: true
