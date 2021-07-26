@@ -17,7 +17,7 @@ tags: [jagorithm]
 
 ---
 
-## 1. Array 2 List
+## 2. Array 2 List
 
 + **`Arrays.asList(Object[])`**
 
@@ -41,7 +41,7 @@ ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(arr2));
 
 ---
 
-## 1. List 2 Array
+## 3. List 2 Array
 
 + **`리스트명.toArray(new 데이터타입[size])`**
 
